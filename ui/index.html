@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rust + Tauri Terminal Shell</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="content">
+            <div class="panel hero">
+                <pre class="banner" id="banner"></pre>
+                <h1>Rust + Tauri terminal shell</h1>
+                <p class="dim">Keyboard-first controls, centered layout, and command-line style output.</p>
+            </div>
+
+            <div class="panel">
+                <label class="dim">[Cmd+1] APP_NAME</label>
+                <input type="text" id="app-name" value="MyMacApp" placeholder="MyMacApp" spellcheck="false">
+                <label class="dim">[Cmd+2] APP_BUNDLE_ID</label>
+                <input type="text" id="bundle-id" value="com.example.mymacapp" placeholder="com.example.mymacapp" spellcheck="false">
+            </div>
+
+            <div class="panel">
+                <span class="dim">Actions</span>
+                <div class="actions-row" id="actions-row">
+                    <button class="action-btn" id="btn-check">Run checks [Cmd+R]</button>
+                    <button class="action-btn" id="btn-build">Build .app [Cmd+B]</button>
+                    <button class="reset-btn" id="btn-reset">Reset [Cmd+K]</button>
+                </div>
+            </div>
+
+            <div class="panel output">
+                <span class="dim">Output</span>
+                <div id="status">Ready. Cmd+R runs checks, Cmd+B prints the build command.</div>
+            </div>
+
+            <div class="panel">
+                <span class="dim">Command Deck</span>
+                <pre class="accent" id="command-deck"></pre>
+            </div>
+
+            <div class="panel" id="shortcuts-panel">
+                <span class="dim">Shortcut Overlay (Cmd+/)</span>
+                <div>Tab / Shift+Tab  -&gt; cycle focus</div>
+                <div>Cmd+1 / Cmd+2    -&gt; jump to APP_NAME / APP_BUNDLE_ID</div>
+                <div>Cmd+R / Cmd+B    -&gt; run checks / build command</div>
+                <div>Cmd+K            -&gt; reset</div>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
