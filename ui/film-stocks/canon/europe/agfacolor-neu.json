@@ -1,0 +1,290 @@
+{
+  "id": "agfacolor-neu",
+  "name": "Agfacolor Neu",
+  "maker": "Agfa",
+  "type": "color",
+  "group": "CENTURY CANON / AGFA",
+  "sort": 276,
+  "catalog": {
+    "edition": "century-100-v1",
+    "rank": 76,
+    "introduced": "1936",
+    "origin": "Germany",
+    "rationale": "Its incorporated color couplers were a foundational advance in modern multilayer color-film construction."
+  },
+  "settings": {
+    "exposure": -0.03,
+    "contrast": 9,
+    "saturation": -10,
+    "temperature": 8,
+    "fade": 7,
+    "grain": 20
+  },
+  "grainProfile": {
+    "medium": "dye",
+    "crystal": "cubic",
+    "emulsion": "mixed",
+    "scale": "coarse",
+    "process": "standard"
+  },
+  "pipeline": {
+    "version": 1,
+    "family": "e6",
+    "monochrome": false,
+    "scene": {
+      "sensitivity": [
+        1.02,
+        1,
+        0.97
+      ],
+      "flash": 0
+    },
+    "curve": {
+      "toe": 0.15,
+      "shoulder": 0.2,
+      "gamma": 1.06,
+      "saturationCompression": 0.15
+    },
+    "crossover": {
+      "shadows": [
+        0.006,
+        0,
+        -0.006
+      ],
+      "highlights": [
+        0.012,
+        0.003,
+        -0.015
+      ]
+    },
+    "chemistry": {
+      "silverRetention": 0,
+      "fog": 0.007,
+      "flare": 0.005,
+      "localContrast": 0.03
+    },
+    "optics": {
+      "halation": 0.065,
+      "halationRadius": 4.5,
+      "halationThreshold": 0.91
+    },
+    "output": {
+      "tint": [
+        1.02,
+        1,
+        0.975
+      ],
+      "scanContrast": 1.06
+    },
+    "grain": {
+      "meanRadius": 1.26,
+      "radiusVariance": 0.68,
+      "shadowBias": 0.35,
+      "chroma": 0.034
+    }
+  },
+  "dossier": {
+    "version": 1,
+    "reference": {
+      "stock": "Agfacolor Neu",
+      "manufacturer": "Agfa",
+      "relationship": "Independent interpretive emulation; researched, not measured",
+      "status": "discontinued"
+    },
+    "tagline": "Muted warm primaries, dense early color, and soft layered detail.",
+    "portrait": "Agfacolor Neu is modeled around muted warm primaries, dense early color, and soft layered detail. Its incorporated color couplers were a foundational advance in modern multilayer color-film construction. Grainlab treats that identity as a linked capture, emulsion, process, and output system—not as a color cast pasted over a digital file.",
+    "facts": [
+      {
+        "label": "CANON RANK",
+        "value": "076 / 100",
+        "note": "Curatorial significance rank; not a sales chart"
+      },
+      {
+        "label": "INTRODUCED",
+        "value": "1936",
+        "note": "Germany"
+      },
+      {
+        "label": "SPEED / EI",
+        "value": "8",
+        "note": "daylight"
+      },
+      {
+        "label": "PROCESS",
+        "value": "Agfacolor reversal",
+        "note": "E6"
+      },
+      {
+        "label": "IMAGE",
+        "value": "CMY dye image",
+        "note": "coarse apparent structure"
+      },
+      {
+        "label": "CRYSTAL MODEL",
+        "value": "cubic",
+        "note": "multilayer architecture mapping"
+      },
+      {
+        "label": "SOURCE START",
+        "value": "Neutral SDR",
+        "note": "DSLR / iPhone normalization"
+      },
+      {
+        "label": "PROFILE",
+        "value": "Interpretive v1",
+        "note": "No manufacturer endorsement"
+      }
+    ],
+    "palette": [
+      {
+        "name": "skin light",
+        "hex": "#d6a47f"
+      },
+      {
+        "name": "amber",
+        "hex": "#ad7548"
+      },
+      {
+        "name": "sage",
+        "hex": "#66705d"
+      },
+      {
+        "name": "shadow",
+        "hex": "#26343b"
+      }
+    ],
+    "chapters": [
+      {
+        "eyebrow": "MATERIAL / HISTORY",
+        "title": "Why Agfacolor Neu belongs in the century canon",
+        "lede": "Its incorporated color couplers were a foundational advance in modern multilayer color-film construction.",
+        "details": [
+          {
+            "label": "Origin",
+            "value": "Germany; introduced 1936."
+          },
+          {
+            "label": "Material",
+            "value": "Agfacolor reversal; daylight; nominal speed / EI reference 8."
+          },
+          {
+            "label": "Image structure",
+            "value": "cubic crystal interpretation, multilayer emulsion mapping, coarse presentation-scale grain."
+          },
+          {
+            "label": "Status",
+            "value": "discontinued"
+          }
+        ],
+        "notes": [
+          "The canon balances cultural use, technical influence, geographic/manufacturer breadth, process diversity, and surviving documentation; rank is curatorial rather than a claimed global sales measurement."
+        ]
+      },
+      {
+        "eyebrow": "VISUAL TARGET",
+        "title": "Tone, color, and material signature",
+        "lede": "The target is muted warm primaries, dense early color, and soft layered detail.",
+        "details": [
+          {
+            "label": "Curve",
+            "value": "Toe 0.15 · development gamma 1.06 · shoulder 0.20 · scan contrast 1.06."
+          },
+          {
+            "label": "Color / spectral posture",
+            "value": "warm channel sensitivity and density-dependent crossover; daylight reference balance."
+          },
+          {
+            "label": "Grain",
+            "value": "coarse correlated dye-cloud density variation; cubic geometry; multilayer architecture."
+          },
+          {
+            "label": "Halation",
+            "value": "7% thresholded scene-highlight scatter before the film curve; intentionally stock/process dependent."
+          }
+        ],
+        "notes": [
+          "Grain is signal-dependent and spatially correlated across the full frame; it is not independent RGB noise or a repeating overlay."
+        ]
+      },
+      {
+        "eyebrow": "DIGITAL START",
+        "title": "From DSLR or iPhone to a plausible negative",
+        "lede": "Begin from a neutral SDR rendering, reduce phone HDR/local tone mapping, and protect both ends: this reversal target has less forgiving toe and shoulder room than a negative.",
+        "details": [
+          {
+            "label": "Input normalization",
+            "value": "Prefer RAW developed neutrally when available. For HEIC/JPEG, choose the least processed rendition; avoid baked Vivid styles, portrait relighting, clarity, and denoise."
+          },
+          {
+            "label": "Dynamic range",
+            "value": "Compress computational HDR gently before emulation, then place exposure precisely; do not ask the reversal curve to rescue clipped source channels."
+          },
+          {
+            "label": "White balance",
+            "value": "Neutralize obvious camera casts first, then let the daylight stock balance and emulsion sensitivity create the intended response."
+          },
+          {
+            "label": "Hard limit",
+            "value": "A rendered DSLR/iPhone file already contains sensor spectral response, computational tone mapping, demosaic, white balance, and gamut decisions; this profile cannot reverse information those stages discarded."
+          }
+        ],
+        "notes": [
+          "Apple ProRAW and camera RAW still need a deliberate neutral development; RAW is not automatically scene-linear or aesthetically neutral after a converter renders it."
+        ]
+      },
+      {
+        "eyebrow": "EMULATION RECIPE",
+        "title": "A stage-by-stage rendering target",
+        "lede": "sRGB decode → -0.03 EV scene placement → 1.020/1.000/0.970 channel sensitivity → toe 0.15, γ 1.06, shoulder 0.20 → Agfacolor reversal chemistry → 7% thresholded halation → coarse dye-cloud structure",
+        "details": [
+          {
+            "label": "Scene",
+            "value": "Decode to linear light, apply -0.03 EV and the stock sensitivity before tone shaping."
+          },
+          {
+            "label": "Emulsion",
+            "value": "Build the toe, midtone gamma, shoulder, crossover, saturation compression, and correlated image structure as one response."
+          },
+          {
+            "label": "Lab / optics",
+            "value": "Model Agfacolor reversal, chemical fog, local density contrast, and highlight scatter before the output transform."
+          },
+          {
+            "label": "Scan / print",
+            "value": "Preserve the direct positive's black density and limited latitude; scan without flattening it into a negative-like file."
+          }
+        ],
+        "notes": [
+          "All parameters are bounded artistic approximations derived from published characteristics and process knowledge, not digitized manufacturer sensitometric or spectral measurements."
+        ]
+      }
+    ],
+    "bestFor": [
+      "Subjects that benefit from muted warm primaries, dense early color, and soft layered detail.",
+      "Scenes whose palette and contrast align with the stock rather than fighting it."
+    ],
+    "watchFor": [
+      "A rendered DSLR/iPhone file already contains sensor spectral response, computational tone mapping, demosaic, white balance, and gamut decisions; this profile cannot reverse information those stages discarded.",
+      "Stacking a strong camera picture style, computational HDR, or sharpening underneath the emulation.",
+      "Treating reversal latitude like a forgiving color negative; clipped channels cannot be recovered."
+    ],
+    "fieldNotes": [
+      "Expose for the material idea: muted warm primaries, dense early color, and soft layered detail.",
+      "Try the profile on neutral daylight, mixed light, skin, foliage, and a flat wall before deciding what its name means."
+    ],
+    "sources": [
+      {
+        "title": "AGFA film technical-data archive",
+        "publisher": "AGFA primary publications, archived",
+        "url": "https://125px.com/docs/film/agfa/"
+      },
+      {
+        "title": "AGFA company history",
+        "publisher": "AGFA",
+        "url": "https://www.agfa.com/corporate/about-us/our-company/history/"
+      }
+    ],
+    "verified": "2026-07-16",
+    "disclaimer": "Agfacolor Neu is an independent Grainlab artistic emulation informed by cited public literature and historical material. It is not endorsed by Agfa, is not a measured ICC/LUT profile, and cannot reproduce a specific batch, lens, exposure, chemistry, printer, scanner, paper, aging state, or wavelengths absent from the digital source."
+  }
+}

@@ -1,0 +1,290 @@
+{
+  "id": "orwo-wolfen-nc500",
+  "name": "WOLFEN NC500",
+  "maker": "ORWO",
+  "type": "color",
+  "group": "CENTURY CANON / ORWO",
+  "sort": 282,
+  "catalog": {
+    "edition": "century-100-v1",
+    "rank": 82,
+    "introduced": "2022",
+    "origin": "Germany",
+    "rationale": "A new European color coating whose visible imperfections and restrained palette should remain distinct from polished Vision-derived looks."
+  },
+  "settings": {
+    "exposure": 0,
+    "contrast": -3,
+    "saturation": -12,
+    "temperature": -3,
+    "fade": 7,
+    "grain": 20
+  },
+  "grainProfile": {
+    "medium": "dye",
+    "crystal": "cubic",
+    "emulsion": "mixed",
+    "scale": "coarse",
+    "process": "standard"
+  },
+  "pipeline": {
+    "version": 1,
+    "family": "c41",
+    "monochrome": false,
+    "scene": {
+      "sensitivity": [
+        0.96,
+        1.025,
+        0.99
+      ],
+      "flash": 0
+    },
+    "curve": {
+      "toe": 0.18,
+      "shoulder": 0.38,
+      "gamma": 0.94,
+      "saturationCompression": 0.25
+    },
+    "crossover": {
+      "shadows": [
+        -0.02,
+        0.02,
+        0.005
+      ],
+      "highlights": [
+        0.008,
+        0.006,
+        -0.014
+      ]
+    },
+    "chemistry": {
+      "silverRetention": 0,
+      "fog": 0.003,
+      "flare": 0.005,
+      "localContrast": 0.045
+    },
+    "optics": {
+      "halation": 0.07,
+      "halationRadius": 4.5,
+      "halationThreshold": 0.91
+    },
+    "output": {
+      "tint": [
+        0.98,
+        1.02,
+        0.995
+      ],
+      "scanContrast": 1
+    },
+    "grain": {
+      "meanRadius": 1.454,
+      "radiusVariance": 0.68,
+      "shadowBias": 0.55,
+      "chroma": 0.045
+    }
+  },
+  "dossier": {
+    "version": 1,
+    "reference": {
+      "stock": "WOLFEN NC500",
+      "manufacturer": "ORWO",
+      "relationship": "Independent interpretive emulation; researched, not measured",
+      "status": "current"
+    },
+    "tagline": "Muted color, green-cyan shadows, coarse texture, and low-fi density variation.",
+    "portrait": "WOLFEN NC500 is modeled around muted color, green-cyan shadows, coarse texture, and low-fi density variation. A new European color coating whose visible imperfections and restrained palette should remain distinct from polished Vision-derived looks. Grainlab treats that identity as a linked capture, emulsion, process, and output system—not as a color cast pasted over a digital file.",
+    "facts": [
+      {
+        "label": "CANON RANK",
+        "value": "082 / 100",
+        "note": "Curatorial significance rank; not a sales chart"
+      },
+      {
+        "label": "INTRODUCED",
+        "value": "2022",
+        "note": "Germany"
+      },
+      {
+        "label": "SPEED / EI",
+        "value": "500",
+        "note": "daylight"
+      },
+      {
+        "label": "PROCESS",
+        "value": "C-41 color negative",
+        "note": "C41"
+      },
+      {
+        "label": "IMAGE",
+        "value": "CMY dye image",
+        "note": "coarse apparent structure"
+      },
+      {
+        "label": "CRYSTAL MODEL",
+        "value": "cubic",
+        "note": "multilayer architecture mapping"
+      },
+      {
+        "label": "SOURCE START",
+        "value": "Neutral SDR",
+        "note": "DSLR / iPhone normalization"
+      },
+      {
+        "label": "PROFILE",
+        "value": "Interpretive v1",
+        "note": "No manufacturer endorsement"
+      }
+    ],
+    "palette": [
+      {
+        "name": "skin light",
+        "hex": "#d6a47f"
+      },
+      {
+        "name": "amber",
+        "hex": "#ad7548"
+      },
+      {
+        "name": "sage",
+        "hex": "#66705d"
+      },
+      {
+        "name": "shadow",
+        "hex": "#26343b"
+      }
+    ],
+    "chapters": [
+      {
+        "eyebrow": "MATERIAL / HISTORY",
+        "title": "Why WOLFEN NC500 belongs in the century canon",
+        "lede": "A new European color coating whose visible imperfections and restrained palette should remain distinct from polished Vision-derived looks.",
+        "details": [
+          {
+            "label": "Origin",
+            "value": "Germany; introduced 2022."
+          },
+          {
+            "label": "Material",
+            "value": "C-41 color negative; daylight; nominal speed / EI reference 500."
+          },
+          {
+            "label": "Image structure",
+            "value": "cubic crystal interpretation, multilayer emulsion mapping, coarse presentation-scale grain."
+          },
+          {
+            "label": "Status",
+            "value": "current"
+          }
+        ],
+        "notes": [
+          "The canon balances cultural use, technical influence, geographic/manufacturer breadth, process diversity, and surviving documentation; rank is curatorial rather than a claimed global sales measurement."
+        ]
+      },
+      {
+        "eyebrow": "VISUAL TARGET",
+        "title": "Tone, color, and material signature",
+        "lede": "The target is muted color, green-cyan shadows, coarse texture, and low-fi density variation.",
+        "details": [
+          {
+            "label": "Curve",
+            "value": "Toe 0.18 · development gamma 0.94 · shoulder 0.38 · scan contrast 1.00."
+          },
+          {
+            "label": "Color / spectral posture",
+            "value": "mutedGreen channel sensitivity and density-dependent crossover; daylight reference balance."
+          },
+          {
+            "label": "Grain",
+            "value": "coarse correlated dye-cloud density variation; cubic geometry; multilayer architecture."
+          },
+          {
+            "label": "Halation",
+            "value": "7% thresholded scene-highlight scatter before the film curve; intentionally stock/process dependent."
+          }
+        ],
+        "notes": [
+          "Grain is signal-dependent and spatially correlated across the full frame; it is not independent RGB noise or a repeating overlay."
+        ]
+      },
+      {
+        "eyebrow": "DIGITAL START",
+        "title": "From DSLR or iPhone to a plausible negative",
+        "lede": "Begin from a neutral SDR rendering. Disable or minimize phone HDR, vivid styles, skin smoothing, and sharpening; preserve channel detail before the negative curve and dye-layer crossover are applied.",
+        "details": [
+          {
+            "label": "Input normalization",
+            "value": "Prefer RAW developed neutrally when available. For HEIC/JPEG, choose the least processed rendition; avoid baked Vivid styles, portrait relighting, clarity, and denoise."
+          },
+          {
+            "label": "Dynamic range",
+            "value": "Map HDR/Display-P3 into a stable SDR working image without clipping, preserving highlight and shadow separation before the film response."
+          },
+          {
+            "label": "White balance",
+            "value": "Neutralize obvious camera casts first, then let the daylight stock balance and emulsion sensitivity create the intended response."
+          },
+          {
+            "label": "Hard limit",
+            "value": "A rendered DSLR/iPhone file already contains sensor spectral response, computational tone mapping, demosaic, white balance, and gamut decisions; this profile cannot reverse information those stages discarded."
+          }
+        ],
+        "notes": [
+          "Apple ProRAW and camera RAW still need a deliberate neutral development; RAW is not automatically scene-linear or aesthetically neutral after a converter renders it."
+        ]
+      },
+      {
+        "eyebrow": "EMULATION RECIPE",
+        "title": "A stage-by-stage rendering target",
+        "lede": "sRGB decode → +0.00 EV scene placement → 0.960/1.025/0.990 channel sensitivity → toe 0.18, γ 0.94, shoulder 0.38 → C-41 color negative chemistry → 7% thresholded halation → coarse dye-cloud structure",
+        "details": [
+          {
+            "label": "Scene",
+            "value": "Decode to linear light, apply +0.00 EV and the stock sensitivity before tone shaping."
+          },
+          {
+            "label": "Emulsion",
+            "value": "Build the toe, midtone gamma, shoulder, crossover, saturation compression, and correlated image structure as one response."
+          },
+          {
+            "label": "Lab / optics",
+            "value": "Model C-41 color negative, chemical fog, local density contrast, and highlight scatter before the output transform."
+          },
+          {
+            "label": "Scan / print",
+            "value": "Use a neutral scan baseline, set black and white points after the film curve, and sharpen subject detail at final output size."
+          }
+        ],
+        "notes": [
+          "All parameters are bounded artistic approximations derived from published characteristics and process knowledge, not digitized manufacturer sensitometric or spectral measurements."
+        ]
+      }
+    ],
+    "bestFor": [
+      "Subjects that benefit from muted color, green-cyan shadows, coarse texture, and low-fi density variation.",
+      "Scenes whose palette and contrast align with the stock rather than fighting it."
+    ],
+    "watchFor": [
+      "A rendered DSLR/iPhone file already contains sensor spectral response, computational tone mapping, demosaic, white balance, and gamut decisions; this profile cannot reverse information those stages discarded.",
+      "Stacking a strong camera picture style, computational HDR, or sharpening underneath the emulation.",
+      "Judging grain at 200% instead of at 100% and intended output size."
+    ],
+    "fieldNotes": [
+      "Expose for the material idea: muted color, green-cyan shadows, coarse texture, and low-fi density variation.",
+      "Try the profile on neutral daylight, mixed light, skin, foliage, and a flat wall before deciding what its name means."
+    ],
+    "sources": [
+      {
+        "title": "ORWO UN54 product and data-sheet portal",
+        "publisher": "ORWO Film",
+        "url": "https://www.orwo.shop/en-us/products/orwo-un54-35mm"
+      },
+      {
+        "title": "ORWO film-manufacturing history",
+        "publisher": "ORWO",
+        "url": "https://www.orwo.wtf/about"
+      }
+    ],
+    "verified": "2026-07-16",
+    "disclaimer": "WOLFEN NC500 is an independent Grainlab artistic emulation informed by cited public literature and historical material. It is not endorsed by ORWO, is not a measured ICC/LUT profile, and cannot reproduce a specific batch, lens, exposure, chemistry, printer, scanner, paper, aging state, or wavelengths absent from the digital source."
+  }
+}

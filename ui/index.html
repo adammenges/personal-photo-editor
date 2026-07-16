@@ -34,7 +34,7 @@
                 <div class="sidebar-top">
                     <div class="eyebrow-row">
                         <span>01 / FILM LIBRARY</span>
-                        <span id="preset-count">12 STOCKS</span>
+                        <span id="preset-count">LOADING…</span>
                     </div>
                     <label class="search-field">
                         <span aria-hidden="true">/</span>
@@ -47,6 +47,18 @@
                         <button class="filter-tab" data-filter="mono" role="tab" aria-selected="false">Mono</button>
                         <button class="filter-tab" data-filter="utility" role="tab" aria-selected="false">Utility</button>
                     </div>
+                    <label class="process-filter">
+                        <span>PROCESS</span>
+                        <select id="process-filter" aria-label="Filter film stocks by process family">
+                            <option value="all">ALL PROCESSES</option>
+                            <option value="bw">B&amp;W SILVER</option>
+                            <option value="c41">C-41 / CHROMOGENIC</option>
+                            <option value="e6">REVERSAL / SLIDE</option>
+                            <option value="ecn2">ECN-2 / CINEMA</option>
+                            <option value="print">INSTANT / PRINT</option>
+                            <option value="utility">HOUSE / UTILITY</option>
+                        </select>
+                    </label>
                 </div>
 
                 <div class="preset-list" id="preset-list" aria-label="Film presets"></div>

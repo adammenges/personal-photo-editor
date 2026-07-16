@@ -1,0 +1,290 @@
+{
+  "id": "kodak-kodacolor-x",
+  "name": "Kodacolor-X",
+  "maker": "Kodak",
+  "type": "color",
+  "group": "CENTURY CANON / KODAK",
+  "sort": 221,
+  "catalog": {
+    "edition": "century-100-v1",
+    "rank": 21,
+    "introduced": "1963",
+    "origin": "United States",
+    "rationale": "This C-22 negative carried family and commercial color photography through the 1960s before C-41 chemistry arrived."
+  },
+  "settings": {
+    "exposure": 0,
+    "contrast": 2,
+    "saturation": -4,
+    "temperature": 7,
+    "fade": 5,
+    "grain": 13
+  },
+  "grainProfile": {
+    "medium": "dye",
+    "crystal": "cubic",
+    "emulsion": "mixed",
+    "scale": "medium",
+    "process": "standard"
+  },
+  "pipeline": {
+    "version": 1,
+    "family": "c41",
+    "monochrome": false,
+    "scene": {
+      "sensitivity": [
+        1.04,
+        1,
+        0.95
+      ],
+      "flash": 0
+    },
+    "curve": {
+      "toe": 0.18,
+      "shoulder": 0.34,
+      "gamma": 0.98,
+      "saturationCompression": 0.19
+    },
+    "crossover": {
+      "shadows": [
+        0.012,
+        0.003,
+        -0.015
+      ],
+      "highlights": [
+        0.02,
+        0.008,
+        -0.025
+      ]
+    },
+    "chemistry": {
+      "silverRetention": 0,
+      "fog": 0.007,
+      "flare": 0.005,
+      "localContrast": 0.025
+    },
+    "optics": {
+      "halation": 0.06,
+      "halationRadius": 4.5,
+      "halationThreshold": 0.91
+    },
+    "output": {
+      "tint": [
+        1.035,
+        1,
+        0.96
+      ],
+      "scanContrast": 1
+    },
+    "grain": {
+      "meanRadius": 0.906,
+      "radiusVariance": 0.46,
+      "shadowBias": 0.55,
+      "chroma": 0.045
+    }
+  },
+  "dossier": {
+    "version": 1,
+    "reference": {
+      "stock": "Kodacolor-X",
+      "manufacturer": "Kodak",
+      "relationship": "Independent interpretive emulation; researched, not measured",
+      "status": "discontinued"
+    },
+    "tagline": "Warm restrained color, soft resolution, and dense mid-century dye character.",
+    "portrait": "Kodacolor-X is modeled around warm restrained color, soft resolution, and dense mid-century dye character. This C-22 negative carried family and commercial color photography through the 1960s before C-41 chemistry arrived. Grainlab treats that identity as a linked capture, emulsion, process, and output system—not as a color cast pasted over a digital file.",
+    "facts": [
+      {
+        "label": "CANON RANK",
+        "value": "021 / 100",
+        "note": "Curatorial significance rank; not a sales chart"
+      },
+      {
+        "label": "INTRODUCED",
+        "value": "1963",
+        "note": "United States"
+      },
+      {
+        "label": "SPEED / EI",
+        "value": "80",
+        "note": "daylight"
+      },
+      {
+        "label": "PROCESS",
+        "value": "C-22 color negative",
+        "note": "C41"
+      },
+      {
+        "label": "IMAGE",
+        "value": "CMY dye image",
+        "note": "medium apparent structure"
+      },
+      {
+        "label": "CRYSTAL MODEL",
+        "value": "cubic",
+        "note": "mixed architecture mapping"
+      },
+      {
+        "label": "SOURCE START",
+        "value": "Neutral SDR",
+        "note": "DSLR / iPhone normalization"
+      },
+      {
+        "label": "PROFILE",
+        "value": "Interpretive v1",
+        "note": "No manufacturer endorsement"
+      }
+    ],
+    "palette": [
+      {
+        "name": "sun gold",
+        "hex": "#d5a24b"
+      },
+      {
+        "name": "memory red",
+        "hex": "#ae4d3c"
+      },
+      {
+        "name": "pool blue",
+        "hex": "#3f7790"
+      },
+      {
+        "name": "brown black",
+        "hex": "#29221d"
+      }
+    ],
+    "chapters": [
+      {
+        "eyebrow": "MATERIAL / HISTORY",
+        "title": "Why Kodacolor-X belongs in the century canon",
+        "lede": "This C-22 negative carried family and commercial color photography through the 1960s before C-41 chemistry arrived.",
+        "details": [
+          {
+            "label": "Origin",
+            "value": "United States; introduced 1963."
+          },
+          {
+            "label": "Material",
+            "value": "C-22 color negative; daylight; nominal speed / EI reference 80."
+          },
+          {
+            "label": "Image structure",
+            "value": "cubic crystal interpretation, mixed emulsion mapping, medium presentation-scale grain."
+          },
+          {
+            "label": "Status",
+            "value": "discontinued"
+          }
+        ],
+        "notes": [
+          "The canon balances cultural use, technical influence, geographic/manufacturer breadth, process diversity, and surviving documentation; rank is curatorial rather than a claimed global sales measurement."
+        ]
+      },
+      {
+        "eyebrow": "VISUAL TARGET",
+        "title": "Tone, color, and material signature",
+        "lede": "The target is warm restrained color, soft resolution, and dense mid-century dye character.",
+        "details": [
+          {
+            "label": "Curve",
+            "value": "Toe 0.18 · development gamma 0.98 · shoulder 0.34 · scan contrast 1.00."
+          },
+          {
+            "label": "Color / spectral posture",
+            "value": "gold channel sensitivity and density-dependent crossover; daylight reference balance."
+          },
+          {
+            "label": "Grain",
+            "value": "medium correlated dye-cloud density variation; cubic geometry; mixed architecture."
+          },
+          {
+            "label": "Halation",
+            "value": "6% thresholded scene-highlight scatter before the film curve; intentionally stock/process dependent."
+          }
+        ],
+        "notes": [
+          "Grain is signal-dependent and spatially correlated across the full frame; it is not independent RGB noise or a repeating overlay."
+        ]
+      },
+      {
+        "eyebrow": "DIGITAL START",
+        "title": "From DSLR or iPhone to a plausible negative",
+        "lede": "Begin from a neutral SDR rendering. Disable or minimize phone HDR, vivid styles, skin smoothing, and sharpening; preserve channel detail before the negative curve and dye-layer crossover are applied.",
+        "details": [
+          {
+            "label": "Input normalization",
+            "value": "Prefer RAW developed neutrally when available. For HEIC/JPEG, choose the least processed rendition; avoid baked Vivid styles, portrait relighting, clarity, and denoise."
+          },
+          {
+            "label": "Dynamic range",
+            "value": "Map HDR/Display-P3 into a stable SDR working image without clipping, preserving highlight and shadow separation before the film response."
+          },
+          {
+            "label": "White balance",
+            "value": "Neutralize obvious camera casts first, then let the daylight stock balance and emulsion sensitivity create the intended response."
+          },
+          {
+            "label": "Hard limit",
+            "value": "A rendered DSLR/iPhone file already contains sensor spectral response, computational tone mapping, demosaic, white balance, and gamut decisions; this profile cannot reverse information those stages discarded."
+          }
+        ],
+        "notes": [
+          "Apple ProRAW and camera RAW still need a deliberate neutral development; RAW is not automatically scene-linear or aesthetically neutral after a converter renders it."
+        ]
+      },
+      {
+        "eyebrow": "EMULATION RECIPE",
+        "title": "A stage-by-stage rendering target",
+        "lede": "sRGB decode → +0.00 EV scene placement → 1.040/1.000/0.950 channel sensitivity → toe 0.18, γ 0.98, shoulder 0.34 → C-22 color negative chemistry → 6% thresholded halation → medium dye-cloud structure",
+        "details": [
+          {
+            "label": "Scene",
+            "value": "Decode to linear light, apply +0.00 EV and the stock sensitivity before tone shaping."
+          },
+          {
+            "label": "Emulsion",
+            "value": "Build the toe, midtone gamma, shoulder, crossover, saturation compression, and correlated image structure as one response."
+          },
+          {
+            "label": "Lab / optics",
+            "value": "Model C-22 color negative, chemical fog, local density contrast, and highlight scatter before the output transform."
+          },
+          {
+            "label": "Scan / print",
+            "value": "Use a neutral scan baseline, set black and white points after the film curve, and sharpen subject detail at final output size."
+          }
+        ],
+        "notes": [
+          "All parameters are bounded artistic approximations derived from published characteristics and process knowledge, not digitized manufacturer sensitometric or spectral measurements."
+        ]
+      }
+    ],
+    "bestFor": [
+      "Subjects that benefit from warm restrained color, soft resolution, and dense mid-century dye character.",
+      "Scenes whose palette and contrast align with the stock rather than fighting it."
+    ],
+    "watchFor": [
+      "A rendered DSLR/iPhone file already contains sensor spectral response, computational tone mapping, demosaic, white balance, and gamut decisions; this profile cannot reverse information those stages discarded.",
+      "Stacking a strong camera picture style, computational HDR, or sharpening underneath the emulation.",
+      "Judging grain at 200% instead of at 100% and intended output size."
+    ],
+    "fieldNotes": [
+      "Expose for the material idea: warm restrained color, soft resolution, and dense mid-century dye character.",
+      "Try the profile on neutral daylight, mixed light, skin, foliage, and a flat wall before deciding what its name means."
+    ],
+    "sources": [
+      {
+        "title": "KODAK PROFESSIONAL film technical publications",
+        "publisher": "Kodak Alaris",
+        "url": "https://kodakprofessional.com/photographers/resources"
+      },
+      {
+        "title": "KODAK PROFESSIONAL Films brochure",
+        "publisher": "Kodak Alaris",
+        "url": "https://www.kodakprofessional.com/sites/default/files/wysiwyg/film/KODAKPROFESSIONAL_Film_Brochure2018.pdf"
+      }
+    ],
+    "verified": "2026-07-16",
+    "disclaimer": "Kodacolor-X is an independent Grainlab artistic emulation informed by cited public literature and historical material. It is not endorsed by Kodak, is not a measured ICC/LUT profile, and cannot reproduce a specific batch, lens, exposure, chemistry, printer, scanner, paper, aging state, or wavelengths absent from the digital source."
+  }
+}

@@ -1,0 +1,290 @@
+{
+  "id": "cinestill-800t",
+  "name": "800T",
+  "maker": "CineStill",
+  "type": "color",
+  "group": "CENTURY CANON / CINESTILL",
+  "sort": 290,
+  "catalog": {
+    "edition": "century-100-v1",
+    "rank": 90,
+    "introduced": "2013",
+    "origin": "United States",
+    "rationale": "Removing the remjet backing and adapting motion-film technology for C-41 produces a still stock with deliberately visible halation behavior."
+  },
+  "settings": {
+    "exposure": 0.04,
+    "contrast": -1,
+    "saturation": 1,
+    "temperature": -10,
+    "fade": 1,
+    "grain": 13
+  },
+  "grainProfile": {
+    "medium": "dye",
+    "crystal": "tabular",
+    "emulsion": "core-shell",
+    "scale": "medium",
+    "process": "standard"
+  },
+  "pipeline": {
+    "version": 1,
+    "family": "c41",
+    "monochrome": false,
+    "scene": {
+      "sensitivity": [
+        1.03,
+        0.98,
+        1.01
+      ],
+      "flash": 0
+    },
+    "curve": {
+      "toe": 0.17,
+      "shoulder": 0.48,
+      "gamma": 0.96,
+      "saturationCompression": 0.22
+    },
+    "crossover": {
+      "shadows": [
+        -0.015,
+        0.004,
+        0.018
+      ],
+      "highlights": [
+        0.022,
+        -0.004,
+        -0.018
+      ]
+    },
+    "chemistry": {
+      "silverRetention": 0,
+      "fog": 0.009,
+      "flare": 0.005,
+      "localContrast": 0.03
+    },
+    "optics": {
+      "halation": 0.22,
+      "halationRadius": 11,
+      "halationThreshold": 0.78
+    },
+    "output": {
+      "tint": [
+        1.01,
+        1,
+        0.995
+      ],
+      "scanContrast": 1
+    },
+    "grain": {
+      "meanRadius": 1.055,
+      "radiusVariance": 0.46,
+      "shadowBias": 0.82,
+      "chroma": 0.045
+    }
+  },
+  "dossier": {
+    "version": 1,
+    "reference": {
+      "stock": "800T",
+      "manufacturer": "CineStill",
+      "relationship": "Independent interpretive emulation; researched, not measured",
+      "status": "current"
+    },
+    "tagline": "Cool tungsten color, red highlight halation, and cinematic low-light grain.",
+    "portrait": "800T is modeled around cool tungsten color, red highlight halation, and cinematic low-light grain. Removing the remjet backing and adapting motion-film technology for C-41 produces a still stock with deliberately visible halation behavior. Grainlab treats that identity as a linked capture, emulsion, process, and output system—not as a color cast pasted over a digital file.",
+    "facts": [
+      {
+        "label": "CANON RANK",
+        "value": "090 / 100",
+        "note": "Curatorial significance rank; not a sales chart"
+      },
+      {
+        "label": "INTRODUCED",
+        "value": "2013",
+        "note": "United States"
+      },
+      {
+        "label": "SPEED / EI",
+        "value": "800",
+        "note": "3200 K tungsten"
+      },
+      {
+        "label": "PROCESS",
+        "value": "C-41 color negative",
+        "note": "C41"
+      },
+      {
+        "label": "IMAGE",
+        "value": "CMY dye image",
+        "note": "medium apparent structure"
+      },
+      {
+        "label": "CRYSTAL MODEL",
+        "value": "tabular",
+        "note": "core-shell architecture mapping"
+      },
+      {
+        "label": "SOURCE START",
+        "value": "Neutral SDR",
+        "note": "DSLR / iPhone normalization"
+      },
+      {
+        "label": "PROFILE",
+        "value": "Interpretive v1",
+        "note": "No manufacturer endorsement"
+      }
+    ],
+    "palette": [
+      {
+        "name": "skin light",
+        "hex": "#d6a47f"
+      },
+      {
+        "name": "amber",
+        "hex": "#ad7548"
+      },
+      {
+        "name": "sage",
+        "hex": "#66705d"
+      },
+      {
+        "name": "shadow",
+        "hex": "#26343b"
+      }
+    ],
+    "chapters": [
+      {
+        "eyebrow": "MATERIAL / HISTORY",
+        "title": "Why 800T belongs in the century canon",
+        "lede": "Removing the remjet backing and adapting motion-film technology for C-41 produces a still stock with deliberately visible halation behavior.",
+        "details": [
+          {
+            "label": "Origin",
+            "value": "United States; introduced 2013."
+          },
+          {
+            "label": "Material",
+            "value": "C-41 color negative; 3200 K tungsten; nominal speed / EI reference 800."
+          },
+          {
+            "label": "Image structure",
+            "value": "tabular crystal interpretation, core-shell emulsion mapping, medium presentation-scale grain."
+          },
+          {
+            "label": "Status",
+            "value": "current"
+          }
+        ],
+        "notes": [
+          "The canon balances cultural use, technical influence, geographic/manufacturer breadth, process diversity, and surviving documentation; rank is curatorial rather than a claimed global sales measurement."
+        ]
+      },
+      {
+        "eyebrow": "VISUAL TARGET",
+        "title": "Tone, color, and material signature",
+        "lede": "The target is cool tungsten color, red highlight halation, and cinematic low-light grain.",
+        "details": [
+          {
+            "label": "Curve",
+            "value": "Toe 0.17 · development gamma 0.96 · shoulder 0.48 · scan contrast 1.00."
+          },
+          {
+            "label": "Color / spectral posture",
+            "value": "cyanRed channel sensitivity and density-dependent crossover; 3200 K tungsten reference balance."
+          },
+          {
+            "label": "Grain",
+            "value": "medium correlated dye-cloud density variation; tabular geometry; core-shell architecture."
+          },
+          {
+            "label": "Halation",
+            "value": "22% thresholded scene-highlight scatter before the film curve; intentionally stock/process dependent."
+          }
+        ],
+        "notes": [
+          "Grain is signal-dependent and spatially correlated across the full frame; it is not independent RGB noise or a repeating overlay."
+        ]
+      },
+      {
+        "eyebrow": "DIGITAL START",
+        "title": "From DSLR or iPhone to a plausible negative",
+        "lede": "Begin from a neutral SDR rendering. Disable or minimize phone HDR, vivid styles, skin smoothing, and sharpening; preserve channel detail before the negative curve and dye-layer crossover are applied.",
+        "details": [
+          {
+            "label": "Input normalization",
+            "value": "Prefer RAW developed neutrally when available. For HEIC/JPEG, choose the least processed rendition; avoid baked Vivid styles, portrait relighting, clarity, and denoise."
+          },
+          {
+            "label": "Dynamic range",
+            "value": "Map HDR/Display-P3 into a stable SDR working image without clipping, preserving highlight and shadow separation before the film response."
+          },
+          {
+            "label": "White balance",
+            "value": "Neutralize obvious camera casts first, then let the 3200 K tungsten stock balance and emulsion sensitivity create the intended response."
+          },
+          {
+            "label": "Hard limit",
+            "value": "A rendered DSLR/iPhone file already contains sensor spectral response, computational tone mapping, demosaic, white balance, and gamut decisions; this profile cannot reverse information those stages discarded."
+          }
+        ],
+        "notes": [
+          "Apple ProRAW and camera RAW still need a deliberate neutral development; RAW is not automatically scene-linear or aesthetically neutral after a converter renders it."
+        ]
+      },
+      {
+        "eyebrow": "EMULATION RECIPE",
+        "title": "A stage-by-stage rendering target",
+        "lede": "sRGB decode → +0.04 EV scene placement → 1.030/0.980/1.010 channel sensitivity → toe 0.17, γ 0.96, shoulder 0.48 → C-41 color negative chemistry → 22% thresholded halation → medium dye-cloud structure",
+        "details": [
+          {
+            "label": "Scene",
+            "value": "Decode to linear light, apply +0.04 EV and the stock sensitivity before tone shaping."
+          },
+          {
+            "label": "Emulsion",
+            "value": "Build the toe, midtone gamma, shoulder, crossover, saturation compression, and correlated image structure as one response."
+          },
+          {
+            "label": "Lab / optics",
+            "value": "Model C-41 color negative, chemical fog, local density contrast, and highlight scatter before the output transform."
+          },
+          {
+            "label": "Scan / print",
+            "value": "Use a neutral scan baseline, set black and white points after the film curve, and sharpen subject detail at final output size."
+          }
+        ],
+        "notes": [
+          "All parameters are bounded artistic approximations derived from published characteristics and process knowledge, not digitized manufacturer sensitometric or spectral measurements."
+        ]
+      }
+    ],
+    "bestFor": [
+      "Subjects that benefit from cool tungsten color, red highlight halation, and cinematic low-light grain.",
+      "Scenes whose palette and contrast align with the stock rather than fighting it."
+    ],
+    "watchFor": [
+      "A rendered DSLR/iPhone file already contains sensor spectral response, computational tone mapping, demosaic, white balance, and gamut decisions; this profile cannot reverse information those stages discarded.",
+      "Stacking a strong camera picture style, computational HDR, or sharpening underneath the emulation.",
+      "Judging grain at 200% instead of at 100% and intended output size."
+    ],
+    "fieldNotes": [
+      "Expose for the material idea: cool tungsten color, red highlight halation, and cinematic low-light grain.",
+      "Try the profile on neutral daylight, mixed light, skin, foliage, and a flat wall before deciding what its name means."
+    ],
+    "sources": [
+      {
+        "title": "CineStill film product catalog",
+        "publisher": "CineStill Film",
+        "url": "https://cinestillfilm.com/collections/product-catalog"
+      },
+      {
+        "title": "CineStill film and process FAQ",
+        "publisher": "CineStill Film",
+        "url": "https://cinestillfilm.com/pages/frequently-asked-questions"
+      }
+    ],
+    "verified": "2026-07-16",
+    "disclaimer": "800T is an independent Grainlab artistic emulation informed by cited public literature and historical material. It is not endorsed by CineStill, is not a measured ICC/LUT profile, and cannot reproduce a specific batch, lens, exposure, chemistry, printer, scanner, paper, aging state, or wavelengths absent from the digital source."
+  }
+}

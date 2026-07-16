@@ -229,7 +229,38 @@ fn validate_dossier(dossier: &Value, source: &Path) {
     }
 }
 
-fn validate_stock(stock: &Value, source: &Path, identifiers: &mut HashSet<String>) {
+fn validate_catalog(catalog: &Value, source: &Path, canon_ranks: &mut HashSet<u64>) {
+    assert_eq!(
+        required_string(catalog, "edition", source),
+        "century-100-v1",
+        "{} has an unsupported catalog edition",
+        source.display()
+    );
+    let rank = catalog["rank"]
+        .as_u64()
+        .filter(|rank| (1..=100).contains(rank))
+        .unwrap_or_else(|| {
+            panic!(
+                "{} catalog.rank must be from 1 through 100",
+                source.display()
+            )
+        });
+    assert!(
+        canon_ranks.insert(rank),
+        "duplicate century canon rank {rank} in {}",
+        source.display()
+    );
+    for key in ["introduced", "origin", "rationale"] {
+        required_string(catalog, key, source);
+    }
+}
+
+fn validate_stock(
+    stock: &Value,
+    source: &Path,
+    identifiers: &mut HashSet<String>,
+    canon_ranks: &mut HashSet<u64>,
+) {
     let identifier = required_string(stock, "id", source);
     assert!(
         identifiers.insert(identifier.to_owned()),
@@ -253,6 +284,9 @@ fn validate_stock(stock: &Value, source: &Path, identifiers: &mut HashSet<String
     for key in ["medium", "crystal", "emulsion", "scale", "process"] {
         required_string(grain, key, source);
     }
+    if !stock["catalog"].is_null() {
+        validate_catalog(&stock["catalog"], source, canon_ranks);
+    }
     validate_pipeline(&stock["pipeline"], source);
     validate_dossier(&stock["dossier"], source);
 }
@@ -266,6 +300,7 @@ fn main() {
     definitions.sort();
 
     let mut identifiers = HashSet::new();
+    let mut canon_ranks = HashSet::new();
     let mut stocks: Vec<Value> = definitions
         .iter()
         .map(|source| {
@@ -273,10 +308,21 @@ fn main() {
                 .unwrap_or_else(|error| panic!("could not read {}: {error}", source.display()));
             let stock: Value = serde_json::from_str(&contents)
                 .unwrap_or_else(|error| panic!("invalid JSON in {}: {error}", source.display()));
-            validate_stock(&stock, source, &mut identifiers);
+            validate_stock(&stock, source, &mut identifiers, &mut canon_ranks);
             stock
         })
         .collect();
+    assert_eq!(
+        canon_ranks.len(),
+        100,
+        "the century-100-v1 catalog must contain exactly 100 ranked stocks"
+    );
+    for rank in 1..=100 {
+        assert!(
+            canon_ranks.contains(&rank),
+            "the century-100-v1 catalog is missing rank {rank}"
+        );
+    }
     stocks.sort_by_key(|stock| stock["sort"].as_i64().unwrap_or(i64::MAX));
 
     let manifest_path = stock_directory.join("index.json");

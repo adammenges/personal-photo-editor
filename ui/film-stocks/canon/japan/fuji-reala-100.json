@@ -1,0 +1,290 @@
+{
+  "id": "fuji-reala-100",
+  "name": "Fujicolor Reala 100",
+  "maker": "Fujifilm",
+  "type": "color",
+  "group": "CENTURY CANON / FUJIFILM",
+  "sort": 246,
+  "catalog": {
+    "edition": "century-100-v1",
+    "rank": 46,
+    "introduced": "1989",
+    "origin": "Japan",
+    "rationale": "Reala introduced a fourth color-sensitive layer to improve color under difficult illumination and became a scanning favorite."
+  },
+  "settings": {
+    "exposure": 0,
+    "contrast": -1,
+    "saturation": 0,
+    "temperature": -1,
+    "fade": 1,
+    "grain": 8
+  },
+  "grainProfile": {
+    "medium": "dye",
+    "crystal": "tabular",
+    "emulsion": "mixed",
+    "scale": "fine",
+    "process": "standard"
+  },
+  "pipeline": {
+    "version": 1,
+    "family": "c41",
+    "monochrome": false,
+    "scene": {
+      "sensitivity": [
+        0.98,
+        1.025,
+        1.01
+      ],
+      "flash": 0
+    },
+    "curve": {
+      "toe": 0.11,
+      "shoulder": 0.44,
+      "gamma": 0.97,
+      "saturationCompression": 0.2
+    },
+    "crossover": {
+      "shadows": [
+        -0.012,
+        0.012,
+        0.008
+      ],
+      "highlights": [
+        0.004,
+        0.006,
+        -0.008
+      ]
+    },
+    "chemistry": {
+      "silverRetention": 0,
+      "fog": 0.003,
+      "flare": 0.005,
+      "localContrast": 0.03
+    },
+    "optics": {
+      "halation": 0.03,
+      "halationRadius": 4.5,
+      "halationThreshold": 0.91
+    },
+    "output": {
+      "tint": [
+        0.99,
+        1.01,
+        1.01
+      ],
+      "scanContrast": 1
+    },
+    "grain": {
+      "meanRadius": 0.58,
+      "radiusVariance": 0.26,
+      "shadowBias": 0.55,
+      "chroma": 0.045
+    }
+  },
+  "dossier": {
+    "version": 1,
+    "reference": {
+      "stock": "Fujicolor Reala 100",
+      "manufacturer": "Fujifilm",
+      "relationship": "Independent interpretive emulation; researched, not measured",
+      "status": "discontinued"
+    },
+    "tagline": "Natural saturation, fine detail, and nuanced mixed-light color.",
+    "portrait": "Fujicolor Reala 100 is modeled around natural saturation, fine detail, and nuanced mixed-light color. Reala introduced a fourth color-sensitive layer to improve color under difficult illumination and became a scanning favorite. Grainlab treats that identity as a linked capture, emulsion, process, and output system—not as a color cast pasted over a digital file.",
+    "facts": [
+      {
+        "label": "CANON RANK",
+        "value": "046 / 100",
+        "note": "Curatorial significance rank; not a sales chart"
+      },
+      {
+        "label": "INTRODUCED",
+        "value": "1989",
+        "note": "Japan"
+      },
+      {
+        "label": "SPEED / EI",
+        "value": "100",
+        "note": "daylight"
+      },
+      {
+        "label": "PROCESS",
+        "value": "C-41 color negative",
+        "note": "C41"
+      },
+      {
+        "label": "IMAGE",
+        "value": "CMY dye image",
+        "note": "fine apparent structure"
+      },
+      {
+        "label": "CRYSTAL MODEL",
+        "value": "tabular",
+        "note": "multilayer architecture mapping"
+      },
+      {
+        "label": "SOURCE START",
+        "value": "Neutral SDR",
+        "note": "DSLR / iPhone normalization"
+      },
+      {
+        "label": "PROFILE",
+        "value": "Interpretive v1",
+        "note": "No manufacturer endorsement"
+      }
+    ],
+    "palette": [
+      {
+        "name": "skin light",
+        "hex": "#d6a47f"
+      },
+      {
+        "name": "amber",
+        "hex": "#ad7548"
+      },
+      {
+        "name": "sage",
+        "hex": "#66705d"
+      },
+      {
+        "name": "shadow",
+        "hex": "#26343b"
+      }
+    ],
+    "chapters": [
+      {
+        "eyebrow": "MATERIAL / HISTORY",
+        "title": "Why Fujicolor Reala 100 belongs in the century canon",
+        "lede": "Reala introduced a fourth color-sensitive layer to improve color under difficult illumination and became a scanning favorite.",
+        "details": [
+          {
+            "label": "Origin",
+            "value": "Japan; introduced 1989."
+          },
+          {
+            "label": "Material",
+            "value": "C-41 color negative; daylight; nominal speed / EI reference 100."
+          },
+          {
+            "label": "Image structure",
+            "value": "tabular crystal interpretation, multilayer emulsion mapping, fine presentation-scale grain."
+          },
+          {
+            "label": "Status",
+            "value": "discontinued"
+          }
+        ],
+        "notes": [
+          "The canon balances cultural use, technical influence, geographic/manufacturer breadth, process diversity, and surviving documentation; rank is curatorial rather than a claimed global sales measurement."
+        ]
+      },
+      {
+        "eyebrow": "VISUAL TARGET",
+        "title": "Tone, color, and material signature",
+        "lede": "The target is natural saturation, fine detail, and nuanced mixed-light color.",
+        "details": [
+          {
+            "label": "Curve",
+            "value": "Toe 0.11 · development gamma 0.97 · shoulder 0.44 · scan contrast 1.00."
+          },
+          {
+            "label": "Color / spectral posture",
+            "value": "greenNeutral channel sensitivity and density-dependent crossover; daylight reference balance."
+          },
+          {
+            "label": "Grain",
+            "value": "fine correlated dye-cloud density variation; tabular geometry; multilayer architecture."
+          },
+          {
+            "label": "Halation",
+            "value": "3% thresholded scene-highlight scatter before the film curve; intentionally stock/process dependent."
+          }
+        ],
+        "notes": [
+          "Grain is signal-dependent and spatially correlated across the full frame; it is not independent RGB noise or a repeating overlay."
+        ]
+      },
+      {
+        "eyebrow": "DIGITAL START",
+        "title": "From DSLR or iPhone to a plausible negative",
+        "lede": "Begin from a neutral SDR rendering. Disable or minimize phone HDR, vivid styles, skin smoothing, and sharpening; preserve channel detail before the negative curve and dye-layer crossover are applied.",
+        "details": [
+          {
+            "label": "Input normalization",
+            "value": "Prefer RAW developed neutrally when available. For HEIC/JPEG, choose the least processed rendition; avoid baked Vivid styles, portrait relighting, clarity, and denoise."
+          },
+          {
+            "label": "Dynamic range",
+            "value": "Map HDR/Display-P3 into a stable SDR working image without clipping, preserving highlight and shadow separation before the film response."
+          },
+          {
+            "label": "White balance",
+            "value": "Neutralize obvious camera casts first, then let the daylight stock balance and emulsion sensitivity create the intended response."
+          },
+          {
+            "label": "Hard limit",
+            "value": "A rendered DSLR/iPhone file already contains sensor spectral response, computational tone mapping, demosaic, white balance, and gamut decisions; this profile cannot reverse information those stages discarded."
+          }
+        ],
+        "notes": [
+          "Apple ProRAW and camera RAW still need a deliberate neutral development; RAW is not automatically scene-linear or aesthetically neutral after a converter renders it."
+        ]
+      },
+      {
+        "eyebrow": "EMULATION RECIPE",
+        "title": "A stage-by-stage rendering target",
+        "lede": "sRGB decode → +0.00 EV scene placement → 0.980/1.025/1.010 channel sensitivity → toe 0.11, γ 0.97, shoulder 0.44 → C-41 color negative chemistry → 3% thresholded halation → fine dye-cloud structure",
+        "details": [
+          {
+            "label": "Scene",
+            "value": "Decode to linear light, apply +0.00 EV and the stock sensitivity before tone shaping."
+          },
+          {
+            "label": "Emulsion",
+            "value": "Build the toe, midtone gamma, shoulder, crossover, saturation compression, and correlated image structure as one response."
+          },
+          {
+            "label": "Lab / optics",
+            "value": "Model C-41 color negative, chemical fog, local density contrast, and highlight scatter before the output transform."
+          },
+          {
+            "label": "Scan / print",
+            "value": "Use a neutral scan baseline, set black and white points after the film curve, and sharpen subject detail at final output size."
+          }
+        ],
+        "notes": [
+          "All parameters are bounded artistic approximations derived from published characteristics and process knowledge, not digitized manufacturer sensitometric or spectral measurements."
+        ]
+      }
+    ],
+    "bestFor": [
+      "Subjects that benefit from natural saturation, fine detail, and nuanced mixed-light color.",
+      "Scenes whose palette and contrast align with the stock rather than fighting it."
+    ],
+    "watchFor": [
+      "A rendered DSLR/iPhone file already contains sensor spectral response, computational tone mapping, demosaic, white balance, and gamut decisions; this profile cannot reverse information those stages discarded.",
+      "Stacking a strong camera picture style, computational HDR, or sharpening underneath the emulation.",
+      "Judging grain at 200% instead of at 100% and intended output size."
+    ],
+    "fieldNotes": [
+      "Expose for the material idea: natural saturation, fine detail, and nuanced mixed-light color.",
+      "Try the profile on neutral daylight, mixed light, skin, foliage, and a flat wall before deciding what its name means."
+    ],
+    "sources": [
+      {
+        "title": "Professional Film Data Guide",
+        "publisher": "FUJIFILM",
+        "url": "https://asset.fujifilm.com/www/us/files/2020-04/9cdee030ab7fc76bbcfddbcd38650038/ProfessionalFilmDataGuide.pdf"
+      },
+      {
+        "title": "Negative and reversal film data-sheet archive",
+        "publisher": "FUJIFILM",
+        "url": "https://www.fujifilm.com/fi/en/consumer/support/films/negative-and-reversal"
+      }
+    ],
+    "verified": "2026-07-16",
+    "disclaimer": "Fujicolor Reala 100 is an independent Grainlab artistic emulation informed by cited public literature and historical material. It is not endorsed by Fujifilm, is not a measured ICC/LUT profile, and cannot reproduce a specific batch, lens, exposure, chemistry, printer, scanner, paper, aging state, or wavelengths absent from the digital source."
+  }
+}

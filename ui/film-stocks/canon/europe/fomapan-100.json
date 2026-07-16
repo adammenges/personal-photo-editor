@@ -1,0 +1,290 @@
+{
+  "id": "fomapan-100",
+  "name": "FOMAPAN 100 Classic",
+  "maker": "Foma",
+  "type": "mono",
+  "group": "CENTURY CANON / FOMA",
+  "sort": 283,
+  "catalog": {
+    "edition": "century-100-v1",
+    "rank": 83,
+    "introduced": "1990s lineage",
+    "origin": "Czech Republic",
+    "rationale": "Foma's long Czech manufacturing lineage makes this one of the most accessible surviving traditional emulsions."
+  },
+  "settings": {
+    "exposure": 0,
+    "contrast": 12,
+    "saturation": -100,
+    "temperature": 0,
+    "fade": 1,
+    "grain": 8
+  },
+  "grainProfile": {
+    "medium": "silver",
+    "crystal": "cubic",
+    "emulsion": "uniform",
+    "scale": "fine",
+    "process": "standard"
+  },
+  "pipeline": {
+    "version": 1,
+    "family": "bw",
+    "monochrome": true,
+    "scene": {
+      "sensitivity": [
+        0.29,
+        0.61,
+        0.1
+      ],
+      "flash": 0
+    },
+    "curve": {
+      "toe": 0.13,
+      "shoulder": 0.31,
+      "gamma": 1.03,
+      "saturationCompression": 0
+    },
+    "crossover": {
+      "shadows": [
+        0,
+        0,
+        0
+      ],
+      "highlights": [
+        0,
+        0,
+        0
+      ]
+    },
+    "chemistry": {
+      "silverRetention": 0,
+      "fog": 0.003,
+      "flare": 0.005,
+      "localContrast": 0.065
+    },
+    "optics": {
+      "halation": 0.018,
+      "halationRadius": 4.5,
+      "halationThreshold": 0.91
+    },
+    "output": {
+      "tint": [
+        1,
+        1,
+        1
+      ],
+      "scanContrast": 1
+    },
+    "grain": {
+      "meanRadius": 0.58,
+      "radiusVariance": 0.26,
+      "shadowBias": 0.55,
+      "chroma": 0
+    }
+  },
+  "dossier": {
+    "version": 1,
+    "reference": {
+      "stock": "FOMAPAN 100 Classic",
+      "manufacturer": "Foma",
+      "relationship": "Independent interpretive emulation; researched, not measured",
+      "status": "current"
+    },
+    "tagline": "Bright classic tone, defined grain, and broad highlight halftones.",
+    "portrait": "FOMAPAN 100 Classic is modeled around bright classic tone, defined grain, and broad highlight halftones. Foma's long Czech manufacturing lineage makes this one of the most accessible surviving traditional emulsions. Grainlab treats that identity as a linked capture, emulsion, process, and output system—not as a color cast pasted over a digital file.",
+    "facts": [
+      {
+        "label": "CANON RANK",
+        "value": "083 / 100",
+        "note": "Curatorial significance rank; not a sales chart"
+      },
+      {
+        "label": "INTRODUCED",
+        "value": "1990s lineage",
+        "note": "Czech Republic"
+      },
+      {
+        "label": "SPEED / EI",
+        "value": "100",
+        "note": "panchromatic"
+      },
+      {
+        "label": "PROCESS",
+        "value": "B&W negative",
+        "note": "BW"
+      },
+      {
+        "label": "IMAGE",
+        "value": "Metallic silver",
+        "note": "fine apparent structure"
+      },
+      {
+        "label": "CRYSTAL MODEL",
+        "value": "cubic",
+        "note": "uniform architecture mapping"
+      },
+      {
+        "label": "SOURCE START",
+        "value": "Neutral SDR",
+        "note": "DSLR / iPhone normalization"
+      },
+      {
+        "label": "PROFILE",
+        "value": "Interpretive v1",
+        "note": "No manufacturer endorsement"
+      }
+    ],
+    "palette": [
+      {
+        "name": "paper",
+        "hex": "#ddd9cd"
+      },
+      {
+        "name": "middle gray",
+        "hex": "#8b8982"
+      },
+      {
+        "name": "charcoal",
+        "hex": "#393a37"
+      },
+      {
+        "name": "silver black",
+        "hex": "#0d0f0e"
+      }
+    ],
+    "chapters": [
+      {
+        "eyebrow": "MATERIAL / HISTORY",
+        "title": "Why FOMAPAN 100 Classic belongs in the century canon",
+        "lede": "Foma's long Czech manufacturing lineage makes this one of the most accessible surviving traditional emulsions.",
+        "details": [
+          {
+            "label": "Origin",
+            "value": "Czech Republic; introduced 1990s lineage."
+          },
+          {
+            "label": "Material",
+            "value": "B&W negative; panchromatic; nominal speed / EI reference 100."
+          },
+          {
+            "label": "Image structure",
+            "value": "cubic crystal interpretation, uniform emulsion mapping, fine presentation-scale grain."
+          },
+          {
+            "label": "Status",
+            "value": "current"
+          }
+        ],
+        "notes": [
+          "The canon balances cultural use, technical influence, geographic/manufacturer breadth, process diversity, and surviving documentation; rank is curatorial rather than a claimed global sales measurement."
+        ]
+      },
+      {
+        "eyebrow": "VISUAL TARGET",
+        "title": "Tone, color, and material signature",
+        "lede": "The target is bright classic tone, defined grain, and broad highlight halftones.",
+        "details": [
+          {
+            "label": "Curve",
+            "value": "Toe 0.13 · development gamma 1.03 · shoulder 0.31 · scan contrast 1.00."
+          },
+          {
+            "label": "Color / spectral posture",
+            "value": "Monochrome conversion uses panchromatic weighting before the film curve."
+          },
+          {
+            "label": "Grain",
+            "value": "fine metallic-silver clumps; cubic geometry; uniform architecture."
+          },
+          {
+            "label": "Halation",
+            "value": "2% thresholded scene-highlight scatter before the film curve; intentionally stock/process dependent."
+          }
+        ],
+        "notes": [
+          "Grain is signal-dependent and spatially correlated across the full frame; it is not independent RGB noise or a repeating overlay."
+        ]
+      },
+      {
+        "eyebrow": "DIGITAL START",
+        "title": "From DSLR or iPhone to a plausible negative",
+        "lede": "Begin from a neutral SDR rendering with restrained sharpening and noise reduction. Convert through the stated spectral weights before the silver curve; do not desaturate a contrasty RGB image and call it film.",
+        "details": [
+          {
+            "label": "Input normalization",
+            "value": "Prefer RAW developed neutrally when available. For HEIC/JPEG, choose the least processed rendition; avoid baked Vivid styles, portrait relighting, clarity, and denoise."
+          },
+          {
+            "label": "Dynamic range",
+            "value": "Map HDR/Display-P3 into a stable SDR working image without clipping, preserving highlight and shadow separation before the film response."
+          },
+          {
+            "label": "White balance",
+            "value": "Neutralize obvious camera casts first, then let the panchromatic stock balance and emulsion sensitivity create the intended response."
+          },
+          {
+            "label": "Hard limit",
+            "value": "A rendered DSLR/iPhone file already contains sensor spectral response, computational tone mapping, demosaic, white balance, and gamut decisions; this profile cannot reverse information those stages discarded."
+          }
+        ],
+        "notes": [
+          "Apple ProRAW and camera RAW still need a deliberate neutral development; RAW is not automatically scene-linear or aesthetically neutral after a converter renders it."
+        ]
+      },
+      {
+        "eyebrow": "EMULATION RECIPE",
+        "title": "A stage-by-stage rendering target",
+        "lede": "sRGB decode → +0.00 EV scene placement → 1.000/1.000/1.000 channel sensitivity → toe 0.13, γ 1.03, shoulder 0.31 → B&W negative chemistry → 2% thresholded halation → fine silver structure",
+        "details": [
+          {
+            "label": "Scene",
+            "value": "Decode to linear light, apply +0.00 EV and the stock sensitivity before tone shaping."
+          },
+          {
+            "label": "Emulsion",
+            "value": "Build the toe, midtone gamma, shoulder, crossover, saturation compression, and correlated image structure as one response."
+          },
+          {
+            "label": "Lab / optics",
+            "value": "Model B&W negative, chemical fog, local density contrast, and highlight scatter before the output transform."
+          },
+          {
+            "label": "Scan / print",
+            "value": "Use a neutral scan baseline, set black and white points after the film curve, and sharpen subject detail at final output size."
+          }
+        ],
+        "notes": [
+          "All parameters are bounded artistic approximations derived from published characteristics and process knowledge, not digitized manufacturer sensitometric or spectral measurements."
+        ]
+      }
+    ],
+    "bestFor": [
+      "Subjects that benefit from bright classic tone, defined grain, and broad highlight halftones.",
+      "Form, gesture, texture, and light where color separation can be translated into deliberate gray relationships."
+    ],
+    "watchFor": [
+      "A rendered DSLR/iPhone file already contains sensor spectral response, computational tone mapping, demosaic, white balance, and gamut decisions; this profile cannot reverse information those stages discarded.",
+      "Stacking a strong camera picture style, computational HDR, or sharpening underneath the emulation.",
+      "Judging grain at 200% instead of at 100% and intended output size."
+    ],
+    "fieldNotes": [
+      "Expose for the material idea: bright classic tone, defined grain, and broad highlight halftones.",
+      "Try the profile on neutral daylight, mixed light, skin, foliage, and a flat wall before deciding what its name means."
+    ],
+    "sources": [
+      {
+        "title": "B&W materials and developing information",
+        "publisher": "FOMA BOHEMIA",
+        "url": "https://www.foma.cz/en/catalogue_bw_photo_materials_and_developing_information"
+      },
+      {
+        "title": "FOMA black-and-white film catalog",
+        "publisher": "FOMA BOHEMIA",
+        "url": "https://www.foma.cz/en/catalogue-bw-film-324"
+      }
+    ],
+    "verified": "2026-07-16",
+    "disclaimer": "FOMAPAN 100 Classic is an independent Grainlab artistic emulation informed by cited public literature and historical material. It is not endorsed by Foma, is not a measured ICC/LUT profile, and cannot reproduce a specific batch, lens, exposure, chemistry, printer, scanner, paper, aging state, or wavelengths absent from the digital source."
+  }
+}

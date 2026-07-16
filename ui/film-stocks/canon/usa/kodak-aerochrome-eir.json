@@ -1,0 +1,290 @@
+{
+  "id": "kodak-aerochrome-eir",
+  "name": "AEROCHROME EIR",
+  "maker": "Kodak",
+  "type": "color",
+  "group": "CENTURY CANON / KODAK",
+  "sort": 229,
+  "catalog": {
+    "edition": "century-100-v1",
+    "rank": 29,
+    "introduced": "1940s",
+    "origin": "United States",
+    "rationale": "Aerial surveillance material escaped its technical origin to become one of photography's most unmistakable psychedelic palettes."
+  },
+  "settings": {
+    "exposure": -0.03,
+    "contrast": 20,
+    "saturation": 28,
+    "temperature": 8,
+    "fade": 1,
+    "grain": 13
+  },
+  "grainProfile": {
+    "medium": "dye",
+    "crystal": "cubic",
+    "emulsion": "mixed",
+    "scale": "medium",
+    "process": "standard"
+  },
+  "pipeline": {
+    "version": 1,
+    "family": "e6",
+    "monochrome": false,
+    "scene": {
+      "sensitivity": [
+        1.08,
+        0.92,
+        1.05
+      ],
+      "flash": 0
+    },
+    "curve": {
+      "toe": 0.1,
+      "shoulder": 0.17,
+      "gamma": 1.17,
+      "saturationCompression": 0.02
+    },
+    "crossover": {
+      "shadows": [
+        0.02,
+        -0.02,
+        0.015
+      ],
+      "highlights": [
+        0.04,
+        -0.025,
+        0.015
+      ]
+    },
+    "chemistry": {
+      "silverRetention": 0,
+      "fog": 0.007,
+      "flare": 0.005,
+      "localContrast": 0.08
+    },
+    "optics": {
+      "halation": 0.11,
+      "halationRadius": 11,
+      "halationThreshold": 0.78
+    },
+    "output": {
+      "tint": [
+        1.03,
+        0.98,
+        1.02
+      ],
+      "scanContrast": 1.06
+    },
+    "grain": {
+      "meanRadius": 0.965,
+      "radiusVariance": 0.46,
+      "shadowBias": 0.35,
+      "chroma": 0.034
+    }
+  },
+  "dossier": {
+    "version": 1,
+    "reference": {
+      "stock": "AEROCHROME EIR",
+      "manufacturer": "Kodak",
+      "relationship": "Independent interpretive emulation; researched, not measured",
+      "status": "discontinued"
+    },
+    "tagline": "Scarlet foliage, cyan skies, and false-color infrared separation.",
+    "portrait": "AEROCHROME EIR is modeled around scarlet foliage, cyan skies, and false-color infrared separation. Aerial surveillance material escaped its technical origin to become one of photography's most unmistakable psychedelic palettes. Grainlab treats that identity as a linked capture, emulsion, process, and output system—not as a color cast pasted over a digital file.",
+    "facts": [
+      {
+        "label": "CANON RANK",
+        "value": "029 / 100",
+        "note": "Curatorial significance rank; not a sales chart"
+      },
+      {
+        "label": "INTRODUCED",
+        "value": "1940s",
+        "note": "United States"
+      },
+      {
+        "label": "SPEED / EI",
+        "value": "200",
+        "note": "infrared-sensitive"
+      },
+      {
+        "label": "PROCESS",
+        "value": "E-6 false-color infrared reversal",
+        "note": "E6"
+      },
+      {
+        "label": "IMAGE",
+        "value": "CMY dye image",
+        "note": "medium apparent structure"
+      },
+      {
+        "label": "CRYSTAL MODEL",
+        "value": "cubic",
+        "note": "multilayer architecture mapping"
+      },
+      {
+        "label": "SOURCE START",
+        "value": "Neutral SDR",
+        "note": "DSLR / iPhone normalization"
+      },
+      {
+        "label": "PROFILE",
+        "value": "Interpretive v1",
+        "note": "No manufacturer endorsement"
+      }
+    ],
+    "palette": [
+      {
+        "name": "skin light",
+        "hex": "#d6a47f"
+      },
+      {
+        "name": "amber",
+        "hex": "#ad7548"
+      },
+      {
+        "name": "sage",
+        "hex": "#66705d"
+      },
+      {
+        "name": "shadow",
+        "hex": "#26343b"
+      }
+    ],
+    "chapters": [
+      {
+        "eyebrow": "MATERIAL / HISTORY",
+        "title": "Why AEROCHROME EIR belongs in the century canon",
+        "lede": "Aerial surveillance material escaped its technical origin to become one of photography's most unmistakable psychedelic palettes.",
+        "details": [
+          {
+            "label": "Origin",
+            "value": "United States; introduced 1940s."
+          },
+          {
+            "label": "Material",
+            "value": "E-6 false-color infrared reversal; infrared-sensitive; nominal speed / EI reference 200."
+          },
+          {
+            "label": "Image structure",
+            "value": "cubic crystal interpretation, multilayer emulsion mapping, medium presentation-scale grain."
+          },
+          {
+            "label": "Status",
+            "value": "discontinued"
+          }
+        ],
+        "notes": [
+          "The canon balances cultural use, technical influence, geographic/manufacturer breadth, process diversity, and surviving documentation; rank is curatorial rather than a claimed global sales measurement."
+        ]
+      },
+      {
+        "eyebrow": "VISUAL TARGET",
+        "title": "Tone, color, and material signature",
+        "lede": "The target is scarlet foliage, cyan skies, and false-color infrared separation.",
+        "details": [
+          {
+            "label": "Curve",
+            "value": "Toe 0.10 · development gamma 1.17 · shoulder 0.17 · scan contrast 1.06."
+          },
+          {
+            "label": "Color / spectral posture",
+            "value": "magenta channel sensitivity and density-dependent crossover; infrared-sensitive reference balance."
+          },
+          {
+            "label": "Grain",
+            "value": "medium correlated dye-cloud density variation; cubic geometry; multilayer architecture."
+          },
+          {
+            "label": "Halation",
+            "value": "11% thresholded scene-highlight scatter before the film curve; intentionally stock/process dependent."
+          }
+        ],
+        "notes": [
+          "Grain is signal-dependent and spatially correlated across the full frame; it is not independent RGB noise or a repeating overlay."
+        ]
+      },
+      {
+        "eyebrow": "DIGITAL START",
+        "title": "From DSLR or iPhone to a plausible negative",
+        "lede": "Begin from a neutral SDR rendering, reduce phone HDR/local tone mapping, and protect both ends: this reversal target has less forgiving toe and shoulder room than a negative.",
+        "details": [
+          {
+            "label": "Input normalization",
+            "value": "Prefer RAW developed neutrally when available. For HEIC/JPEG, choose the least processed rendition; avoid baked Vivid styles, portrait relighting, clarity, and denoise."
+          },
+          {
+            "label": "Dynamic range",
+            "value": "Compress computational HDR gently before emulation, then place exposure precisely; do not ask the reversal curve to rescue clipped source channels."
+          },
+          {
+            "label": "White balance",
+            "value": "Neutralize obvious camera casts first, then let the infrared-sensitive stock balance and emulsion sensitivity create the intended response."
+          },
+          {
+            "label": "Hard limit",
+            "value": "Visible-RGB DSLR or iPhone input cannot reconstruct wavelengths the sensor or its IR-cut filter never recorded; this is a tonal analogy, not spectral recovery."
+          }
+        ],
+        "notes": [
+          "Apple ProRAW and camera RAW still need a deliberate neutral development; RAW is not automatically scene-linear or aesthetically neutral after a converter renders it."
+        ]
+      },
+      {
+        "eyebrow": "EMULATION RECIPE",
+        "title": "A stage-by-stage rendering target",
+        "lede": "sRGB decode → -0.03 EV scene placement → 1.080/0.920/1.050 channel sensitivity → toe 0.10, γ 1.17, shoulder 0.17 → E-6 false-color infrared reversal chemistry → 11% thresholded halation → medium dye-cloud structure",
+        "details": [
+          {
+            "label": "Scene",
+            "value": "Decode to linear light, apply -0.03 EV and the stock sensitivity before tone shaping."
+          },
+          {
+            "label": "Emulsion",
+            "value": "Build the toe, midtone gamma, shoulder, crossover, saturation compression, and correlated image structure as one response."
+          },
+          {
+            "label": "Lab / optics",
+            "value": "Model E-6 false-color infrared reversal, chemical fog, local density contrast, and highlight scatter before the output transform."
+          },
+          {
+            "label": "Scan / print",
+            "value": "Preserve the direct positive's black density and limited latitude; scan without flattening it into a negative-like file."
+          }
+        ],
+        "notes": [
+          "All parameters are bounded artistic approximations derived from published characteristics and process knowledge, not digitized manufacturer sensitometric or spectral measurements."
+        ]
+      }
+    ],
+    "bestFor": [
+      "Subjects that benefit from scarlet foliage, cyan skies, and false-color infrared separation.",
+      "Scenes whose palette and contrast align with the stock rather than fighting it."
+    ],
+    "watchFor": [
+      "Visible-RGB DSLR or iPhone input cannot reconstruct wavelengths the sensor or its IR-cut filter never recorded; this is a tonal analogy, not spectral recovery.",
+      "Stacking a strong camera picture style, computational HDR, or sharpening underneath the emulation.",
+      "Treating reversal latitude like a forgiving color negative; clipped channels cannot be recovered."
+    ],
+    "fieldNotes": [
+      "Expose for the material idea: scarlet foliage, cyan skies, and false-color infrared separation.",
+      "Try the profile on neutral daylight, mixed light, skin, foliage, and a flat wall before deciding what its name means."
+    ],
+    "sources": [
+      {
+        "title": "KODAK PROFESSIONAL film technical publications",
+        "publisher": "Kodak Alaris",
+        "url": "https://kodakprofessional.com/photographers/resources"
+      },
+      {
+        "title": "KODAK PROFESSIONAL Films brochure",
+        "publisher": "Kodak Alaris",
+        "url": "https://www.kodakprofessional.com/sites/default/files/wysiwyg/film/KODAKPROFESSIONAL_Film_Brochure2018.pdf"
+      }
+    ],
+    "verified": "2026-07-16",
+    "disclaimer": "AEROCHROME EIR is an independent Grainlab artistic emulation informed by cited public literature and historical material. It is not endorsed by Kodak, is not a measured ICC/LUT profile, and cannot reproduce a specific batch, lens, exposure, chemistry, printer, scanner, paper, aging state, or wavelengths absent from the digital source."
+  }
+}

@@ -1,0 +1,290 @@
+{
+  "id": "kodak-exr-50d",
+  "name": "EXR 50D 5245",
+  "maker": "Eastman Kodak",
+  "type": "color",
+  "group": "CENTURY CANON / EASTMAN KODAK",
+  "sort": 236,
+  "catalog": {
+    "edition": "century-100-v1",
+    "rank": 36,
+    "introduced": "1989",
+    "origin": "United States",
+    "rationale": "A celebrated EXR exterior stock associated with clean large-screen images before the VISION families softened the negative for scanning."
+  },
+  "settings": {
+    "exposure": 0.08,
+    "contrast": 2,
+    "saturation": -2,
+    "temperature": 5,
+    "fade": 3,
+    "grain": 8
+  },
+  "grainProfile": {
+    "medium": "dye",
+    "crystal": "cubic",
+    "emulsion": "mixed",
+    "scale": "fine",
+    "process": "motion"
+  },
+  "pipeline": {
+    "version": 1,
+    "family": "ecn2",
+    "monochrome": false,
+    "scene": {
+      "sensitivity": [
+        1.02,
+        1,
+        0.97
+      ],
+      "flash": 0
+    },
+    "curve": {
+      "toe": 0.16,
+      "shoulder": 0.38,
+      "gamma": 0.99,
+      "saturationCompression": 0.18
+    },
+    "crossover": {
+      "shadows": [
+        0.006,
+        0,
+        -0.006
+      ],
+      "highlights": [
+        0.012,
+        0.003,
+        -0.015
+      ]
+    },
+    "chemistry": {
+      "silverRetention": 0,
+      "fog": 0.003,
+      "flare": 0.005,
+      "localContrast": 0.045
+    },
+    "optics": {
+      "halation": 0.045,
+      "halationRadius": 4.5,
+      "halationThreshold": 0.91
+    },
+    "output": {
+      "tint": [
+        1.02,
+        1,
+        0.975
+      ],
+      "scanContrast": 0.92
+    },
+    "grain": {
+      "meanRadius": 0.535,
+      "radiusVariance": 0.26,
+      "shadowBias": 0.55,
+      "chroma": 0.026
+    }
+  },
+  "dossier": {
+    "version": 1,
+    "reference": {
+      "stock": "EXR 50D 5245",
+      "manufacturer": "Eastman Kodak",
+      "relationship": "Independent interpretive emulation; researched, not measured",
+      "status": "discontinued"
+    },
+    "tagline": "Crisp daylight detail, warmer color, and firmer print-era contrast.",
+    "portrait": "EXR 50D 5245 is modeled around crisp daylight detail, warmer color, and firmer print-era contrast. A celebrated EXR exterior stock associated with clean large-screen images before the VISION families softened the negative for scanning. Grainlab treats that identity as a linked capture, emulsion, process, and output system—not as a color cast pasted over a digital file.",
+    "facts": [
+      {
+        "label": "CANON RANK",
+        "value": "036 / 100",
+        "note": "Curatorial significance rank; not a sales chart"
+      },
+      {
+        "label": "INTRODUCED",
+        "value": "1989",
+        "note": "United States"
+      },
+      {
+        "label": "SPEED / EI",
+        "value": "50",
+        "note": "daylight"
+      },
+      {
+        "label": "PROCESS",
+        "value": "ECN-2 motion negative",
+        "note": "ECN2"
+      },
+      {
+        "label": "IMAGE",
+        "value": "CMY dye image",
+        "note": "fine apparent structure"
+      },
+      {
+        "label": "CRYSTAL MODEL",
+        "value": "cubic",
+        "note": "multilayer architecture mapping"
+      },
+      {
+        "label": "SOURCE START",
+        "value": "Neutral SDR",
+        "note": "DSLR / iPhone normalization"
+      },
+      {
+        "label": "PROFILE",
+        "value": "Interpretive v1",
+        "note": "No manufacturer endorsement"
+      }
+    ],
+    "palette": [
+      {
+        "name": "skin light",
+        "hex": "#d6a47f"
+      },
+      {
+        "name": "amber",
+        "hex": "#ad7548"
+      },
+      {
+        "name": "sage",
+        "hex": "#66705d"
+      },
+      {
+        "name": "shadow",
+        "hex": "#26343b"
+      }
+    ],
+    "chapters": [
+      {
+        "eyebrow": "MATERIAL / HISTORY",
+        "title": "Why EXR 50D 5245 belongs in the century canon",
+        "lede": "A celebrated EXR exterior stock associated with clean large-screen images before the VISION families softened the negative for scanning.",
+        "details": [
+          {
+            "label": "Origin",
+            "value": "United States; introduced 1989."
+          },
+          {
+            "label": "Material",
+            "value": "ECN-2 motion negative; daylight; nominal speed / EI reference 50."
+          },
+          {
+            "label": "Image structure",
+            "value": "cubic crystal interpretation, multilayer emulsion mapping, fine presentation-scale grain."
+          },
+          {
+            "label": "Status",
+            "value": "discontinued"
+          }
+        ],
+        "notes": [
+          "The canon balances cultural use, technical influence, geographic/manufacturer breadth, process diversity, and surviving documentation; rank is curatorial rather than a claimed global sales measurement."
+        ]
+      },
+      {
+        "eyebrow": "VISUAL TARGET",
+        "title": "Tone, color, and material signature",
+        "lede": "The target is crisp daylight detail, warmer color, and firmer print-era contrast.",
+        "details": [
+          {
+            "label": "Curve",
+            "value": "Toe 0.16 · development gamma 0.99 · shoulder 0.38 · scan contrast .92."
+          },
+          {
+            "label": "Color / spectral posture",
+            "value": "warm channel sensitivity and density-dependent crossover; daylight reference balance."
+          },
+          {
+            "label": "Grain",
+            "value": "fine correlated dye-cloud density variation; cubic geometry; multilayer architecture."
+          },
+          {
+            "label": "Halation",
+            "value": "5% thresholded scene-highlight scatter before the film curve; intentionally stock/process dependent."
+          }
+        ],
+        "notes": [
+          "Grain is signal-dependent and spatially correlated across the full frame; it is not independent RGB noise or a repeating overlay."
+        ]
+      },
+      {
+        "eyebrow": "DIGITAL START",
+        "title": "From DSLR or iPhone to a plausible negative",
+        "lede": "Begin from a low-contrast neutral SDR rendering. Undo phone HDR halos and aggressive sharpening; preserve highlight detail so the negative-style shoulder and downstream scan contrast can do the shaping.",
+        "details": [
+          {
+            "label": "Input normalization",
+            "value": "Prefer RAW developed neutrally when available. For HEIC/JPEG, choose the least processed rendition; avoid baked Vivid styles, portrait relighting, clarity, and denoise."
+          },
+          {
+            "label": "Dynamic range",
+            "value": "Map HDR/Display-P3 into a stable SDR working image without clipping, preserving highlight and shadow separation before the film response."
+          },
+          {
+            "label": "White balance",
+            "value": "Neutralize obvious camera casts first, then let the daylight stock balance and emulsion sensitivity create the intended response."
+          },
+          {
+            "label": "Hard limit",
+            "value": "A rendered DSLR/iPhone file already contains sensor spectral response, computational tone mapping, demosaic, white balance, and gamut decisions; this profile cannot reverse information those stages discarded."
+          }
+        ],
+        "notes": [
+          "Apple ProRAW and camera RAW still need a deliberate neutral development; RAW is not automatically scene-linear or aesthetically neutral after a converter renders it."
+        ]
+      },
+      {
+        "eyebrow": "EMULATION RECIPE",
+        "title": "A stage-by-stage rendering target",
+        "lede": "sRGB decode → +0.08 EV scene placement → 1.020/1.000/0.970 channel sensitivity → toe 0.16, γ 0.99, shoulder 0.38 → ECN-2 motion negative chemistry → 5% thresholded halation → fine dye-cloud structure",
+        "details": [
+          {
+            "label": "Scene",
+            "value": "Decode to linear light, apply +0.08 EV and the stock sensitivity before tone shaping."
+          },
+          {
+            "label": "Emulsion",
+            "value": "Build the toe, midtone gamma, shoulder, crossover, saturation compression, and correlated image structure as one response."
+          },
+          {
+            "label": "Lab / optics",
+            "value": "Model ECN-2 motion negative, chemical fog, local density contrast, and highlight scatter before the output transform."
+          },
+          {
+            "label": "Scan / print",
+            "value": "Return a low-contrast negative-style scan with open highlights; the profile's output stage supplies a restrained viewing transform, not a baked blockbuster grade."
+          }
+        ],
+        "notes": [
+          "All parameters are bounded artistic approximations derived from published characteristics and process knowledge, not digitized manufacturer sensitometric or spectral measurements."
+        ]
+      }
+    ],
+    "bestFor": [
+      "Subjects that benefit from crisp daylight detail, warmer color, and firmer print-era contrast.",
+      "Narrative sequences, mixed exposure, and highlights intended for a grading pass."
+    ],
+    "watchFor": [
+      "A rendered DSLR/iPhone file already contains sensor spectral response, computational tone mapping, demosaic, white balance, and gamut decisions; this profile cannot reverse information those stages discarded.",
+      "Stacking a strong camera picture style, computational HDR, or sharpening underneath the emulation.",
+      "Judging grain at 200% instead of at 100% and intended output size."
+    ],
+    "fieldNotes": [
+      "Expose for the material idea: crisp daylight detail, warmer color, and firmer print-era contrast.",
+      "Try the profile on neutral daylight, mixed light, skin, foliage, and a flat wall before deciding what its name means."
+    ],
+    "sources": [
+      {
+        "title": "Chronology of KODAK motion-picture film",
+        "publisher": "Eastman Kodak",
+        "url": "https://www.kodak.com/en/motion/page/chronology-of-film/"
+      },
+      {
+        "title": "Motion-picture processing information",
+        "publisher": "Eastman Kodak",
+        "url": "https://www.kodak.com/en/motion/page/processing-information/"
+      }
+    ],
+    "verified": "2026-07-16",
+    "disclaimer": "EXR 50D 5245 is an independent Grainlab artistic emulation informed by cited public literature and historical material. It is not endorsed by Eastman Kodak, is not a measured ICC/LUT profile, and cannot reproduce a specific batch, lens, exposure, chemistry, printer, scanner, paper, aging state, or wavelengths absent from the digital source."
+  }
+}

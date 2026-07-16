@@ -1,0 +1,290 @@
+{
+  "id": "polaroid-type-55",
+  "name": "Type 55 P/N",
+  "maker": "Polaroid",
+  "type": "mono",
+  "group": "CENTURY CANON / POLAROID",
+  "sort": 300,
+  "catalog": {
+    "edition": "century-100-v1",
+    "rank": 100,
+    "introduced": "1961",
+    "origin": "United States",
+    "rationale": "The rare dual-result 4×5 material gave photographers an immediate print and an enlargable negative from one exposure."
+  },
+  "settings": {
+    "exposure": 0,
+    "contrast": 7,
+    "saturation": -100,
+    "temperature": 0,
+    "fade": 5,
+    "grain": 8
+  },
+  "grainProfile": {
+    "medium": "silver",
+    "crystal": "cubic",
+    "emulsion": "uniform",
+    "scale": "fine",
+    "process": "standard"
+  },
+  "pipeline": {
+    "version": 1,
+    "family": "print",
+    "monochrome": true,
+    "scene": {
+      "sensitivity": [
+        0.29,
+        0.61,
+        0.1
+      ],
+      "flash": 0
+    },
+    "curve": {
+      "toe": 0.15,
+      "shoulder": 0.28,
+      "gamma": 1.03,
+      "saturationCompression": 0
+    },
+    "crossover": {
+      "shadows": [
+        0,
+        0,
+        0
+      ],
+      "highlights": [
+        0,
+        0,
+        0
+      ]
+    },
+    "chemistry": {
+      "silverRetention": 0,
+      "fog": 0.007,
+      "flare": 0.025,
+      "localContrast": 0.045
+    },
+    "optics": {
+      "halation": 0.03,
+      "halationRadius": 10,
+      "halationThreshold": 0.91
+    },
+    "output": {
+      "tint": [
+        1,
+        1,
+        1
+      ],
+      "scanContrast": 0.9
+    },
+    "grain": {
+      "meanRadius": 0.535,
+      "radiusVariance": 0.26,
+      "shadowBias": 0.55,
+      "chroma": 0
+    }
+  },
+  "dossier": {
+    "version": 1,
+    "reference": {
+      "stock": "Type 55 P/N",
+      "manufacturer": "Polaroid",
+      "relationship": "Independent interpretive emulation; researched, not measured",
+      "status": "discontinued"
+    },
+    "tagline": "Delicate positive tone, a detailed recoverable negative, and luminous edge-rich silver.",
+    "portrait": "Type 55 P/N is modeled around delicate positive tone, a detailed recoverable negative, and luminous edge-rich silver. The rare dual-result 4×5 material gave photographers an immediate print and an enlargable negative from one exposure. Grainlab treats that identity as a linked capture, emulsion, process, and output system—not as a color cast pasted over a digital file.",
+    "facts": [
+      {
+        "label": "CANON RANK",
+        "value": "100 / 100",
+        "note": "Curatorial significance rank; not a sales chart"
+      },
+      {
+        "label": "INTRODUCED",
+        "value": "1961",
+        "note": "United States"
+      },
+      {
+        "label": "SPEED / EI",
+        "value": "50",
+        "note": "panchromatic"
+      },
+      {
+        "label": "PROCESS",
+        "value": "peel-apart positive/negative instant",
+        "note": "PRINT"
+      },
+      {
+        "label": "IMAGE",
+        "value": "Metallic silver",
+        "note": "fine apparent structure"
+      },
+      {
+        "label": "CRYSTAL MODEL",
+        "value": "cubic",
+        "note": "uniform architecture mapping"
+      },
+      {
+        "label": "SOURCE START",
+        "value": "Neutral SDR",
+        "note": "DSLR / iPhone normalization"
+      },
+      {
+        "label": "PROFILE",
+        "value": "Interpretive v1",
+        "note": "No manufacturer endorsement"
+      }
+    ],
+    "palette": [
+      {
+        "name": "paper",
+        "hex": "#ddd9cd"
+      },
+      {
+        "name": "middle gray",
+        "hex": "#8b8982"
+      },
+      {
+        "name": "charcoal",
+        "hex": "#393a37"
+      },
+      {
+        "name": "silver black",
+        "hex": "#0d0f0e"
+      }
+    ],
+    "chapters": [
+      {
+        "eyebrow": "MATERIAL / HISTORY",
+        "title": "Why Type 55 P/N belongs in the century canon",
+        "lede": "The rare dual-result 4×5 material gave photographers an immediate print and an enlargable negative from one exposure.",
+        "details": [
+          {
+            "label": "Origin",
+            "value": "United States; introduced 1961."
+          },
+          {
+            "label": "Material",
+            "value": "peel-apart positive/negative instant; panchromatic; nominal speed / EI reference 50."
+          },
+          {
+            "label": "Image structure",
+            "value": "cubic crystal interpretation, uniform emulsion mapping, fine presentation-scale grain."
+          },
+          {
+            "label": "Status",
+            "value": "discontinued"
+          }
+        ],
+        "notes": [
+          "The canon balances cultural use, technical influence, geographic/manufacturer breadth, process diversity, and surviving documentation; rank is curatorial rather than a claimed global sales measurement."
+        ]
+      },
+      {
+        "eyebrow": "VISUAL TARGET",
+        "title": "Tone, color, and material signature",
+        "lede": "The target is delicate positive tone, a detailed recoverable negative, and luminous edge-rich silver.",
+        "details": [
+          {
+            "label": "Curve",
+            "value": "Toe 0.15 · development gamma 1.03 · shoulder 0.28 · scan contrast .90."
+          },
+          {
+            "label": "Color / spectral posture",
+            "value": "Monochrome conversion uses panchromatic weighting before the film curve."
+          },
+          {
+            "label": "Grain",
+            "value": "fine metallic-silver clumps; cubic geometry; uniform architecture."
+          },
+          {
+            "label": "Halation",
+            "value": "3% thresholded scene-highlight scatter before the film curve; intentionally stock/process dependent."
+          }
+        ],
+        "notes": [
+          "Grain is signal-dependent and spatially correlated across the full frame; it is not independent RGB noise or a repeating overlay."
+        ]
+      },
+      {
+        "eyebrow": "DIGITAL START",
+        "title": "From DSLR or iPhone to a plausible negative",
+        "lede": "Begin from a neutral SDR image, then accept lower resolution and local color variation as part of the instant positive rather than adding generic blur over a finished grade.",
+        "details": [
+          {
+            "label": "Input normalization",
+            "value": "Prefer RAW developed neutrally when available. For HEIC/JPEG, choose the least processed rendition; avoid baked Vivid styles, portrait relighting, clarity, and denoise."
+          },
+          {
+            "label": "Dynamic range",
+            "value": "Map HDR/Display-P3 into a stable SDR working image without clipping, preserving highlight and shadow separation before the film response."
+          },
+          {
+            "label": "White balance",
+            "value": "Neutralize obvious camera casts first, then let the panchromatic stock balance and emulsion sensitivity create the intended response."
+          },
+          {
+            "label": "Hard limit",
+            "value": "A rendered DSLR/iPhone file already contains sensor spectral response, computational tone mapping, demosaic, white balance, and gamut decisions; this profile cannot reverse information those stages discarded."
+          }
+        ],
+        "notes": [
+          "Apple ProRAW and camera RAW still need a deliberate neutral development; RAW is not automatically scene-linear or aesthetically neutral after a converter renders it."
+        ]
+      },
+      {
+        "eyebrow": "EMULATION RECIPE",
+        "title": "A stage-by-stage rendering target",
+        "lede": "sRGB decode → +0.00 EV scene placement → 1.000/1.000/1.000 channel sensitivity → toe 0.15, γ 1.03, shoulder 0.28 → peel-apart positive/negative instant chemistry → 3% thresholded halation → fine silver structure",
+        "details": [
+          {
+            "label": "Scene",
+            "value": "Decode to linear light, apply +0.00 EV and the stock sensitivity before tone shaping."
+          },
+          {
+            "label": "Emulsion",
+            "value": "Build the toe, midtone gamma, shoulder, crossover, saturation compression, and correlated image structure as one response."
+          },
+          {
+            "label": "Lab / optics",
+            "value": "Model peel-apart positive/negative instant, chemical fog, local density contrast, and highlight scatter before the output transform."
+          },
+          {
+            "label": "Scan / print",
+            "value": "Preserve local instant-material softness, edge behavior, and lower contrast; do not confuse age damage with the fresh stock target."
+          }
+        ],
+        "notes": [
+          "All parameters are bounded artistic approximations derived from published characteristics and process knowledge, not digitized manufacturer sensitometric or spectral measurements."
+        ]
+      }
+    ],
+    "bestFor": [
+      "Subjects that benefit from delicate positive tone, a detailed recoverable negative, and luminous edge-rich silver.",
+      "Form, gesture, texture, and light where color separation can be translated into deliberate gray relationships."
+    ],
+    "watchFor": [
+      "A rendered DSLR/iPhone file already contains sensor spectral response, computational tone mapping, demosaic, white balance, and gamut decisions; this profile cannot reverse information those stages discarded.",
+      "Stacking a strong camera picture style, computational HDR, or sharpening underneath the emulation.",
+      "Judging grain at 200% instead of at 100% and intended output size."
+    ],
+    "fieldNotes": [
+      "Expose for the material idea: delicate positive tone, a detailed recoverable negative, and luminous edge-rich silver.",
+      "Try the profile on neutral daylight, mixed light, skin, foliage, and a flat wall before deciding what its name means."
+    ],
+    "sources": [
+      {
+        "title": "Polaroid corporate history",
+        "publisher": "Polaroid",
+        "url": "https://press.polaroid.com/en/about/"
+      },
+      {
+        "title": "Polaroid Corporation archive finding aid",
+        "publisher": "Harvard University Archives",
+        "url": "https://hollisarchives.lib.harvard.edu/download_collection_pdf/bak01604.pdf"
+      }
+    ],
+    "verified": "2026-07-16",
+    "disclaimer": "Type 55 P/N is an independent Grainlab artistic emulation informed by cited public literature and historical material. It is not endorsed by Polaroid, is not a measured ICC/LUT profile, and cannot reproduce a specific batch, lens, exposure, chemistry, printer, scanner, paper, aging state, or wavelengths absent from the digital source."
+  }
+}

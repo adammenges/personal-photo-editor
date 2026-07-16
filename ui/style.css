@@ -323,6 +323,36 @@ kbd {
     color: var(--accent);
 }
 
+.process-filter {
+    height: 30px;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: center;
+    gap: 8px;
+    margin-top: 7px;
+    padding: 0 8px;
+    border: 1px solid var(--border);
+    background: var(--surface-deep);
+    color: var(--text-dim);
+    font-size: 8px;
+    letter-spacing: 0.1em;
+}
+
+.process-filter select {
+    min-width: 0;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: var(--text-soft);
+    font: inherit;
+    letter-spacing: 0.05em;
+    text-align: right;
+}
+
+.process-filter:focus-within {
+    border-color: var(--accent);
+}
+
 .preset-list {
     overflow: auto;
     padding: 4px 0 14px;

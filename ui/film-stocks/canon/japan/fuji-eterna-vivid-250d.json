@@ -1,0 +1,290 @@
+{
+  "id": "fuji-eterna-vivid-250d",
+  "name": "ETERNA Vivid 250D",
+  "maker": "Fujifilm",
+  "type": "color",
+  "group": "CENTURY CANON / FUJIFILM",
+  "sort": 257,
+  "catalog": {
+    "edition": "century-100-v1",
+    "rank": 57,
+    "introduced": "2008",
+    "origin": "Japan",
+    "rationale": "A daylight cinema negative with more built-in color energy than standard ETERNA while preserving scan-oriented latitude."
+  },
+  "settings": {
+    "exposure": 0.08,
+    "contrast": 1,
+    "saturation": 7,
+    "temperature": -1,
+    "fade": 1,
+    "grain": 8
+  },
+  "grainProfile": {
+    "medium": "dye",
+    "crystal": "tabular",
+    "emulsion": "mixed",
+    "scale": "fine",
+    "process": "motion"
+  },
+  "pipeline": {
+    "version": 1,
+    "family": "ecn2",
+    "monochrome": false,
+    "scene": {
+      "sensitivity": [
+        0.98,
+        1.05,
+        1.01
+      ],
+      "flash": 0
+    },
+    "curve": {
+      "toe": 0.12,
+      "shoulder": 0.43,
+      "gamma": 0.97,
+      "saturationCompression": 0.16
+    },
+    "crossover": {
+      "shadows": [
+        -0.012,
+        0.02,
+        0.006
+      ],
+      "highlights": [
+        0.012,
+        0.014,
+        -0.018
+      ]
+    },
+    "chemistry": {
+      "silverRetention": 0,
+      "fog": 0.003,
+      "flare": 0.005,
+      "localContrast": 0.04
+    },
+    "optics": {
+      "halation": 0.025,
+      "halationRadius": 4.5,
+      "halationThreshold": 0.91
+    },
+    "output": {
+      "tint": [
+        0.99,
+        1.015,
+        1
+      ],
+      "scanContrast": 0.92
+    },
+    "grain": {
+      "meanRadius": 0.639,
+      "radiusVariance": 0.26,
+      "shadowBias": 0.55,
+      "chroma": 0.026
+    }
+  },
+  "dossier": {
+    "version": 1,
+    "reference": {
+      "stock": "ETERNA Vivid 250D",
+      "manufacturer": "Fujifilm",
+      "relationship": "Independent interpretive emulation; researched, not measured",
+      "status": "discontinued"
+    },
+    "tagline": "Crisp daylight color, vivid greens, and stronger density separation.",
+    "portrait": "ETERNA Vivid 250D is modeled around crisp daylight color, vivid greens, and stronger density separation. A daylight cinema negative with more built-in color energy than standard ETERNA while preserving scan-oriented latitude. Grainlab treats that identity as a linked capture, emulsion, process, and output system—not as a color cast pasted over a digital file.",
+    "facts": [
+      {
+        "label": "CANON RANK",
+        "value": "057 / 100",
+        "note": "Curatorial significance rank; not a sales chart"
+      },
+      {
+        "label": "INTRODUCED",
+        "value": "2008",
+        "note": "Japan"
+      },
+      {
+        "label": "SPEED / EI",
+        "value": "250",
+        "note": "daylight"
+      },
+      {
+        "label": "PROCESS",
+        "value": "ECN-2 motion negative",
+        "note": "ECN2"
+      },
+      {
+        "label": "IMAGE",
+        "value": "CMY dye image",
+        "note": "fine apparent structure"
+      },
+      {
+        "label": "CRYSTAL MODEL",
+        "value": "tabular",
+        "note": "multilayer architecture mapping"
+      },
+      {
+        "label": "SOURCE START",
+        "value": "Neutral SDR",
+        "note": "DSLR / iPhone normalization"
+      },
+      {
+        "label": "PROFILE",
+        "value": "Interpretive v1",
+        "note": "No manufacturer endorsement"
+      }
+    ],
+    "palette": [
+      {
+        "name": "skin light",
+        "hex": "#d6a47f"
+      },
+      {
+        "name": "amber",
+        "hex": "#ad7548"
+      },
+      {
+        "name": "sage",
+        "hex": "#66705d"
+      },
+      {
+        "name": "shadow",
+        "hex": "#26343b"
+      }
+    ],
+    "chapters": [
+      {
+        "eyebrow": "MATERIAL / HISTORY",
+        "title": "Why ETERNA Vivid 250D belongs in the century canon",
+        "lede": "A daylight cinema negative with more built-in color energy than standard ETERNA while preserving scan-oriented latitude.",
+        "details": [
+          {
+            "label": "Origin",
+            "value": "Japan; introduced 2008."
+          },
+          {
+            "label": "Material",
+            "value": "ECN-2 motion negative; daylight; nominal speed / EI reference 250."
+          },
+          {
+            "label": "Image structure",
+            "value": "tabular crystal interpretation, multilayer emulsion mapping, fine presentation-scale grain."
+          },
+          {
+            "label": "Status",
+            "value": "discontinued"
+          }
+        ],
+        "notes": [
+          "The canon balances cultural use, technical influence, geographic/manufacturer breadth, process diversity, and surviving documentation; rank is curatorial rather than a claimed global sales measurement."
+        ]
+      },
+      {
+        "eyebrow": "VISUAL TARGET",
+        "title": "Tone, color, and material signature",
+        "lede": "The target is crisp daylight color, vivid greens, and stronger density separation.",
+        "details": [
+          {
+            "label": "Curve",
+            "value": "Toe 0.12 · development gamma 0.97 · shoulder 0.43 · scan contrast .92."
+          },
+          {
+            "label": "Color / spectral posture",
+            "value": "greenVivid channel sensitivity and density-dependent crossover; daylight reference balance."
+          },
+          {
+            "label": "Grain",
+            "value": "fine correlated dye-cloud density variation; tabular geometry; multilayer architecture."
+          },
+          {
+            "label": "Halation",
+            "value": "3% thresholded scene-highlight scatter before the film curve; intentionally stock/process dependent."
+          }
+        ],
+        "notes": [
+          "Grain is signal-dependent and spatially correlated across the full frame; it is not independent RGB noise or a repeating overlay."
+        ]
+      },
+      {
+        "eyebrow": "DIGITAL START",
+        "title": "From DSLR or iPhone to a plausible negative",
+        "lede": "Begin from a low-contrast neutral SDR rendering. Undo phone HDR halos and aggressive sharpening; preserve highlight detail so the negative-style shoulder and downstream scan contrast can do the shaping.",
+        "details": [
+          {
+            "label": "Input normalization",
+            "value": "Prefer RAW developed neutrally when available. For HEIC/JPEG, choose the least processed rendition; avoid baked Vivid styles, portrait relighting, clarity, and denoise."
+          },
+          {
+            "label": "Dynamic range",
+            "value": "Map HDR/Display-P3 into a stable SDR working image without clipping, preserving highlight and shadow separation before the film response."
+          },
+          {
+            "label": "White balance",
+            "value": "Neutralize obvious camera casts first, then let the daylight stock balance and emulsion sensitivity create the intended response."
+          },
+          {
+            "label": "Hard limit",
+            "value": "A rendered DSLR/iPhone file already contains sensor spectral response, computational tone mapping, demosaic, white balance, and gamut decisions; this profile cannot reverse information those stages discarded."
+          }
+        ],
+        "notes": [
+          "Apple ProRAW and camera RAW still need a deliberate neutral development; RAW is not automatically scene-linear or aesthetically neutral after a converter renders it."
+        ]
+      },
+      {
+        "eyebrow": "EMULATION RECIPE",
+        "title": "A stage-by-stage rendering target",
+        "lede": "sRGB decode → +0.08 EV scene placement → 0.980/1.050/1.010 channel sensitivity → toe 0.12, γ 0.97, shoulder 0.43 → ECN-2 motion negative chemistry → 3% thresholded halation → fine dye-cloud structure",
+        "details": [
+          {
+            "label": "Scene",
+            "value": "Decode to linear light, apply +0.08 EV and the stock sensitivity before tone shaping."
+          },
+          {
+            "label": "Emulsion",
+            "value": "Build the toe, midtone gamma, shoulder, crossover, saturation compression, and correlated image structure as one response."
+          },
+          {
+            "label": "Lab / optics",
+            "value": "Model ECN-2 motion negative, chemical fog, local density contrast, and highlight scatter before the output transform."
+          },
+          {
+            "label": "Scan / print",
+            "value": "Return a low-contrast negative-style scan with open highlights; the profile's output stage supplies a restrained viewing transform, not a baked blockbuster grade."
+          }
+        ],
+        "notes": [
+          "All parameters are bounded artistic approximations derived from published characteristics and process knowledge, not digitized manufacturer sensitometric or spectral measurements."
+        ]
+      }
+    ],
+    "bestFor": [
+      "Subjects that benefit from crisp daylight color, vivid greens, and stronger density separation.",
+      "Narrative sequences, mixed exposure, and highlights intended for a grading pass."
+    ],
+    "watchFor": [
+      "A rendered DSLR/iPhone file already contains sensor spectral response, computational tone mapping, demosaic, white balance, and gamut decisions; this profile cannot reverse information those stages discarded.",
+      "Stacking a strong camera picture style, computational HDR, or sharpening underneath the emulation.",
+      "Judging grain at 200% instead of at 100% and intended output size."
+    ],
+    "fieldNotes": [
+      "Expose for the material idea: crisp daylight color, vivid greens, and stronger density separation.",
+      "Try the profile on neutral daylight, mixed light, skin, foliage, and a flat wall before deciding what its name means."
+    ],
+    "sources": [
+      {
+        "title": "Professional Film Data Guide",
+        "publisher": "FUJIFILM",
+        "url": "https://asset.fujifilm.com/www/us/files/2020-04/9cdee030ab7fc76bbcfddbcd38650038/ProfessionalFilmDataGuide.pdf"
+      },
+      {
+        "title": "Negative and reversal film data-sheet archive",
+        "publisher": "FUJIFILM",
+        "url": "https://www.fujifilm.com/fi/en/consumer/support/films/negative-and-reversal"
+      }
+    ],
+    "verified": "2026-07-16",
+    "disclaimer": "ETERNA Vivid 250D is an independent Grainlab artistic emulation informed by cited public literature and historical material. It is not endorsed by Fujifilm, is not a measured ICC/LUT profile, and cannot reproduce a specific batch, lens, exposure, chemistry, printer, scanner, paper, aging state, or wavelengths absent from the digital source."
+  }
+}

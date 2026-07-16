@@ -1,0 +1,290 @@
+{
+  "id": "cinestill-400d",
+  "name": "400D",
+  "maker": "CineStill",
+  "type": "color",
+  "group": "CENTURY CANON / CINESTILL",
+  "sort": 291,
+  "catalog": {
+    "edition": "century-100-v1",
+    "rank": 91,
+    "introduced": "2022",
+    "origin": "United States",
+    "rationale": "A contemporary daylight motion-inspired still film designed around flexible scanning and broad exposure options."
+  },
+  "settings": {
+    "exposure": 0,
+    "contrast": -3,
+    "saturation": -2,
+    "temperature": 4,
+    "fade": 1,
+    "grain": 13
+  },
+  "grainProfile": {
+    "medium": "dye",
+    "crystal": "tabular",
+    "emulsion": "mixed",
+    "scale": "medium",
+    "process": "standard"
+  },
+  "pipeline": {
+    "version": 1,
+    "family": "c41",
+    "monochrome": false,
+    "scene": {
+      "sensitivity": [
+        1.02,
+        1,
+        0.97
+      ],
+      "flash": 0
+    },
+    "curve": {
+      "toe": 0.14,
+      "shoulder": 0.5,
+      "gamma": 0.94,
+      "saturationCompression": 0.23
+    },
+    "crossover": {
+      "shadows": [
+        0.006,
+        0,
+        -0.006
+      ],
+      "highlights": [
+        0.012,
+        0.003,
+        -0.015
+      ]
+    },
+    "chemistry": {
+      "silverRetention": 0,
+      "fog": 0.003,
+      "flare": 0.005,
+      "localContrast": 0.025
+    },
+    "optics": {
+      "halation": 0.11,
+      "halationRadius": 11,
+      "halationThreshold": 0.78
+    },
+    "output": {
+      "tint": [
+        1.02,
+        1,
+        0.975
+      ],
+      "scanContrast": 1
+    },
+    "grain": {
+      "meanRadius": 1.01,
+      "radiusVariance": 0.46,
+      "shadowBias": 0.55,
+      "chroma": 0.045
+    }
+  },
+  "dossier": {
+    "version": 1,
+    "reference": {
+      "stock": "400D",
+      "manufacturer": "CineStill",
+      "relationship": "Independent interpretive emulation; researched, not measured",
+      "status": "current"
+    },
+    "tagline": "Soft warm color, wide latitude, and occasional red highlight halation.",
+    "portrait": "400D is modeled around soft warm color, wide latitude, and occasional red highlight halation. A contemporary daylight motion-inspired still film designed around flexible scanning and broad exposure options. Grainlab treats that identity as a linked capture, emulsion, process, and output system—not as a color cast pasted over a digital file.",
+    "facts": [
+      {
+        "label": "CANON RANK",
+        "value": "091 / 100",
+        "note": "Curatorial significance rank; not a sales chart"
+      },
+      {
+        "label": "INTRODUCED",
+        "value": "2022",
+        "note": "United States"
+      },
+      {
+        "label": "SPEED / EI",
+        "value": "400",
+        "note": "daylight"
+      },
+      {
+        "label": "PROCESS",
+        "value": "C-41 color negative",
+        "note": "C41"
+      },
+      {
+        "label": "IMAGE",
+        "value": "CMY dye image",
+        "note": "medium apparent structure"
+      },
+      {
+        "label": "CRYSTAL MODEL",
+        "value": "tabular",
+        "note": "multilayer architecture mapping"
+      },
+      {
+        "label": "SOURCE START",
+        "value": "Neutral SDR",
+        "note": "DSLR / iPhone normalization"
+      },
+      {
+        "label": "PROFILE",
+        "value": "Interpretive v1",
+        "note": "No manufacturer endorsement"
+      }
+    ],
+    "palette": [
+      {
+        "name": "skin light",
+        "hex": "#d6a47f"
+      },
+      {
+        "name": "amber",
+        "hex": "#ad7548"
+      },
+      {
+        "name": "sage",
+        "hex": "#66705d"
+      },
+      {
+        "name": "shadow",
+        "hex": "#26343b"
+      }
+    ],
+    "chapters": [
+      {
+        "eyebrow": "MATERIAL / HISTORY",
+        "title": "Why 400D belongs in the century canon",
+        "lede": "A contemporary daylight motion-inspired still film designed around flexible scanning and broad exposure options.",
+        "details": [
+          {
+            "label": "Origin",
+            "value": "United States; introduced 2022."
+          },
+          {
+            "label": "Material",
+            "value": "C-41 color negative; daylight; nominal speed / EI reference 400."
+          },
+          {
+            "label": "Image structure",
+            "value": "tabular crystal interpretation, multilayer emulsion mapping, medium presentation-scale grain."
+          },
+          {
+            "label": "Status",
+            "value": "current"
+          }
+        ],
+        "notes": [
+          "The canon balances cultural use, technical influence, geographic/manufacturer breadth, process diversity, and surviving documentation; rank is curatorial rather than a claimed global sales measurement."
+        ]
+      },
+      {
+        "eyebrow": "VISUAL TARGET",
+        "title": "Tone, color, and material signature",
+        "lede": "The target is soft warm color, wide latitude, and occasional red highlight halation.",
+        "details": [
+          {
+            "label": "Curve",
+            "value": "Toe 0.14 · development gamma 0.94 · shoulder 0.50 · scan contrast 1.00."
+          },
+          {
+            "label": "Color / spectral posture",
+            "value": "warm channel sensitivity and density-dependent crossover; daylight reference balance."
+          },
+          {
+            "label": "Grain",
+            "value": "medium correlated dye-cloud density variation; tabular geometry; multilayer architecture."
+          },
+          {
+            "label": "Halation",
+            "value": "11% thresholded scene-highlight scatter before the film curve; intentionally stock/process dependent."
+          }
+        ],
+        "notes": [
+          "Grain is signal-dependent and spatially correlated across the full frame; it is not independent RGB noise or a repeating overlay."
+        ]
+      },
+      {
+        "eyebrow": "DIGITAL START",
+        "title": "From DSLR or iPhone to a plausible negative",
+        "lede": "Begin from a neutral SDR rendering. Disable or minimize phone HDR, vivid styles, skin smoothing, and sharpening; preserve channel detail before the negative curve and dye-layer crossover are applied.",
+        "details": [
+          {
+            "label": "Input normalization",
+            "value": "Prefer RAW developed neutrally when available. For HEIC/JPEG, choose the least processed rendition; avoid baked Vivid styles, portrait relighting, clarity, and denoise."
+          },
+          {
+            "label": "Dynamic range",
+            "value": "Map HDR/Display-P3 into a stable SDR working image without clipping, preserving highlight and shadow separation before the film response."
+          },
+          {
+            "label": "White balance",
+            "value": "Neutralize obvious camera casts first, then let the daylight stock balance and emulsion sensitivity create the intended response."
+          },
+          {
+            "label": "Hard limit",
+            "value": "A rendered DSLR/iPhone file already contains sensor spectral response, computational tone mapping, demosaic, white balance, and gamut decisions; this profile cannot reverse information those stages discarded."
+          }
+        ],
+        "notes": [
+          "Apple ProRAW and camera RAW still need a deliberate neutral development; RAW is not automatically scene-linear or aesthetically neutral after a converter renders it."
+        ]
+      },
+      {
+        "eyebrow": "EMULATION RECIPE",
+        "title": "A stage-by-stage rendering target",
+        "lede": "sRGB decode → +0.00 EV scene placement → 1.020/1.000/0.970 channel sensitivity → toe 0.14, γ 0.94, shoulder 0.50 → C-41 color negative chemistry → 11% thresholded halation → medium dye-cloud structure",
+        "details": [
+          {
+            "label": "Scene",
+            "value": "Decode to linear light, apply +0.00 EV and the stock sensitivity before tone shaping."
+          },
+          {
+            "label": "Emulsion",
+            "value": "Build the toe, midtone gamma, shoulder, crossover, saturation compression, and correlated image structure as one response."
+          },
+          {
+            "label": "Lab / optics",
+            "value": "Model C-41 color negative, chemical fog, local density contrast, and highlight scatter before the output transform."
+          },
+          {
+            "label": "Scan / print",
+            "value": "Use a neutral scan baseline, set black and white points after the film curve, and sharpen subject detail at final output size."
+          }
+        ],
+        "notes": [
+          "All parameters are bounded artistic approximations derived from published characteristics and process knowledge, not digitized manufacturer sensitometric or spectral measurements."
+        ]
+      }
+    ],
+    "bestFor": [
+      "Subjects that benefit from soft warm color, wide latitude, and occasional red highlight halation.",
+      "Scenes whose palette and contrast align with the stock rather than fighting it."
+    ],
+    "watchFor": [
+      "A rendered DSLR/iPhone file already contains sensor spectral response, computational tone mapping, demosaic, white balance, and gamut decisions; this profile cannot reverse information those stages discarded.",
+      "Stacking a strong camera picture style, computational HDR, or sharpening underneath the emulation.",
+      "Judging grain at 200% instead of at 100% and intended output size."
+    ],
+    "fieldNotes": [
+      "Expose for the material idea: soft warm color, wide latitude, and occasional red highlight halation.",
+      "Try the profile on neutral daylight, mixed light, skin, foliage, and a flat wall before deciding what its name means."
+    ],
+    "sources": [
+      {
+        "title": "CineStill film product catalog",
+        "publisher": "CineStill Film",
+        "url": "https://cinestillfilm.com/collections/product-catalog"
+      },
+      {
+        "title": "CineStill film and process FAQ",
+        "publisher": "CineStill Film",
+        "url": "https://cinestillfilm.com/pages/frequently-asked-questions"
+      }
+    ],
+    "verified": "2026-07-16",
+    "disclaimer": "400D is an independent Grainlab artistic emulation informed by cited public literature and historical material. It is not endorsed by CineStill, is not a measured ICC/LUT profile, and cannot reproduce a specific batch, lens, exposure, chemistry, printer, scanner, paper, aging state, or wavelengths absent from the digital source."
+  }
+}

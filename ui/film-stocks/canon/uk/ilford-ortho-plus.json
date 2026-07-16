@@ -1,0 +1,290 @@
+{
+  "id": "ilford-ortho-plus",
+  "name": "ORTHO PLUS",
+  "maker": "Ilford",
+  "type": "mono",
+  "group": "CENTURY CANON / ILFORD",
+  "sort": 267,
+  "catalog": {
+    "edition": "century-100-v1",
+    "rank": 67,
+    "introduced": "1998",
+    "origin": "United Kingdom",
+    "rationale": "Red blindness changes subject relationships physically; the emulation must alter spectral weighting rather than add a monochrome curve alone."
+  },
+  "settings": {
+    "exposure": 0,
+    "contrast": 18,
+    "saturation": -100,
+    "temperature": 0,
+    "fade": 1,
+    "grain": 8
+  },
+  "grainProfile": {
+    "medium": "silver",
+    "crystal": "cubic",
+    "emulsion": "uniform",
+    "scale": "fine",
+    "process": "standard"
+  },
+  "pipeline": {
+    "version": 1,
+    "family": "bw",
+    "monochrome": true,
+    "scene": {
+      "sensitivity": [
+        0.18,
+        0.74,
+        0.08
+      ],
+      "flash": 0
+    },
+    "curve": {
+      "toe": 0.11,
+      "shoulder": 0.29,
+      "gamma": 1.07,
+      "saturationCompression": 0
+    },
+    "crossover": {
+      "shadows": [
+        0,
+        0,
+        0
+      ],
+      "highlights": [
+        0,
+        0,
+        0
+      ]
+    },
+    "chemistry": {
+      "silverRetention": 0,
+      "fog": 0.003,
+      "flare": 0.005,
+      "localContrast": 0.09
+    },
+    "optics": {
+      "halation": 0.015,
+      "halationRadius": 4.5,
+      "halationThreshold": 0.91
+    },
+    "output": {
+      "tint": [
+        1,
+        1,
+        1
+      ],
+      "scanContrast": 1
+    },
+    "grain": {
+      "meanRadius": 0.566,
+      "radiusVariance": 0.26,
+      "shadowBias": 0.55,
+      "chroma": 0
+    }
+  },
+  "dossier": {
+    "version": 1,
+    "reference": {
+      "stock": "ORTHO PLUS",
+      "manufacturer": "Ilford",
+      "relationship": "Independent interpretive emulation; researched, not measured",
+      "status": "current"
+    },
+    "tagline": "Dark reds, bright blue-green separation, fine grain, and graphic clarity.",
+    "portrait": "ORTHO PLUS is modeled around dark reds, bright blue-green separation, fine grain, and graphic clarity. Red blindness changes subject relationships physically; the emulation must alter spectral weighting rather than add a monochrome curve alone. Grainlab treats that identity as a linked capture, emulsion, process, and output system—not as a color cast pasted over a digital file.",
+    "facts": [
+      {
+        "label": "CANON RANK",
+        "value": "067 / 100",
+        "note": "Curatorial significance rank; not a sales chart"
+      },
+      {
+        "label": "INTRODUCED",
+        "value": "1998",
+        "note": "United Kingdom"
+      },
+      {
+        "label": "SPEED / EI",
+        "value": "80",
+        "note": "blue-green sensitive"
+      },
+      {
+        "label": "PROCESS",
+        "value": "B&W orthochromatic negative",
+        "note": "BW"
+      },
+      {
+        "label": "IMAGE",
+        "value": "Metallic silver",
+        "note": "fine apparent structure"
+      },
+      {
+        "label": "CRYSTAL MODEL",
+        "value": "cubic",
+        "note": "uniform architecture mapping"
+      },
+      {
+        "label": "SOURCE START",
+        "value": "Neutral SDR",
+        "note": "DSLR / iPhone normalization"
+      },
+      {
+        "label": "PROFILE",
+        "value": "Interpretive v1",
+        "note": "No manufacturer endorsement"
+      }
+    ],
+    "palette": [
+      {
+        "name": "paper",
+        "hex": "#ddd9cd"
+      },
+      {
+        "name": "middle gray",
+        "hex": "#8b8982"
+      },
+      {
+        "name": "charcoal",
+        "hex": "#393a37"
+      },
+      {
+        "name": "silver black",
+        "hex": "#0d0f0e"
+      }
+    ],
+    "chapters": [
+      {
+        "eyebrow": "MATERIAL / HISTORY",
+        "title": "Why ORTHO PLUS belongs in the century canon",
+        "lede": "Red blindness changes subject relationships physically; the emulation must alter spectral weighting rather than add a monochrome curve alone.",
+        "details": [
+          {
+            "label": "Origin",
+            "value": "United Kingdom; introduced 1998."
+          },
+          {
+            "label": "Material",
+            "value": "B&W orthochromatic negative; blue-green sensitive; nominal speed / EI reference 80."
+          },
+          {
+            "label": "Image structure",
+            "value": "cubic crystal interpretation, uniform emulsion mapping, fine presentation-scale grain."
+          },
+          {
+            "label": "Status",
+            "value": "current"
+          }
+        ],
+        "notes": [
+          "The canon balances cultural use, technical influence, geographic/manufacturer breadth, process diversity, and surviving documentation; rank is curatorial rather than a claimed global sales measurement."
+        ]
+      },
+      {
+        "eyebrow": "VISUAL TARGET",
+        "title": "Tone, color, and material signature",
+        "lede": "The target is dark reds, bright blue-green separation, fine grain, and graphic clarity.",
+        "details": [
+          {
+            "label": "Curve",
+            "value": "Toe 0.11 · development gamma 1.07 · shoulder 0.29 · scan contrast 1.00."
+          },
+          {
+            "label": "Color / spectral posture",
+            "value": "Monochrome conversion uses blue-green sensitive weighting before the film curve."
+          },
+          {
+            "label": "Grain",
+            "value": "fine metallic-silver clumps; cubic geometry; uniform architecture."
+          },
+          {
+            "label": "Halation",
+            "value": "2% thresholded scene-highlight scatter before the film curve; intentionally stock/process dependent."
+          }
+        ],
+        "notes": [
+          "Grain is signal-dependent and spatially correlated across the full frame; it is not independent RGB noise or a repeating overlay."
+        ]
+      },
+      {
+        "eyebrow": "DIGITAL START",
+        "title": "From DSLR or iPhone to a plausible negative",
+        "lede": "Begin from a neutral SDR rendering with restrained sharpening and noise reduction. Convert through the stated spectral weights before the silver curve; do not desaturate a contrasty RGB image and call it film.",
+        "details": [
+          {
+            "label": "Input normalization",
+            "value": "Prefer RAW developed neutrally when available. For HEIC/JPEG, choose the least processed rendition; avoid baked Vivid styles, portrait relighting, clarity, and denoise."
+          },
+          {
+            "label": "Dynamic range",
+            "value": "Map HDR/Display-P3 into a stable SDR working image without clipping, preserving highlight and shadow separation before the film response."
+          },
+          {
+            "label": "White balance",
+            "value": "Neutralize obvious camera casts first, then let the blue-green sensitive stock balance and emulsion sensitivity create the intended response."
+          },
+          {
+            "label": "Hard limit",
+            "value": "A rendered DSLR/iPhone file already contains sensor spectral response, computational tone mapping, demosaic, white balance, and gamut decisions; this profile cannot reverse information those stages discarded."
+          }
+        ],
+        "notes": [
+          "Apple ProRAW and camera RAW still need a deliberate neutral development; RAW is not automatically scene-linear or aesthetically neutral after a converter renders it."
+        ]
+      },
+      {
+        "eyebrow": "EMULATION RECIPE",
+        "title": "A stage-by-stage rendering target",
+        "lede": "sRGB decode → +0.00 EV scene placement → 0.970/1.000/1.035 channel sensitivity → toe 0.11, γ 1.07, shoulder 0.29 → B&W orthochromatic negative chemistry → 2% thresholded halation → fine silver structure",
+        "details": [
+          {
+            "label": "Scene",
+            "value": "Decode to linear light, apply +0.00 EV and the stock sensitivity before tone shaping."
+          },
+          {
+            "label": "Emulsion",
+            "value": "Build the toe, midtone gamma, shoulder, crossover, saturation compression, and correlated image structure as one response."
+          },
+          {
+            "label": "Lab / optics",
+            "value": "Model B&W orthochromatic negative, chemical fog, local density contrast, and highlight scatter before the output transform."
+          },
+          {
+            "label": "Scan / print",
+            "value": "Use a neutral scan baseline, set black and white points after the film curve, and sharpen subject detail at final output size."
+          }
+        ],
+        "notes": [
+          "All parameters are bounded artistic approximations derived from published characteristics and process knowledge, not digitized manufacturer sensitometric or spectral measurements."
+        ]
+      }
+    ],
+    "bestFor": [
+      "Subjects that benefit from dark reds, bright blue-green separation, fine grain, and graphic clarity.",
+      "Form, gesture, texture, and light where color separation can be translated into deliberate gray relationships."
+    ],
+    "watchFor": [
+      "A rendered DSLR/iPhone file already contains sensor spectral response, computational tone mapping, demosaic, white balance, and gamut decisions; this profile cannot reverse information those stages discarded.",
+      "Stacking a strong camera picture style, computational HDR, or sharpening underneath the emulation.",
+      "Judging grain at 200% instead of at 100% and intended output size."
+    ],
+    "fieldNotes": [
+      "Expose for the material idea: dark reds, bright blue-green separation, fine grain, and graphic clarity.",
+      "Try the profile on neutral daylight, mixed light, skin, foliage, and a flat wall before deciding what its name means."
+    ],
+    "sources": [
+      {
+        "title": "ILFORD PHOTO technical downloads",
+        "publisher": "HARMAN technology",
+        "url": "https://www.ilfordphoto.com/technical-downloads/"
+      },
+      {
+        "title": "ILFORD film-family and grain comparison",
+        "publisher": "HARMAN technology",
+        "url": "https://www.ilfordphoto.com/choosing-your-first-ilford-film/"
+      }
+    ],
+    "verified": "2026-07-16",
+    "disclaimer": "ORTHO PLUS is an independent Grainlab artistic emulation informed by cited public literature and historical material. It is not endorsed by Ilford, is not a measured ICC/LUT profile, and cannot reproduce a specific batch, lens, exposure, chemistry, printer, scanner, paper, aging state, or wavelengths absent from the digital source."
+  }
+}

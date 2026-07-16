@@ -1,0 +1,290 @@
+{
+  "id": "ilford-sfx-200",
+  "name": "SFX 200",
+  "maker": "Ilford",
+  "type": "mono",
+  "group": "CENTURY CANON / ILFORD",
+  "sort": 266,
+  "catalog": {
+    "edition": "century-100-v1",
+    "rank": 66,
+    "introduced": "1997",
+    "origin": "United Kingdom",
+    "rationale": "Its extended red sensitivity enables infrared-like effects while remaining easier to handle than true infrared HIE."
+  },
+  "settings": {
+    "exposure": 0,
+    "contrast": 24,
+    "saturation": -100,
+    "temperature": 0,
+    "fade": 2,
+    "grain": 13
+  },
+  "grainProfile": {
+    "medium": "silver",
+    "crystal": "cubic",
+    "emulsion": "mixed",
+    "scale": "medium",
+    "process": "standard"
+  },
+  "pipeline": {
+    "version": 1,
+    "family": "bw",
+    "monochrome": true,
+    "scene": {
+      "sensitivity": [
+        0.47,
+        0.43,
+        0.1
+      ],
+      "flash": 0
+    },
+    "curve": {
+      "toe": 0.16,
+      "shoulder": 0.25,
+      "gamma": 1.12,
+      "saturationCompression": 0
+    },
+    "crossover": {
+      "shadows": [
+        0,
+        0,
+        0
+      ],
+      "highlights": [
+        0,
+        0,
+        0
+      ]
+    },
+    "chemistry": {
+      "silverRetention": 0,
+      "fog": 0.003,
+      "flare": 0.005,
+      "localContrast": 0.08
+    },
+    "optics": {
+      "halation": 0.15,
+      "halationRadius": 11,
+      "halationThreshold": 0.78
+    },
+    "output": {
+      "tint": [
+        1,
+        1,
+        1
+      ],
+      "scanContrast": 1
+    },
+    "grain": {
+      "meanRadius": 0.965,
+      "radiusVariance": 0.46,
+      "shadowBias": 0.55,
+      "chroma": 0
+    }
+  },
+  "dossier": {
+    "version": 1,
+    "reference": {
+      "stock": "SFX 200",
+      "manufacturer": "Ilford",
+      "relationship": "Independent interpretive emulation; researched, not measured",
+      "status": "current"
+    },
+    "tagline": "Deep red-filter skies, pale foliage, and moderate conventional grain.",
+    "portrait": "SFX 200 is modeled around deep red-filter skies, pale foliage, and moderate conventional grain. Its extended red sensitivity enables infrared-like effects while remaining easier to handle than true infrared HIE. Grainlab treats that identity as a linked capture, emulsion, process, and output system—not as a color cast pasted over a digital file.",
+    "facts": [
+      {
+        "label": "CANON RANK",
+        "value": "066 / 100",
+        "note": "Curatorial significance rank; not a sales chart"
+      },
+      {
+        "label": "INTRODUCED",
+        "value": "1997",
+        "note": "United Kingdom"
+      },
+      {
+        "label": "SPEED / EI",
+        "value": "200",
+        "note": "extended red"
+      },
+      {
+        "label": "PROCESS",
+        "value": "B&W extended-red negative",
+        "note": "BW"
+      },
+      {
+        "label": "IMAGE",
+        "value": "Metallic silver",
+        "note": "medium apparent structure"
+      },
+      {
+        "label": "CRYSTAL MODEL",
+        "value": "cubic",
+        "note": "mixed architecture mapping"
+      },
+      {
+        "label": "SOURCE START",
+        "value": "Neutral SDR",
+        "note": "DSLR / iPhone normalization"
+      },
+      {
+        "label": "PROFILE",
+        "value": "Interpretive v1",
+        "note": "No manufacturer endorsement"
+      }
+    ],
+    "palette": [
+      {
+        "name": "paper",
+        "hex": "#ddd9cd"
+      },
+      {
+        "name": "middle gray",
+        "hex": "#8b8982"
+      },
+      {
+        "name": "charcoal",
+        "hex": "#393a37"
+      },
+      {
+        "name": "silver black",
+        "hex": "#0d0f0e"
+      }
+    ],
+    "chapters": [
+      {
+        "eyebrow": "MATERIAL / HISTORY",
+        "title": "Why SFX 200 belongs in the century canon",
+        "lede": "Its extended red sensitivity enables infrared-like effects while remaining easier to handle than true infrared HIE.",
+        "details": [
+          {
+            "label": "Origin",
+            "value": "United Kingdom; introduced 1997."
+          },
+          {
+            "label": "Material",
+            "value": "B&W extended-red negative; extended red; nominal speed / EI reference 200."
+          },
+          {
+            "label": "Image structure",
+            "value": "cubic crystal interpretation, mixed emulsion mapping, medium presentation-scale grain."
+          },
+          {
+            "label": "Status",
+            "value": "current"
+          }
+        ],
+        "notes": [
+          "The canon balances cultural use, technical influence, geographic/manufacturer breadth, process diversity, and surviving documentation; rank is curatorial rather than a claimed global sales measurement."
+        ]
+      },
+      {
+        "eyebrow": "VISUAL TARGET",
+        "title": "Tone, color, and material signature",
+        "lede": "The target is deep red-filter skies, pale foliage, and moderate conventional grain.",
+        "details": [
+          {
+            "label": "Curve",
+            "value": "Toe 0.16 · development gamma 1.12 · shoulder 0.25 · scan contrast 1.00."
+          },
+          {
+            "label": "Color / spectral posture",
+            "value": "Monochrome conversion uses extended red weighting before the film curve."
+          },
+          {
+            "label": "Grain",
+            "value": "medium metallic-silver clumps; cubic geometry; mixed architecture."
+          },
+          {
+            "label": "Halation",
+            "value": "15% thresholded scene-highlight scatter before the film curve; intentionally stock/process dependent."
+          }
+        ],
+        "notes": [
+          "Grain is signal-dependent and spatially correlated across the full frame; it is not independent RGB noise or a repeating overlay."
+        ]
+      },
+      {
+        "eyebrow": "DIGITAL START",
+        "title": "From DSLR or iPhone to a plausible negative",
+        "lede": "Begin from a neutral SDR rendering with restrained sharpening and noise reduction. Convert through the stated spectral weights before the silver curve; do not desaturate a contrasty RGB image and call it film.",
+        "details": [
+          {
+            "label": "Input normalization",
+            "value": "Prefer RAW developed neutrally when available. For HEIC/JPEG, choose the least processed rendition; avoid baked Vivid styles, portrait relighting, clarity, and denoise."
+          },
+          {
+            "label": "Dynamic range",
+            "value": "Map HDR/Display-P3 into a stable SDR working image without clipping, preserving highlight and shadow separation before the film response."
+          },
+          {
+            "label": "White balance",
+            "value": "Neutralize obvious camera casts first, then let the extended red stock balance and emulsion sensitivity create the intended response."
+          },
+          {
+            "label": "Hard limit",
+            "value": "Visible-RGB DSLR or iPhone input cannot reconstruct wavelengths the sensor or its IR-cut filter never recorded; this is a tonal analogy, not spectral recovery."
+          }
+        ],
+        "notes": [
+          "Apple ProRAW and camera RAW still need a deliberate neutral development; RAW is not automatically scene-linear or aesthetically neutral after a converter renders it."
+        ]
+      },
+      {
+        "eyebrow": "EMULATION RECIPE",
+        "title": "A stage-by-stage rendering target",
+        "lede": "sRGB decode → +0.00 EV scene placement → 1.150/0.960/0.820 channel sensitivity → toe 0.16, γ 1.12, shoulder 0.25 → B&W extended-red negative chemistry → 15% thresholded halation → medium silver structure",
+        "details": [
+          {
+            "label": "Scene",
+            "value": "Decode to linear light, apply +0.00 EV and the stock sensitivity before tone shaping."
+          },
+          {
+            "label": "Emulsion",
+            "value": "Build the toe, midtone gamma, shoulder, crossover, saturation compression, and correlated image structure as one response."
+          },
+          {
+            "label": "Lab / optics",
+            "value": "Model B&W extended-red negative, chemical fog, local density contrast, and highlight scatter before the output transform."
+          },
+          {
+            "label": "Scan / print",
+            "value": "Use a neutral scan baseline, set black and white points after the film curve, and sharpen subject detail at final output size."
+          }
+        ],
+        "notes": [
+          "All parameters are bounded artistic approximations derived from published characteristics and process knowledge, not digitized manufacturer sensitometric or spectral measurements."
+        ]
+      }
+    ],
+    "bestFor": [
+      "Subjects that benefit from deep red-filter skies, pale foliage, and moderate conventional grain.",
+      "Form, gesture, texture, and light where color separation can be translated into deliberate gray relationships."
+    ],
+    "watchFor": [
+      "Visible-RGB DSLR or iPhone input cannot reconstruct wavelengths the sensor or its IR-cut filter never recorded; this is a tonal analogy, not spectral recovery.",
+      "Stacking a strong camera picture style, computational HDR, or sharpening underneath the emulation.",
+      "Judging grain at 200% instead of at 100% and intended output size."
+    ],
+    "fieldNotes": [
+      "Expose for the material idea: deep red-filter skies, pale foliage, and moderate conventional grain.",
+      "Try the profile on neutral daylight, mixed light, skin, foliage, and a flat wall before deciding what its name means."
+    ],
+    "sources": [
+      {
+        "title": "ILFORD PHOTO technical downloads",
+        "publisher": "HARMAN technology",
+        "url": "https://www.ilfordphoto.com/technical-downloads/"
+      },
+      {
+        "title": "ILFORD film-family and grain comparison",
+        "publisher": "HARMAN technology",
+        "url": "https://www.ilfordphoto.com/choosing-your-first-ilford-film/"
+      }
+    ],
+    "verified": "2026-07-16",
+    "disclaimer": "SFX 200 is an independent Grainlab artistic emulation informed by cited public literature and historical material. It is not endorsed by Ilford, is not a measured ICC/LUT profile, and cannot reproduce a specific batch, lens, exposure, chemistry, printer, scanner, paper, aging state, or wavelengths absent from the digital source."
+  }
+}

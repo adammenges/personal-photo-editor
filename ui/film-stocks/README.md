@@ -2,6 +2,8 @@
 
 Every `.json` file below this directory is one film stock. Category folders keep the library legible; the folder name does not control behavior—the `type` field does.
 
+The researched Century 100 profiles also include a `catalog` block with the stable `century-100-v1` edition, unique rank, introduction era, origin, and selection rationale. The build requires that edition to contain all 100 ranks. Unranked house, utility, and experimental profiles omit `catalog` and remain fully supported. See [`docs/film-stock-century-canon.md`](../../docs/film-stock-century-canon.md) for methodology and the complete selection.
+
 `src-tauri/build.rs` discovers the files recursively, validates required fields, and regenerates `index.json`. Adding a valid definition and running `make dev`, `make check`, or `make build-app` makes it appear in the Film Library automatically.
 
 ```json

@@ -5,6 +5,8 @@ document.documentElement.classList.toggle("is-tauri", Boolean(window.__TAURI__))
 const $ = (id) => document.getElementById(id);
 
 let PRESETS = [];
+let presetThumbnailObserver = null;
+const thumbnailPresets = new WeakMap();
 
 const GRAIN_TRAIT_KEYS = ["medium", "crystal", "emulsion", "scale", "process"];
 const STOCK_GRAIN_TRAITS = Object.freeze(Object.fromEntries(GRAIN_TRAIT_KEYS.map((key) => [key, "stock"])));
@@ -133,6 +135,7 @@ function normalizeFilmStock(definition) {
         type: definition.type,
         group: definition.group,
         sort: definition.sort || 0,
+        catalog: definition.catalog || null,
         dossier: definition.dossier,
         pipeline: normalizePipeline(definition.pipeline),
         ...settings,
@@ -169,6 +172,7 @@ const state = {
     preset: null,
     adjustments: { ...defaults },
     filter: "all",
+    processFilter: "all",
     search: "",
     compare: false,
     grid: false,
@@ -730,15 +734,36 @@ function filteredPresets() {
     const query = state.search.trim().toLowerCase();
     return PRESETS.filter((preset) => {
         const matchesType = state.filter === "all" || preset.type === state.filter;
-        const searchIndex = `${preset.name} ${preset.maker} ${preset.group} ${JSON.stringify(preset.dossier)}`.toLowerCase();
+        const matchesProcess = state.processFilter === "all" || preset.pipeline.family === state.processFilter;
+        const searchIndex = `${preset.name} ${preset.maker} ${preset.group} ${JSON.stringify(preset.catalog)} ${JSON.stringify(preset.dossier)}`.toLowerCase();
         const matchesQuery = !query || searchIndex.includes(query);
-        return matchesType && matchesQuery;
+        return matchesType && matchesProcess && matchesQuery;
     });
+}
+
+function observePresetThumbnail(canvas, preset, list) {
+    thumbnailPresets.set(canvas, preset);
+    if (!("IntersectionObserver" in window)) {
+        renderPresetThumbnail(canvas, preset);
+        return;
+    }
+    if (!presetThumbnailObserver) {
+        presetThumbnailObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach((entry) => {
+                if (!entry.isIntersecting || !state.sourceImage) return;
+                renderPresetThumbnail(entry.target, thumbnailPresets.get(entry.target));
+                observer.unobserve(entry.target);
+            });
+        }, { root: list, rootMargin: "180px 0px" });
+    }
+    presetThumbnailObserver.observe(canvas);
 }
 
 function renderPresetList() {
     const list = $("preset-list");
     const presets = filteredPresets();
+    presetThumbnailObserver?.disconnect();
+    presetThumbnailObserver = null;
     list.innerHTML = "";
     $("preset-count").textContent = `${presets.length} STOCK${presets.length === 1 ? "" : "S"}`;
 
@@ -771,7 +796,7 @@ function renderPresetList() {
                 <canvas width="84" height="68" aria-hidden="true"></canvas>
                 <span>
                     <span class="preset-name">${preset.name}</span>
-                    <span class="preset-meta">${preset.maker} · ${preset.type}</span>
+                    <span class="preset-meta">${preset.maker} · ${preset.type}${preset.catalog ? ` · #${String(preset.catalog.rank).padStart(3, "0")}` : ""}</span>
                 </span>
                 <span class="preset-index">${String(originalIndex + 1).padStart(2, "0")}</span>`;
             row.addEventListener("click", () => selectPreset(preset));
@@ -784,7 +809,7 @@ function renderPresetList() {
             info.addEventListener("click", () => openStockDossier(preset));
             entry.append(row, info);
             list.appendChild(entry);
-            renderPresetThumbnail(row.querySelector("canvas"), preset);
+            observePresetThumbnail(row.querySelector("canvas"), preset, list);
         });
     });
 }
@@ -814,7 +839,7 @@ function renderStockDossier(preset) {
     $("stock-dossier-content").innerHTML = `
         <section class="dossier-hero">
             <div class="dossier-identity">
-                <div class="dossier-code">GL/${String(PRESETS.indexOf(preset) + 1).padStart(2, "0")} · ${escapeHTML(preset.type.toUpperCase())}</div>
+                <div class="dossier-code">${preset.catalog ? `CENTURY CANON ${String(preset.catalog.rank).padStart(3, "0")}/100` : `GL/${String(PRESETS.indexOf(preset) + 1).padStart(2, "0")}`} · ${escapeHTML(preset.type.toUpperCase())}</div>
                 <p class="dossier-tagline">${escapeHTML(dossier.tagline)}</p>
                 <p class="dossier-portrait">${escapeHTML(dossier.portrait)}</p>
                 <div class="dossier-reference">
@@ -1598,6 +1623,11 @@ function bindEvents() {
             tab.classList.toggle("is-active", active);
             tab.setAttribute("aria-selected", String(active));
         });
+        renderPresetList();
+    });
+
+    $("process-filter").addEventListener("change", (event) => {
+        state.processFilter = event.target.value;
         renderPresetList();
     });
 

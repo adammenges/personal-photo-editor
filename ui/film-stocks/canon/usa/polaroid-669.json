@@ -1,0 +1,290 @@
+{
+  "id": "polaroid-669",
+  "name": "Polacolor 669",
+  "maker": "Polaroid",
+  "type": "color",
+  "group": "CENTURY CANON / POLAROID",
+  "sort": 299,
+  "catalog": {
+    "edition": "century-100-v1",
+    "rank": 99,
+    "introduced": "1981",
+    "origin": "United States",
+    "rationale": "The peel-apart packfilm became a professional proofing tool and an artwork in its own right through transfers, lifts, and unique positives."
+  },
+  "settings": {
+    "exposure": 0,
+    "contrast": -9,
+    "saturation": -12,
+    "temperature": 5,
+    "fade": 8,
+    "grain": 20
+  },
+  "grainProfile": {
+    "medium": "dye",
+    "crystal": "cubic",
+    "emulsion": "mixed",
+    "scale": "coarse",
+    "process": "standard"
+  },
+  "pipeline": {
+    "version": 1,
+    "family": "print",
+    "monochrome": false,
+    "scene": {
+      "sensitivity": [
+        1.02,
+        1,
+        0.97
+      ],
+      "flash": 0
+    },
+    "curve": {
+      "toe": 0.2,
+      "shoulder": 0.4,
+      "gamma": 0.9,
+      "saturationCompression": 0.28
+    },
+    "crossover": {
+      "shadows": [
+        0.006,
+        0,
+        -0.006
+      ],
+      "highlights": [
+        0.012,
+        0.003,
+        -0.015
+      ]
+    },
+    "chemistry": {
+      "silverRetention": 0,
+      "fog": 0.003,
+      "flare": 0.025,
+      "localContrast": 0.01
+    },
+    "optics": {
+      "halation": 0.06,
+      "halationRadius": 10,
+      "halationThreshold": 0.91
+    },
+    "output": {
+      "tint": [
+        1.02,
+        1,
+        0.975
+      ],
+      "scanContrast": 0.9
+    },
+    "grain": {
+      "meanRadius": 1.336,
+      "radiusVariance": 0.68,
+      "shadowBias": 0.55,
+      "chroma": 0.028
+    }
+  },
+  "dossier": {
+    "version": 1,
+    "reference": {
+      "stock": "Polacolor 669",
+      "manufacturer": "Polaroid",
+      "relationship": "Independent interpretive emulation; researched, not measured",
+      "status": "discontinued"
+    },
+    "tagline": "Soft low-contrast color, warm skin, cool whites, and creamy instant diffusion.",
+    "portrait": "Polacolor 669 is modeled around soft low-contrast color, warm skin, cool whites, and creamy instant diffusion. The peel-apart packfilm became a professional proofing tool and an artwork in its own right through transfers, lifts, and unique positives. Grainlab treats that identity as a linked capture, emulsion, process, and output system—not as a color cast pasted over a digital file.",
+    "facts": [
+      {
+        "label": "CANON RANK",
+        "value": "099 / 100",
+        "note": "Curatorial significance rank; not a sales chart"
+      },
+      {
+        "label": "INTRODUCED",
+        "value": "1981",
+        "note": "United States"
+      },
+      {
+        "label": "SPEED / EI",
+        "value": "80",
+        "note": "daylight"
+      },
+      {
+        "label": "PROCESS",
+        "value": "peel-apart instant",
+        "note": "PRINT"
+      },
+      {
+        "label": "IMAGE",
+        "value": "Instant positive dyes / silver",
+        "note": "coarse apparent structure"
+      },
+      {
+        "label": "CRYSTAL MODEL",
+        "value": "cubic",
+        "note": "multilayer architecture mapping"
+      },
+      {
+        "label": "SOURCE START",
+        "value": "Neutral SDR",
+        "note": "DSLR / iPhone normalization"
+      },
+      {
+        "label": "PROFILE",
+        "value": "Interpretive v1",
+        "note": "No manufacturer endorsement"
+      }
+    ],
+    "palette": [
+      {
+        "name": "skin light",
+        "hex": "#d6a47f"
+      },
+      {
+        "name": "amber",
+        "hex": "#ad7548"
+      },
+      {
+        "name": "sage",
+        "hex": "#66705d"
+      },
+      {
+        "name": "shadow",
+        "hex": "#26343b"
+      }
+    ],
+    "chapters": [
+      {
+        "eyebrow": "MATERIAL / HISTORY",
+        "title": "Why Polacolor 669 belongs in the century canon",
+        "lede": "The peel-apart packfilm became a professional proofing tool and an artwork in its own right through transfers, lifts, and unique positives.",
+        "details": [
+          {
+            "label": "Origin",
+            "value": "United States; introduced 1981."
+          },
+          {
+            "label": "Material",
+            "value": "peel-apart instant; daylight; nominal speed / EI reference 80."
+          },
+          {
+            "label": "Image structure",
+            "value": "cubic crystal interpretation, multilayer emulsion mapping, coarse presentation-scale grain."
+          },
+          {
+            "label": "Status",
+            "value": "discontinued"
+          }
+        ],
+        "notes": [
+          "The canon balances cultural use, technical influence, geographic/manufacturer breadth, process diversity, and surviving documentation; rank is curatorial rather than a claimed global sales measurement."
+        ]
+      },
+      {
+        "eyebrow": "VISUAL TARGET",
+        "title": "Tone, color, and material signature",
+        "lede": "The target is soft low-contrast color, warm skin, cool whites, and creamy instant diffusion.",
+        "details": [
+          {
+            "label": "Curve",
+            "value": "Toe 0.20 · development gamma 0.90 · shoulder 0.40 · scan contrast .90."
+          },
+          {
+            "label": "Color / spectral posture",
+            "value": "warm channel sensitivity and density-dependent crossover; daylight reference balance."
+          },
+          {
+            "label": "Grain",
+            "value": "coarse correlated dye-cloud density variation; cubic geometry; multilayer architecture."
+          },
+          {
+            "label": "Halation",
+            "value": "6% thresholded scene-highlight scatter before the film curve; intentionally stock/process dependent."
+          }
+        ],
+        "notes": [
+          "Grain is signal-dependent and spatially correlated across the full frame; it is not independent RGB noise or a repeating overlay."
+        ]
+      },
+      {
+        "eyebrow": "DIGITAL START",
+        "title": "From DSLR or iPhone to a plausible negative",
+        "lede": "Begin from a neutral SDR image, then accept lower resolution and local color variation as part of the instant positive rather than adding generic blur over a finished grade.",
+        "details": [
+          {
+            "label": "Input normalization",
+            "value": "Prefer RAW developed neutrally when available. For HEIC/JPEG, choose the least processed rendition; avoid baked Vivid styles, portrait relighting, clarity, and denoise."
+          },
+          {
+            "label": "Dynamic range",
+            "value": "Map HDR/Display-P3 into a stable SDR working image without clipping, preserving highlight and shadow separation before the film response."
+          },
+          {
+            "label": "White balance",
+            "value": "Neutralize obvious camera casts first, then let the daylight stock balance and emulsion sensitivity create the intended response."
+          },
+          {
+            "label": "Hard limit",
+            "value": "A rendered DSLR/iPhone file already contains sensor spectral response, computational tone mapping, demosaic, white balance, and gamut decisions; this profile cannot reverse information those stages discarded."
+          }
+        ],
+        "notes": [
+          "Apple ProRAW and camera RAW still need a deliberate neutral development; RAW is not automatically scene-linear or aesthetically neutral after a converter renders it."
+        ]
+      },
+      {
+        "eyebrow": "EMULATION RECIPE",
+        "title": "A stage-by-stage rendering target",
+        "lede": "sRGB decode → +0.00 EV scene placement → 1.020/1.000/0.970 channel sensitivity → toe 0.20, γ 0.90, shoulder 0.40 → peel-apart instant chemistry → 6% thresholded halation → coarse dye-cloud structure",
+        "details": [
+          {
+            "label": "Scene",
+            "value": "Decode to linear light, apply +0.00 EV and the stock sensitivity before tone shaping."
+          },
+          {
+            "label": "Emulsion",
+            "value": "Build the toe, midtone gamma, shoulder, crossover, saturation compression, and correlated image structure as one response."
+          },
+          {
+            "label": "Lab / optics",
+            "value": "Model peel-apart instant, chemical fog, local density contrast, and highlight scatter before the output transform."
+          },
+          {
+            "label": "Scan / print",
+            "value": "Preserve local instant-material softness, edge behavior, and lower contrast; do not confuse age damage with the fresh stock target."
+          }
+        ],
+        "notes": [
+          "All parameters are bounded artistic approximations derived from published characteristics and process knowledge, not digitized manufacturer sensitometric or spectral measurements."
+        ]
+      }
+    ],
+    "bestFor": [
+      "Subjects that benefit from soft low-contrast color, warm skin, cool whites, and creamy instant diffusion.",
+      "Scenes whose palette and contrast align with the stock rather than fighting it."
+    ],
+    "watchFor": [
+      "A rendered DSLR/iPhone file already contains sensor spectral response, computational tone mapping, demosaic, white balance, and gamut decisions; this profile cannot reverse information those stages discarded.",
+      "Stacking a strong camera picture style, computational HDR, or sharpening underneath the emulation.",
+      "Judging grain at 200% instead of at 100% and intended output size."
+    ],
+    "fieldNotes": [
+      "Expose for the material idea: soft low-contrast color, warm skin, cool whites, and creamy instant diffusion.",
+      "Try the profile on neutral daylight, mixed light, skin, foliage, and a flat wall before deciding what its name means."
+    ],
+    "sources": [
+      {
+        "title": "Polaroid corporate history",
+        "publisher": "Polaroid",
+        "url": "https://press.polaroid.com/en/about/"
+      },
+      {
+        "title": "Polaroid Corporation archive finding aid",
+        "publisher": "Harvard University Archives",
+        "url": "https://hollisarchives.lib.harvard.edu/download_collection_pdf/bak01604.pdf"
+      }
+    ],
+    "verified": "2026-07-16",
+    "disclaimer": "Polacolor 669 is an independent Grainlab artistic emulation informed by cited public literature and historical material. It is not endorsed by Polaroid, is not a measured ICC/LUT profile, and cannot reproduce a specific batch, lens, exposure, chemistry, printer, scanner, paper, aging state, or wavelengths absent from the digital source."
+  }
+}

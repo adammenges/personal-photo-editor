@@ -50,22 +50,11 @@ This is still an artistic emulator rather than a measured color-science product.
 
 ## Film library
 
-The bundled library contains twelve editable interpretations. These are independent Grainlab profiles, not manufacturer-supplied LUTs or measured claims of exact reproduction.
+The bundled library combines a researched **Century 100** canon with ten Grainlab house/process profiles. The canon spans 45 monochrome and 55 color materials from the United States, Japan, the United Kingdom, Germany, Belgium, the Czech Republic, Italy, Austria, Ukraine/former USSR, and China. Its process coverage is 43 silver B&W, 25 C-41/chromogenic, 16 reversal, 14 ECN-2 cinema-negative, and two instant materials.
 
-| Stock | Family | Image structure | Intent |
-|---|---|---|---|
-| Clean Scan | Utility | Neutral base | Minimal processing and no added stock grain |
-| Contact Proof | Print | Fine cubic silver | Restrained proof-sheet response |
-| Chrome 64 | E-6 | Fine dye image | Crisp reversal color and a firmer tonal scale |
-| Portrait 400 | C-41 | Mixed tabular dye clouds | Wide shoulder, gentle skin color, forgiving negative response |
-| Vivid 100 | C-41 | Fine tabular dye clouds | Saturated daylight color with tight grain |
-| Soft Chrome | E-6 | Fine tabular dye image | Softer reversal contrast and calm color separation |
-| Cinema 500T | ECN-2 | Core-shell tabular dye clouds | Tungsten-balanced motion-picture latitude and smooth grain |
-| Bleach Bypass | ECN-2 variant | Retained silver over dye | Lower saturation, higher density contrast, metallic texture |
-| Night Process | Pushed ECN-2 | Coarser mixed dye image | Underexposed shadows, cool crossover, enlarged grain clumps |
-| Tri-X 400 | B&W | Cubic metallic silver | Crisp, characterful medium-speed silver grain |
-| Delta 100 | B&W | Engineered Delta silver | Fine, uniform monochrome structure |
-| Infrared 400 | B&W interpretation | Fine cubic silver | High-separation false-infrared-inspired monochrome response |
+The word “top” is deliberately curatorial, not a fabricated worldwide sales ranking. Selection weighs historical and cultural use, technical influence, geographic and manufacturer breadth, process diversity, continued relevance, and the quality of surviving primary or authoritative documentation. The stable `century-100-v1` ranks make the selection reviewable and testable.
+
+Every canon profile includes a neutral DSLR/iPhone starting posture, a stage-by-stage emulation recipe, curve and image-structure parameters, scan/lab guidance, known limits, and source citations. The ten unranked house profiles remain useful for Clean Scan, contact-proof, generic process, infrared, and creative starting points.
 
 Every library entry includes a searchable technical dossier with:
 
@@ -76,6 +65,8 @@ Every library entry includes a searchable technical dossier with:
 - primary-source technical references and a verification date.
 
 Press `I` or click the information button beside a stock to open its dossier.
+
+See [Century 100 research and methodology](docs/film-stock-century-canon.md) for the complete selection, coverage, input assumptions, and interpretation rules.
 
 ## Processing model
 

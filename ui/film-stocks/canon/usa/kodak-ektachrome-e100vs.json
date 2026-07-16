@@ -1,0 +1,290 @@
+{
+  "id": "kodak-ektachrome-e100vs",
+  "name": "EKTACHROME E100VS",
+  "maker": "Kodak",
+  "type": "color",
+  "group": "CENTURY CANON / KODAK",
+  "sort": 228,
+  "catalog": {
+    "edition": "century-100-v1",
+    "rank": 28,
+    "introduced": "1999",
+    "origin": "United States",
+    "rationale": "The VS variant was chosen when the slide itself needed to deliver a finished, high-impact color statement."
+  },
+  "settings": {
+    "exposure": -0.03,
+    "contrast": 18,
+    "saturation": 24,
+    "temperature": 0,
+    "fade": 1,
+    "grain": 8
+  },
+  "grainProfile": {
+    "medium": "dye",
+    "crystal": "tabular",
+    "emulsion": "mixed",
+    "scale": "fine",
+    "process": "standard"
+  },
+  "pipeline": {
+    "version": 1,
+    "family": "e6",
+    "monochrome": false,
+    "scene": {
+      "sensitivity": [
+        1.04,
+        0.98,
+        1.03
+      ],
+      "flash": 0
+    },
+    "curve": {
+      "toe": 0.06,
+      "shoulder": 0.16,
+      "gamma": 1.16,
+      "saturationCompression": 0.04
+    },
+    "crossover": {
+      "shadows": [
+        -0.008,
+        0.002,
+        0.012
+      ],
+      "highlights": [
+        0.018,
+        -0.004,
+        -0.008
+      ]
+    },
+    "chemistry": {
+      "silverRetention": 0,
+      "fog": 0.003,
+      "flare": 0.005,
+      "localContrast": 0.07
+    },
+    "optics": {
+      "halation": 0.02,
+      "halationRadius": 4.5,
+      "halationThreshold": 0.91
+    },
+    "output": {
+      "tint": [
+        1.01,
+        1,
+        1
+      ],
+      "scanContrast": 1.06
+    },
+    "grain": {
+      "meanRadius": 0.58,
+      "radiusVariance": 0.26,
+      "shadowBias": 0.35,
+      "chroma": 0.034
+    }
+  },
+  "dossier": {
+    "version": 1,
+    "reference": {
+      "stock": "EKTACHROME E100VS",
+      "manufacturer": "Kodak",
+      "relationship": "Independent interpretive emulation; researched, not measured",
+      "status": "discontinued"
+    },
+    "tagline": "Dense saturation, emphatic reds and blues, and crisp commercial contrast.",
+    "portrait": "EKTACHROME E100VS is modeled around dense saturation, emphatic reds and blues, and crisp commercial contrast. The VS variant was chosen when the slide itself needed to deliver a finished, high-impact color statement. Grainlab treats that identity as a linked capture, emulsion, process, and output system—not as a color cast pasted over a digital file.",
+    "facts": [
+      {
+        "label": "CANON RANK",
+        "value": "028 / 100",
+        "note": "Curatorial significance rank; not a sales chart"
+      },
+      {
+        "label": "INTRODUCED",
+        "value": "1999",
+        "note": "United States"
+      },
+      {
+        "label": "SPEED / EI",
+        "value": "100",
+        "note": "daylight"
+      },
+      {
+        "label": "PROCESS",
+        "value": "E-6 color reversal",
+        "note": "E6"
+      },
+      {
+        "label": "IMAGE",
+        "value": "CMY dye image",
+        "note": "fine apparent structure"
+      },
+      {
+        "label": "CRYSTAL MODEL",
+        "value": "tabular",
+        "note": "mixed architecture mapping"
+      },
+      {
+        "label": "SOURCE START",
+        "value": "Neutral SDR",
+        "note": "DSLR / iPhone normalization"
+      },
+      {
+        "label": "PROFILE",
+        "value": "Interpretive v1",
+        "note": "No manufacturer endorsement"
+      }
+    ],
+    "palette": [
+      {
+        "name": "signal red",
+        "hex": "#c54135"
+      },
+      {
+        "name": "chrome blue",
+        "hex": "#286f9f"
+      },
+      {
+        "name": "leaf",
+        "hex": "#47743e"
+      },
+      {
+        "name": "black",
+        "hex": "#111417"
+      }
+    ],
+    "chapters": [
+      {
+        "eyebrow": "MATERIAL / HISTORY",
+        "title": "Why EKTACHROME E100VS belongs in the century canon",
+        "lede": "The VS variant was chosen when the slide itself needed to deliver a finished, high-impact color statement.",
+        "details": [
+          {
+            "label": "Origin",
+            "value": "United States; introduced 1999."
+          },
+          {
+            "label": "Material",
+            "value": "E-6 color reversal; daylight; nominal speed / EI reference 100."
+          },
+          {
+            "label": "Image structure",
+            "value": "tabular crystal interpretation, mixed emulsion mapping, fine presentation-scale grain."
+          },
+          {
+            "label": "Status",
+            "value": "discontinued"
+          }
+        ],
+        "notes": [
+          "The canon balances cultural use, technical influence, geographic/manufacturer breadth, process diversity, and surviving documentation; rank is curatorial rather than a claimed global sales measurement."
+        ]
+      },
+      {
+        "eyebrow": "VISUAL TARGET",
+        "title": "Tone, color, and material signature",
+        "lede": "The target is dense saturation, emphatic reds and blues, and crisp commercial contrast.",
+        "details": [
+          {
+            "label": "Curve",
+            "value": "Toe 0.06 · development gamma 1.16 · shoulder 0.16 · scan contrast 1.06."
+          },
+          {
+            "label": "Color / spectral posture",
+            "value": "vivid channel sensitivity and density-dependent crossover; daylight reference balance."
+          },
+          {
+            "label": "Grain",
+            "value": "fine correlated dye-cloud density variation; tabular geometry; mixed architecture."
+          },
+          {
+            "label": "Halation",
+            "value": "2% thresholded scene-highlight scatter before the film curve; intentionally stock/process dependent."
+          }
+        ],
+        "notes": [
+          "Grain is signal-dependent and spatially correlated across the full frame; it is not independent RGB noise or a repeating overlay."
+        ]
+      },
+      {
+        "eyebrow": "DIGITAL START",
+        "title": "From DSLR or iPhone to a plausible negative",
+        "lede": "Begin from a neutral SDR rendering, reduce phone HDR/local tone mapping, and protect both ends: this reversal target has less forgiving toe and shoulder room than a negative.",
+        "details": [
+          {
+            "label": "Input normalization",
+            "value": "Prefer RAW developed neutrally when available. For HEIC/JPEG, choose the least processed rendition; avoid baked Vivid styles, portrait relighting, clarity, and denoise."
+          },
+          {
+            "label": "Dynamic range",
+            "value": "Compress computational HDR gently before emulation, then place exposure precisely; do not ask the reversal curve to rescue clipped source channels."
+          },
+          {
+            "label": "White balance",
+            "value": "Neutralize obvious camera casts first, then let the daylight stock balance and emulsion sensitivity create the intended response."
+          },
+          {
+            "label": "Hard limit",
+            "value": "A rendered DSLR/iPhone file already contains sensor spectral response, computational tone mapping, demosaic, white balance, and gamut decisions; this profile cannot reverse information those stages discarded."
+          }
+        ],
+        "notes": [
+          "Apple ProRAW and camera RAW still need a deliberate neutral development; RAW is not automatically scene-linear or aesthetically neutral after a converter renders it."
+        ]
+      },
+      {
+        "eyebrow": "EMULATION RECIPE",
+        "title": "A stage-by-stage rendering target",
+        "lede": "sRGB decode → -0.03 EV scene placement → 1.040/0.980/1.030 channel sensitivity → toe 0.06, γ 1.16, shoulder 0.16 → E-6 color reversal chemistry → 2% thresholded halation → fine dye-cloud structure",
+        "details": [
+          {
+            "label": "Scene",
+            "value": "Decode to linear light, apply -0.03 EV and the stock sensitivity before tone shaping."
+          },
+          {
+            "label": "Emulsion",
+            "value": "Build the toe, midtone gamma, shoulder, crossover, saturation compression, and correlated image structure as one response."
+          },
+          {
+            "label": "Lab / optics",
+            "value": "Model E-6 color reversal, chemical fog, local density contrast, and highlight scatter before the output transform."
+          },
+          {
+            "label": "Scan / print",
+            "value": "Preserve the direct positive's black density and limited latitude; scan without flattening it into a negative-like file."
+          }
+        ],
+        "notes": [
+          "All parameters are bounded artistic approximations derived from published characteristics and process knowledge, not digitized manufacturer sensitometric or spectral measurements."
+        ]
+      }
+    ],
+    "bestFor": [
+      "Subjects that benefit from dense saturation, emphatic reds and blues, and crisp commercial contrast.",
+      "Scenes whose palette and contrast align with the stock rather than fighting it."
+    ],
+    "watchFor": [
+      "A rendered DSLR/iPhone file already contains sensor spectral response, computational tone mapping, demosaic, white balance, and gamut decisions; this profile cannot reverse information those stages discarded.",
+      "Stacking a strong camera picture style, computational HDR, or sharpening underneath the emulation.",
+      "Treating reversal latitude like a forgiving color negative; clipped channels cannot be recovered."
+    ],
+    "fieldNotes": [
+      "Expose for the material idea: dense saturation, emphatic reds and blues, and crisp commercial contrast.",
+      "Try the profile on neutral daylight, mixed light, skin, foliage, and a flat wall before deciding what its name means."
+    ],
+    "sources": [
+      {
+        "title": "KODAK PROFESSIONAL film technical publications",
+        "publisher": "Kodak Alaris",
+        "url": "https://kodakprofessional.com/photographers/resources"
+      },
+      {
+        "title": "KODAK PROFESSIONAL Films brochure",
+        "publisher": "Kodak Alaris",
+        "url": "https://www.kodakprofessional.com/sites/default/files/wysiwyg/film/KODAKPROFESSIONAL_Film_Brochure2018.pdf"
+      }
+    ],
+    "verified": "2026-07-16",
+    "disclaimer": "EKTACHROME E100VS is an independent Grainlab artistic emulation informed by cited public literature and historical material. It is not endorsed by Kodak, is not a measured ICC/LUT profile, and cannot reproduce a specific batch, lens, exposure, chemistry, printer, scanner, paper, aging state, or wavelengths absent from the digital source."
+  }
+}

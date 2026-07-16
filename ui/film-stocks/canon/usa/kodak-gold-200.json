@@ -1,0 +1,290 @@
+{
+  "id": "kodak-gold-200",
+  "name": "GOLD 200",
+  "maker": "Kodak",
+  "type": "color",
+  "group": "CENTURY CANON / KODAK",
+  "sort": 217,
+  "catalog": {
+    "edition": "century-100-v1",
+    "rank": 17,
+    "introduced": "1986",
+    "origin": "United States",
+    "rationale": "Mass-market availability made its warm family-photo color one of the world's most recognizable negative-film signatures."
+  },
+  "settings": {
+    "exposure": 0,
+    "contrast": 5,
+    "saturation": 8,
+    "temperature": 5,
+    "fade": 1,
+    "grain": 13
+  },
+  "grainProfile": {
+    "medium": "dye",
+    "crystal": "tabular",
+    "emulsion": "mixed",
+    "scale": "medium",
+    "process": "standard"
+  },
+  "pipeline": {
+    "version": 1,
+    "family": "c41",
+    "monochrome": false,
+    "scene": {
+      "sensitivity": [
+        1.04,
+        1,
+        0.95
+      ],
+      "flash": 0
+    },
+    "curve": {
+      "toe": 0.13,
+      "shoulder": 0.36,
+      "gamma": 1.02,
+      "saturationCompression": 0.15
+    },
+    "crossover": {
+      "shadows": [
+        0.012,
+        0.003,
+        -0.015
+      ],
+      "highlights": [
+        0.02,
+        0.008,
+        -0.025
+      ]
+    },
+    "chemistry": {
+      "silverRetention": 0,
+      "fog": 0.003,
+      "flare": 0.005,
+      "localContrast": 0.04
+    },
+    "optics": {
+      "halation": 0.045,
+      "halationRadius": 4.5,
+      "halationThreshold": 0.91
+    },
+    "output": {
+      "tint": [
+        1.035,
+        1,
+        0.96
+      ],
+      "scanContrast": 1
+    },
+    "grain": {
+      "meanRadius": 0.965,
+      "radiusVariance": 0.46,
+      "shadowBias": 0.55,
+      "chroma": 0.045
+    }
+  },
+  "dossier": {
+    "version": 1,
+    "reference": {
+      "stock": "GOLD 200",
+      "manufacturer": "Kodak",
+      "relationship": "Independent interpretive emulation; researched, not measured",
+      "status": "current"
+    },
+    "tagline": "Sunny warmth, bright blues, friendly reds, and visible nostalgic texture.",
+    "portrait": "GOLD 200 is modeled around sunny warmth, bright blues, friendly reds, and visible nostalgic texture. Mass-market availability made its warm family-photo color one of the world's most recognizable negative-film signatures. Grainlab treats that identity as a linked capture, emulsion, process, and output system—not as a color cast pasted over a digital file.",
+    "facts": [
+      {
+        "label": "CANON RANK",
+        "value": "017 / 100",
+        "note": "Curatorial significance rank; not a sales chart"
+      },
+      {
+        "label": "INTRODUCED",
+        "value": "1986",
+        "note": "United States"
+      },
+      {
+        "label": "SPEED / EI",
+        "value": "200",
+        "note": "daylight"
+      },
+      {
+        "label": "PROCESS",
+        "value": "C-41 color negative",
+        "note": "C41"
+      },
+      {
+        "label": "IMAGE",
+        "value": "CMY dye image",
+        "note": "medium apparent structure"
+      },
+      {
+        "label": "CRYSTAL MODEL",
+        "value": "tabular",
+        "note": "mixed architecture mapping"
+      },
+      {
+        "label": "SOURCE START",
+        "value": "Neutral SDR",
+        "note": "DSLR / iPhone normalization"
+      },
+      {
+        "label": "PROFILE",
+        "value": "Interpretive v1",
+        "note": "No manufacturer endorsement"
+      }
+    ],
+    "palette": [
+      {
+        "name": "sun gold",
+        "hex": "#d5a24b"
+      },
+      {
+        "name": "memory red",
+        "hex": "#ae4d3c"
+      },
+      {
+        "name": "pool blue",
+        "hex": "#3f7790"
+      },
+      {
+        "name": "brown black",
+        "hex": "#29221d"
+      }
+    ],
+    "chapters": [
+      {
+        "eyebrow": "MATERIAL / HISTORY",
+        "title": "Why GOLD 200 belongs in the century canon",
+        "lede": "Mass-market availability made its warm family-photo color one of the world's most recognizable negative-film signatures.",
+        "details": [
+          {
+            "label": "Origin",
+            "value": "United States; introduced 1986."
+          },
+          {
+            "label": "Material",
+            "value": "C-41 color negative; daylight; nominal speed / EI reference 200."
+          },
+          {
+            "label": "Image structure",
+            "value": "tabular crystal interpretation, mixed emulsion mapping, medium presentation-scale grain."
+          },
+          {
+            "label": "Status",
+            "value": "current"
+          }
+        ],
+        "notes": [
+          "The canon balances cultural use, technical influence, geographic/manufacturer breadth, process diversity, and surviving documentation; rank is curatorial rather than a claimed global sales measurement."
+        ]
+      },
+      {
+        "eyebrow": "VISUAL TARGET",
+        "title": "Tone, color, and material signature",
+        "lede": "The target is sunny warmth, bright blues, friendly reds, and visible nostalgic texture.",
+        "details": [
+          {
+            "label": "Curve",
+            "value": "Toe 0.13 · development gamma 1.02 · shoulder 0.36 · scan contrast 1.00."
+          },
+          {
+            "label": "Color / spectral posture",
+            "value": "gold channel sensitivity and density-dependent crossover; daylight reference balance."
+          },
+          {
+            "label": "Grain",
+            "value": "medium correlated dye-cloud density variation; tabular geometry; mixed architecture."
+          },
+          {
+            "label": "Halation",
+            "value": "5% thresholded scene-highlight scatter before the film curve; intentionally stock/process dependent."
+          }
+        ],
+        "notes": [
+          "Grain is signal-dependent and spatially correlated across the full frame; it is not independent RGB noise or a repeating overlay."
+        ]
+      },
+      {
+        "eyebrow": "DIGITAL START",
+        "title": "From DSLR or iPhone to a plausible negative",
+        "lede": "Begin from a neutral SDR rendering. Disable or minimize phone HDR, vivid styles, skin smoothing, and sharpening; preserve channel detail before the negative curve and dye-layer crossover are applied.",
+        "details": [
+          {
+            "label": "Input normalization",
+            "value": "Prefer RAW developed neutrally when available. For HEIC/JPEG, choose the least processed rendition; avoid baked Vivid styles, portrait relighting, clarity, and denoise."
+          },
+          {
+            "label": "Dynamic range",
+            "value": "Map HDR/Display-P3 into a stable SDR working image without clipping, preserving highlight and shadow separation before the film response."
+          },
+          {
+            "label": "White balance",
+            "value": "Neutralize obvious camera casts first, then let the daylight stock balance and emulsion sensitivity create the intended response."
+          },
+          {
+            "label": "Hard limit",
+            "value": "A rendered DSLR/iPhone file already contains sensor spectral response, computational tone mapping, demosaic, white balance, and gamut decisions; this profile cannot reverse information those stages discarded."
+          }
+        ],
+        "notes": [
+          "Apple ProRAW and camera RAW still need a deliberate neutral development; RAW is not automatically scene-linear or aesthetically neutral after a converter renders it."
+        ]
+      },
+      {
+        "eyebrow": "EMULATION RECIPE",
+        "title": "A stage-by-stage rendering target",
+        "lede": "sRGB decode → +0.00 EV scene placement → 1.040/1.000/0.950 channel sensitivity → toe 0.13, γ 1.02, shoulder 0.36 → C-41 color negative chemistry → 5% thresholded halation → medium dye-cloud structure",
+        "details": [
+          {
+            "label": "Scene",
+            "value": "Decode to linear light, apply +0.00 EV and the stock sensitivity before tone shaping."
+          },
+          {
+            "label": "Emulsion",
+            "value": "Build the toe, midtone gamma, shoulder, crossover, saturation compression, and correlated image structure as one response."
+          },
+          {
+            "label": "Lab / optics",
+            "value": "Model C-41 color negative, chemical fog, local density contrast, and highlight scatter before the output transform."
+          },
+          {
+            "label": "Scan / print",
+            "value": "Use a neutral scan baseline, set black and white points after the film curve, and sharpen subject detail at final output size."
+          }
+        ],
+        "notes": [
+          "All parameters are bounded artistic approximations derived from published characteristics and process knowledge, not digitized manufacturer sensitometric or spectral measurements."
+        ]
+      }
+    ],
+    "bestFor": [
+      "Subjects that benefit from sunny warmth, bright blues, friendly reds, and visible nostalgic texture.",
+      "Scenes whose palette and contrast align with the stock rather than fighting it."
+    ],
+    "watchFor": [
+      "A rendered DSLR/iPhone file already contains sensor spectral response, computational tone mapping, demosaic, white balance, and gamut decisions; this profile cannot reverse information those stages discarded.",
+      "Stacking a strong camera picture style, computational HDR, or sharpening underneath the emulation.",
+      "Judging grain at 200% instead of at 100% and intended output size."
+    ],
+    "fieldNotes": [
+      "Expose for the material idea: sunny warmth, bright blues, friendly reds, and visible nostalgic texture.",
+      "Try the profile on neutral daylight, mixed light, skin, foliage, and a flat wall before deciding what its name means."
+    ],
+    "sources": [
+      {
+        "title": "KODAK PROFESSIONAL film technical publications",
+        "publisher": "Kodak Alaris",
+        "url": "https://kodakprofessional.com/photographers/resources"
+      },
+      {
+        "title": "KODAK PROFESSIONAL Films brochure",
+        "publisher": "Kodak Alaris",
+        "url": "https://www.kodakprofessional.com/sites/default/files/wysiwyg/film/KODAKPROFESSIONAL_Film_Brochure2018.pdf"
+      }
+    ],
+    "verified": "2026-07-16",
+    "disclaimer": "GOLD 200 is an independent Grainlab artistic emulation informed by cited public literature and historical material. It is not endorsed by Kodak, is not a measured ICC/LUT profile, and cannot reproduce a specific batch, lens, exposure, chemistry, printer, scanner, paper, aging state, or wavelengths absent from the digital source."
+  }
+}

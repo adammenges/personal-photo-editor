@@ -1,0 +1,290 @@
+{
+  "id": "rollei-retro-80s",
+  "name": "Retro 80S",
+  "maker": "Rollei",
+  "type": "mono",
+  "group": "CENTURY CANON / ROLLEI",
+  "sort": 289,
+  "catalog": {
+    "edition": "century-100-v1",
+    "rank": 89,
+    "introduced": "2000s",
+    "origin": "Germany",
+    "rationale": "Its aerial-film ancestry and transparent polyester base support both negative and reversal interpretations."
+  },
+  "settings": {
+    "exposure": 0,
+    "contrast": 25,
+    "saturation": -100,
+    "temperature": 0,
+    "fade": 0,
+    "grain": 8
+  },
+  "grainProfile": {
+    "medium": "silver",
+    "crystal": "cubic",
+    "emulsion": "uniform",
+    "scale": "fine",
+    "process": "standard"
+  },
+  "pipeline": {
+    "version": 1,
+    "family": "bw",
+    "monochrome": true,
+    "scene": {
+      "sensitivity": [
+        0.29,
+        0.61,
+        0.1
+      ],
+      "flash": 0
+    },
+    "curve": {
+      "toe": 0.08,
+      "shoulder": 0.24,
+      "gamma": 1.16,
+      "saturationCompression": 0
+    },
+    "crossover": {
+      "shadows": [
+        0,
+        0,
+        0
+      ],
+      "highlights": [
+        0,
+        0,
+        0
+      ]
+    },
+    "chemistry": {
+      "silverRetention": 0,
+      "fog": 0.003,
+      "flare": 0.005,
+      "localContrast": 0.11
+    },
+    "optics": {
+      "halation": 0.018,
+      "halationRadius": 4.5,
+      "halationThreshold": 0.91
+    },
+    "output": {
+      "tint": [
+        1,
+        1,
+        1
+      ],
+      "scanContrast": 1
+    },
+    "grain": {
+      "meanRadius": 0.566,
+      "radiusVariance": 0.26,
+      "shadowBias": 0.55,
+      "chroma": 0
+    }
+  },
+  "dossier": {
+    "version": 1,
+    "reference": {
+      "stock": "Retro 80S",
+      "manufacturer": "Rollei",
+      "relationship": "Independent interpretive emulation; researched, not measured",
+      "status": "current"
+    },
+    "tagline": "Extreme sharpness, extended-red separation, and a clear-base modern snap.",
+    "portrait": "Retro 80S is modeled around extreme sharpness, extended-red separation, and a clear-base modern snap. Its aerial-film ancestry and transparent polyester base support both negative and reversal interpretations. Grainlab treats that identity as a linked capture, emulsion, process, and output system—not as a color cast pasted over a digital file.",
+    "facts": [
+      {
+        "label": "CANON RANK",
+        "value": "089 / 100",
+        "note": "Curatorial significance rank; not a sales chart"
+      },
+      {
+        "label": "INTRODUCED",
+        "value": "2000s",
+        "note": "Germany"
+      },
+      {
+        "label": "SPEED / EI",
+        "value": "80",
+        "note": "superpanchromatic"
+      },
+      {
+        "label": "PROCESS",
+        "value": "B&W negative",
+        "note": "BW"
+      },
+      {
+        "label": "IMAGE",
+        "value": "Metallic silver",
+        "note": "fine apparent structure"
+      },
+      {
+        "label": "CRYSTAL MODEL",
+        "value": "cubic",
+        "note": "uniform architecture mapping"
+      },
+      {
+        "label": "SOURCE START",
+        "value": "Neutral SDR",
+        "note": "DSLR / iPhone normalization"
+      },
+      {
+        "label": "PROFILE",
+        "value": "Interpretive v1",
+        "note": "No manufacturer endorsement"
+      }
+    ],
+    "palette": [
+      {
+        "name": "paper",
+        "hex": "#ddd9cd"
+      },
+      {
+        "name": "middle gray",
+        "hex": "#8b8982"
+      },
+      {
+        "name": "charcoal",
+        "hex": "#393a37"
+      },
+      {
+        "name": "silver black",
+        "hex": "#0d0f0e"
+      }
+    ],
+    "chapters": [
+      {
+        "eyebrow": "MATERIAL / HISTORY",
+        "title": "Why Retro 80S belongs in the century canon",
+        "lede": "Its aerial-film ancestry and transparent polyester base support both negative and reversal interpretations.",
+        "details": [
+          {
+            "label": "Origin",
+            "value": "Germany; introduced 2000s."
+          },
+          {
+            "label": "Material",
+            "value": "B&W negative; superpanchromatic; nominal speed / EI reference 80."
+          },
+          {
+            "label": "Image structure",
+            "value": "cubic crystal interpretation, uniform emulsion mapping, fine presentation-scale grain."
+          },
+          {
+            "label": "Status",
+            "value": "current"
+          }
+        ],
+        "notes": [
+          "The canon balances cultural use, technical influence, geographic/manufacturer breadth, process diversity, and surviving documentation; rank is curatorial rather than a claimed global sales measurement."
+        ]
+      },
+      {
+        "eyebrow": "VISUAL TARGET",
+        "title": "Tone, color, and material signature",
+        "lede": "The target is extreme sharpness, extended-red separation, and a clear-base modern snap.",
+        "details": [
+          {
+            "label": "Curve",
+            "value": "Toe 0.08 · development gamma 1.16 · shoulder 0.24 · scan contrast 1.00."
+          },
+          {
+            "label": "Color / spectral posture",
+            "value": "Monochrome conversion uses superpanchromatic weighting before the film curve."
+          },
+          {
+            "label": "Grain",
+            "value": "fine metallic-silver clumps; cubic geometry; uniform architecture."
+          },
+          {
+            "label": "Halation",
+            "value": "2% thresholded scene-highlight scatter before the film curve; intentionally stock/process dependent."
+          }
+        ],
+        "notes": [
+          "Grain is signal-dependent and spatially correlated across the full frame; it is not independent RGB noise or a repeating overlay."
+        ]
+      },
+      {
+        "eyebrow": "DIGITAL START",
+        "title": "From DSLR or iPhone to a plausible negative",
+        "lede": "Begin from a neutral SDR rendering with restrained sharpening and noise reduction. Convert through the stated spectral weights before the silver curve; do not desaturate a contrasty RGB image and call it film.",
+        "details": [
+          {
+            "label": "Input normalization",
+            "value": "Prefer RAW developed neutrally when available. For HEIC/JPEG, choose the least processed rendition; avoid baked Vivid styles, portrait relighting, clarity, and denoise."
+          },
+          {
+            "label": "Dynamic range",
+            "value": "Map HDR/Display-P3 into a stable SDR working image without clipping, preserving highlight and shadow separation before the film response."
+          },
+          {
+            "label": "White balance",
+            "value": "Neutralize obvious camera casts first, then let the superpanchromatic stock balance and emulsion sensitivity create the intended response."
+          },
+          {
+            "label": "Hard limit",
+            "value": "A rendered DSLR/iPhone file already contains sensor spectral response, computational tone mapping, demosaic, white balance, and gamut decisions; this profile cannot reverse information those stages discarded."
+          }
+        ],
+        "notes": [
+          "Apple ProRAW and camera RAW still need a deliberate neutral development; RAW is not automatically scene-linear or aesthetically neutral after a converter renders it."
+        ]
+      },
+      {
+        "eyebrow": "EMULATION RECIPE",
+        "title": "A stage-by-stage rendering target",
+        "lede": "sRGB decode → +0.00 EV scene placement → 1.150/0.960/0.820 channel sensitivity → toe 0.08, γ 1.16, shoulder 0.24 → B&W negative chemistry → 2% thresholded halation → fine silver structure",
+        "details": [
+          {
+            "label": "Scene",
+            "value": "Decode to linear light, apply +0.00 EV and the stock sensitivity before tone shaping."
+          },
+          {
+            "label": "Emulsion",
+            "value": "Build the toe, midtone gamma, shoulder, crossover, saturation compression, and correlated image structure as one response."
+          },
+          {
+            "label": "Lab / optics",
+            "value": "Model B&W negative, chemical fog, local density contrast, and highlight scatter before the output transform."
+          },
+          {
+            "label": "Scan / print",
+            "value": "Use a neutral scan baseline, set black and white points after the film curve, and sharpen subject detail at final output size."
+          }
+        ],
+        "notes": [
+          "All parameters are bounded artistic approximations derived from published characteristics and process knowledge, not digitized manufacturer sensitometric or spectral measurements."
+        ]
+      }
+    ],
+    "bestFor": [
+      "Subjects that benefit from extreme sharpness, extended-red separation, and a clear-base modern snap.",
+      "Form, gesture, texture, and light where color separation can be translated into deliberate gray relationships."
+    ],
+    "watchFor": [
+      "A rendered DSLR/iPhone file already contains sensor spectral response, computational tone mapping, demosaic, white balance, and gamut decisions; this profile cannot reverse information those stages discarded.",
+      "Stacking a strong camera picture style, computational HDR, or sharpening underneath the emulation.",
+      "Judging grain at 200% instead of at 100% and intended output size."
+    ],
+    "fieldNotes": [
+      "Expose for the material idea: extreme sharpness, extended-red separation, and a clear-base modern snap.",
+      "Try the profile on neutral daylight, mixed light, skin, foliage, and a flat wall before deciding what its name means."
+    ],
+    "sources": [
+      {
+        "title": "ROLLEI RETRO 80S fact sheet",
+        "publisher": "Rollei Analog",
+        "url": "https://www.rolleianalog.com/products/rollei-retro-80s/?lang=en"
+      },
+      {
+        "title": "ROLLEI film data-sheet downloads",
+        "publisher": "Rollei Analog",
+        "url": "https://www.rolleianalog.com/downloads/?lang=en"
+      }
+    ],
+    "verified": "2026-07-16",
+    "disclaimer": "Retro 80S is an independent Grainlab artistic emulation informed by cited public literature and historical material. It is not endorsed by Rollei, is not a measured ICC/LUT profile, and cannot reproduce a specific batch, lens, exposure, chemistry, printer, scanner, paper, aging state, or wavelengths absent from the digital source."
+  }
+}
