@@ -1,0 +1,133 @@
+{
+  "id": "tungsten",
+  "name": "Cinema 500T",
+  "maker": "Motion",
+  "type": "color",
+  "group": "CINEMA / COLOR",
+  "sort": 70,
+  "settings": { "exposure": -0.08, "contrast": 9, "saturation": -9, "temperature": -12, "tint": -2, "fade": 5, "grain": 13 },
+  "grainProfile": { "medium": "dye", "crystal": "tabular", "emulsion": "core-shell", "scale": "medium", "process": "motion" },
+  "pipeline": {
+    "version": 1,
+    "family": "ecn2",
+    "monochrome": false,
+    "scene": { "sensitivity": [0.98, 1.0, 1.04], "flash": 0.0 },
+    "curve": { "toe": 0.1, "shoulder": 0.45, "gamma": 0.96, "saturationCompression": 0.18 },
+    "crossover": { "shadows": [-0.01, 0.005, 0.025], "highlights": [0.015, 0.0, -0.01] },
+    "chemistry": { "silverRetention": 0.0, "fog": 0.004, "flare": 0.008, "localContrast": 0.015 },
+    "optics": { "halation": 0.012, "halationRadius": 7.0, "halationThreshold": 0.92 },
+    "output": { "tint": [0.99, 1.0, 1.01], "scanContrast": 0.94 },
+    "grain": { "meanRadius": 1.1, "radiusVariance": 0.35, "shadowBias": 0.65, "chroma": 0.04 }
+  },
+  "dossier": {
+    "version": 1,
+    "reference": {
+      "stock": "KODAK VISION3 500T 5219 / 7219",
+      "manufacturer": "Eastman Kodak Company",
+      "relationship": "Motion-negative interpretation for still images",
+      "status": "Current production reference"
+    },
+    "tagline": "Available darkness, held on a long color negative.",
+    "portrait": "Cinema 500T belongs to practical lamps, blue windows, wet pavement, and faces emerging from the bottom of the curve. It is fast but not frantic: the dye structure stays measured, the shoulder makes room for bulbs and signs, and tungsten balance lets warm household light feel like illumination rather than a technical mistake.",
+    "facts": [
+      { "label": "EXPOSURE INDEX", "value": "EI 500", "note": "Tungsten 3200 K" },
+      { "label": "DAYLIGHT EI", "value": "EI 320", "note": "With Wratten 85 correction" },
+      { "label": "PROCESS", "value": "ECN-2", "note": "Motion-picture negative process" },
+      { "label": "IMAGE", "value": "CMY dye clouds", "note": "Silver removed after development" },
+      { "label": "CODES", "value": "5219 · 7219", "note": "35 mm · 16 mm" },
+      { "label": "BACKING", "value": "Rem-jet", "note": "Removed in ECN-2 prebath" },
+      { "label": "GRAIN SYSTEM", "value": "DLT / T-GRAIN", "note": "Shadow-grain control" },
+      { "label": "CHARACTER", "value": "Low-light · long", "note": "Wide highlight latitude" }
+    ],
+    "palette": [
+      { "name": "practical amber", "hex": "#d2945c" },
+      { "name": "mercury green", "hex": "#5f7f72" },
+      { "name": "window blue", "hex": "#365b72" },
+      { "name": "toe black", "hex": "#111718" }
+    ],
+    "chapters": [
+      {
+        "eyebrow": "EMULSION ANATOMY",
+        "title": "A multilayer negative designed for the scan",
+        "lede": "VISION3 500T uses multiple color-sensitive records, advanced tabular-grain technology, and Kodak’s Dye Layering Technology. DLT is specifically described as reducing grain in shadows, where a fast stock and a digital scan are most likely to reveal it.",
+        "details": [
+          { "label": "Image-forming material", "value": "Cyan, magenta, and yellow dye records created during ECN-2 color development." },
+          { "label": "Dye Layering Technology", "value": "Kodak’s proprietary layer architecture is designed to improve shadow signal-to-noise and visible grain." },
+          { "label": "Rem-jet", "value": "A carbon-backed anti-halation and transport layer softened and removed at the beginning of ECN-2 processing." },
+          { "label": "Grainlab model", "value": "Fine-to-medium dye clouds, tabular core-shell behavior, restrained chroma variation, and exposure-aware shadow texture." }
+        ],
+        "notes": [
+          "Motion-picture grain should feel stable and organic frame to frame; a tiled, repeating texture breaks the illusion immediately.",
+          "The fast rating comes from emulsion engineering, not simply enlarging every crystal uniformly."
+        ]
+      },
+      {
+        "eyebrow": "SENSITOMETRY",
+        "title": "Highlights get the penthouse; shadows pay rent",
+        "lede": "Kodak’s published exposure diagrams emphasize substantial room above a white card and below a black card. The exact usable range depends on flare, lens, processing, scan, and acceptance threshold, but the design priority is clear: hold extremes for postproduction.",
+        "details": [
+          { "label": "Tungsten baseline", "value": "EI 500 under 3200 K illumination without a color-conversion filter." },
+          { "label": "Daylight correction", "value": "EI 320 with an 85 filter converts daylight toward the stock’s tungsten balance." },
+          { "label": "Uncorrected daylight", "value": "A blue-biased negative that can be used deliberately, with channel balance and exposure considered in the grade." },
+          { "label": "Shadow exposure", "value": "Thin shadows reveal grain and color noise first; rating at EI 320 is a common creative overexposure strategy, not a new ISO." }
+        ],
+        "notes": [
+          "Expose the negative for the shadow color you need, then control practical lamps and windows with lighting, filtration, and the final grade.",
+          "A bright bulb may fit the curve while still dominating the scene aesthetically—latitude is not composition."
+        ]
+      },
+      {
+        "eyebrow": "COLOR / LIGHT",
+        "title": "Tungsten is a point of view",
+        "lede": "At 3200 K the color records sit near their intended neutral relationship. Daylight windows go blue; sodium, fluorescent, LED, and firelight each arrive with their own spectral discontinuities. The stock’s attraction is how those sources coexist rather than disappear into one white balance.",
+        "details": [
+          { "label": "Skin", "value": "Natural under controlled tungsten, with warm practicals allowed to remain visibly warm." },
+          { "label": "Mixed light", "value": "Blue daylight and amber interiors separate strongly—a cinematic relationship often preserved rather than neutralized." },
+          { "label": "Greens", "value": "Fluorescent and discharge sources may need filtration or selective grading because spectrum, not CCT alone, controls the cast." },
+          { "label": "Night color", "value": "The negative can hold saturated signs and dim environmental color in one scan when exposure is adequate." }
+        ],
+        "notes": [
+          "Do not globally cool every image and call it 500T. The stock is a capture system whose balance becomes visible through actual source spectra.",
+          "Keep one believable neutral in the grade so the mixed-light relationships retain meaning."
+        ]
+      },
+      {
+        "eyebrow": "ECN-2 / SCAN",
+        "title": "A laboratory negative, not C-41 with movie branding",
+        "lede": "ECN-2 begins with prebath and rem-jet removal, then uses CD-3 color development before stop, bleach, fix, wash, final rinse, and drying. The process and its aim differ from still-photo C-41 even though both end in dye-image color negatives.",
+        "details": [
+          { "label": "Developer", "value": "ECN-2 color developer reduces exposed silver halide while oxidized CD-3 forms image dyes with incorporated couplers." },
+          { "label": "Bleach / fix", "value": "Bleach converts metallic silver to removable silver halide; fixer converts it to soluble complexes removed in wash." },
+          { "label": "Scan posture", "value": "Capture a wide-gamut, high-bit log-style master with the full negative range before display contrast." },
+          { "label": "Still-photo caution", "value": "Use a lab equipped for rem-jet and ECN-2. Cross-processing changes color, contrast, backing removal, and archival assumptions." }
+        ],
+        "notes": [
+          "A cinematic look is a chain: stock, lens, exposure, lighting, ECN-2, scan transform, and grade.",
+          "Grainlab emulates the finished image behavior; it does not reproduce a particular scanner matrix or Kodak print film path."
+        ]
+      }
+    ],
+    "bestFor": [
+      "Night streets, practical-lit interiors, stage work, blue-hour exteriors, and scenes built around mixed color temperature.",
+      "Wide-brightness compositions that need a grading-friendly negative.",
+      "Portraits where the room’s practical light should remain part of the skin-tone story.",
+      "Still images that should feel cut from a motion sequence rather than styled with a generic teal-orange LUT."
+    ],
+    "watchFor": [
+      "Sending rem-jet-backed stock through a lab that expects ordinary C-41 film.",
+      "Underexposing faces and expecting push or scan gain to restore missing color separation.",
+      "Neutralizing every mixed source until the tungsten-balanced atmosphere disappears.",
+      "Adding coarse static grain that ignores exposure and motion-film stability."
+    ],
+    "fieldNotes": [
+      "Let the table lamp be amber, let the window be blue, and decide which darkness contains the person.",
+      "The negative is wide so the grade can be specific—not so the lighting can be absent."
+    ],
+    "sources": [
+      { "title": "KODAK VISION3 500T Color Negative Film 5219 / 7219 resources", "publisher": "Eastman Kodak Company", "url": "https://www.kodak.com/en/motion/product/camera-films/500t-5219-7219/resources/" },
+      { "title": "Using KODAK Kit Chemicals in Motion Picture Film Laboratories", "publisher": "Eastman Kodak Company", "url": "https://www.kodak.com/content/products-brochures/Film/Using-KODAK-Kit-Chemicals-in-Motion-Picture-Film-Laboratories.pdf" }
+    ],
+    "verified": "2026-07-16",
+    "disclaimer": "Cinema 500T is an independent Grainlab rendering inspired by KODAK VISION3 500T technical literature. It is not a Kodak LUT, scanner characterization, spectral profile, or substitute for the stock and ECN-2 process."
+  }
+}

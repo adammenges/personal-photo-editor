@@ -1,0 +1,133 @@
+{
+  "id": "trix",
+  "name": "Tri-X 400",
+  "maker": "Mono",
+  "type": "mono",
+  "group": "MONOCHROME",
+  "sort": 100,
+  "settings": { "exposure": 0.02, "contrast": 24, "saturation": -100, "fade": 2, "grain": 21 },
+  "grainProfile": { "medium": "silver", "crystal": "cubic", "emulsion": "mixed", "scale": "medium", "process": "standard" },
+  "pipeline": {
+    "version": 1,
+    "family": "bw",
+    "monochrome": true,
+    "scene": { "sensitivity": [0.29, 0.61, 0.1], "flash": 0.0 },
+    "curve": { "toe": 0.15, "shoulder": 0.35, "gamma": 1.0, "saturationCompression": 0.0 },
+    "crossover": { "shadows": [0.0, 0.0, 0.0], "highlights": [0.0, 0.0, 0.0] },
+    "chemistry": { "silverRetention": 0.0, "fog": 0.004, "flare": 0.004, "localContrast": 0.07 },
+    "optics": { "halation": 0.02, "halationRadius": 3.0, "halationThreshold": 0.95 },
+    "output": { "tint": [1.0, 1.0, 1.0], "scanContrast": 1.0 },
+    "grain": { "meanRadius": 1.15, "radiusVariance": 0.6, "shadowBias": 0.7, "chroma": 0.0 }
+  },
+  "dossier": {
+    "version": 1,
+    "reference": {
+      "stock": "KODAK PROFESSIONAL TRI-X 400 / 400TX",
+      "manufacturer": "Kodak Alaris",
+      "relationship": "Classic conventional-grain interpretation",
+      "status": "Current production reference"
+    },
+    "tagline": "The photograph as eyewitness testimony.",
+    "portrait": "Tri-X does not decorate a scene; it testifies. Midtones arrive with muscle, highlights carry the memory of hard light, and the silver grain feels less like an effect than the handwriting of the event itself. Grainlab keeps the clumps irregular and the contrast alive, with enough shoulder to remain photographic instead of merely harsh.",
+    "facts": [
+      { "label": "NOMINAL SPEED", "value": "ISO 400 / 27°", "note": "400TX roll-film reference" },
+      { "label": "PUSH RANGE", "value": "EI 800–3200", "note": "Process-dependent; test first" },
+      { "label": "PROCESS", "value": "B&W negative", "note": "D-76 · XTOL · HC-110 and others" },
+      { "label": "IMAGE", "value": "Metallic silver", "note": "Crisp density clumps" },
+      { "label": "SENSITIZATION", "value": "Panchromatic", "note": "Broad visible response" },
+      { "label": "FORMATS", "value": "135 · 120", "note": "400TX; sheet film is TRI-X 320" },
+      { "label": "RMS GRANULARITY", "value": "17", "note": "Kodak rates this as fine" },
+      { "label": "CHARACTER", "value": "Grit · shoulder", "note": "Classic press-film cadence" }
+    ],
+    "palette": [
+      { "name": "newsprint", "hex": "#d8d6ca" },
+      { "name": "sidewalk", "hex": "#8d8b82" },
+      { "name": "charcoal", "hex": "#3a3b38" },
+      { "name": "printer ink", "hex": "#0d0f0e" }
+    ],
+    "chapters": [
+      {
+        "eyebrow": "EMULSION ANATOMY",
+        "title": "Conventional grain with a long memory",
+        "lede": "The negative is a field of developed metallic silver. Grainlab models Tri-X with irregular conventional-grain clumps and a mixture of sizes: the physical pattern that gives fast silver film both sensitivity and its unmistakable edge texture.",
+        "details": [
+          { "label": "Image-forming material", "value": "Metallic silver produced wherever exposed silver-halide grains develop." },
+          { "label": "Crystal interpretation", "value": "Conventional cubic-family behavior rather than the cleaner plate-like signature of tabular films." },
+          { "label": "Grain statistic", "value": "Kodak publishes diffuse RMS granularity 17 for TRI-X 400 in HC-110 Dilution B at 20°C." },
+          { "label": "Format distinction", "value": "TRI-X 400 is the 135/120 emulsion; Kodak’s current sheet-film reference is TRI-X 320, not the same stock." }
+        ],
+        "notes": [
+          "What viewers call grain is an enlargement of random density variations—grain size, clumping, exposure, development, and magnification all participate.",
+          "The 35 mm look is louder because a small negative must be enlarged farther than 120."
+        ]
+      },
+      {
+        "eyebrow": "SENSITOMETRY",
+        "title": "Place the shadows; let the shoulder argue back",
+        "lede": "At EI 400 the curve balances speed, shadow information, and a decisive midtone. Pushing does not make the emulsion catch photons it missed: it develops exposed densities more aggressively, lifting contrast while sparse shadow information stays sparse.",
+        "details": [
+          { "label": "Box-speed baseline", "value": "EI 400 for normal exposure and a standard development target." },
+          { "label": "One-stop push", "value": "EI 800 can preserve a practical documentary negative with higher contrast and more emphatic grain." },
+          { "label": "Two-stop push", "value": "Kodak publishes EI 1250 two-stop push tables; many field workflows meter 1600, but calibration matters." },
+          { "label": "Three-stop territory", "value": "EI 3200 is a strong aesthetic decision: expect compressed shadow separation, harder midtones, and developer-dependent grain." }
+        ],
+        "notes": [
+          "Meter important shadow texture, not the darkness you are willing to print as black.",
+          "If highlights become unprintable, reduce development before reducing exposure that the shadows need."
+        ]
+      },
+      {
+        "eyebrow": "DARKROOM",
+        "title": "The developer writes the accent",
+        "lede": "Tri-X is a platform, not a single look. Solvent developers smooth the clumps; high-acutance or dilute practice makes edges and grain speak more loudly; push development steepens the useful curve.",
+        "details": [
+          { "label": "Kodak small-tank starts", "value": "At 20°C: XTOL 7 min, D-76 6¾ min, HC-110 Dilution B 6 min in Kodak’s 2023 processing matrix." },
+          { "label": "Classic direction", "value": "D-76 gives the familiar balance of grain, speed, and tone associated with the stock’s documentary vocabulary." },
+          { "label": "Speed / fine-grain direction", "value": "XTOL is a common choice when retaining useful speed while moderating grain matters." },
+          { "label": "Agitation", "value": "More agitation generally raises local developer activity and can alter contrast; consistency matters more than folklore." }
+        ],
+        "notes": [
+          "Never copy a development time without matching dilution, temperature, agitation, tank type, and intended contrast.",
+          "A pushed negative is not automatically better because the grain is bigger; the emotional force comes from tone placement."
+        ]
+      },
+      {
+        "eyebrow": "PRINT LANGUAGE",
+        "title": "Make the grain answer to the picture",
+        "lede": "Tri-X can be velvety or violent. A low-contrast scan with a deliberate black point preserves options; a condenser enlarger or aggressive digital clarity will make the same negative feel sharper and grainier than a diffusion workflow.",
+        "details": [
+          { "label": "Scan posture", "value": "Capture full negative density, invert cleanly, and shape the curve before adding local contrast." },
+          { "label": "Sharpening", "value": "Sharpen subject edges at output scale; avoid turning every silver clump into a white-rimmed pixel island." },
+          { "label": "Print posture", "value": "Burn the bright interruption, hold the face, and let one true black anchor the page." },
+          { "label": "Grainlab intent", "value": "Irregular silver clumps, medium scale, high microcontrast, restrained highlight breakup." }
+        ],
+        "notes": [
+          "The canonical look is not gray mush plus noise. It is a strong curve carrying real, exposure-dependent silver texture.",
+          "Judge at print size. A 200% display crop is microscopy, not photography."
+        ]
+      }
+    ],
+    "bestFor": [
+      "Street, reportage, rehearsal rooms, available-light portraiture, and weather with an opinion.",
+      "Scenes where gesture and timing matter more than polished color separation.",
+      "35 mm frames that benefit from visible material texture.",
+      "Push workflows where harder midtones are part of the story."
+    ],
+    "watchFor": [
+      "Treating push development as a substitute for shadow exposure.",
+      "Using one internet development time across different tanks, agitation patterns, and thermometers.",
+      "Sharpening the scan until grain becomes a digital halo pattern.",
+      "Calling every contrasty monochrome look Tri-X without preserving its shoulder and midtone scale."
+    ],
+    "fieldNotes": [
+      "Keep the camera where the event is uncomfortable. Tri-X earns its grain through proximity.",
+      "One face in window light, one stop less than polite, and enough silver in the shadows to remember the room."
+    ],
+    "sources": [
+      { "title": "KODAK PROFESSIONAL TRI-X 320 and 400 Films · F-4017", "publisher": "Kodak Alaris, revised October 2021", "url": "https://www.kodakprofessional.com/sites/default/files/wysiwyg/film/f4017_trix_320400.pdf" },
+      { "title": "Processing KODAK PROFESSIONAL Black-and-White Films · ED-BWF", "publisher": "Kodak Alaris, March 2023", "url": "https://www.kodakprofessional.com/sites/default/files/wysiwyg/pro/resources/edbwf_0.pdf" }
+    ],
+    "verified": "2026-07-16",
+    "disclaimer": "Tri-X 400 is a Grainlab artistic emulation informed by public Kodak literature. It is not endorsed by Kodak Alaris and does not reproduce a specific developer, enlarger, scanner, paper, or sensitometric curve. Process data are starting points only."
+  }
+}

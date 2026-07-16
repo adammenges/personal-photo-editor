@@ -1,55 +1,241 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rust + Tauri Terminal Shell</title>
+    <meta name="color-scheme" content="dark">
+    <title>Grainlab — Photo Development Console</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="app">
-        <div class="content">
-            <div class="panel hero">
-                <pre class="banner" id="banner"></pre>
-                <h1>Rust + Tauri terminal shell</h1>
-                <p class="dim">Keyboard-first controls, centered layout, and command-line style output.</p>
+    <div class="app-shell" id="app-shell">
+        <header class="titlebar" id="titlebar">
+            <div class="brand" aria-label="Grainlab">
+                <span class="brand-mark">GL</span>
+                <span>grainlab<span class="cursor">_</span></span>
+                <span class="build-tag">DEV.01</span>
             </div>
 
-            <div class="panel">
-                <label class="dim">[Cmd+1] APP_NAME</label>
-                <input type="text" id="app-name" value="MyMacApp" placeholder="MyMacApp" spellcheck="false">
-                <label class="dim">[Cmd+2] APP_BUNDLE_ID</label>
-                <input type="text" id="bundle-id" value="com.example.mymacapp" placeholder="com.example.mymacapp" spellcheck="false">
+            <div class="document-state" aria-live="polite">
+                <span class="status-light"></span>
+                <span id="document-name">coast-at-blue-hour.png</span>
+                <span class="document-meta" id="document-meta">1536 × 1024 · RGB</span>
             </div>
 
-            <div class="panel">
-                <span class="dim">Actions</span>
-                <div class="actions-row" id="actions-row">
-                    <button class="action-btn" id="btn-check">Run checks [Cmd+R]</button>
-                    <button class="action-btn" id="btn-build">Build .app [Cmd+B]</button>
-                    <button class="reset-btn" id="btn-reset">Reset [Cmd+K]</button>
+            <nav class="header-actions" aria-label="Document actions">
+                <button class="text-button" id="undo-button" disabled>Undo <kbd>⌘Z</kbd></button>
+                <button class="text-button" id="open-button">Open <kbd>⌘O</kbd></button>
+                <button class="primary-button" id="export-button">Export <kbd>⌘E</kbd></button>
+            </nav>
+        </header>
+
+        <main class="workspace">
+            <aside class="sidebar library-panel" aria-label="Film library">
+                <div class="sidebar-top">
+                    <div class="eyebrow-row">
+                        <span>01 / FILM LIBRARY</span>
+                        <span id="preset-count">12 STOCKS</span>
+                    </div>
+                    <label class="search-field">
+                        <span aria-hidden="true">/</span>
+                        <input id="preset-search" type="search" placeholder="filter film stock" autocomplete="off" spellcheck="false">
+                        <kbd>⌘/</kbd>
+                    </label>
+                    <div class="filter-tabs" id="filter-tabs" role="tablist" aria-label="Film categories">
+                        <button class="filter-tab is-active" data-filter="all" role="tab" aria-selected="true">All</button>
+                        <button class="filter-tab" data-filter="color" role="tab" aria-selected="false">Color</button>
+                        <button class="filter-tab" data-filter="mono" role="tab" aria-selected="false">Mono</button>
+                        <button class="filter-tab" data-filter="utility" role="tab" aria-selected="false">Utility</button>
+                    </div>
                 </div>
-            </div>
 
-            <div class="panel output">
-                <span class="dim">Output</span>
-                <div id="status">Ready. Cmd+R runs checks, Cmd+B prints the build command.</div>
-            </div>
+                <div class="preset-list" id="preset-list" aria-label="Film presets"></div>
 
-            <div class="panel">
-                <span class="dim">Command Deck</span>
-                <pre class="accent" id="command-deck"></pre>
-            </div>
+                <section class="history-panel" aria-labelledby="history-title">
+                    <div class="history-heading">
+                        <span id="history-title">EDIT HISTORY</span>
+                        <span id="history-count">00</span>
+                    </div>
+                    <div class="history-list" id="history-list"></div>
+                </section>
 
-            <div class="panel" id="shortcuts-panel">
-                <span class="dim">Shortcut Overlay (Cmd+/)</span>
-                <div>Tab / Shift+Tab  -&gt; cycle focus</div>
-                <div>Cmd+1 / Cmd+2    -&gt; jump to APP_NAME / APP_BUNDLE_ID</div>
-                <div>Cmd+R / Cmd+B    -&gt; run checks / build command</div>
-                <div>Cmd+K            -&gt; reset</div>
-            </div>
-        </div>
+                <div class="sidebar-footer">
+                    <div>
+                        <span class="terminal-prompt">&gt;</span>
+                        <span id="console-status">demo frame loaded</span>
+                    </div>
+                    <button class="shortcut-button" id="shortcut-button" aria-label="Show keyboard shortcuts">KEYS <kbd>⌘K</kbd></button>
+                </div>
+            </aside>
+
+            <section class="editor" aria-label="Photo workspace">
+                <div class="editor-toolbar">
+                    <div class="view-tabs" role="tablist" aria-label="Editor view">
+                        <button class="view-tab is-active" id="develop-tab" role="tab" aria-selected="true">Develop</button>
+                        <button class="view-tab" id="crop-tab" role="tab" aria-selected="false">Crop</button>
+                    </div>
+                    <div class="view-controls">
+                        <div class="crop-tools" id="crop-tools" hidden>
+                            <button class="tool-button is-active" data-crop-aspect="free">Free</button>
+                            <button class="tool-button" data-crop-aspect="original">Original</button>
+                            <button class="tool-button" data-crop-aspect="square">1:1</button>
+                            <button class="tool-button" id="crop-reset-button">Reset</button>
+                            <button class="tool-button crop-done" id="crop-done-button">Done</button>
+                        </div>
+                        <button class="tool-button" id="fit-button" aria-pressed="true" title="Scroll over the photo to zoom">Fit</button>
+                        <button class="tool-button" id="grid-button" aria-pressed="false">Grid <kbd>G</kbd></button>
+                        <button class="tool-button" id="before-button" aria-pressed="false">Before <kbd>B</kbd></button>
+                    </div>
+                </div>
+
+                <div class="canvas-stage" id="drop-zone">
+                    <div class="canvas-frame" id="canvas-frame">
+                        <canvas id="photo-canvas" aria-label="Edited photo preview" draggable="false"></canvas>
+                        <div class="crop-grid" id="crop-grid" hidden></div>
+                        <div class="crop-overlay" id="crop-overlay" hidden>
+                            <div class="crop-selection" id="crop-selection" role="group" aria-label="Crop selection">
+                                <span class="crop-dimensions" id="crop-dimensions"></span>
+                                <span class="crop-handle crop-handle-nw" data-crop-handle="nw"></span>
+                                <span class="crop-handle crop-handle-n" data-crop-handle="n"></span>
+                                <span class="crop-handle crop-handle-ne" data-crop-handle="ne"></span>
+                                <span class="crop-handle crop-handle-e" data-crop-handle="e"></span>
+                                <span class="crop-handle crop-handle-se" data-crop-handle="se"></span>
+                                <span class="crop-handle crop-handle-s" data-crop-handle="s"></span>
+                                <span class="crop-handle crop-handle-sw" data-crop-handle="sw"></span>
+                                <span class="crop-handle crop-handle-w" data-crop-handle="w"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="image-badge" id="image-badge">KODAK 500T · 82%</div>
+                    <div class="drop-message" id="drop-message">
+                        <strong>DROP FRAME</strong>
+                        <span>JPG · PNG · WEBP</span>
+                    </div>
+                </div>
+
+                <div class="filmstrip" aria-label="Open photos">
+                    <button class="add-frame" id="add-frame-button">
+                        <span>+</span>
+                        <small>ADD FRAME</small>
+                    </button>
+                    <button class="add-frame add-folder" id="add-folder-button">
+                        <span>▱</span>
+                        <small>ADD FOLDER</small>
+                    </button>
+                    <div class="frame-list" id="frame-list"></div>
+                    <div class="filmstrip-info">
+                        <span id="zoom-label">FIT / 42%</span>
+                        <span>LOCAL PROCESSING</span>
+                    </div>
+                </div>
+            </section>
+
+            <aside class="sidebar controls-panel" aria-label="Development controls">
+                <div class="control-scroll">
+                    <section class="scope-section">
+                        <div class="eyebrow-row">
+                            <span>02 / SIGNAL</span>
+                            <span id="render-engine">WGSL…</span>
+                        </div>
+                        <canvas id="histogram" width="260" height="72" aria-label="Image histogram"></canvas>
+                        <div class="scope-scale"><span>0</span><span>64</span><span>128</span><span>192</span><span>255</span></div>
+                    </section>
+
+                    <section class="control-group">
+                        <div class="group-heading">
+                            <span>TONE</span>
+                            <button class="mini-button" data-reset-group="tone">ZERO</button>
+                        </div>
+                        <div id="tone-controls"></div>
+                    </section>
+
+                    <section class="control-group">
+                        <div class="group-heading">
+                            <span>COLOR</span>
+                            <button class="mini-button" data-reset-group="color">ZERO</button>
+                        </div>
+                        <div id="color-controls"></div>
+                    </section>
+
+                    <section class="control-group">
+                        <div class="group-heading">
+                            <span>TEXTURE</span>
+                            <button class="mini-button" data-reset-group="texture">ZERO</button>
+                        </div>
+                        <div id="texture-controls"></div>
+                        <div class="grain-model" aria-labelledby="grain-model-title">
+                            <div class="grain-model-heading">
+                                <span id="grain-model-title">EMULSION MODEL</span>
+                                <output id="grain-profile-summary">STOCK MATCH</output>
+                            </div>
+                            <div class="grain-trait-controls" id="grain-trait-controls"></div>
+                            <p class="grain-model-note" id="grain-model-note">Uses the selected film stock’s physical grain profile.</p>
+                        </div>
+                    </section>
+
+                    <section class="control-group">
+                        <div class="group-heading">
+                            <span>PROCESS</span>
+                            <button class="mini-button" data-reset-group="process">ZERO</button>
+                        </div>
+                        <div id="process-controls"></div>
+                        <p class="grain-model-note" id="pipeline-model-note">Scene exposure, chemical development, emulsion halation, and scanner flare remain separate stages.</p>
+                    </section>
+                </div>
+
+                <div class="controls-footer">
+                    <button class="reset-button" id="reset-button">RESET FRAME</button>
+                </div>
+            </aside>
+        </main>
     </div>
+
+    <div class="command-overlay" id="command-overlay" hidden>
+        <section class="command-card" role="dialog" aria-modal="true" aria-labelledby="command-title">
+            <div class="command-header">
+                <div>
+                    <span class="eyebrow">COMMAND DECK</span>
+                    <h1 id="command-title">Keyboard map</h1>
+                </div>
+                <button class="close-button" id="close-overlay">ESC</button>
+            </div>
+            <div class="shortcut-grid">
+                <div><kbd>⌘O</kbd><span>Open photographs</span></div>
+                <div><kbd>⇧⌘O</kbd><span>Open an image folder</span></div>
+                <div><kbd>⌘E</kbd><span>Export current frame</span></div>
+                <div><kbd>⌘Z</kbd><span>Undo latest adjustment</span></div>
+                <div><kbd>⌘K</kbd><span>Toggle command deck</span></div>
+                <div><kbd>⌘/</kbd><span>Search film library</span></div>
+                <div><kbd>B</kbd><span>Hold for original</span></div>
+                <div><kbd>G</kbd><span>Toggle composition grid</span></div>
+                <div><kbd>I</kbd><span>Open selected stock dossier</span></div>
+                <div><kbd>SCROLL</kbd><span>Zoom around the pointer</span></div>
+                <div><kbd>DOUBLE CLICK</kbd><span>Toggle detail zoom</span></div>
+                <div><kbd>SPACE + DRAG</kbd><span>Pan the zoomed photo</span></div>
+                <div><kbd>↑ / ↓</kbd><span>Step through film stocks</span></div>
+            </div>
+            <p class="command-hint"><span class="terminal-prompt">&gt;</span> Everything is local. Your pixels never leave this machine.</p>
+        </section>
+    </div>
+
+    <div class="stock-overlay" id="stock-overlay" hidden>
+        <article class="stock-dossier" role="dialog" aria-modal="true" aria-labelledby="stock-dossier-title">
+            <header class="dossier-header">
+                <div>
+                    <span class="eyebrow">FILM LIBRARY / TECHNICAL DOSSIER</span>
+                    <h1 id="stock-dossier-title">Film stock</h1>
+                </div>
+                <button class="close-button" id="close-stock-overlay">ESC</button>
+            </header>
+            <div class="dossier-scroll" id="stock-dossier-content"></div>
+        </article>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+    <input id="file-input" type="file" accept="image/jpeg,image/png,image/webp" multiple hidden>
+    <input id="directory-input" type="file" accept="image/jpeg,image/png,image/webp" webkitdirectory directory multiple hidden>
+    <script src="grain.js"></script>
+    <script src="gpu.js"></script>
     <script src="main.js"></script>
 </body>
 </html>

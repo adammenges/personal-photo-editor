@@ -1,0 +1,134 @@
+{
+  "id": "astia",
+  "name": "Soft Chrome",
+  "maker": "Archive",
+  "type": "color",
+  "group": "DAYLIGHT / COLOR",
+  "sort": 60,
+  "settings": { "exposure": 0.08, "contrast": -2, "saturation": 2, "temperature": 5, "fade": 3, "grain": 6 },
+  "grainProfile": { "medium": "dye", "crystal": "tabular", "emulsion": "core-shell", "scale": "fine", "process": "standard" },
+  "pipeline": {
+    "version": 1,
+    "family": "e6",
+    "monochrome": false,
+    "scene": { "sensitivity": [1.01, 1.0, 0.99], "flash": 0.0 },
+    "curve": { "toe": 0.08, "shoulder": 0.12, "gamma": 1.0, "saturationCompression": 0.14 },
+    "crossover": { "shadows": [0.008, -0.002, -0.006], "highlights": [0.006, 0.002, -0.008] },
+    "chemistry": { "silverRetention": 0.0, "fog": 0.003, "flare": 0.005, "localContrast": 0.03 },
+    "optics": { "halation": 0.02, "halationRadius": 3.0, "halationThreshold": 0.94 },
+    "output": { "tint": [1.01, 1.0, 0.99], "scanContrast": 0.98 },
+    "grain": { "meanRadius": 0.58, "radiusVariance": 0.12, "shadowBias": 0.25, "chroma": 0.025 }
+  },
+  "dossier": {
+    "version": 1,
+    "reference": {
+      "stock": "FUJICHROME ASTIA 100F / RAP F",
+      "manufacturer": "FUJIFILM",
+      "relationship": "Soft-contrast portrait reversal interpretation",
+      "status": "Discontinued historical reference"
+    },
+    "tagline": "A transparency that speaks softly enough for skin.",
+    "portrait": "Soft Chrome keeps the luminous object-quality of slide film while lowering its voice. Pastels retain distinctions, skin stays human, and fine detail survives without the brittle snap of a high-saturation chrome. It feels like daylight arranged through silk: still positive, still exact, but willing to let a face outrank the scenery.",
+    "facts": [
+      { "label": "NOMINAL SPEED", "value": "ISO 100 / 21°", "note": "Daylight reversal" },
+      { "label": "PROCESS", "value": "E-6 / CR-56", "note": "Positive transparency" },
+      { "label": "IMAGE", "value": "Positive dye image", "note": "No orange mask" },
+      { "label": "BALANCE", "value": "Daylight", "note": "Portrait-oriented palette" },
+      { "label": "FORMATS", "value": "135 · 120 · 220 · sheet", "note": "Historical catalog range" },
+      { "label": "GRAIN", "value": "Ultra-fine", "note": "100F generation" },
+      { "label": "PUSH / PULL", "value": "E-6 variable", "note": "Density and color can shift" },
+      { "label": "CHARACTER", "value": "Pastel · luminous", "note": "Moderate chrome contrast" }
+    ],
+    "palette": [
+      { "name": "silk highlight", "hex": "#e7d8c7" },
+      { "name": "rose powder", "hex": "#b9807b" },
+      { "name": "celadon", "hex": "#8da69b" },
+      { "name": "evening slate", "hex": "#4d5a62" }
+    ],
+    "chapters": [
+      {
+        "eyebrow": "REVERSAL ANATOMY",
+        "title": "The positive image without the hard sell",
+        "lede": "Astia 100F belonged to Fujifilm’s fine-grain daylight reversal family, but was tuned for lower saturation and gentler contrast than the landscape-forward chrome stereotype. The final film carried a positive dye image intended for direct viewing.",
+        "details": [
+          { "label": "Image-forming material", "value": "Cyan, magenta, and yellow positive dye records after first development, reversal, color development, bleach, and fix." },
+          { "label": "Color aim", "value": "Natural skin, subtle pastels, and moderate saturation rather than exaggerated primary color." },
+          { "label": "100F generation", "value": "Fujifilm research documents new emulsion and color-reproduction technologies shared with the 100F reversal generation." },
+          { "label": "Grainlab model", "value": "Fine engineered dye structure, low clumping, soft contrast, and restrained chroma fluctuation." }
+        ],
+        "notes": [
+          "Soft contrast in reversal film is still not color-negative latitude; highlight exposure remains decisive.",
+          "Fine-grain chrome should look luminous and clean, not covered with a blanket of nostalgic noise."
+        ]
+      },
+      {
+        "eyebrow": "EXPOSURE",
+        "title": "One-third stop is a creative decision",
+        "lede": "A transparency is already the display object. Small exposure changes alter its density, saturation, and highlight separation visibly, so careful incident metering and bracket discipline matter more than post-capture rescue.",
+        "details": [
+          { "label": "Daylight baseline", "value": "ISO 100 / 21° with no correction under daylight." },
+          { "label": "Highlight placement", "value": "Keep textured light values below clear-film failure; luminous does not mean empty." },
+          { "label": "Underexposure", "value": "Makes the slide denser and color richer quickly, but blocks shadow nuance." },
+          { "label": "Push / pull", "value": "Fujifilm E-6 literature includes Astia timing across pull and push ranges; test color and contrast for the actual processor." }
+        ],
+        "notes": [
+          "Bracket fashion, beauty, and product setups in thirds when the lighting ratio is close to the slide’s limit.",
+          "Do not evaluate exposure only from a camera histogram when the intended reference is a physical transparency."
+        ]
+      },
+      {
+        "eyebrow": "COLOR SIGNATURE",
+        "title": "Pastels with a spine",
+        "lede": "The stock’s distinction is the ability to keep delicate color separate without demanding spectacle. Skin, fabric, flowers, mist, and painted interiors retain their own hues while the positive still has enough black to project with depth.",
+        "details": [
+          { "label": "Skin", "value": "Neutral-to-warm with controlled magenta and smooth transitions through cheek and highlight." },
+          { "label": "Pastels", "value": "High differentiation at modest saturation—especially useful for fabric, cosmetics, and quiet product color." },
+          { "label": "Greens / blues", "value": "Clean but not aggressively landscape-coded; easier to keep secondary to a person." },
+          { "label": "Black", "value": "Firm enough to maintain transparency depth without the severe toe of a punchier chrome look." }
+        ],
+        "notes": [
+          "A soft palette still needs a color hierarchy; neutrality alone is not an aesthetic.",
+          "Keep highlights clean rather than yellowing them to manufacture age."
+        ]
+      },
+      {
+        "eyebrow": "E-6 / SCAN",
+        "title": "Preserve the luminous original",
+        "lede": "E-6 creates a standardized positive through first developer, reversal, color developer, bleach, fix, wash, and stabilization. Scanning should translate the slide’s transmitted-light density without flattening it into a negative-style master.",
+        "details": [
+          { "label": "Process family", "value": "Fujifilm CR-56 and Kodak E-6 were documented compatible routes for the historical stock." },
+          { "label": "Scan posture", "value": "Use sufficient optical density range for shadows, neutral viewing calibration, and conservative sharpening." },
+          { "label": "Display transform", "value": "Retain a positive-like black and highlight white while preserving the softer middle-scale contrast." },
+          { "label": "Grainlab intent", "value": "A clean, fine-grain chrome with gentle portrait color—not a faded negative simulation." }
+        ],
+        "notes": [
+          "The stock is discontinued; surviving transparencies differ by storage, processing, mounting, and projection history.",
+          "Archive a neutral high-bit scan before applying a period-specific artistic grade."
+        ]
+      }
+    ],
+    "bestFor": [
+      "Beauty, fashion, portraiture, flowers, product color, pale architecture, and quiet daylight interiors.",
+      "Scenes whose palette is subtle but still deserves the object-like finality of reversal film.",
+      "Skin against pastel cloth or open shade.",
+      "A chrome look without aggressive landscape saturation."
+    ],
+    "watchFor": [
+      "Confusing lower contrast with color-negative exposure latitude.",
+      "Pushing E-6 without testing processor-specific density and color shifts.",
+      "Adding coarse grain to an ultra-fine-grain reference.",
+      "Making every highlight cream-colored and calling it archival."
+    ],
+    "fieldNotes": [
+      "Use a silk dress, an open sky, and one black shape to prove that soft color can still have structure.",
+      "The transparency should feel gentle because the relationships are gentle—not because the image is fogged."
+    ],
+    "sources": [
+      { "title": "FUJIFILM Professional Film Data Guide · Astia 100F", "publisher": "FUJIFILM, 2005", "url": "https://asset.fujifilm.com/www/ca/files/2020-03/d52487c5c6f84e7f935c299491c5c1ff/ProfessionalFilmDataGuide.pdf" },
+      { "title": "Development of FUJICHROME Velvia 100F/100 and ASTIA 100F", "publisher": "FUJIFILM Research Report No. 49, 2004", "url": "https://www.fujifilm.com/jp/ja/about/rd/report/049" },
+      { "title": "E-6 Push and Pull Processing Technical Bulletin", "publisher": "FUJIFILM", "url": "https://asset.fujifilm.com/www/fi/files/2020-11/37dbfb5211b0ce908a3060cc6de71a64/TB_E6_E01_10-20.pdf" }
+    ],
+    "verified": "2026-07-16",
+    "disclaimer": "Soft Chrome is an independent Grainlab interpretation of the discontinued FUJICHROME ASTIA 100F family. It is not a Fujifilm profile and cannot reproduce a specific transparency, E-6 line, projector, viewing booth, or scan."
+  }
+}

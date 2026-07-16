@@ -1,135 +1,317 @@
-# Rust + Tauri macOS Template
+# Grainlab
 
-A GitHub template for building native macOS desktop apps with Rust and [Tauri v2](https://v2.tauri.app). No Node.js, no bundler -- just Rust, HTML, CSS, and JS.
+Grainlab is a local, keyboard-first film development console for macOS. It combines a full-resolution photo workspace, a data-driven film library, and a physically informed WGSL processing pipeline inside a small Rust and Tauri application.
 
-## Features
+The visual language is deliberately closer to a darkroom terminal than a conventional consumer photo editor: dense but legible, fast to navigate, and designed to expose how an image is being formed rather than hide every decision behind a single preset button.
 
-- **Tauri v2** with capability-based permissions and IPC
-- **Static frontend** -- vanilla HTML/CSS/JS in `ui/`, no build step
-- **Terminal-style UI** -- ASCII banner, command deck, dark theme
-- **Keyboard-first** -- global shortcuts for every action
-- **macOS `.app` bundling** via `cargo tauri build`
-- **Icon pipeline** -- drop in a 1024x1024 PNG, get a bundled `.icns`
-- **CI** -- GitHub Actions workflow for fmt, clippy, test, and build
-- **Agent-ready** -- `AGENTS.md` with instructions for Codex, Claude Code, Cursor, etc.
+![Grainlab running on macOS with the Cinema 500T stock and physical process controls](assets/screenshots/grainlab-app.jpg)
 
-## Prerequisites
+> Grainlab processes photographs locally. Images, edits, thumbnails, and exports are not uploaded to a service.
 
-- macOS 13.0+
-- [Rust](https://rustup.rs) (stable)
-- Xcode Command Line Tools (`xcode-select --install`)
+## Why Grainlab exists
 
-## Quick Start
+Most “film” filters are a color cast, an S-curve, and tiled monochrome noise. Grainlab is a foundation for something more coherent: a stock describes scene sensitivity, emulsion response, image-forming material, lab process, grain structure, and scan/output behavior as related stages.
 
-```bash
-# Install toolchain + Tauri CLI
-make setup
+That distinction matters. A push process is not simply extra contrast. Bleach bypass is not ordinary desaturation. Color dye clouds do not look like metallic silver particles, and halation should originate in strong scene exposure before the output transform. Grainlab keeps those ideas separate enough to model, combine, inspect, and improve.
 
-# Run in dev mode (hot reload)
-make dev
+This is still an artistic emulator rather than a measured color-science product. Every stock dossier states its reference lineage, interpretation, caveats, and sources so that technical facts are not confused with creative decisions.
 
-# Lint, format, test
-make check
+## Current capabilities
 
-# Build a production .app bundle
-make build-app
+### Image workspace
+
+- Opens JPG, PNG, and WEBP photographs through the picker, drag and drop, or paste.
+- Opens a whole folder at once and adds every supported image to the filmstrip.
+- Decodes and retains the full source resolution; the preview canvas is scaled visually without replacing the source with a proxy.
+- Keeps independent stock selection, adjustments, crop, and edit history for every open frame.
+- Supports free, original-ratio, and square crops with draggable handles and crop-aware export.
+- Exports a 94-quality JPEG with a maximum 4096-pixel long edge.
+- Ships with an offline 1536 × 1024 demonstration photograph so the app is immediately explorable.
+
+### Navigation and inspection
+
+- Scroll or trackpad gesture zooms around the pointer position.
+- Double-click toggles a detail view.
+- Drag pans a zoomed photograph; `Space` + drag provides an explicit pan gesture.
+- Pan bounds include inspection overscroll so every image corner can reach the viewport.
+- `B` temporarily shows the untouched source without changing the edit.
+- A live luminance histogram and stock thumbnails are generated from the active frame.
+- The top toolbar acts as a native macOS drag region while interactive labels and buttons remain usable.
+
+### Film and process controls
+
+- Tone: exposure, contrast, highlights, and shadows.
+- Color: temperature, tint, and saturation.
+- Texture: fade, grain, and vignette.
+- Process: correlated push/pull development, halation, and scanner flare.
+- Emulsion model: silver or dye image, cubic/T-Grain/Delta crystal geometry, uniform/mixed/core-shell emulsion, grain scale, and lab process.
+- Lab processes: standard, push, pull, motion-picture ECN-2, retained-silver bleach bypass, and cross process.
+- A live technical readout exposes the active family, toe, shoulder, gamma, and halation response.
+
+## Film library
+
+The bundled library contains twelve editable interpretations. These are independent Grainlab profiles, not manufacturer-supplied LUTs or measured claims of exact reproduction.
+
+| Stock | Family | Image structure | Intent |
+|---|---|---|---|
+| Clean Scan | Utility | Neutral base | Minimal processing and no added stock grain |
+| Contact Proof | Print | Fine cubic silver | Restrained proof-sheet response |
+| Chrome 64 | E-6 | Fine dye image | Crisp reversal color and a firmer tonal scale |
+| Portrait 400 | C-41 | Mixed tabular dye clouds | Wide shoulder, gentle skin color, forgiving negative response |
+| Vivid 100 | C-41 | Fine tabular dye clouds | Saturated daylight color with tight grain |
+| Soft Chrome | E-6 | Fine tabular dye image | Softer reversal contrast and calm color separation |
+| Cinema 500T | ECN-2 | Core-shell tabular dye clouds | Tungsten-balanced motion-picture latitude and smooth grain |
+| Bleach Bypass | ECN-2 variant | Retained silver over dye | Lower saturation, higher density contrast, metallic texture |
+| Night Process | Pushed ECN-2 | Coarser mixed dye image | Underexposed shadows, cool crossover, enlarged grain clumps |
+| Tri-X 400 | B&W | Cubic metallic silver | Crisp, characterful medium-speed silver grain |
+| Delta 100 | B&W | Engineered Delta silver | Fine, uniform monochrome structure |
+| Infrared 400 | B&W interpretation | Fine cubic silver | High-separation false-infrared-inspired monochrome response |
+
+Every library entry includes a searchable technical dossier with:
+
+- physical image formation and emulsion anatomy;
+- sensitometry, exposure behavior, and processing guidance;
+- palette, field uses, artistic marginalia, and known failure modes;
+- reference stock, manufacturer, status, and interpretation disclaimer;
+- primary-source technical references and a verification date.
+
+Press `I` or click the information button beside a stock to open its dossier.
+
+## Processing model
+
+The GPU and CPU implementations follow the same stage order. The WebGPU path is the primary renderer and all shader work lives in WGSL.
+
+```text
+decoded sRGB source
+        │
+        ▼
+1. SCENE / CAPTURE
+   sRGB → linear light · exposure · white balance · channel sensitivity · flashing
+        │
+        ├── thresholded neighboring highlights → halation exposure
+        ▼
+2. EMULSION
+   toe · shoulder · development gamma · channel crossover · saturation compression
+        │
+        ▼
+3. LAB / CHEMISTRY
+   push or pull coupling · chemical fog · local density contrast · retained silver
+        │
+        ▼
+4. SCAN / OUTPUT
+   flare · output tint · scan contrast · creative tone/color controls · vignette
+        │
+        ▼
+5. IMAGE STRUCTURE
+   density-dependent silver or dye grain · sRGB encoding · full-resolution output
 ```
 
-The built `.app` lands in `dist/`.
+### Scene and emulsion response
 
-## Use as a GitHub Template
+Input RGB is decoded to linear light before exposure and white-balance gains are applied. A stock can then weight the three source channels as either separate color records or a monochrome spectral approximation. The resulting exposure enters a normalized H-D-style response with independently controlled toe, shoulder, and development gamma.
 
-1. Push this repo to GitHub
-2. **Settings > General > Template repository** -- enable it
-3. Click **Use this template** to scaffold a new app
+Shadow and highlight crossover are separate three-channel vectors. That lets a stock create density-dependent color separation without baking one global cast into every luminance value. Saturation compression also responds to chroma magnitude instead of behaving as a fixed desaturation slider.
 
-See [Creating a repository from a template](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template).
+### Push, pull, and retained silver
 
-## Project Structure
+The Push/Pull control couples several consequences that occur together in physical processing. A push lowers effective scene exposure while increasing development gamma, fog, local contrast, grain radius variance, and shadow-biased grain visibility. A pull does the inverse: additional exposure, softer gamma, a longer shoulder, and finer-looking grain.
 
-```
-src-tauri/
-  src/lib.rs          Tauri commands (Rust backend)
-  src/main.rs         Entry point
-  tauri.conf.json     App config (window, bundle, permissions)
-  capabilities/       Tauri v2 permission grants
-ui/
-  index.html          App shell
-  main.js             Frontend logic + IPC via window.__TAURI__
-  style.css           Dark terminal theme
-scripts/
-  setup.sh            Install toolchain + Tauri CLI
-  dev.sh              cargo tauri dev
-  check.sh            fmt + clippy + test
-  build_macos_app.sh  cargo tauri build + copy to dist/
-assets/
-  icons/              App icon source (1024x1024 PNG)
-  symbols/            SF Symbol exports for in-app icons
-```
+Bleach bypass retains a neutral silver component over the color dye image. Grainlab models that as increased neutral density and contrast with reduced chroma, rather than treating it as a saturation preset.
 
-## Configuration
+### Halation and flare
 
-All app settings live in [`src-tauri/tauri.conf.json`](src-tauri/tauri.conf.json):
+Halation is sampled from thresholded neighboring highlights in the scene-linear image and added before the film response. Its radius is defined at a 2048-pixel reference edge and scales with the decoded photograph, so it does not change character simply because the source dimensions change.
 
-| Field | Purpose |
-|---|---|
-| `productName` | App name in the menu bar and `.app` bundle |
-| `identifier` | macOS bundle identifier (e.g. `com.example.myapp`) |
-| `app.windows` | Window size, title, transparency, decorations |
-| `bundle.icon` | Paths to generated icon files in `src-tauri/icons/` |
-| `bundle.macOS.minimumSystemVersion` | Minimum macOS version |
+Scanner flare remains a separate veiling-light control. It lifts the scan path rather than changing which emulsion crystals were exposed.
 
-## Keyboard Shortcuts
+### Grain
+
+Grain is deterministic for a given frame but spatially non-periodic. It does not use a repeating texture tile, which avoids the rosette and wallpaper artifacts common to simple film-grain shaders.
+
+The model combines multiple continuous stochastic fields and varies them by:
+
+- metallic silver versus overlapping dye-cloud image formation;
+- cubic, tabular, or Delta-style crystal geometry;
+- uniform, mixed-size, or core-shell-inspired emulsion construction;
+- mean clump radius and radius variance;
+- image density and additional shadow exposure bias;
+- shared luminance grain versus weak independent dye-layer chroma variation;
+- standard, pushed, pulled, motion-picture, bleach-bypass, or cross processing.
+
+At fit view, grain should read as texture rather than an overlay. At 100%, coarse and pushed stocks reveal larger irregular clumps while fine tabular stocks remain restrained.
+
+## Typical workflow
+
+1. Open one photograph with `Cmd+O`, open a folder with `Shift+Cmd+O`, or drop images onto the canvas.
+2. Search or browse the Film Library and select a stock.
+3. Press `I` if you want to understand the stock’s physical model and field notes.
+4. Adjust tone and color, then refine grain structure or lab process only when the photograph calls for it.
+5. Scroll over the image to inspect full-resolution detail; hold `Space` while dragging to pan.
+6. Switch to Crop for free, original, or square framing.
+7. Use the history panel or `Cmd+Z` to revisit decisions.
+8. Export the active developed frame with `Cmd+E`.
+
+## Keyboard map
 
 | Shortcut | Action |
 |---|---|
-| `Cmd+R` | Run checks |
-| `Cmd+B` | Show build command |
-| `Cmd+K` | Reset fields |
-| `Cmd+1` / `Cmd+2` | Focus APP_NAME / APP_BUNDLE_ID |
-| `Tab` / `Shift+Tab` | Cycle focus |
-| `Cmd+/` | Toggle shortcut overlay |
+| `Cmd+O` | Open one or more photographs |
+| `Shift+Cmd+O` | Open every supported image in a folder |
+| `Cmd+E` | Export the current frame |
+| `Cmd+Z` | Undo the latest edit |
+| `Cmd+K` | Toggle the command deck |
+| `Cmd+/` | Focus Film Library search |
+| `I` | Open the selected stock dossier |
+| `B` | Hold to compare with the original source |
+| `G` | Toggle the composition grid |
+| `Up` / `Down` | Step through visible film stocks |
+| Scroll over photo | Zoom around the pointer |
+| Double-click photo | Toggle detail zoom |
+| Drag zoomed photo | Pan directly |
+| `Space` + drag | Pan explicitly |
 
-## App Icon
+## Run locally
 
-1. Place a **1024x1024 PNG** at `assets/icons/AppIcon-1024.png`
-2. Run `cargo tauri icon assets/icons/AppIcon-1024.png` to generate all required sizes into `src-tauri/icons/`
-3. Run `make build-app` -- Tauri picks up the generated icons and bundles the `.icns`
+### Requirements
 
-Fallback if no icon exists: `scripts/generate_default_icon.swift` creates one from SF Symbols, or the macOS generic app icon is extracted.
+- macOS 13 or newer;
+- Xcode Command Line Tools;
+- Rustup and Cargo;
+- the pinned Rust 1.95.0 toolchain.
 
-## Make Targets
+The setup script installs the pinned Tauri CLI and fetches Rust dependencies:
 
-| Target | Command |
+```bash
+make setup
+make doctor
+make dev
+```
+
+`make dev` launches the Tauri application directly; there is no Node.js development server or frontend bundler.
+
+### Development commands
+
+| Command | Purpose |
 |---|---|
-| `make setup` | Install Rust toolchain, Tauri CLI, macOS targets |
-| `make dev` | Start dev server with hot reload |
-| `make check` | Run fmt, clippy, and tests |
-| `make build-app` | Build production `.app` bundle |
-| `make clean` | Remove `target/` and `dist/` |
+| `make setup` | Install pinned tools and fetch dependencies |
+| `make doctor` | Verify Cargo, Rust, Xcode tools, Tauri, and the lockfile |
+| `make dev` | Launch Grainlab in Tauri development mode |
+| `make check` | Check shell and JavaScript syntax, Rust formatting, Clippy, and tests |
+| `make icons` | Regenerate platform icons from the 1024px source asset |
+| `make build-app` | Build, sign, verify, and copy the release app to `dist/` |
+| `make clean` | Remove generated Cargo and app output |
 
-## Architecture
+## Build the macOS app
 
+```bash
+make check
+make build-app
+open dist/Grainlab.app
 ```
-Frontend (ui/)              Backend (src-tauri/)
- index.html                  lib.rs
- main.js ──invoke()──────▶  #[tauri::command] fn
-          ◀── return ─────  get_build_command()
-                             get_check_command()
+
+The build script produces a release `.app`, verifies bundle metadata and resources, checks the signature, applies an ad-hoc signature when needed for local use, and copies the result to `dist/Grainlab.app`.
+
+Build metadata can be overridden without editing tracked configuration:
+
+```bash
+APP_NAME="Grainlab Beta" \
+APP_BUNDLE_ID="com.example.grainlab-beta" \
+APP_VERSION="0.2.0" \
+./scripts/build_macos_app.sh
 ```
 
-IPC uses Tauri's `window.__TAURI__.core.invoke()` (enabled by `withGlobalTauri: true` in config). The frontend has no build step -- Tauri serves static files directly from `ui/`.
+Set `UNIVERSAL=1` to build a universal Apple Silicon and Intel bundle. Set `FORCE_ICONS=1` to regenerate platform icons even when the source timestamp has not changed.
 
-## CI
+## Add or modify a film stock
 
-The GitHub Actions workflow (`.github/workflows/ci.yml`) runs on every push and PR:
+Each stock is one JSON file beneath `ui/film-stocks/`. Category folders are organizational; the data inside the file controls rendering and library placement.
 
-1. `cargo fmt --check`
-2. `cargo clippy -- -D warnings`
-3. `cargo test`
-4. `cargo tauri build`
+1. Copy the closest stock definition into the appropriate category folder.
+2. Give it a unique `id`, library metadata, base creative settings, and physical `grainProfile`.
+3. Define a version-1 `pipeline` covering scene sensitivity, curve, crossover, chemistry, optics, output, and grain detail.
+4. Write its dossier with clear technical references, artistic intent, caveats, and primary-source URLs.
+5. Run `make check` or `make dev`.
 
-Runs on `macos-latest` with Rust stable.
+`src-tauri/build.rs` recursively discovers stock files, validates required fields, pipeline families, numeric ranges, vectors, palette colors, dossier sections, and HTTPS references, then regenerates `ui/film-stocks/index.json`. A valid new file appears in the app without editing JavaScript or HTML.
+
+See [the film-stock schema guide](ui/film-stocks/README.md) for the complete interface and an annotated example.
+
+## Project layout
+
+```text
+assets/
+  icons/                         source icon and icon documentation
+  screenshots/grainlab-app.jpg  README product screenshot
+  symbols/                       exported SF Symbols
+
+ui/
+  index.html                     static application shell
+  style.css                      terminal-inspired design system
+  main.js                        state, controls, history, crop, zoom, and export
+  gpu.js                         WebGPU device, buffers, uniforms, and dispatch
+  grain.js                       deterministic CPU compatibility grain model
+  shaders/photo.wgsl             full GPU development pipeline
+  film-stocks/                   discoverable stock definitions and dossiers
+  film-stocks/index.json         generated library manifest
+  assets/demo-coast.png          bundled offline demonstration photograph
+
+src-tauri/
+  build.rs                       film-stock validation and manifest generation
+  src/lib.rs                     Tauri application runner
+  tauri.conf.json                window, security, and bundle configuration
+
+scripts/
+  setup.sh                       pinned tool setup
+  doctor.sh                      environment diagnostics
+  dev.sh                         development launcher
+  check.sh                       repository validation
+  build_macos_app.sh             release packaging and verification
+```
+
+The frontend is intentionally static HTML, CSS, JavaScript, and WGSL. Rust owns the native Tauri shell and packaging boundary. This keeps the application inspectable and makes the film model easy to extend without introducing a JavaScript build toolchain.
+
+## Validation and reliability
+
+`make check` is expected to pass before packaging. It currently verifies:
+
+- Bash syntax for repository scripts;
+- JavaScript syntax for every frontend module;
+- Rust formatting;
+- Clippy with warnings treated as errors;
+- Rust unit and documentation tests;
+- all film-stock definitions through the Tauri build script.
+
+At runtime, Grainlab requests a high-performance WebGPU adapter and compiles `photo.wgsl`. Shader compilation errors are surfaced before the pipeline is created. If WebGPU is unavailable or rendering fails, the app falls back to the CPU implementation and labels the active engine `CPU / SAFE` instead of silently changing behavior.
+
+## Privacy, scope, and current limitations
+
+- Processing is local and the application does not include analytics or an upload path.
+- JPG, PNG, and WEBP are supported; native RAW decoding is not implemented yet.
+- Export currently targets JPEG and limits the long edge to 4096 pixels.
+- The emulator uses physically informed parameter relationships but is not a spectral camera profile, measured scanner characterization, or ICC-managed print proof.
+- Infrared appearance is inferred from visible RGB input; a three-channel visible photograph cannot recover wavelengths the camera never recorded.
+- Stock names and dossiers identify references and interpretation status; Grainlab is not endorsed by the referenced film manufacturers.
+
+## Build-on-top roadmap
+
+- Native RAW decoding and camera-aware scene-linear input.
+- Tiled GPU dispatch for extremely large panoramas and scans.
+- Editable custom stocks, sidecar persistence, and preset sharing.
+- Curves, straighten, masks, local corrections, and batch export.
+- High-bit-depth intermediates and color-managed TIFF or PNG output.
+- Scanner, enlarger, and paper profiles as explicit output modules.
+- Quantitative step-wedge, ColorChecker, and grain-spectrum regression fixtures.
+
+## Template upstream
+
+The reusable macOS and Tauri foundation is tracked as the `upstream` Git remote:
+
+```bash
+git fetch upstream
+git log --oneline upstream/main
+```
+
+Grainlab and the template began with unrelated Git histories, so upstream improvements are reviewed and integrated selectively rather than merged wholesale over product-specific code.
 
 ## License
 

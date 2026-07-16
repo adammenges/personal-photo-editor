@@ -1,0 +1,133 @@
+{
+  "id": "infra",
+  "name": "Infrared 400",
+  "maker": "Mono",
+  "type": "mono",
+  "group": "MONOCHROME",
+  "sort": 120,
+  "settings": { "exposure": 0.14, "contrast": 34, "saturation": -100, "grain": 12 },
+  "grainProfile": { "medium": "silver", "crystal": "cubic", "emulsion": "mixed", "scale": "fine", "process": "standard" },
+  "pipeline": {
+    "version": 1,
+    "family": "bw",
+    "monochrome": true,
+    "scene": { "sensitivity": [0.35, 0.6, 0.05], "flash": 0.0 },
+    "curve": { "toe": 0.2, "shoulder": 0.15, "gamma": 1.05, "saturationCompression": 0.0 },
+    "crossover": { "shadows": [0.0, 0.0, 0.0], "highlights": [0.0, 0.0, 0.0] },
+    "chemistry": { "silverRetention": 0.0, "fog": 0.003, "flare": 0.005, "localContrast": 0.08 },
+    "optics": { "halation": 0.025, "halationRadius": 4.0, "halationThreshold": 0.92 },
+    "output": { "tint": [0.99, 1.0, 1.01], "scanContrast": 1.03 },
+    "grain": { "meanRadius": 0.7, "radiusVariance": 0.25, "shadowBias": 0.55, "chroma": 0.0 }
+  },
+  "dossier": {
+    "version": 1,
+    "reference": {
+      "stock": "ROLLEI INFRARED",
+      "manufacturer": "Maco Photo Products / Rollei Analog",
+      "relationship": "Hyperpanchromatic infrared interpretation",
+      "status": "Current production reference"
+    },
+    "tagline": "Green leaves become their own moonlight.",
+    "portrait": "Infrared 400 is a landscape seen by the edge of human vision. Chlorophyll lifts toward porcelain, blue atmosphere falls toward charcoal, and ordinary daylight takes on the charged stillness of a dream remembered at noon. The emulation is intentionally spectral in mood, but its grain stays fine: the reference stock is not a crude special-effect material.",
+    "facts": [
+      { "label": "NOMINAL SPEED", "value": "ISO 200–400", "note": "Filter and developer dependent" },
+      { "label": "SPECTRAL REACH", "value": "650–750 nm", "note": "Hyperpanchromatic into near IR" },
+      { "label": "IR FILTER", "value": "715–730 nm", "note": "Manufacturer’s recommended zone" },
+      { "label": "IMAGE", "value": "Metallic silver", "note": "Silver-rich thin emulsion" },
+      { "label": "RMS GRANULARITY", "value": "11", "note": "Fine-grain reference" },
+      { "label": "RESOLVING POWER", "value": "160 lines/mm", "note": "At contrast 1000:1" },
+      { "label": "BASE", "value": "100 μm clear PET", "note": "Crystal-clear polyester" },
+      { "label": "FORMATS", "value": "135 · 120 · 4×5", "note": "Also 35 mm bulk rolls" }
+    ],
+    "palette": [
+      { "name": "wood glow", "hex": "#e3e4d9" },
+      { "name": "silver grass", "hex": "#a7aca3" },
+      { "name": "storm sky", "hex": "#38413f" },
+      { "name": "infrared black", "hex": "#0a0d0c" }
+    ],
+    "chapters": [
+      {
+        "eyebrow": "SPECTRAL ANATOMY",
+        "title": "Beyond panchromatic seeing",
+        "lede": "The reference is a silver-rich hyperpanchromatic black-and-white emulsion with sensitivity extending into near infrared. Its clear polyester support, thin emulsion, and published fine grain distinguish it from the woolly infrared caricature often added in software.",
+        "details": [
+          { "label": "Spectral response", "value": "Visible light plus a pronounced response extending from roughly 650 to 750 nm." },
+          { "label": "Image-forming material", "value": "Developed metallic silver; no dye clouds and no channel-colored grain." },
+          { "label": "Published structure", "value": "7.5 μm thin, silver-rich emulsion on a crystal-clear 100 μm polyester support." },
+          { "label": "Crystal caveat", "value": "The manufacturer does not name a tabular geometry; Grainlab uses a fine conventional-grain model as an explicit inference." }
+        ],
+        "notes": [
+          "The Wood effect comes from foliage reflecting near-infrared radiation, not from simply brightening green pixels.",
+          "Spectral output changes with season, plant health, sun angle, haze, filter cutoff, lens transmission, and development."
+        ]
+      },
+      {
+        "eyebrow": "EXPOSURE RITUAL",
+        "title": "Meter visible light, then test the invisible",
+        "lede": "An ordinary meter does not directly tell you how much near-infrared radiation reaches the film. Filter factors are starting points; a bracket is often the only honest meter for a new filter, lens, season, or time of day.",
+        "details": [
+          { "label": "Without an IR filter", "value": "Use as a sharp hyperpanchromatic film around EI 200–400, refined for the chosen developer." },
+          { "label": "With a 715–730 nm filter", "value": "Expect a major speed loss and bracket. Published nominal ISO no longer describes the complete system." },
+          { "label": "Focus", "value": "Infrared focuses beyond visible light. Stop down or use an IR focus index when the lens provides one." },
+          { "label": "Loading", "value": "Protect the clear-base film from strong light and follow current manufacturer handling guidance." }
+        ],
+        "notes": [
+          "Shoot a three-to-five-frame exposure ladder the first time a filter/lens combination matters.",
+          "Hard sun maximizes the spectral separation; overcast light produces a quieter, less theatrical infrared rendering."
+        ]
+      },
+      {
+        "eyebrow": "TONE / GRAIN",
+        "title": "Strange light, disciplined structure",
+        "lede": "The most convincing infrared image keeps ordinary photographic logic beneath the spectral surprise. Fine silver grain, clear edge detail, and a protected highlight scale make luminous foliage feel physical rather than inverted.",
+        "details": [
+          { "label": "Foliage", "value": "Often renders pale under a deep IR filter because healthy leaves reflect strongly in near infrared." },
+          { "label": "Sky / water", "value": "Can fall dramatically dark when little near-IR energy reaches the camera from those directions." },
+          { "label": "Skin", "value": "May become smooth and pale; eyes, veins, and cosmetics can respond in unfamiliar ways." },
+          { "label": "Grainlab intent", "value": "Fine metallic-silver clumps with high tonal separation, not oversized monochrome noise." }
+        ],
+        "notes": [
+          "The shader can evoke infrared relationships from RGB input, but a normal digital photo does not contain a true near-IR capture channel.",
+          "A real IR negative remains scene- and spectrum-dependent in ways no fixed preset can fully reconstruct."
+        ]
+      },
+      {
+        "eyebrow": "DARKROOM / SCAN",
+        "title": "Clear base, deep information",
+        "lede": "The clear PET base suits negative or reversal workflows and scans cleanly, but its physical behavior deserves care. Keep the strip controlled, avoid static and dust, and do not crush the spectral separation into pure black and white too early.",
+        "details": [
+          { "label": "Published example", "value": "Rollei lists R09/Rodinal 1+25 for 10½ min at 20°C and ID-11/D-76 stock for 10:50 at EI 400." },
+          { "label": "Agitation reference", "value": "Continuous first 60 seconds, then 5 seconds every 30 seconds in the manufacturer’s table." },
+          { "label": "Scan posture", "value": "Hold foliage detail below clipping and establish the black point from the subject, not from empty sky." },
+          { "label": "Support handling", "value": "Polyester is dimensionally stable and strong; use clean sleeves and a carrier that keeps it flat." }
+        ],
+        "notes": [
+          "Development times vary with actual EI, contrast target, dilution, equipment, and personal technique.",
+          "Use local contrast sparingly around bright leaves; halos instantly break the optical illusion."
+        ]
+      }
+    ],
+    "bestFor": [
+      "Hard-sun foliage, old trees, formal gardens, cloud architecture, and landscapes that should feel unearthly but precise.",
+      "Black-and-white work where a spectral shift matters more than coarse grain.",
+      "Clear-base reversal experiments and high-resolution scans.",
+      "Scenes with deliberate separation between living vegetation and dark atmosphere."
+    ],
+    "watchFor": [
+      "Trusting a visible-light meter as if it measures near-infrared radiation.",
+      "Wide-open focus errors caused by the infrared focal shift.",
+      "Assuming every green object reflects IR like healthy chlorophyll.",
+      "Claiming a true infrared record from ordinary RGB data—the preset is a spectral interpretation."
+    ],
+    "fieldNotes": [
+      "Find the brightest leaves at noon, then meter as though the sky intends to become night.",
+      "Infrared becomes art when the strange foliage still has veins."
+    ],
+    "sources": [
+      { "title": "ROLLEI INFRARED Data Sheet · R210401", "publisher": "Maco Photo Products / Rollei Analog, 2021", "url": "https://www.rolleianalog.com/wp-content/uploads/2021/04/INFRARED_Datenblatt_EN_R210401.pdf?lang=en" },
+      { "title": "Rollei Infrared product and development reference", "publisher": "Rollei Analog", "url": "https://www.rolleianalog.com/rollei-infrared/?lang=en" }
+    ],
+    "verified": "2026-07-16",
+    "disclaimer": "Infrared 400 is a Grainlab interpretation informed by Rollei Infrared literature. A conventional RGB source does not record near-infrared wavelengths, so this preset can evoke—but cannot recover—true spectral information. Process and exposure values require testing with your actual film, filter, lens, and developer."
+  }
+}

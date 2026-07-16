@@ -1,0 +1,133 @@
+{
+  "id": "ektar",
+  "name": "Vivid 100",
+  "maker": "Archive",
+  "type": "color",
+  "group": "DAYLIGHT / COLOR",
+  "sort": 50,
+  "settings": { "contrast": 12, "saturation": 19, "temperature": 3, "grain": 5 },
+  "grainProfile": { "medium": "dye", "crystal": "tabular", "emulsion": "core-shell", "scale": "fine", "process": "standard" },
+  "pipeline": {
+    "version": 1,
+    "family": "c41",
+    "monochrome": false,
+    "scene": { "sensitivity": [1.04, 0.99, 0.97], "flash": 0.0 },
+    "curve": { "toe": 0.05, "shoulder": 0.25, "gamma": 1.02, "saturationCompression": 0.1 },
+    "crossover": { "shadows": [0.012, -0.006, -0.004], "highlights": [0.012, 0.0, -0.012] },
+    "chemistry": { "silverRetention": 0.0, "fog": 0.002, "flare": 0.004, "localContrast": 0.05 },
+    "optics": { "halation": 0.02, "halationRadius": 4.0, "halationThreshold": 0.93 },
+    "output": { "tint": [1.01, 1.0, 0.99], "scanContrast": 1.04 },
+    "grain": { "meanRadius": 0.55, "radiusVariance": 0.1, "shadowBias": 0.25, "chroma": 0.035 }
+  },
+  "dossier": {
+    "version": 1,
+    "reference": {
+      "stock": "KODAK PROFESSIONAL EKTAR 100",
+      "manufacturer": "Kodak Alaris",
+      "relationship": "Fine-grain saturated color-negative interpretation",
+      "status": "Current production reference"
+    },
+    "tagline": "Color with polished edges and nowhere to hide.",
+    "portrait": "Vivid 100 is sunlight made articulate: red lacquer, blue water, green glass, polished chrome. Its pleasure is precision rather than haze. The grain stays nearly below perception while hue separation and edge detail carry the feeling of a slow, deliberate exposure on a negative made to be enlarged.",
+    "facts": [
+      { "label": "NOMINAL SPEED", "value": "ISO 100 / 21°", "note": "Daylight color negative" },
+      { "label": "PROCESS", "value": "C-41", "note": "Standard color-negative chemistry" },
+      { "label": "IMAGE", "value": "CMY dye clouds", "note": "Orange-masked negative" },
+      { "label": "BALANCE", "value": "Daylight", "note": "ISO 25 with 80A at 3200 K" },
+      { "label": "FORMATS", "value": "135 · 120 · sheet", "note": "Availability varies" },
+      { "label": "GRAIN CLAIM", "value": "Ultra-fine", "note": "Kodak’s finest-grain color negative" },
+      { "label": "EMULSION", "value": "T-GRAIN + cubic", "note": "Micro-structure optimized" },
+      { "label": "CHARACTER", "value": "Vivid · exact", "note": "High color separation" }
+    ],
+    "palette": [
+      { "name": "signal red", "hex": "#c44a35" },
+      { "name": "canyon gold", "hex": "#d29c45" },
+      { "name": "deep cyan", "hex": "#2c727a" },
+      { "name": "pine shadow", "hex": "#233c33" }
+    ],
+    "chapters": [
+      {
+        "eyebrow": "EMULSION ANATOMY",
+        "title": "Tiny dye clouds, engineered edges",
+        "lede": "Ektar’s technical publication combines micro-structure-optimized T-GRAIN emulsions, advanced cubic emulsions, proprietary development accelerators, DIR couplers, and VISION-derived technology. Grainlab interprets that mixed architecture as very fine dye-cloud structure with crisp spatial definition.",
+        "details": [
+          { "label": "Image-forming material", "value": "Cyan, magenta, and yellow dye images formed during C-41 development; metallic silver is then removed." },
+          { "label": "Crystal architecture", "value": "A published combination of optimized T-GRAIN and advanced cubic emulsion technologies—not one uniform crystal population." },
+          { "label": "Edge behavior", "value": "DIR couplers and optimized chemistry support distinct edges and fine detail in the manufacturer’s design." },
+          { "label": "Grainlab model", "value": "Fine tabular-led mixed grain, low clumping, subtle channel independence, high edge retention." }
+        ],
+        "notes": [
+          "Fine grain is not the absence of film structure; it is structure held below distraction at a given enlargement.",
+          "Underexposure and scanner sharpening can make even a very fine negative look coarse."
+        ]
+      },
+      {
+        "eyebrow": "EXPOSURE",
+        "title": "Slow enough to make every decision visible",
+        "lede": "ISO 100 rewards deliberate light and stable technique. The reference is daylight balanced; blue conversion filters for tungsten cost substantial speed, which is why a tripod or daylight source often makes more sense than forcing the stock into dim warm interiors.",
+        "details": [
+          { "label": "Daylight / flash", "value": "ISO 100 with no correction under daylight or electronic flash." },
+          { "label": "3400 K photolamp", "value": "Kodak publishes ISO 32 with an 80B filter." },
+          { "label": "3200 K tungsten", "value": "Kodak publishes ISO 25 with an 80A filter for corrected color." },
+          { "label": "Metering posture", "value": "Protect shadow exposure and bracket color-critical product or landscape work." }
+        ],
+        "notes": [
+          "Color negative tolerates exposure variation, but saturated color does not excuse a thin negative.",
+          "At slow shutter speeds, camera motion will erase the exact edge quality this stock is chosen to preserve."
+        ]
+      },
+      {
+        "eyebrow": "COLOR SIGNATURE",
+        "title": "Saturation with object boundaries",
+        "lede": "The reference is built for vivid color, nature, travel, fashion, and products. Its distinguishing quality is not a global saturation slider but the way neighboring colors stay separate while the negative remains printable and scannable.",
+        "details": [
+          { "label": "Reds", "value": "Dense, confident, and often the first color viewers associate with the stock." },
+          { "label": "Blues / cyans", "value": "Clear and deep, especially in water, painted surfaces, and open daylight." },
+          { "label": "Greens", "value": "Vivid with strong separation; easy to overcook if the scan already carries a saturated house look." },
+          { "label": "Skin", "value": "Can be beautiful in controlled light, but the palette is less forgiving and portrait-specialized than a low-saturation negative." }
+        ],
+        "notes": [
+          "Use color relationships, not the saturation control, to decide whether the frame is working.",
+          "A neutral scan can look calmer than lab defaults; the negative leaves meaningful room for interpretation."
+        ]
+      },
+      {
+        "eyebrow": "SCAN / ENLARGEMENT",
+        "title": "Built to survive magnification",
+        "lede": "Kodak positions the stock for scanning and extraordinary enlargement. The technical data list a 35 mm Print Grain Index below the visual threshold for a 4×6 print, rising predictably with magnification.",
+        "details": [
+          { "label": "35 mm Print Grain Index", "value": "Kodak publishes <25 at 4×6, 38 at 8×10, and 66 at 16×20 under its specified print method." },
+          { "label": "Scanning", "value": "Supported across linear-array CCD, area-array CCD, and PMT/drum scanning workflows." },
+          { "label": "Capture master", "value": "Use high bit depth, unclipped channels, moderate sharpening, and a neutral inversion before creative color." },
+          { "label": "Grainlab intent", "value": "Make texture perceptible only when enlargement and viewing distance justify it." }
+        ],
+        "notes": [
+          "Print Grain Index is a psychophysical print metric, not a grain diameter or a universal scanner-noise number.",
+          "Do not add coarse grain to make fine-grain film look more analog; let tone, color, and edge behavior do the work."
+        ]
+      }
+    ],
+    "bestFor": [
+      "Landscape, nature, travel, fashion, automobiles, architecture, and color-critical product studies.",
+      "Bright daylight and tripod work where ISO 100 is an advantage rather than a limitation.",
+      "35 mm frames intended for unusually clean enlargements.",
+      "Scenes organized around strong red/cyan, warm/cool, or complementary color structure."
+    ],
+    "watchFor": [
+      "Underexposure that makes a famously fine-grain stock scan noisy and coarse.",
+      "Using tungsten correction without accounting for the published effective-speed loss.",
+      "Over-saturating skin and foliage after a lab scan has already applied a vivid transform.",
+      "Mistaking edge sharpening for actual optical detail."
+    ],
+    "fieldNotes": [
+      "Choose three colors before raising the camera. Let everything else become their supporting cast.",
+      "The small grain is permission to print large, not permission to stop looking at the light."
+    ],
+    "sources": [
+      { "title": "KODAK PROFESSIONAL EKTAR 100 Film · E-4046", "publisher": "Kodak Alaris, January 2025", "url": "https://kodakprofessional.com/sites/default/files/2025-07/e4046.pdf" },
+      { "title": "KODAK PROFESSIONAL EKTAR 100 product reference", "publisher": "Kodak Alaris", "url": "https://www.kodakprofessional.com/en-gb/photographers/film/color/filme-kodak-professional-ektar-100/530" }
+    ],
+    "verified": "2026-07-16",
+    "disclaimer": "Vivid 100 is an independent Grainlab interpretation informed by KODAK PROFESSIONAL EKTAR 100 literature. Published Print Grain Index values depend on Kodak’s stated print conditions and should not be treated as universal scanner measurements."
+  }
+}

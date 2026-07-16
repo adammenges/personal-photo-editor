@@ -1,21 +1,13 @@
-# App Icon
+# App icon source
 
-Place your app icon source here:
+`AppIcon-1024.png` is the single source of truth for the application icon. Use a square 1024 × 1024 PNG with transparency where appropriate.
 
-- `AppIcon-1024.png` (required for production, 1024x1024 PNG)
-
-Then run:
+Regenerate Tauri's macOS, Windows, iOS, and Android icon set with:
 
 ```bash
-./scripts/build_macos_app.sh
+make icons
 ```
 
-That command will:
+`scripts/build_macos_app.sh` also regenerates icons when the source is newer than `src-tauri/icons/icon.icns`. If the source is missing on macOS, the build attempts to recreate the included default with `generate_default_icon.swift`.
 
-1. Generate `AppIcon.icns`
-2. Copy it into `dist/<AppName>.app/Contents/Resources/AppIcon.icns`
-
-If `AppIcon-1024.png` is missing, the build script auto-generates a fallback icon:
-
-1. First tries `scripts/generate_default_icon.swift`.
-2. If Swift generation is unavailable, falls back to the macOS generic application icon.
+Commit the generated files in `src-tauri/icons/` so a fresh checkout has a complete icon set.

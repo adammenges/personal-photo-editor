@@ -1,0 +1,133 @@
+{
+  "id": "chrome",
+  "name": "Chrome 64",
+  "maker": "Archive",
+  "type": "color",
+  "group": "DAYLIGHT / COLOR",
+  "sort": 30,
+  "settings": { "exposure": -0.05, "contrast": 18, "saturation": 8, "temperature": 4, "grain": 7 },
+  "grainProfile": { "medium": "dye", "crystal": "cubic", "emulsion": "uniform", "scale": "fine", "process": "standard" },
+  "pipeline": {
+    "version": 1,
+    "family": "e6",
+    "monochrome": false,
+    "scene": { "sensitivity": [1.03, 1.0, 0.96], "flash": 0.0 },
+    "curve": { "toe": 0.12, "shoulder": 0.08, "gamma": 1.03, "saturationCompression": 0.08 },
+    "crossover": { "shadows": [0.02, 0.0, -0.015], "highlights": [0.01, 0.0, -0.005] },
+    "chemistry": { "silverRetention": 0.0, "fog": 0.0, "flare": 0.003, "localContrast": 0.04 },
+    "optics": { "halation": 0.025, "halationRadius": 3.0, "halationThreshold": 0.94 },
+    "output": { "tint": [1.015, 1.0, 0.975], "scanContrast": 1.05 },
+    "grain": { "meanRadius": 0.65, "radiusVariance": 0.12, "shadowBias": 0.28, "chroma": 0.025 }
+  },
+  "dossier": {
+    "version": 1,
+    "reference": {
+      "stock": "KODACHROME 64",
+      "manufacturer": "Eastman Kodak Company",
+      "relationship": "Historical K-14 reversal-film interpretation",
+      "status": "Retired stock and unavailable K-14 process"
+    },
+    "tagline": "A projected memory with black already inside it.",
+    "portrait": "Chrome 64 is not a faded postcard. It is a dense little positive: warm reds, firm shadow color, fine structure, and the uncanny authority of an image that existed as the object you projected. This interpretation aims for the lucid, slightly formal color of a well-kept transparency rather than a generic vintage cast.",
+    "facts": [
+      { "label": "NOMINAL SPEED", "value": "ISO 64 / 19°", "note": "Daylight reversal reference" },
+      { "label": "PROCESS", "value": "K-14", "note": "Specialized, now unavailable" },
+      { "label": "IMAGE", "value": "Positive dye image", "note": "Viewed or projected directly" },
+      { "label": "COUPLERS", "value": "Processing baths", "note": "Not incorporated in the film" },
+      { "label": "BALANCE", "value": "Daylight", "note": "Slow, deliberate exposure" },
+      { "label": "LATITUDE", "value": "Narrow reversal", "note": "Meter highlights carefully" },
+      { "label": "ERA", "value": "1935–2009", "note": "Kodachrome family run" },
+      { "label": "CHARACTER", "value": "Dense · archival", "note": "Fine, crisp color" }
+    ],
+    "palette": [
+      { "name": "projector white", "hex": "#e0d7bf" },
+      { "name": "kodachrome red", "hex": "#b74431" },
+      { "name": "lake blue", "hex": "#365b68" },
+      { "name": "slide mount", "hex": "#24251f" }
+    ],
+    "chapters": [
+      {
+        "eyebrow": "EMULSION ANATOMY",
+        "title": "Color assembled in the laboratory",
+        "lede": "Unlike ordinary chromogenic color films with dye couplers incorporated in their emulsion layers, Kodachrome’s complex K-14 sequence introduced couplers during separate color-development stages. The processed object was a positive transparency with no orange negative mask.",
+        "details": [
+          { "label": "Latent records", "value": "Multiple silver-halide layers recorded blue, green, and red scene information." },
+          { "label": "Coupler architecture", "value": "Color couplers entered through controlled processing solutions rather than living in the coated emulsion." },
+          { "label": "Final object", "value": "A positive dye transparency meant to be viewed by transmitted light or projection." },
+          { "label": "Grainlab model", "value": "Fine conventional-crystal structure, low chroma noise, firm black density, and clean dye boundaries." }
+        ],
+        "notes": [
+          "The famous look came from the stock/process system; K-14 chemistry was not interchangeable with E-6.",
+          "The thin, complex image architecture is one reason a generic orange-masked negative preset is not an adequate model."
+        ]
+      },
+      {
+        "eyebrow": "EXPOSURE / PROJECTION",
+        "title": "The slide is the verdict",
+        "lede": "Reversal film does not offer the same printing latitude as a color negative. Exposure determines the density of the object you will view, so highlight placement and color temperature must be decided before the shutter rather than rescued from a generous negative later.",
+        "details": [
+          { "label": "Metering", "value": "Use an incident reading or a deliberate spot placement; protect bright textured values from becoming clear film." },
+          { "label": "Underexposure", "value": "Deepens the transparency rapidly, often enriching color while sacrificing shadow separation." },
+          { "label": "Overexposure", "value": "Thins highlight dye density and can erase delicate bright color with little room for reconstruction." },
+          { "label": "Viewing condition", "value": "Projection contrast, lamp spectrum, screen, scan transform, and display all change the remembered look." }
+        ],
+        "notes": [
+          "Bracket in thirds when the transparency itself is the final original.",
+          "A modern display rendition should keep a real black while avoiding crushed, nostalgia-filter shadows."
+        ]
+      },
+      {
+        "eyebrow": "K-14 PROCESS",
+        "title": "A color factory in miniature",
+        "lede": "K-14M used first development, controlled re-exposure or fogging, separate cyan, yellow, and magenta development stages, washes, conditioning, bleach, fix, and stabilization. Process control was inseparable from color quality.",
+        "details": [
+          { "label": "First developer", "value": "Created the initial negative silver image and established density before color-development stages." },
+          { "label": "Selective color development", "value": "Color records were made developable in sequence and coupled with dyes from their dedicated baths." },
+          { "label": "Bleach / fix", "value": "Converted and removed remaining silver compounds, leaving the positive dye image." },
+          { "label": "Historical limit", "value": "K-14 is no longer commercially available; surviving exposed rolls cannot be normally color processed today." }
+        ],
+        "notes": [
+          "Kodak’s K-Lab theory guide runs dozens of pages because the look depended on a highly specific chemical sequence.",
+          "Digital emulation can study the result but cannot recreate the physical archival object or its dye stability."
+        ]
+      },
+      {
+        "eyebrow": "SCAN LANGUAGE",
+        "title": "Translate the slide; do not embalm it",
+        "lede": "A good scan preserves the transparency’s dense shadows and fine color boundaries without forcing every frame into the same warm mythology. The goal is transmitted-light plausibility on an emissive display.",
+        "details": [
+          { "label": "Dynamic range", "value": "Use a scanner capable of separating dense slide shadows without flare or channel clipping." },
+          { "label": "Color posture", "value": "Establish a neutral viewing transform first, then retain the stock’s warm reds and composed blues selectively." },
+          { "label": "Dust", "value": "Handle the physical transparency carefully; dense shadows make dust and scratches conspicuous." },
+          { "label": "Grainlab intent", "value": "Crisp fine grain, substantial black, warm primary color, and no artificial fade wash." }
+        ],
+        "notes": [
+          "The most respectful archival grade is not always the most saturated one.",
+          "Leave the blacks dense enough that the frame still feels made for light passing through film."
+        ]
+      }
+    ],
+    "bestFor": [
+      "Travel, documentary color, projected-family-memory moods, graphic daylight, and restrained primary colors.",
+      "Scenes that need a finished positive feeling rather than the open malleability of a negative.",
+      "Sunlit reds, painted signs, blue water, skin against dark clothing, and composed mid-century color.",
+      "Archival narratives where clarity matters more than faux damage."
+    ],
+    "watchFor": [
+      "Adding yellow fade, light leaks, dust, and crushed blacks merely because the reference is historical.",
+      "Treating reversal exposure like a forgiving color-negative workflow.",
+      "Calling E-6 processing a substitute for the chemically distinct K-14 process.",
+      "Assuming every famous Kodachrome image shared one scan, projector, age, or color grade."
+    ],
+    "fieldNotes": [
+      "Frame it as though the next thing the image touches will be a beam of light.",
+      "History deserves color more exact than sepia."
+    ],
+    "sources": [
+      { "title": "Theory Guide for the Kodak K-Lab Processor · Process K-14M", "publisher": "Eastman Kodak Company, 1999", "url": "https://www.kodak.com/cluster/global/plugins/acrobat/en/service/kLab/tg2044_1_02mar99.pdf" },
+      { "title": "Kodak company milestones · Kodachrome retirement", "publisher": "Eastman Kodak Company", "url": "https://www.kodak.com/en/company/page/milestones/" }
+    ],
+    "verified": "2026-07-16",
+    "disclaimer": "Chrome 64 is an independent historical interpretation. KODACHROME and K-14 are retired Kodak products/processes; Grainlab does not reproduce their chemistry, dye spectra, projection path, or a measured archival scan."
+  }
+}

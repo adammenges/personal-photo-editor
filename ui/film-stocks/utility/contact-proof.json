@@ -1,0 +1,133 @@
+{
+  "id": "proof",
+  "name": "Contact Proof",
+  "maker": "Utility",
+  "type": "utility",
+  "group": "UTILITY / BASE",
+  "sort": 20,
+  "settings": { "exposure": -0.15, "contrast": 8, "saturation": -16, "temperature": -2, "fade": 10, "grain": 4 },
+  "grainProfile": { "medium": "silver", "crystal": "cubic", "emulsion": "mixed", "scale": "fine", "process": "standard" },
+  "pipeline": {
+    "version": 1,
+    "family": "print",
+    "monochrome": false,
+    "scene": { "sensitivity": [1.0, 1.0, 1.0], "flash": 0.0 },
+    "curve": { "toe": 0.08, "shoulder": 0.15, "gamma": 0.96, "saturationCompression": 0.12 },
+    "crossover": { "shadows": [0.0, 0.0, 0.0], "highlights": [0.0, 0.0, 0.0] },
+    "chemistry": { "silverRetention": 0.0, "fog": 0.012, "flare": 0.006, "localContrast": 0.04 },
+    "optics": { "halation": 0.0, "halationRadius": 0.0, "halationThreshold": 1.0 },
+    "output": { "tint": [0.97, 1.0, 0.98], "scanContrast": 0.94 },
+    "grain": { "meanRadius": 0.55, "radiusVariance": 0.18, "shadowBias": 0.35, "chroma": 0.0 }
+  },
+  "dossier": {
+    "version": 1,
+    "reference": {
+      "stock": "Silver-gelatin contact sheet / work print",
+      "manufacturer": "Darkroom practice",
+      "relationship": "Proofing-material interpretation, not a camera film stock",
+      "status": "Active traditional workflow reference"
+    },
+    "tagline": "The frame before it learns how important it is.",
+    "portrait": "Contact Proof imagines the photograph at workbench scale: direct, slightly cool, modest in contrast, carrying enough paper and silver character to feel handled but not yet performed. It is the look of decisions being made—grease pencil outside the frame, enlarger time still negotiable, sequence more important than polish.",
+    "facts": [
+      { "label": "CATEGORY", "value": "Work print", "note": "Not camera-original film" },
+      { "label": "PROCESS", "value": "Silver gelatin", "note": "Paper developer · stop · fix · wash" },
+      { "label": "IMAGE", "value": "Metallic silver", "note": "Paper-base positive" },
+      { "label": "MAGNIFICATION", "value": "1:1 contact", "note": "Negative touches paper" },
+      { "label": "PURPOSE", "value": "Edit / judge", "note": "Density, focus, gesture, sequence" },
+      { "label": "SURFACE", "value": "Work-print matte", "note": "Low-gloss interpretation" },
+      { "label": "GRAIN", "value": "Negative-led", "note": "Paper texture adds its own scale" },
+      { "label": "CHARACTER", "value": "Cool · provisional", "note": "Darkroom utility aesthetic" }
+    ],
+    "palette": [
+      { "name": "fiber white", "hex": "#d4d7cf" },
+      { "name": "tray gray", "hex": "#888e89" },
+      { "name": "pencil lead", "hex": "#4a4e4b" },
+      { "name": "wet black", "hex": "#171a18" }
+    ],
+    "chapters": [
+      {
+        "eyebrow": "PHYSICAL OBJECT",
+        "title": "Negative and paper in direct contact",
+        "lede": "A traditional contact sheet places processed negatives emulsion-side against photographic paper under glass and exposes them to enlarger light. Because there is effectively no enlargement, every frame appears at the physical size of its negative.",
+        "details": [
+          { "label": "Image-forming material", "value": "Metallic silver in the developed paper emulsion, viewed by reflected light." },
+          { "label": "Scale", "value": "35 mm frames remain tiny; medium and large formats reveal progressively more without optical enlargement." },
+          { "label": "Sharpness", "value": "Contact pressure, glass cleanliness, negative flatness, and emulsion orientation control edge fidelity." },
+          { "label": "Grain relationship", "value": "Camera-negative grain is not enlarged, while paper emulsion and surface contribute their own fine texture." }
+        ],
+        "notes": [
+          "A contact print is a new photographic object, not the negative itself.",
+          "Its reflected-paper white and black density differ fundamentally from a projected transparency or emissive display."
+        ]
+      },
+      {
+        "eyebrow": "PROOF EXPOSURE",
+        "title": "One standard print for honest comparison",
+        "lede": "The useful contact sheet is made at a repeatable paper exposure and contrast so negative density differences remain visible. If every frame is individually corrected, the proof stops reporting how the rolls were exposed and developed.",
+        "details": [
+          { "label": "Minimum-time approach", "value": "A common method finds the minimum exposure that makes unexposed film-base-plus-fog print as the first convincing black." },
+          { "label": "Contrast", "value": "Use a standard paper grade or filtration and keep it consistent across the roll or project." },
+          { "label": "Reference", "value": "Include edge markings and blank film so base density, frame spacing, and process condition remain inspectable." },
+          { "label": "Evaluation", "value": "Judge exposure consistency, focus, motion, expression, sequence, and which frames deserve enlargement tests." }
+        ],
+        "notes": [
+          "A dark contact sheet can hide thin negatives; a pale one can flatter excessive density. Standardization is the point.",
+          "Mark selections beside the image, not across the only readable version of the frame."
+        ]
+      },
+      {
+        "eyebrow": "PAPER / CHEMISTRY",
+        "title": "The proof has its own emulsion behavior",
+        "lede": "Paper choice, developer, contrast filtration, development completion, fixing, washing, dry-down, and viewing light all affect the work print. A cool neutral proof is a convention, not a chemically universal truth.",
+        "details": [
+          { "label": "RC paper", "value": "Fast processing and flat drying make resin-coated paper practical for routine proofing." },
+          { "label": "Fiber paper", "value": "Richer object quality and longer washing/drying demands; usually reserved for more deliberate work prints or finals." },
+          { "label": "Development", "value": "Develop consistently to completion at controlled temperature instead of snatching prints by eye." },
+          { "label": "Dry-down", "value": "Fiber prints can appear darker after drying; evaluate under the intended dry viewing condition." }
+        ],
+        "notes": [
+          "Paper texture should not be confused with enlarged camera-film grain.",
+          "Archival permanence depends on adequate fixing, washing, toning choices, storage, and material—not on the image looking old."
+        ]
+      },
+      {
+        "eyebrow": "DIGITAL PROOF",
+        "title": "Keep the provisional intelligence",
+        "lede": "A digital contact sheet can preserve the editing function even when the source is a single image: low-drama tone, visible edge information, and enough texture to encourage sequencing rather than fetishizing a final grade.",
+        "details": [
+          { "label": "Tone", "value": "Slightly compressed highlights, lifted paper-like floor, and a cool-neutral work-print balance." },
+          { "label": "Texture", "value": "Fine neutral silver structure at low amplitude; no scratches, sprocket holes, or fake dust by default." },
+          { "label": "Use", "value": "A restrained base for choosing crops, comparing frames, and deciding which image earns a deeper treatment." },
+          { "label": "Grainlab intent", "value": "Darkroom utility atmosphere without pretending a full-resolution digital source physically touched paper." }
+        ],
+        "notes": [
+          "The aesthetic is provisional but the UI applies it as a normal editable stock preset.",
+          "If the proof becomes prettier than the final image, it has stopped being a neutral editing aid and become its own interpretation."
+        ]
+      }
+    ],
+    "bestFor": [
+      "Sequencing a folder, judging gestures, selecting crops, and calming an overworked grade.",
+      "Documentary, portrait, and street frames that benefit from a work-print mood.",
+      "Testing whether the image survives without saturated color or dramatic contrast.",
+      "A restrained monochrome-adjacent starting point that keeps some source color."
+    ],
+    "watchFor": [
+      "Calling paper texture camera-film grain.",
+      "Adding fake dust, scratches, borders, or sprockets that do not serve proofing.",
+      "Using a different tone curve on every frame and losing comparative value.",
+      "Treating the utility preset as a literal simulation of a specific paper/developer combination."
+    ],
+    "fieldNotes": [
+      "Circle the frame because of the gesture, not because the grade already loves it.",
+      "A proof is where photographs learn to stand beside one another."
+    ],
+    "sources": [
+      { "title": "How to Process and Print Black-and-White Film", "publisher": "Kodak Alaris resources", "url": "https://kodakprofessional.com/photographers/resources" },
+      { "title": "Kodak Glossary of Motion Picture Terms · contact printing and density", "publisher": "Eastman Kodak Company", "url": "https://www.kodak.com/en/motion/page/glossary-of-motion-picture-terms/" }
+    ],
+    "verified": "2026-07-16",
+    "disclaimer": "Contact Proof is a Grainlab work-print interpretation, not a camera film or a measured silver-gelatin paper profile. Physical contact prints vary with negative, paper, developer, filtration, exposure, washing, drying, and viewing illumination."
+  }
+}

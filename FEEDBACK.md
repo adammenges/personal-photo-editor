@@ -1,2 +1,13 @@
 - Always make the top bar the same McClair is the background so that it blends in it looks more like a native app
 - Make the UI reactive to window size by adapting layout/components at any width
+- Never use short-period deterministic modulo noise for film grain; research the physical photographic process and use non-tiling, signal-dependent, spatially correlated grain across the full image.
+- Non-interactive toolbar regions must drag the native window and must never select interface text.
+- Photo interaction should prioritize navigation: drag a zoomed image directly or with Space, double-click to zoom, and reserve original comparison for the explicit Before control or shortcut.
+- Editing features shown in the interface must be functional, and edit history must be visible and actionable.
+- Film stocks must be data-driven and automatically discoverable from definition files instead of being hard-coded in the main application script.
+- Image import must support selecting complete folders as well as individual files.
+- Do not treat `data-tauri-drag-region` as sufficient proof of native window dragging: grant `core:window:allow-start-dragging`, call `startDragging()` explicitly from non-interactive toolbar space, and verify that the packaged macOS window actually changes position.
+- Never magnify a fixed low-resolution photo preview when zooming. Keep the original decoded source and rebuild the preview buffer at Retina-aware dimensions that track the displayed zoom, reaching the source's native resolution when needed.
+- Cursor-centered zoom must be verified against the photo's actual on-screen bounds: after zooming, the normalized source coordinate beneath an off-center pointer must remain unchanged.
+- Pan limits must provide inspection overscroll: every corner of a zoomed image should be draggable into the central viewing area, not merely allowed to touch the viewport edge.
+- Always load and process the complete native-resolution image in the editor. Do not use an adaptive, fit-sized, or otherwise downsampled preview buffer; the canvas backing dimensions must equal the decoded source dimensions at every zoom level.

@@ -1,0 +1,133 @@
+{
+  "id": "delta",
+  "name": "Delta 100",
+  "maker": "Mono",
+  "type": "mono",
+  "group": "MONOCHROME",
+  "sort": 110,
+  "settings": { "exposure": 0.04, "contrast": 13, "saturation": -100, "grain": 8 },
+  "grainProfile": { "medium": "silver", "crystal": "delta", "emulsion": "core-shell", "scale": "fine", "process": "standard" },
+  "pipeline": {
+    "version": 1,
+    "family": "bw",
+    "monochrome": true,
+    "scene": { "sensitivity": [0.25, 0.68, 0.07], "flash": 0.0 },
+    "curve": { "toe": 0.08, "shoulder": 0.35, "gamma": 0.98, "saturationCompression": 0.0 },
+    "crossover": { "shadows": [0.0, 0.0, 0.0], "highlights": [0.0, 0.0, 0.0] },
+    "chemistry": { "silverRetention": 0.0, "fog": 0.002, "flare": 0.003, "localContrast": 0.06 },
+    "optics": { "halation": 0.012, "halationRadius": 2.0, "halationThreshold": 0.96 },
+    "output": { "tint": [1.0, 1.0, 1.0], "scanContrast": 1.0 },
+    "grain": { "meanRadius": 0.65, "radiusVariance": 0.2, "shadowBias": 0.45, "chroma": 0.0 }
+  },
+  "dossier": {
+    "version": 1,
+    "reference": {
+      "stock": "ILFORD DELTA 100 PROFESSIONAL",
+      "manufacturer": "HARMAN technology / ILFORD PHOTO",
+      "relationship": "Close technical and aesthetic study; rendering is interpretive",
+      "status": "Current production reference"
+    },
+    "tagline": "Silver rendered with a draftsman’s restraint.",
+    "portrait": "Delta 100 is the quiet precision instrument in the monochrome drawer: fine enough to describe weathered stone, open enough to keep a pale sky breathing, and modern enough that the grain reads as structure rather than nostalgia. This emulation favors long tonal sentences, lucid edges, and blacks that arrive deliberately instead of collapsing into ink.",
+    "facts": [
+      { "label": "NOMINAL SPEED", "value": "ISO 100 / 21°", "note": "Daylight rating" },
+      { "label": "PRACTICAL EI", "value": "50–200", "note": "Manufacturer’s useful metering range" },
+      { "label": "PROCESS", "value": "B&W negative", "note": "Developer choice shapes acutance and grain" },
+      { "label": "IMAGE", "value": "Metallic silver", "note": "No dye-cloud image" },
+      { "label": "SENSITIZATION", "value": "Panchromatic", "note": "Normal color-filter practice applies" },
+      { "label": "FORMATS", "value": "135 · 120 · sheet", "note": "Base thickness varies by format" },
+      { "label": "GRAIN FAMILY", "value": "Core-shell / Delta", "note": "Fine engineered crystal system" },
+      { "label": "CHARACTER", "value": "Fine · lucid", "note": "High enlargement headroom" }
+    ],
+    "palette": [
+      { "name": "paper white", "hex": "#d9ded8" },
+      { "name": "pewter", "hex": "#89928c" },
+      { "name": "graphite", "hex": "#434a46" },
+      { "name": "selenium", "hex": "#141816" }
+    ],
+    "chapters": [
+      {
+        "eyebrow": "EMULSION ANATOMY",
+        "title": "A modern silver negative",
+        "lede": "The physical photograph is formed by developed metallic silver. ILFORD’s Delta family uses engineered core-shell crystal technology to gain speed efficiently while holding grain tight; Grainlab translates that into small, restrained clumps with a clean frequency distribution.",
+        "details": [
+          { "label": "Image-forming material", "value": "Metallic silver remaining after development and fixation." },
+          { "label": "Crystal model", "value": "Delta-family engineered crystals; the shader uses its dedicated Delta response rather than generic cubic grain." },
+          { "label": "Support", "value": "0.125 mm acetate for 135, 0.110 mm clear acetate for 120, and 0.180 mm polyester for sheet film." },
+          { "label": "Halation control", "value": "120 and sheet versions carry an anti-halation backing that clears during processing." }
+        ],
+        "notes": [
+          "The visible grain is the statistical pattern of developed silver, not a texture printed on top of the image.",
+          "Format matters: the same emulsion enlarged from 35 mm will announce itself sooner than a 120 or sheet negative."
+        ]
+      },
+      {
+        "eyebrow": "SENSITOMETRY",
+        "title": "Long midtones, disciplined shoulders",
+        "lede": "At box speed the stock gives a full, measured scale. Rating at EI 50 supplies a denser negative and generous shadow placement; EI 200 is within ILFORD’s stated good-image-quality range but asks more of development and shadow exposure.",
+        "details": [
+          { "label": "Metering baseline", "value": "EI 100 for a normal contrast index and the manufacturer’s intended balance." },
+          { "label": "Overexposure", "value": "EI 50 gives one extra stop of exposure; useful for luminous skin, foliage separation, and scan-friendly shadow density." },
+          { "label": "Underexposure", "value": "EI 200 can work cleanly, but sparse shadows cannot be recreated by longer development." },
+          { "label": "Reciprocity", "value": "Long exposures need ILFORD’s published reciprocity compensation; test when exposure time leaves the ordinary shutter-speed range." }
+        ],
+        "notes": [
+          "Expose for the shadow value you need to print; develop for the highlight contrast your output medium can hold.",
+          "A yellow or orange filter changes both spectral rendering and effective exposure—apply the published filter factor or TTL reading."
+        ]
+      },
+      {
+        "eyebrow": "DARKROOM",
+        "title": "Developer choice is part of the lens",
+        "lede": "Fine grain is not one immutable property. Solvent action, dilution, agitation, time, and enlargement all decide whether Delta looks creamy, etched, or clinically smooth.",
+        "details": [
+          { "label": "Balanced starting point", "value": "ILFOTEC DD-X 1+4 for 10 minutes at 20°C, or ID-11 stock for 8½ minutes, per ILFORD’s sheet." },
+          { "label": "Finest-grain direction", "value": "PERCEPTOL stock at EI 50, or DD-X at EI 100, trades speed or edge bite for smoothness." },
+          { "label": "Acutance direction", "value": "More dilute developers can emphasize edge effects; control agitation before chasing longer times." },
+          { "label": "Process discipline", "value": "Development data are starting points. Calibrate for thermometer, agitation, tank, water, scanner, and paper." }
+        ],
+        "notes": [
+          "Short development below five minutes can invite unevenness; choose a dilution that keeps the process controllable.",
+          "Judge a developer from the final enlargement or scan, not a 100% negative crop in isolation."
+        ]
+      },
+      {
+        "eyebrow": "SCAN / PRINT",
+        "title": "Give the microcontrast somewhere to go",
+        "lede": "Delta rewards a neutral scan with conservative sharpening. Its beauty is the relationship between fine grain and clear local contrast; aggressive clarity can turn that relationship brittle.",
+        "details": [
+          { "label": "Scan posture", "value": "Capture a flat, unclipped 16-bit grayscale master and establish contrast downstream." },
+          { "label": "Sharpening", "value": "Use radius appropriate to output size. Do not sharpen grain into a false edge network." },
+          { "label": "Darkroom print", "value": "A strong fit for fiber paper, fine-art subjects, and split-grade control of quiet skies." },
+          { "label": "Grainlab intent", "value": "Crisp silver microstructure with restrained amplitude and a smooth tonal envelope." }
+        ],
+        "notes": [
+          "If the file feels sterile, add print contrast or local burning before increasing grain.",
+          "If it feels digital, reduce edge sharpening first—the stock itself is supposed to be fine."
+        ]
+      }
+    ],
+    "bestFor": [
+      "Architecture, still life, landscape, and portrait sessions where texture must remain articulate.",
+      "Medium-format negatives intended for large, calm prints.",
+      "Overcast light whose close tonal values need separation instead of brute contrast.",
+      "Photographers who want silver character without a loud grain signature."
+    ],
+    "watchFor": [
+      "Casual underexposure: development can raise contrast but cannot manufacture missing shadow exposure.",
+      "Over-sharpening fine scans until engineered grain resembles digital noise.",
+      "Mixing film-speed changes and development changes without a repeatable test method.",
+      "Assuming every Delta format uses the same physical base or handling routine."
+    ],
+    "fieldNotes": [
+      "Let the negative whisper. Delta is most convincing when the light has already done the dramatic work.",
+      "Meter the dark stone, protect the bright plaster, and leave the middle of the curve room to breathe."
+    ],
+    "sources": [
+      { "title": "DELTA 100 PROFESSIONAL Technical Information", "publisher": "ILFORD PHOTO / HARMAN technology, April 2023", "url": "https://www.ilfordphoto.com/amfile/file/download/file/3/product/423/" },
+      { "title": "DELTA 100 Professional developer and process chart", "publisher": "ILFORD PHOTO", "url": "https://www.ilfordphoto.com/delta-100-professional-sheet-film" }
+    ],
+    "verified": "2026-07-16",
+    "disclaimer": "Delta 100 is a Grainlab emulation informed by public manufacturer literature. It is not an ICC profile, spectral measurement, sensitometric reproduction, or product of HARMAN technology. Developer times are reference starting points—consult the current data sheet and test your own process."
+  }
+}

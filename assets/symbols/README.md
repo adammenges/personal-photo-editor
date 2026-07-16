@@ -7,7 +7,7 @@ Recommended workflow:
 1. Open Apple's SF Symbols app.
 2. Export symbols as SVG.
 3. Save them in this directory with stable names.
-4. Reference them from Rust UI code (for example with `iced` SVG/image widgets).
+4. Reference them from the static frontend in `ui/`.
 
 Keep icon style consistent:
 

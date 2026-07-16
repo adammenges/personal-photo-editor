@@ -1,0 +1,3476 @@
+[
+  {
+    "dossier": {
+      "bestFor": [
+        "Checking the unstyled source before choosing a stock.",
+        "Building a manual grade from zero and testing one variable at a time.",
+        "Diagnosing compression, sharpening, color cast, and source-resolution issues.",
+        "Making a conservative derivative when no film interpretation is appropriate."
+      ],
+      "chapters": [
+        {
+          "details": [
+            {
+              "label": "Tone",
+              "value": "No preset exposure, contrast, fade, highlight, or shadow bias."
+            },
+            {
+              "label": "Color",
+              "value": "No preset temperature, tint, or saturation bias."
+            },
+            {
+              "label": "Texture",
+              "value": "No preset grain. User-added grain and vignette controls can still alter the frame."
+            },
+            {
+              "label": "Resolution",
+              "value": "The editor keeps a full-resolution decoded image buffer; zoom changes view scale, not source pixel count."
+            }
+          ],
+          "eyebrow": "CONTROL CONDITION",
+          "lede": "Clean Scan sets the stock-specific adjustment offsets and grain amount to zero. It does not linearize a camera file, reverse prior edits, recover clipped channels, or bypass the application’s display and export pipeline.",
+          "notes": [
+            "A neutral preset is not automatically colorimetric truth; source profile interpretation and webview color management still matter.",
+            "Reset Frame is the true return to default manual controls. Clean Scan only selects the zero-bias stock."
+          ],
+          "title": "What zero means in this application"
+        },
+        {
+          "details": [
+            {
+              "label": "Input",
+              "value": "JPEG, PNG, and WebP are decoded by the platform; embedded profile support depends on the webview imaging path."
+            },
+            {
+              "label": "Working behavior",
+              "value": "Grainlab currently processes display-oriented RGB values rather than a scene-linear RAW negative."
+            },
+            {
+              "label": "Display",
+              "value": "Perceived neutrality depends on a calibrated display, ambient light, and the operating system’s color pipeline."
+            },
+            {
+              "label": "Export",
+              "value": "JPEG output is a rendered derivative; preserve the original file separately as the source of record."
+            }
+          ],
+          "eyebrow": "COLOR MANAGEMENT",
+          "lede": "RGB triplets are meaningful only in relation to primaries, transfer functions, white point, and viewing conditions. Clean Scan avoids an artistic stock transform but cannot make an untagged or incorrectly decoded file self-describing.",
+          "notes": [
+            "Use a photographed gray card or color target when reproduction accuracy matters.",
+            "Do not judge subtle casts beside a saturated wallpaper, colored room light, or uncalibrated high-vivid display mode."
+          ],
+          "title": "Numbers need a color space before they become color"
+        },
+        {
+          "details": [
+            {
+              "label": "Grain test",
+              "value": "Set Clean Scan, zero Texture, then add one grain trait at a time to inspect physical-model behavior."
+            },
+            {
+              "label": "Tone test",
+              "value": "Compare the histogram before and after a stock to see which density regions the interpretation moves."
+            },
+            {
+              "label": "Color test",
+              "value": "Use a neutral object and known memory colors—skin, sky, foliage—to separate cast from intended palette."
+            },
+            {
+              "label": "Resolution test",
+              "value": "Inspect at 100% view before blaming a stock for source compression, focus, denoise, or prior sharpening artifacts."
+            }
+          ],
+          "eyebrow": "DIAGNOSTIC USE",
+          "lede": "Film emulation is easiest to understand by difference. Clean Scan lets you isolate whether an effect comes from the selected stock, the manual adjustment stack, the source capture, or the display.",
+          "notes": [
+            "A useful emulation should survive comparison with its baseline; hiding the before image encourages self-deception.",
+            "When a preset feels excessive, diagnose tone, color, and texture independently before reducing everything."
+          ],
+          "title": "A reference frame for every aesthetic claim"
+        },
+        {
+          "details": [
+            {
+              "label": "Source master",
+              "value": "Keep the untouched original with its metadata and embedded profile."
+            },
+            {
+              "label": "Edit master",
+              "value": "Export the highest practical quality and avoid repeated lossy JPEG round trips."
+            },
+            {
+              "label": "Delivery",
+              "value": "Size and sharpen for the actual print or display instead of treating one derivative as universal."
+            },
+            {
+              "label": "Grainlab intent",
+              "value": "Provide a visually quiet checkpoint from which deliberate film behavior can be evaluated."
+            }
+          ],
+          "eyebrow": "ARCHIVAL POSTURE",
+          "lede": "A rendered JPEG is an interpretation. Preserve the camera original or highest-quality source, store edit intent separately when possible, and make new derivatives for new display contexts rather than overwriting the only master.",
+          "notes": [
+            "Neutrality is a workflow tool, not an artistic virtue.",
+            "The cleanest file is valuable because it leaves the next decision open."
+          ],
+          "title": "The source is not the look"
+        }
+      ],
+      "disclaimer": "Clean Scan is a Grainlab control preset, not a film stock, camera profile, ICC transform, RAW workflow, or claim of colorimetric accuracy. It deliberately applies no stock-specific creative offsets.",
+      "facts": [
+        {
+          "label": "CATEGORY",
+          "note": "Not a physical stock",
+          "value": "Control"
+        },
+        {
+          "label": "STOCK CURVE",
+          "note": "Neutral preset offsets",
+          "value": "None"
+        },
+        {
+          "label": "GRAIN",
+          "note": "No synthetic film structure",
+          "value": "0"
+        },
+        {
+          "label": "COLOR CAST",
+          "note": "Source values retained",
+          "value": "None"
+        },
+        {
+          "label": "PROCESS",
+          "note": "Local full-resolution pipeline",
+          "value": "Digital"
+        },
+        {
+          "label": "PURPOSE",
+          "note": "Compare edits and diagnose",
+          "value": "Baseline"
+        },
+        {
+          "label": "LATITUDE",
+          "note": "No invented recovery",
+          "value": "Source-bound"
+        },
+        {
+          "label": "CHARACTER",
+          "note": "A/B reference state",
+          "value": "Literal · clean"
+        }
+      ],
+      "fieldNotes": [
+        "Before asking which film the picture wants, ask what is already in the file.",
+        "A control is not boring. It is how you know the romance came from a decision."
+      ],
+      "palette": [
+        {
+          "hex": "#e1e8e4",
+          "name": "display white"
+        },
+        {
+          "hex": "#858b88",
+          "name": "middle gray"
+        },
+        {
+          "hex": "#3d4240",
+          "name": "neutral dark"
+        },
+        {
+          "hex": "#0d100f",
+          "name": "display black"
+        }
+      ],
+      "portrait": "Clean Scan is the blank sensitometric page. It adds no stock curve, no visible grain, no temperature story, and no historical costume. Its job is to show what the source and your manual controls are actually doing so every film interpretation has an honest control to stand beside.",
+      "reference": {
+        "manufacturer": "Grainlab Utility",
+        "relationship": "Control condition; intentionally not a film emulation",
+        "status": "Digital reference transform",
+        "stock": "Neutral scene-referred scan baseline"
+      },
+      "sources": [
+        {
+          "publisher": "International Color Consortium",
+          "title": "ICC specification and color-management resources",
+          "url": "https://www.color.org/icc_specs2.xalter"
+        },
+        {
+          "publisher": "Eastman Kodak Company",
+          "title": "Kodak Glossary of Motion Picture Terms · density, resolution, RGB, RMS",
+          "url": "https://www.kodak.com/en/motion/page/glossary-of-motion-picture-terms/"
+        }
+      ],
+      "tagline": "Zero romance, maximum evidence.",
+      "verified": "2026-07-16",
+      "version": 1,
+      "watchFor": [
+        "Calling a display-oriented decoded image a RAW or scene-linear negative.",
+        "Assuming zero preset offsets neutralize an incorrect source profile or room lighting.",
+        "Forgetting that user controls remain active after selecting the utility preset.",
+        "Overwriting the only original with a rendered JPEG."
+      ]
+    },
+    "grainProfile": {
+      "crystal": "tabular",
+      "emulsion": "core-shell",
+      "medium": "dye",
+      "process": "standard",
+      "scale": "fine"
+    },
+    "group": "UTILITY / BASE",
+    "id": "neutral",
+    "maker": "Utility",
+    "name": "Clean Scan",
+    "pipeline": {
+      "chemistry": {
+        "flare": 0.0,
+        "fog": 0.0,
+        "localContrast": 0.0,
+        "silverRetention": 0.0
+      },
+      "crossover": {
+        "highlights": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "shadows": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "curve": {
+        "gamma": 1.0,
+        "saturationCompression": 0.0,
+        "shoulder": 0.0,
+        "toe": 0.0
+      },
+      "family": "utility",
+      "grain": {
+        "chroma": 0.03,
+        "meanRadius": 0.6,
+        "radiusVariance": 0.05,
+        "shadowBias": 0.1
+      },
+      "monochrome": false,
+      "optics": {
+        "halation": 0.0,
+        "halationRadius": 0.0,
+        "halationThreshold": 1.0
+      },
+      "output": {
+        "scanContrast": 1.0,
+        "tint": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "scene": {
+        "flash": 0.0,
+        "sensitivity": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "version": 1
+    },
+    "settings": {
+      "grain": 0
+    },
+    "sort": 10,
+    "type": "utility"
+  },
+  {
+    "dossier": {
+      "bestFor": [
+        "Sequencing a folder, judging gestures, selecting crops, and calming an overworked grade.",
+        "Documentary, portrait, and street frames that benefit from a work-print mood.",
+        "Testing whether the image survives without saturated color or dramatic contrast.",
+        "A restrained monochrome-adjacent starting point that keeps some source color."
+      ],
+      "chapters": [
+        {
+          "details": [
+            {
+              "label": "Image-forming material",
+              "value": "Metallic silver in the developed paper emulsion, viewed by reflected light."
+            },
+            {
+              "label": "Scale",
+              "value": "35 mm frames remain tiny; medium and large formats reveal progressively more without optical enlargement."
+            },
+            {
+              "label": "Sharpness",
+              "value": "Contact pressure, glass cleanliness, negative flatness, and emulsion orientation control edge fidelity."
+            },
+            {
+              "label": "Grain relationship",
+              "value": "Camera-negative grain is not enlarged, while paper emulsion and surface contribute their own fine texture."
+            }
+          ],
+          "eyebrow": "PHYSICAL OBJECT",
+          "lede": "A traditional contact sheet places processed negatives emulsion-side against photographic paper under glass and exposes them to enlarger light. Because there is effectively no enlargement, every frame appears at the physical size of its negative.",
+          "notes": [
+            "A contact print is a new photographic object, not the negative itself.",
+            "Its reflected-paper white and black density differ fundamentally from a projected transparency or emissive display."
+          ],
+          "title": "Negative and paper in direct contact"
+        },
+        {
+          "details": [
+            {
+              "label": "Minimum-time approach",
+              "value": "A common method finds the minimum exposure that makes unexposed film-base-plus-fog print as the first convincing black."
+            },
+            {
+              "label": "Contrast",
+              "value": "Use a standard paper grade or filtration and keep it consistent across the roll or project."
+            },
+            {
+              "label": "Reference",
+              "value": "Include edge markings and blank film so base density, frame spacing, and process condition remain inspectable."
+            },
+            {
+              "label": "Evaluation",
+              "value": "Judge exposure consistency, focus, motion, expression, sequence, and which frames deserve enlargement tests."
+            }
+          ],
+          "eyebrow": "PROOF EXPOSURE",
+          "lede": "The useful contact sheet is made at a repeatable paper exposure and contrast so negative density differences remain visible. If every frame is individually corrected, the proof stops reporting how the rolls were exposed and developed.",
+          "notes": [
+            "A dark contact sheet can hide thin negatives; a pale one can flatter excessive density. Standardization is the point.",
+            "Mark selections beside the image, not across the only readable version of the frame."
+          ],
+          "title": "One standard print for honest comparison"
+        },
+        {
+          "details": [
+            {
+              "label": "RC paper",
+              "value": "Fast processing and flat drying make resin-coated paper practical for routine proofing."
+            },
+            {
+              "label": "Fiber paper",
+              "value": "Richer object quality and longer washing/drying demands; usually reserved for more deliberate work prints or finals."
+            },
+            {
+              "label": "Development",
+              "value": "Develop consistently to completion at controlled temperature instead of snatching prints by eye."
+            },
+            {
+              "label": "Dry-down",
+              "value": "Fiber prints can appear darker after drying; evaluate under the intended dry viewing condition."
+            }
+          ],
+          "eyebrow": "PAPER / CHEMISTRY",
+          "lede": "Paper choice, developer, contrast filtration, development completion, fixing, washing, dry-down, and viewing light all affect the work print. A cool neutral proof is a convention, not a chemically universal truth.",
+          "notes": [
+            "Paper texture should not be confused with enlarged camera-film grain.",
+            "Archival permanence depends on adequate fixing, washing, toning choices, storage, and material—not on the image looking old."
+          ],
+          "title": "The proof has its own emulsion behavior"
+        },
+        {
+          "details": [
+            {
+              "label": "Tone",
+              "value": "Slightly compressed highlights, lifted paper-like floor, and a cool-neutral work-print balance."
+            },
+            {
+              "label": "Texture",
+              "value": "Fine neutral silver structure at low amplitude; no scratches, sprocket holes, or fake dust by default."
+            },
+            {
+              "label": "Use",
+              "value": "A restrained base for choosing crops, comparing frames, and deciding which image earns a deeper treatment."
+            },
+            {
+              "label": "Grainlab intent",
+              "value": "Darkroom utility atmosphere without pretending a full-resolution digital source physically touched paper."
+            }
+          ],
+          "eyebrow": "DIGITAL PROOF",
+          "lede": "A digital contact sheet can preserve the editing function even when the source is a single image: low-drama tone, visible edge information, and enough texture to encourage sequencing rather than fetishizing a final grade.",
+          "notes": [
+            "The aesthetic is provisional but the UI applies it as a normal editable stock preset.",
+            "If the proof becomes prettier than the final image, it has stopped being a neutral editing aid and become its own interpretation."
+          ],
+          "title": "Keep the provisional intelligence"
+        }
+      ],
+      "disclaimer": "Contact Proof is a Grainlab work-print interpretation, not a camera film or a measured silver-gelatin paper profile. Physical contact prints vary with negative, paper, developer, filtration, exposure, washing, drying, and viewing illumination.",
+      "facts": [
+        {
+          "label": "CATEGORY",
+          "note": "Not camera-original film",
+          "value": "Work print"
+        },
+        {
+          "label": "PROCESS",
+          "note": "Paper developer · stop · fix · wash",
+          "value": "Silver gelatin"
+        },
+        {
+          "label": "IMAGE",
+          "note": "Paper-base positive",
+          "value": "Metallic silver"
+        },
+        {
+          "label": "MAGNIFICATION",
+          "note": "Negative touches paper",
+          "value": "1:1 contact"
+        },
+        {
+          "label": "PURPOSE",
+          "note": "Density, focus, gesture, sequence",
+          "value": "Edit / judge"
+        },
+        {
+          "label": "SURFACE",
+          "note": "Low-gloss interpretation",
+          "value": "Work-print matte"
+        },
+        {
+          "label": "GRAIN",
+          "note": "Paper texture adds its own scale",
+          "value": "Negative-led"
+        },
+        {
+          "label": "CHARACTER",
+          "note": "Darkroom utility aesthetic",
+          "value": "Cool · provisional"
+        }
+      ],
+      "fieldNotes": [
+        "Circle the frame because of the gesture, not because the grade already loves it.",
+        "A proof is where photographs learn to stand beside one another."
+      ],
+      "palette": [
+        {
+          "hex": "#d4d7cf",
+          "name": "fiber white"
+        },
+        {
+          "hex": "#888e89",
+          "name": "tray gray"
+        },
+        {
+          "hex": "#4a4e4b",
+          "name": "pencil lead"
+        },
+        {
+          "hex": "#171a18",
+          "name": "wet black"
+        }
+      ],
+      "portrait": "Contact Proof imagines the photograph at workbench scale: direct, slightly cool, modest in contrast, carrying enough paper and silver character to feel handled but not yet performed. It is the look of decisions being made—grease pencil outside the frame, enlarger time still negotiable, sequence more important than polish.",
+      "reference": {
+        "manufacturer": "Darkroom practice",
+        "relationship": "Proofing-material interpretation, not a camera film stock",
+        "status": "Active traditional workflow reference",
+        "stock": "Silver-gelatin contact sheet / work print"
+      },
+      "sources": [
+        {
+          "publisher": "Kodak Alaris resources",
+          "title": "How to Process and Print Black-and-White Film",
+          "url": "https://kodakprofessional.com/photographers/resources"
+        },
+        {
+          "publisher": "Eastman Kodak Company",
+          "title": "Kodak Glossary of Motion Picture Terms · contact printing and density",
+          "url": "https://www.kodak.com/en/motion/page/glossary-of-motion-picture-terms/"
+        }
+      ],
+      "tagline": "The frame before it learns how important it is.",
+      "verified": "2026-07-16",
+      "version": 1,
+      "watchFor": [
+        "Calling paper texture camera-film grain.",
+        "Adding fake dust, scratches, borders, or sprockets that do not serve proofing.",
+        "Using a different tone curve on every frame and losing comparative value.",
+        "Treating the utility preset as a literal simulation of a specific paper/developer combination."
+      ]
+    },
+    "grainProfile": {
+      "crystal": "cubic",
+      "emulsion": "mixed",
+      "medium": "silver",
+      "process": "standard",
+      "scale": "fine"
+    },
+    "group": "UTILITY / BASE",
+    "id": "proof",
+    "maker": "Utility",
+    "name": "Contact Proof",
+    "pipeline": {
+      "chemistry": {
+        "flare": 0.006,
+        "fog": 0.012,
+        "localContrast": 0.04,
+        "silverRetention": 0.0
+      },
+      "crossover": {
+        "highlights": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "shadows": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "curve": {
+        "gamma": 0.96,
+        "saturationCompression": 0.12,
+        "shoulder": 0.15,
+        "toe": 0.08
+      },
+      "family": "print",
+      "grain": {
+        "chroma": 0.0,
+        "meanRadius": 0.55,
+        "radiusVariance": 0.18,
+        "shadowBias": 0.35
+      },
+      "monochrome": false,
+      "optics": {
+        "halation": 0.0,
+        "halationRadius": 0.0,
+        "halationThreshold": 1.0
+      },
+      "output": {
+        "scanContrast": 0.94,
+        "tint": [
+          0.97,
+          1.0,
+          0.98
+        ]
+      },
+      "scene": {
+        "flash": 0.0,
+        "sensitivity": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "version": 1
+    },
+    "settings": {
+      "contrast": 8,
+      "exposure": -0.15,
+      "fade": 10,
+      "grain": 4,
+      "saturation": -16,
+      "temperature": -2
+    },
+    "sort": 20,
+    "type": "utility"
+  },
+  {
+    "dossier": {
+      "bestFor": [
+        "Travel, documentary color, projected-family-memory moods, graphic daylight, and restrained primary colors.",
+        "Scenes that need a finished positive feeling rather than the open malleability of a negative.",
+        "Sunlit reds, painted signs, blue water, skin against dark clothing, and composed mid-century color.",
+        "Archival narratives where clarity matters more than faux damage."
+      ],
+      "chapters": [
+        {
+          "details": [
+            {
+              "label": "Latent records",
+              "value": "Multiple silver-halide layers recorded blue, green, and red scene information."
+            },
+            {
+              "label": "Coupler architecture",
+              "value": "Color couplers entered through controlled processing solutions rather than living in the coated emulsion."
+            },
+            {
+              "label": "Final object",
+              "value": "A positive dye transparency meant to be viewed by transmitted light or projection."
+            },
+            {
+              "label": "Grainlab model",
+              "value": "Fine conventional-crystal structure, low chroma noise, firm black density, and clean dye boundaries."
+            }
+          ],
+          "eyebrow": "EMULSION ANATOMY",
+          "lede": "Unlike ordinary chromogenic color films with dye couplers incorporated in their emulsion layers, Kodachrome’s complex K-14 sequence introduced couplers during separate color-development stages. The processed object was a positive transparency with no orange negative mask.",
+          "notes": [
+            "The famous look came from the stock/process system; K-14 chemistry was not interchangeable with E-6.",
+            "The thin, complex image architecture is one reason a generic orange-masked negative preset is not an adequate model."
+          ],
+          "title": "Color assembled in the laboratory"
+        },
+        {
+          "details": [
+            {
+              "label": "Metering",
+              "value": "Use an incident reading or a deliberate spot placement; protect bright textured values from becoming clear film."
+            },
+            {
+              "label": "Underexposure",
+              "value": "Deepens the transparency rapidly, often enriching color while sacrificing shadow separation."
+            },
+            {
+              "label": "Overexposure",
+              "value": "Thins highlight dye density and can erase delicate bright color with little room for reconstruction."
+            },
+            {
+              "label": "Viewing condition",
+              "value": "Projection contrast, lamp spectrum, screen, scan transform, and display all change the remembered look."
+            }
+          ],
+          "eyebrow": "EXPOSURE / PROJECTION",
+          "lede": "Reversal film does not offer the same printing latitude as a color negative. Exposure determines the density of the object you will view, so highlight placement and color temperature must be decided before the shutter rather than rescued from a generous negative later.",
+          "notes": [
+            "Bracket in thirds when the transparency itself is the final original.",
+            "A modern display rendition should keep a real black while avoiding crushed, nostalgia-filter shadows."
+          ],
+          "title": "The slide is the verdict"
+        },
+        {
+          "details": [
+            {
+              "label": "First developer",
+              "value": "Created the initial negative silver image and established density before color-development stages."
+            },
+            {
+              "label": "Selective color development",
+              "value": "Color records were made developable in sequence and coupled with dyes from their dedicated baths."
+            },
+            {
+              "label": "Bleach / fix",
+              "value": "Converted and removed remaining silver compounds, leaving the positive dye image."
+            },
+            {
+              "label": "Historical limit",
+              "value": "K-14 is no longer commercially available; surviving exposed rolls cannot be normally color processed today."
+            }
+          ],
+          "eyebrow": "K-14 PROCESS",
+          "lede": "K-14M used first development, controlled re-exposure or fogging, separate cyan, yellow, and magenta development stages, washes, conditioning, bleach, fix, and stabilization. Process control was inseparable from color quality.",
+          "notes": [
+            "Kodak’s K-Lab theory guide runs dozens of pages because the look depended on a highly specific chemical sequence.",
+            "Digital emulation can study the result but cannot recreate the physical archival object or its dye stability."
+          ],
+          "title": "A color factory in miniature"
+        },
+        {
+          "details": [
+            {
+              "label": "Dynamic range",
+              "value": "Use a scanner capable of separating dense slide shadows without flare or channel clipping."
+            },
+            {
+              "label": "Color posture",
+              "value": "Establish a neutral viewing transform first, then retain the stock’s warm reds and composed blues selectively."
+            },
+            {
+              "label": "Dust",
+              "value": "Handle the physical transparency carefully; dense shadows make dust and scratches conspicuous."
+            },
+            {
+              "label": "Grainlab intent",
+              "value": "Crisp fine grain, substantial black, warm primary color, and no artificial fade wash."
+            }
+          ],
+          "eyebrow": "SCAN LANGUAGE",
+          "lede": "A good scan preserves the transparency’s dense shadows and fine color boundaries without forcing every frame into the same warm mythology. The goal is transmitted-light plausibility on an emissive display.",
+          "notes": [
+            "The most respectful archival grade is not always the most saturated one.",
+            "Leave the blacks dense enough that the frame still feels made for light passing through film."
+          ],
+          "title": "Translate the slide; do not embalm it"
+        }
+      ],
+      "disclaimer": "Chrome 64 is an independent historical interpretation. KODACHROME and K-14 are retired Kodak products/processes; Grainlab does not reproduce their chemistry, dye spectra, projection path, or a measured archival scan.",
+      "facts": [
+        {
+          "label": "NOMINAL SPEED",
+          "note": "Daylight reversal reference",
+          "value": "ISO 64 / 19°"
+        },
+        {
+          "label": "PROCESS",
+          "note": "Specialized, now unavailable",
+          "value": "K-14"
+        },
+        {
+          "label": "IMAGE",
+          "note": "Viewed or projected directly",
+          "value": "Positive dye image"
+        },
+        {
+          "label": "COUPLERS",
+          "note": "Not incorporated in the film",
+          "value": "Processing baths"
+        },
+        {
+          "label": "BALANCE",
+          "note": "Slow, deliberate exposure",
+          "value": "Daylight"
+        },
+        {
+          "label": "LATITUDE",
+          "note": "Meter highlights carefully",
+          "value": "Narrow reversal"
+        },
+        {
+          "label": "ERA",
+          "note": "Kodachrome family run",
+          "value": "1935–2009"
+        },
+        {
+          "label": "CHARACTER",
+          "note": "Fine, crisp color",
+          "value": "Dense · archival"
+        }
+      ],
+      "fieldNotes": [
+        "Frame it as though the next thing the image touches will be a beam of light.",
+        "History deserves color more exact than sepia."
+      ],
+      "palette": [
+        {
+          "hex": "#e0d7bf",
+          "name": "projector white"
+        },
+        {
+          "hex": "#b74431",
+          "name": "kodachrome red"
+        },
+        {
+          "hex": "#365b68",
+          "name": "lake blue"
+        },
+        {
+          "hex": "#24251f",
+          "name": "slide mount"
+        }
+      ],
+      "portrait": "Chrome 64 is not a faded postcard. It is a dense little positive: warm reds, firm shadow color, fine structure, and the uncanny authority of an image that existed as the object you projected. This interpretation aims for the lucid, slightly formal color of a well-kept transparency rather than a generic vintage cast.",
+      "reference": {
+        "manufacturer": "Eastman Kodak Company",
+        "relationship": "Historical K-14 reversal-film interpretation",
+        "status": "Retired stock and unavailable K-14 process",
+        "stock": "KODACHROME 64"
+      },
+      "sources": [
+        {
+          "publisher": "Eastman Kodak Company, 1999",
+          "title": "Theory Guide for the Kodak K-Lab Processor · Process K-14M",
+          "url": "https://www.kodak.com/cluster/global/plugins/acrobat/en/service/kLab/tg2044_1_02mar99.pdf"
+        },
+        {
+          "publisher": "Eastman Kodak Company",
+          "title": "Kodak company milestones · Kodachrome retirement",
+          "url": "https://www.kodak.com/en/company/page/milestones/"
+        }
+      ],
+      "tagline": "A projected memory with black already inside it.",
+      "verified": "2026-07-16",
+      "version": 1,
+      "watchFor": [
+        "Adding yellow fade, light leaks, dust, and crushed blacks merely because the reference is historical.",
+        "Treating reversal exposure like a forgiving color-negative workflow.",
+        "Calling E-6 processing a substitute for the chemically distinct K-14 process.",
+        "Assuming every famous Kodachrome image shared one scan, projector, age, or color grade."
+      ]
+    },
+    "grainProfile": {
+      "crystal": "cubic",
+      "emulsion": "uniform",
+      "medium": "dye",
+      "process": "standard",
+      "scale": "fine"
+    },
+    "group": "DAYLIGHT / COLOR",
+    "id": "chrome",
+    "maker": "Archive",
+    "name": "Chrome 64",
+    "pipeline": {
+      "chemistry": {
+        "flare": 0.003,
+        "fog": 0.0,
+        "localContrast": 0.04,
+        "silverRetention": 0.0
+      },
+      "crossover": {
+        "highlights": [
+          0.01,
+          0.0,
+          -0.005
+        ],
+        "shadows": [
+          0.02,
+          0.0,
+          -0.015
+        ]
+      },
+      "curve": {
+        "gamma": 1.03,
+        "saturationCompression": 0.08,
+        "shoulder": 0.08,
+        "toe": 0.12
+      },
+      "family": "e6",
+      "grain": {
+        "chroma": 0.025,
+        "meanRadius": 0.65,
+        "radiusVariance": 0.12,
+        "shadowBias": 0.28
+      },
+      "monochrome": false,
+      "optics": {
+        "halation": 0.025,
+        "halationRadius": 3.0,
+        "halationThreshold": 0.94
+      },
+      "output": {
+        "scanContrast": 1.05,
+        "tint": [
+          1.015,
+          1.0,
+          0.975
+        ]
+      },
+      "scene": {
+        "flash": 0.0,
+        "sensitivity": [
+          1.03,
+          1.0,
+          0.96
+        ]
+      },
+      "version": 1
+    },
+    "settings": {
+      "contrast": 18,
+      "exposure": -0.05,
+      "grain": 7,
+      "saturation": 8,
+      "temperature": 4
+    },
+    "sort": 30,
+    "type": "color"
+  },
+  {
+    "dossier": {
+      "bestFor": [
+        "Portraits, weddings, interiors, travel, family documents, and any scene where people outrank palette theatrics.",
+        "Backlight, white clothing, mixed complexions, and broad scene brightness.",
+        "35 mm work needing useful speed without a coarse-grain aesthetic.",
+        "Scans intended for a gentle editorial grade."
+      ],
+      "chapters": [
+        {
+          "details": [
+            {
+              "label": "Image-forming material",
+              "value": "Overlapping cyan, magenta, and yellow dye clouds; density is orange-masked for color printing and scanning."
+            },
+            {
+              "label": "Crystal system",
+              "value": "The reference family uses KODAK T-GRAIN and motion-picture-derived emulsion technology for speed with controlled grain."
+            },
+            {
+              "label": "Grainlab model",
+              "value": "Soft dye-cloud modulation seeded by tabular, mixed-size, core-shell-inspired crystals."
+            },
+            {
+              "label": "Why grain has color",
+              "value": "The three dye records fluctuate independently at microscopic scale, creating subtle chroma variation rather than one neutral noise field."
+            }
+          ],
+          "eyebrow": "EMULSION ANATOMY",
+          "lede": "A color negative begins with silver-halide exposure, but the final image is formed by cyan, magenta, and yellow dye clouds after bleaching and fixing remove the silver. Multiple sensitized layers and interlayers control speed, color separation, sharpness, and unwanted dye interactions.",
+          "notes": [
+            "The silver-halide crystal initiates the dye image; it is not the final visible particle in a normally processed color negative.",
+            "Apparent grain depends strongly on scanner optics, sharpening, color-channel noise, negative size, and exposure density."
+          ],
+          "title": "Three color records, many layers, one forgiving negative"
+        },
+        {
+          "details": [
+            {
+              "label": "Metering baseline",
+              "value": "EI 400 in daylight or electronic flash for the manufacturer’s intended speed relationship."
+            },
+            {
+              "label": "Extra exposure",
+              "value": "A denser negative can yield cleaner shadows and finer-looking grain, but color and density still depend on scanning and lab control."
+            },
+            {
+              "label": "Underexposure",
+              "value": "Thin shadows expose fewer grains and tend to scan with more visible grain, color crossover, and weaker separation."
+            },
+            {
+              "label": "Highlights",
+              "value": "The negative shoulder is generous, but no stock makes careless metering or a clipped scan unlimited."
+            }
+          ],
+          "eyebrow": "SENSITOMETRY",
+          "lede": "Modern portrait negative film carries far more scene brightness than a typical display can show at once. Its signature is not flatness but recoverable information: open shadows when exposed honestly and highlights that compress gracefully before clipping.",
+          "notes": [
+            "For backlit portraits, meter the face or incident light rather than allowing the bright background to starve the negative.",
+            "Bracket critical work; lab scanners and home inversion workflows do not place density identically."
+          ],
+          "title": "A long shoulder made for faces and accidents"
+        },
+        {
+          "details": [
+            {
+              "label": "Skin",
+              "value": "Warm-neutral with controlled red and magenta; intended to tolerate mixed complexions in one frame."
+            },
+            {
+              "label": "Greens",
+              "value": "Muted toward sage rather than electric yellow-green."
+            },
+            {
+              "label": "Blues",
+              "value": "Open and slightly restrained, especially in bright skies."
+            },
+            {
+              "label": "Neutrals",
+              "value": "Creamy highlights and softly warm grays without a hard vintage color cast."
+            }
+          ],
+          "eyebrow": "COLOR SIGNATURE",
+          "lede": "The reference is designed for natural skin reproduction, fine grain, and scanning. Grainlab leans into warm neutrals, calm foliage, and modest saturation while keeping reds alive enough that faces do not feel bloodless.",
+          "notes": [
+            "A film stock has no single immutable palette; illuminant, exposure, processing, scanner characterization, and grading all participate.",
+            "White balance the scan from a true neutral before deciding whether the stock itself is warm."
+          ],
+          "title": "Skin first, saturation second"
+        },
+        {
+          "details": [
+            {
+              "label": "Chemistry",
+              "value": "Process C-41 in controlled color-negative chemistry; Kodak specifies FLEXICOLOR process families."
+            },
+            {
+              "label": "Scan posture",
+              "value": "Capture all three channels without clipping, invert from a neutral mask, and make the creative grade after normalization."
+            },
+            {
+              "label": "Dust / correction",
+              "value": "Infrared dust-removal systems generally work on chromogenic dye images, unlike traditional silver B&W negatives."
+            },
+            {
+              "label": "Grain discipline",
+              "value": "Reduce digital sharpening and underexposure before adding blur; real dye-cloud grain should retain subject edges."
+            }
+          ],
+          "eyebrow": "LAB / SCAN",
+          "lede": "Process consistency protects color balance. The scan should preserve the orange-masked negative’s channel information before a display transform shapes the final contrast and palette.",
+          "notes": [
+            "The most film-like scan is not necessarily the flattest or warmest—it is the one whose tone and color remain internally coherent.",
+            "Keep a high-bit, low-contrast master so later printing choices are reversible."
+          ],
+          "title": "Scan the negative you exposed, not the preset you expected"
+        }
+      ],
+      "disclaimer": "Portrait 400 is an independent Grainlab interpretation informed by KODAK PROFESSIONAL PORTRA 400 literature. It is not a measured film profile, does not reproduce a specific scanner or paper path, and is not endorsed by Kodak Alaris.",
+      "facts": [
+        {
+          "label": "NOMINAL SPEED",
+          "note": "Daylight color negative",
+          "value": "ISO 400 / 27°"
+        },
+        {
+          "label": "PROCESS",
+          "note": "KODAK FLEXICOLOR reference",
+          "value": "C-41"
+        },
+        {
+          "label": "IMAGE",
+          "note": "Silver is removed in processing",
+          "value": "CMY dye clouds"
+        },
+        {
+          "label": "BALANCE",
+          "note": "Electronic flash without correction",
+          "value": "Daylight"
+        },
+        {
+          "label": "FORMATS",
+          "note": "Availability varies",
+          "value": "135 · 120 · sheet"
+        },
+        {
+          "label": "CRYSTAL MODEL",
+          "note": "Efficient tabular family",
+          "value": "T-GRAIN"
+        },
+        {
+          "label": "LATITUDE",
+          "note": "Highlight-friendly curve",
+          "value": "Wide negative"
+        },
+        {
+          "label": "CHARACTER",
+          "note": "Moderate saturation",
+          "value": "Warm · forgiving"
+        }
+      ],
+      "fieldNotes": [
+        "Give the face enough light to become a negative, then let the window remain a window.",
+        "The stock should feel like memory with excellent color science—not memory faded by neglect."
+      ],
+      "palette": [
+        {
+          "hex": "#e4c5ad",
+          "name": "porcelain skin"
+        },
+        {
+          "hex": "#b89462",
+          "name": "late wheat"
+        },
+        {
+          "hex": "#778377",
+          "name": "sage cloth"
+        },
+        {
+          "hex": "#332c29",
+          "name": "soft umber"
+        }
+      ],
+      "portrait": "Portrait 400 is built around mercy: room in the highlights, room around skin, room for a white shirt and a dark jacket to remain in the same emotional scene. The palette is warm without turning amber, restrained without becoming gray, and softly granular in the way overlapping dye clouds feel when a negative is scanned with care.",
+      "reference": {
+        "manufacturer": "Kodak Alaris",
+        "relationship": "Portrait-negative interpretation; not a measured profile",
+        "status": "Current production reference",
+        "stock": "KODAK PROFESSIONAL PORTRA 400"
+      },
+      "sources": [
+        {
+          "publisher": "Kodak Alaris",
+          "title": "KODAK PROFESSIONAL PORTRA 400 Film · E-4050",
+          "url": "https://www.kodakprofessional.com/sites/default/files/wysiwyg/pro/resources/e4050_portra_400.pdf"
+        },
+        {
+          "publisher": "Kodak Alaris",
+          "title": "KODAK PROFESSIONAL Film Technical Resources",
+          "url": "https://kodakprofessional.com/photographers/resources"
+        }
+      ],
+      "tagline": "A generous negative for the colors people remember.",
+      "verified": "2026-07-16",
+      "version": 1,
+      "watchFor": [
+        "Thin, underexposed shadows that exaggerate grain and color contamination.",
+        "Stacking warmth in capture, lab scan, and grade until skin turns orange.",
+        "Calling the negative unlimited because it has wide latitude.",
+        "Using aggressive clarity that turns soft dye clouds into brittle digital texture."
+      ]
+    },
+    "grainProfile": {
+      "crystal": "tabular",
+      "emulsion": "core-shell",
+      "medium": "dye",
+      "process": "standard",
+      "scale": "medium"
+    },
+    "group": "DAYLIGHT / COLOR",
+    "id": "portra",
+    "maker": "Archive",
+    "name": "Portrait 400",
+    "pipeline": {
+      "chemistry": {
+        "flare": 0.005,
+        "fog": 0.003,
+        "localContrast": 0.02,
+        "silverRetention": 0.0
+      },
+      "crossover": {
+        "highlights": [
+          0.008,
+          0.002,
+          -0.01
+        ],
+        "shadows": [
+          0.01,
+          -0.004,
+          -0.006
+        ]
+      },
+      "curve": {
+        "gamma": 0.98,
+        "saturationCompression": 0.18,
+        "shoulder": 0.35,
+        "toe": 0.06
+      },
+      "family": "c41",
+      "grain": {
+        "chroma": 0.045,
+        "meanRadius": 0.95,
+        "radiusVariance": 0.28,
+        "shadowBias": 0.5
+      },
+      "monochrome": false,
+      "optics": {
+        "halation": 0.035,
+        "halationRadius": 5.0,
+        "halationThreshold": 0.9
+      },
+      "output": {
+        "scanContrast": 0.96,
+        "tint": [
+          1.015,
+          1.0,
+          0.985
+        ]
+      },
+      "scene": {
+        "flash": 0.002,
+        "sensitivity": [
+          1.02,
+          1.0,
+          0.97
+        ]
+      },
+      "version": 1
+    },
+    "settings": {
+      "contrast": -5,
+      "exposure": 0.12,
+      "fade": 6,
+      "grain": 11,
+      "saturation": -7,
+      "temperature": 8
+    },
+    "sort": 40,
+    "type": "color"
+  },
+  {
+    "dossier": {
+      "bestFor": [
+        "Landscape, nature, travel, fashion, automobiles, architecture, and color-critical product studies.",
+        "Bright daylight and tripod work where ISO 100 is an advantage rather than a limitation.",
+        "35 mm frames intended for unusually clean enlargements.",
+        "Scenes organized around strong red/cyan, warm/cool, or complementary color structure."
+      ],
+      "chapters": [
+        {
+          "details": [
+            {
+              "label": "Image-forming material",
+              "value": "Cyan, magenta, and yellow dye images formed during C-41 development; metallic silver is then removed."
+            },
+            {
+              "label": "Crystal architecture",
+              "value": "A published combination of optimized T-GRAIN and advanced cubic emulsion technologies—not one uniform crystal population."
+            },
+            {
+              "label": "Edge behavior",
+              "value": "DIR couplers and optimized chemistry support distinct edges and fine detail in the manufacturer’s design."
+            },
+            {
+              "label": "Grainlab model",
+              "value": "Fine tabular-led mixed grain, low clumping, subtle channel independence, high edge retention."
+            }
+          ],
+          "eyebrow": "EMULSION ANATOMY",
+          "lede": "Ektar’s technical publication combines micro-structure-optimized T-GRAIN emulsions, advanced cubic emulsions, proprietary development accelerators, DIR couplers, and VISION-derived technology. Grainlab interprets that mixed architecture as very fine dye-cloud structure with crisp spatial definition.",
+          "notes": [
+            "Fine grain is not the absence of film structure; it is structure held below distraction at a given enlargement.",
+            "Underexposure and scanner sharpening can make even a very fine negative look coarse."
+          ],
+          "title": "Tiny dye clouds, engineered edges"
+        },
+        {
+          "details": [
+            {
+              "label": "Daylight / flash",
+              "value": "ISO 100 with no correction under daylight or electronic flash."
+            },
+            {
+              "label": "3400 K photolamp",
+              "value": "Kodak publishes ISO 32 with an 80B filter."
+            },
+            {
+              "label": "3200 K tungsten",
+              "value": "Kodak publishes ISO 25 with an 80A filter for corrected color."
+            },
+            {
+              "label": "Metering posture",
+              "value": "Protect shadow exposure and bracket color-critical product or landscape work."
+            }
+          ],
+          "eyebrow": "EXPOSURE",
+          "lede": "ISO 100 rewards deliberate light and stable technique. The reference is daylight balanced; blue conversion filters for tungsten cost substantial speed, which is why a tripod or daylight source often makes more sense than forcing the stock into dim warm interiors.",
+          "notes": [
+            "Color negative tolerates exposure variation, but saturated color does not excuse a thin negative.",
+            "At slow shutter speeds, camera motion will erase the exact edge quality this stock is chosen to preserve."
+          ],
+          "title": "Slow enough to make every decision visible"
+        },
+        {
+          "details": [
+            {
+              "label": "Reds",
+              "value": "Dense, confident, and often the first color viewers associate with the stock."
+            },
+            {
+              "label": "Blues / cyans",
+              "value": "Clear and deep, especially in water, painted surfaces, and open daylight."
+            },
+            {
+              "label": "Greens",
+              "value": "Vivid with strong separation; easy to overcook if the scan already carries a saturated house look."
+            },
+            {
+              "label": "Skin",
+              "value": "Can be beautiful in controlled light, but the palette is less forgiving and portrait-specialized than a low-saturation negative."
+            }
+          ],
+          "eyebrow": "COLOR SIGNATURE",
+          "lede": "The reference is built for vivid color, nature, travel, fashion, and products. Its distinguishing quality is not a global saturation slider but the way neighboring colors stay separate while the negative remains printable and scannable.",
+          "notes": [
+            "Use color relationships, not the saturation control, to decide whether the frame is working.",
+            "A neutral scan can look calmer than lab defaults; the negative leaves meaningful room for interpretation."
+          ],
+          "title": "Saturation with object boundaries"
+        },
+        {
+          "details": [
+            {
+              "label": "35 mm Print Grain Index",
+              "value": "Kodak publishes <25 at 4×6, 38 at 8×10, and 66 at 16×20 under its specified print method."
+            },
+            {
+              "label": "Scanning",
+              "value": "Supported across linear-array CCD, area-array CCD, and PMT/drum scanning workflows."
+            },
+            {
+              "label": "Capture master",
+              "value": "Use high bit depth, unclipped channels, moderate sharpening, and a neutral inversion before creative color."
+            },
+            {
+              "label": "Grainlab intent",
+              "value": "Make texture perceptible only when enlargement and viewing distance justify it."
+            }
+          ],
+          "eyebrow": "SCAN / ENLARGEMENT",
+          "lede": "Kodak positions the stock for scanning and extraordinary enlargement. The technical data list a 35 mm Print Grain Index below the visual threshold for a 4×6 print, rising predictably with magnification.",
+          "notes": [
+            "Print Grain Index is a psychophysical print metric, not a grain diameter or a universal scanner-noise number.",
+            "Do not add coarse grain to make fine-grain film look more analog; let tone, color, and edge behavior do the work."
+          ],
+          "title": "Built to survive magnification"
+        }
+      ],
+      "disclaimer": "Vivid 100 is an independent Grainlab interpretation informed by KODAK PROFESSIONAL EKTAR 100 literature. Published Print Grain Index values depend on Kodak’s stated print conditions and should not be treated as universal scanner measurements.",
+      "facts": [
+        {
+          "label": "NOMINAL SPEED",
+          "note": "Daylight color negative",
+          "value": "ISO 100 / 21°"
+        },
+        {
+          "label": "PROCESS",
+          "note": "Standard color-negative chemistry",
+          "value": "C-41"
+        },
+        {
+          "label": "IMAGE",
+          "note": "Orange-masked negative",
+          "value": "CMY dye clouds"
+        },
+        {
+          "label": "BALANCE",
+          "note": "ISO 25 with 80A at 3200 K",
+          "value": "Daylight"
+        },
+        {
+          "label": "FORMATS",
+          "note": "Availability varies",
+          "value": "135 · 120 · sheet"
+        },
+        {
+          "label": "GRAIN CLAIM",
+          "note": "Kodak’s finest-grain color negative",
+          "value": "Ultra-fine"
+        },
+        {
+          "label": "EMULSION",
+          "note": "Micro-structure optimized",
+          "value": "T-GRAIN + cubic"
+        },
+        {
+          "label": "CHARACTER",
+          "note": "High color separation",
+          "value": "Vivid · exact"
+        }
+      ],
+      "fieldNotes": [
+        "Choose three colors before raising the camera. Let everything else become their supporting cast.",
+        "The small grain is permission to print large, not permission to stop looking at the light."
+      ],
+      "palette": [
+        {
+          "hex": "#c44a35",
+          "name": "signal red"
+        },
+        {
+          "hex": "#d29c45",
+          "name": "canyon gold"
+        },
+        {
+          "hex": "#2c727a",
+          "name": "deep cyan"
+        },
+        {
+          "hex": "#233c33",
+          "name": "pine shadow"
+        }
+      ],
+      "portrait": "Vivid 100 is sunlight made articulate: red lacquer, blue water, green glass, polished chrome. Its pleasure is precision rather than haze. The grain stays nearly below perception while hue separation and edge detail carry the feeling of a slow, deliberate exposure on a negative made to be enlarged.",
+      "reference": {
+        "manufacturer": "Kodak Alaris",
+        "relationship": "Fine-grain saturated color-negative interpretation",
+        "status": "Current production reference",
+        "stock": "KODAK PROFESSIONAL EKTAR 100"
+      },
+      "sources": [
+        {
+          "publisher": "Kodak Alaris, January 2025",
+          "title": "KODAK PROFESSIONAL EKTAR 100 Film · E-4046",
+          "url": "https://kodakprofessional.com/sites/default/files/2025-07/e4046.pdf"
+        },
+        {
+          "publisher": "Kodak Alaris",
+          "title": "KODAK PROFESSIONAL EKTAR 100 product reference",
+          "url": "https://www.kodakprofessional.com/en-gb/photographers/film/color/filme-kodak-professional-ektar-100/530"
+        }
+      ],
+      "tagline": "Color with polished edges and nowhere to hide.",
+      "verified": "2026-07-16",
+      "version": 1,
+      "watchFor": [
+        "Underexposure that makes a famously fine-grain stock scan noisy and coarse.",
+        "Using tungsten correction without accounting for the published effective-speed loss.",
+        "Over-saturating skin and foliage after a lab scan has already applied a vivid transform.",
+        "Mistaking edge sharpening for actual optical detail."
+      ]
+    },
+    "grainProfile": {
+      "crystal": "tabular",
+      "emulsion": "core-shell",
+      "medium": "dye",
+      "process": "standard",
+      "scale": "fine"
+    },
+    "group": "DAYLIGHT / COLOR",
+    "id": "ektar",
+    "maker": "Archive",
+    "name": "Vivid 100",
+    "pipeline": {
+      "chemistry": {
+        "flare": 0.004,
+        "fog": 0.002,
+        "localContrast": 0.05,
+        "silverRetention": 0.0
+      },
+      "crossover": {
+        "highlights": [
+          0.012,
+          0.0,
+          -0.012
+        ],
+        "shadows": [
+          0.012,
+          -0.006,
+          -0.004
+        ]
+      },
+      "curve": {
+        "gamma": 1.02,
+        "saturationCompression": 0.1,
+        "shoulder": 0.25,
+        "toe": 0.05
+      },
+      "family": "c41",
+      "grain": {
+        "chroma": 0.035,
+        "meanRadius": 0.55,
+        "radiusVariance": 0.1,
+        "shadowBias": 0.25
+      },
+      "monochrome": false,
+      "optics": {
+        "halation": 0.02,
+        "halationRadius": 4.0,
+        "halationThreshold": 0.93
+      },
+      "output": {
+        "scanContrast": 1.04,
+        "tint": [
+          1.01,
+          1.0,
+          0.99
+        ]
+      },
+      "scene": {
+        "flash": 0.0,
+        "sensitivity": [
+          1.04,
+          0.99,
+          0.97
+        ]
+      },
+      "version": 1
+    },
+    "settings": {
+      "contrast": 12,
+      "grain": 5,
+      "saturation": 19,
+      "temperature": 3
+    },
+    "sort": 50,
+    "type": "color"
+  },
+  {
+    "dossier": {
+      "bestFor": [
+        "Beauty, fashion, portraiture, flowers, product color, pale architecture, and quiet daylight interiors.",
+        "Scenes whose palette is subtle but still deserves the object-like finality of reversal film.",
+        "Skin against pastel cloth or open shade.",
+        "A chrome look without aggressive landscape saturation."
+      ],
+      "chapters": [
+        {
+          "details": [
+            {
+              "label": "Image-forming material",
+              "value": "Cyan, magenta, and yellow positive dye records after first development, reversal, color development, bleach, and fix."
+            },
+            {
+              "label": "Color aim",
+              "value": "Natural skin, subtle pastels, and moderate saturation rather than exaggerated primary color."
+            },
+            {
+              "label": "100F generation",
+              "value": "Fujifilm research documents new emulsion and color-reproduction technologies shared with the 100F reversal generation."
+            },
+            {
+              "label": "Grainlab model",
+              "value": "Fine engineered dye structure, low clumping, soft contrast, and restrained chroma fluctuation."
+            }
+          ],
+          "eyebrow": "REVERSAL ANATOMY",
+          "lede": "Astia 100F belonged to Fujifilm’s fine-grain daylight reversal family, but was tuned for lower saturation and gentler contrast than the landscape-forward chrome stereotype. The final film carried a positive dye image intended for direct viewing.",
+          "notes": [
+            "Soft contrast in reversal film is still not color-negative latitude; highlight exposure remains decisive.",
+            "Fine-grain chrome should look luminous and clean, not covered with a blanket of nostalgic noise."
+          ],
+          "title": "The positive image without the hard sell"
+        },
+        {
+          "details": [
+            {
+              "label": "Daylight baseline",
+              "value": "ISO 100 / 21° with no correction under daylight."
+            },
+            {
+              "label": "Highlight placement",
+              "value": "Keep textured light values below clear-film failure; luminous does not mean empty."
+            },
+            {
+              "label": "Underexposure",
+              "value": "Makes the slide denser and color richer quickly, but blocks shadow nuance."
+            },
+            {
+              "label": "Push / pull",
+              "value": "Fujifilm E-6 literature includes Astia timing across pull and push ranges; test color and contrast for the actual processor."
+            }
+          ],
+          "eyebrow": "EXPOSURE",
+          "lede": "A transparency is already the display object. Small exposure changes alter its density, saturation, and highlight separation visibly, so careful incident metering and bracket discipline matter more than post-capture rescue.",
+          "notes": [
+            "Bracket fashion, beauty, and product setups in thirds when the lighting ratio is close to the slide’s limit.",
+            "Do not evaluate exposure only from a camera histogram when the intended reference is a physical transparency."
+          ],
+          "title": "One-third stop is a creative decision"
+        },
+        {
+          "details": [
+            {
+              "label": "Skin",
+              "value": "Neutral-to-warm with controlled magenta and smooth transitions through cheek and highlight."
+            },
+            {
+              "label": "Pastels",
+              "value": "High differentiation at modest saturation—especially useful for fabric, cosmetics, and quiet product color."
+            },
+            {
+              "label": "Greens / blues",
+              "value": "Clean but not aggressively landscape-coded; easier to keep secondary to a person."
+            },
+            {
+              "label": "Black",
+              "value": "Firm enough to maintain transparency depth without the severe toe of a punchier chrome look."
+            }
+          ],
+          "eyebrow": "COLOR SIGNATURE",
+          "lede": "The stock’s distinction is the ability to keep delicate color separate without demanding spectacle. Skin, fabric, flowers, mist, and painted interiors retain their own hues while the positive still has enough black to project with depth.",
+          "notes": [
+            "A soft palette still needs a color hierarchy; neutrality alone is not an aesthetic.",
+            "Keep highlights clean rather than yellowing them to manufacture age."
+          ],
+          "title": "Pastels with a spine"
+        },
+        {
+          "details": [
+            {
+              "label": "Process family",
+              "value": "Fujifilm CR-56 and Kodak E-6 were documented compatible routes for the historical stock."
+            },
+            {
+              "label": "Scan posture",
+              "value": "Use sufficient optical density range for shadows, neutral viewing calibration, and conservative sharpening."
+            },
+            {
+              "label": "Display transform",
+              "value": "Retain a positive-like black and highlight white while preserving the softer middle-scale contrast."
+            },
+            {
+              "label": "Grainlab intent",
+              "value": "A clean, fine-grain chrome with gentle portrait color—not a faded negative simulation."
+            }
+          ],
+          "eyebrow": "E-6 / SCAN",
+          "lede": "E-6 creates a standardized positive through first developer, reversal, color developer, bleach, fix, wash, and stabilization. Scanning should translate the slide’s transmitted-light density without flattening it into a negative-style master.",
+          "notes": [
+            "The stock is discontinued; surviving transparencies differ by storage, processing, mounting, and projection history.",
+            "Archive a neutral high-bit scan before applying a period-specific artistic grade."
+          ],
+          "title": "Preserve the luminous original"
+        }
+      ],
+      "disclaimer": "Soft Chrome is an independent Grainlab interpretation of the discontinued FUJICHROME ASTIA 100F family. It is not a Fujifilm profile and cannot reproduce a specific transparency, E-6 line, projector, viewing booth, or scan.",
+      "facts": [
+        {
+          "label": "NOMINAL SPEED",
+          "note": "Daylight reversal",
+          "value": "ISO 100 / 21°"
+        },
+        {
+          "label": "PROCESS",
+          "note": "Positive transparency",
+          "value": "E-6 / CR-56"
+        },
+        {
+          "label": "IMAGE",
+          "note": "No orange mask",
+          "value": "Positive dye image"
+        },
+        {
+          "label": "BALANCE",
+          "note": "Portrait-oriented palette",
+          "value": "Daylight"
+        },
+        {
+          "label": "FORMATS",
+          "note": "Historical catalog range",
+          "value": "135 · 120 · 220 · sheet"
+        },
+        {
+          "label": "GRAIN",
+          "note": "100F generation",
+          "value": "Ultra-fine"
+        },
+        {
+          "label": "PUSH / PULL",
+          "note": "Density and color can shift",
+          "value": "E-6 variable"
+        },
+        {
+          "label": "CHARACTER",
+          "note": "Moderate chrome contrast",
+          "value": "Pastel · luminous"
+        }
+      ],
+      "fieldNotes": [
+        "Use a silk dress, an open sky, and one black shape to prove that soft color can still have structure.",
+        "The transparency should feel gentle because the relationships are gentle—not because the image is fogged."
+      ],
+      "palette": [
+        {
+          "hex": "#e7d8c7",
+          "name": "silk highlight"
+        },
+        {
+          "hex": "#b9807b",
+          "name": "rose powder"
+        },
+        {
+          "hex": "#8da69b",
+          "name": "celadon"
+        },
+        {
+          "hex": "#4d5a62",
+          "name": "evening slate"
+        }
+      ],
+      "portrait": "Soft Chrome keeps the luminous object-quality of slide film while lowering its voice. Pastels retain distinctions, skin stays human, and fine detail survives without the brittle snap of a high-saturation chrome. It feels like daylight arranged through silk: still positive, still exact, but willing to let a face outrank the scenery.",
+      "reference": {
+        "manufacturer": "FUJIFILM",
+        "relationship": "Soft-contrast portrait reversal interpretation",
+        "status": "Discontinued historical reference",
+        "stock": "FUJICHROME ASTIA 100F / RAP F"
+      },
+      "sources": [
+        {
+          "publisher": "FUJIFILM, 2005",
+          "title": "FUJIFILM Professional Film Data Guide · Astia 100F",
+          "url": "https://asset.fujifilm.com/www/ca/files/2020-03/d52487c5c6f84e7f935c299491c5c1ff/ProfessionalFilmDataGuide.pdf"
+        },
+        {
+          "publisher": "FUJIFILM Research Report No. 49, 2004",
+          "title": "Development of FUJICHROME Velvia 100F/100 and ASTIA 100F",
+          "url": "https://www.fujifilm.com/jp/ja/about/rd/report/049"
+        },
+        {
+          "publisher": "FUJIFILM",
+          "title": "E-6 Push and Pull Processing Technical Bulletin",
+          "url": "https://asset.fujifilm.com/www/fi/files/2020-11/37dbfb5211b0ce908a3060cc6de71a64/TB_E6_E01_10-20.pdf"
+        }
+      ],
+      "tagline": "A transparency that speaks softly enough for skin.",
+      "verified": "2026-07-16",
+      "version": 1,
+      "watchFor": [
+        "Confusing lower contrast with color-negative exposure latitude.",
+        "Pushing E-6 without testing processor-specific density and color shifts.",
+        "Adding coarse grain to an ultra-fine-grain reference.",
+        "Making every highlight cream-colored and calling it archival."
+      ]
+    },
+    "grainProfile": {
+      "crystal": "tabular",
+      "emulsion": "core-shell",
+      "medium": "dye",
+      "process": "standard",
+      "scale": "fine"
+    },
+    "group": "DAYLIGHT / COLOR",
+    "id": "astia",
+    "maker": "Archive",
+    "name": "Soft Chrome",
+    "pipeline": {
+      "chemistry": {
+        "flare": 0.005,
+        "fog": 0.003,
+        "localContrast": 0.03,
+        "silverRetention": 0.0
+      },
+      "crossover": {
+        "highlights": [
+          0.006,
+          0.002,
+          -0.008
+        ],
+        "shadows": [
+          0.008,
+          -0.002,
+          -0.006
+        ]
+      },
+      "curve": {
+        "gamma": 1.0,
+        "saturationCompression": 0.14,
+        "shoulder": 0.12,
+        "toe": 0.08
+      },
+      "family": "e6",
+      "grain": {
+        "chroma": 0.025,
+        "meanRadius": 0.58,
+        "radiusVariance": 0.12,
+        "shadowBias": 0.25
+      },
+      "monochrome": false,
+      "optics": {
+        "halation": 0.02,
+        "halationRadius": 3.0,
+        "halationThreshold": 0.94
+      },
+      "output": {
+        "scanContrast": 0.98,
+        "tint": [
+          1.01,
+          1.0,
+          0.99
+        ]
+      },
+      "scene": {
+        "flash": 0.0,
+        "sensitivity": [
+          1.01,
+          1.0,
+          0.99
+        ]
+      },
+      "version": 1
+    },
+    "settings": {
+      "contrast": -2,
+      "exposure": 0.08,
+      "fade": 3,
+      "grain": 6,
+      "saturation": 2,
+      "temperature": 5
+    },
+    "sort": 60,
+    "type": "color"
+  },
+  {
+    "dossier": {
+      "bestFor": [
+        "Night streets, practical-lit interiors, stage work, blue-hour exteriors, and scenes built around mixed color temperature.",
+        "Wide-brightness compositions that need a grading-friendly negative.",
+        "Portraits where the room’s practical light should remain part of the skin-tone story.",
+        "Still images that should feel cut from a motion sequence rather than styled with a generic teal-orange LUT."
+      ],
+      "chapters": [
+        {
+          "details": [
+            {
+              "label": "Image-forming material",
+              "value": "Cyan, magenta, and yellow dye records created during ECN-2 color development."
+            },
+            {
+              "label": "Dye Layering Technology",
+              "value": "Kodak’s proprietary layer architecture is designed to improve shadow signal-to-noise and visible grain."
+            },
+            {
+              "label": "Rem-jet",
+              "value": "A carbon-backed anti-halation and transport layer softened and removed at the beginning of ECN-2 processing."
+            },
+            {
+              "label": "Grainlab model",
+              "value": "Fine-to-medium dye clouds, tabular core-shell behavior, restrained chroma variation, and exposure-aware shadow texture."
+            }
+          ],
+          "eyebrow": "EMULSION ANATOMY",
+          "lede": "VISION3 500T uses multiple color-sensitive records, advanced tabular-grain technology, and Kodak’s Dye Layering Technology. DLT is specifically described as reducing grain in shadows, where a fast stock and a digital scan are most likely to reveal it.",
+          "notes": [
+            "Motion-picture grain should feel stable and organic frame to frame; a tiled, repeating texture breaks the illusion immediately.",
+            "The fast rating comes from emulsion engineering, not simply enlarging every crystal uniformly."
+          ],
+          "title": "A multilayer negative designed for the scan"
+        },
+        {
+          "details": [
+            {
+              "label": "Tungsten baseline",
+              "value": "EI 500 under 3200 K illumination without a color-conversion filter."
+            },
+            {
+              "label": "Daylight correction",
+              "value": "EI 320 with an 85 filter converts daylight toward the stock’s tungsten balance."
+            },
+            {
+              "label": "Uncorrected daylight",
+              "value": "A blue-biased negative that can be used deliberately, with channel balance and exposure considered in the grade."
+            },
+            {
+              "label": "Shadow exposure",
+              "value": "Thin shadows reveal grain and color noise first; rating at EI 320 is a common creative overexposure strategy, not a new ISO."
+            }
+          ],
+          "eyebrow": "SENSITOMETRY",
+          "lede": "Kodak’s published exposure diagrams emphasize substantial room above a white card and below a black card. The exact usable range depends on flare, lens, processing, scan, and acceptance threshold, but the design priority is clear: hold extremes for postproduction.",
+          "notes": [
+            "Expose the negative for the shadow color you need, then control practical lamps and windows with lighting, filtration, and the final grade.",
+            "A bright bulb may fit the curve while still dominating the scene aesthetically—latitude is not composition."
+          ],
+          "title": "Highlights get the penthouse; shadows pay rent"
+        },
+        {
+          "details": [
+            {
+              "label": "Skin",
+              "value": "Natural under controlled tungsten, with warm practicals allowed to remain visibly warm."
+            },
+            {
+              "label": "Mixed light",
+              "value": "Blue daylight and amber interiors separate strongly—a cinematic relationship often preserved rather than neutralized."
+            },
+            {
+              "label": "Greens",
+              "value": "Fluorescent and discharge sources may need filtration or selective grading because spectrum, not CCT alone, controls the cast."
+            },
+            {
+              "label": "Night color",
+              "value": "The negative can hold saturated signs and dim environmental color in one scan when exposure is adequate."
+            }
+          ],
+          "eyebrow": "COLOR / LIGHT",
+          "lede": "At 3200 K the color records sit near their intended neutral relationship. Daylight windows go blue; sodium, fluorescent, LED, and firelight each arrive with their own spectral discontinuities. The stock’s attraction is how those sources coexist rather than disappear into one white balance.",
+          "notes": [
+            "Do not globally cool every image and call it 500T. The stock is a capture system whose balance becomes visible through actual source spectra.",
+            "Keep one believable neutral in the grade so the mixed-light relationships retain meaning."
+          ],
+          "title": "Tungsten is a point of view"
+        },
+        {
+          "details": [
+            {
+              "label": "Developer",
+              "value": "ECN-2 color developer reduces exposed silver halide while oxidized CD-3 forms image dyes with incorporated couplers."
+            },
+            {
+              "label": "Bleach / fix",
+              "value": "Bleach converts metallic silver to removable silver halide; fixer converts it to soluble complexes removed in wash."
+            },
+            {
+              "label": "Scan posture",
+              "value": "Capture a wide-gamut, high-bit log-style master with the full negative range before display contrast."
+            },
+            {
+              "label": "Still-photo caution",
+              "value": "Use a lab equipped for rem-jet and ECN-2. Cross-processing changes color, contrast, backing removal, and archival assumptions."
+            }
+          ],
+          "eyebrow": "ECN-2 / SCAN",
+          "lede": "ECN-2 begins with prebath and rem-jet removal, then uses CD-3 color development before stop, bleach, fix, wash, final rinse, and drying. The process and its aim differ from still-photo C-41 even though both end in dye-image color negatives.",
+          "notes": [
+            "A cinematic look is a chain: stock, lens, exposure, lighting, ECN-2, scan transform, and grade.",
+            "Grainlab emulates the finished image behavior; it does not reproduce a particular scanner matrix or Kodak print film path."
+          ],
+          "title": "A laboratory negative, not C-41 with movie branding"
+        }
+      ],
+      "disclaimer": "Cinema 500T is an independent Grainlab rendering inspired by KODAK VISION3 500T technical literature. It is not a Kodak LUT, scanner characterization, spectral profile, or substitute for the stock and ECN-2 process.",
+      "facts": [
+        {
+          "label": "EXPOSURE INDEX",
+          "note": "Tungsten 3200 K",
+          "value": "EI 500"
+        },
+        {
+          "label": "DAYLIGHT EI",
+          "note": "With Wratten 85 correction",
+          "value": "EI 320"
+        },
+        {
+          "label": "PROCESS",
+          "note": "Motion-picture negative process",
+          "value": "ECN-2"
+        },
+        {
+          "label": "IMAGE",
+          "note": "Silver removed after development",
+          "value": "CMY dye clouds"
+        },
+        {
+          "label": "CODES",
+          "note": "35 mm · 16 mm",
+          "value": "5219 · 7219"
+        },
+        {
+          "label": "BACKING",
+          "note": "Removed in ECN-2 prebath",
+          "value": "Rem-jet"
+        },
+        {
+          "label": "GRAIN SYSTEM",
+          "note": "Shadow-grain control",
+          "value": "DLT / T-GRAIN"
+        },
+        {
+          "label": "CHARACTER",
+          "note": "Wide highlight latitude",
+          "value": "Low-light · long"
+        }
+      ],
+      "fieldNotes": [
+        "Let the table lamp be amber, let the window be blue, and decide which darkness contains the person.",
+        "The negative is wide so the grade can be specific—not so the lighting can be absent."
+      ],
+      "palette": [
+        {
+          "hex": "#d2945c",
+          "name": "practical amber"
+        },
+        {
+          "hex": "#5f7f72",
+          "name": "mercury green"
+        },
+        {
+          "hex": "#365b72",
+          "name": "window blue"
+        },
+        {
+          "hex": "#111718",
+          "name": "toe black"
+        }
+      ],
+      "portrait": "Cinema 500T belongs to practical lamps, blue windows, wet pavement, and faces emerging from the bottom of the curve. It is fast but not frantic: the dye structure stays measured, the shoulder makes room for bulbs and signs, and tungsten balance lets warm household light feel like illumination rather than a technical mistake.",
+      "reference": {
+        "manufacturer": "Eastman Kodak Company",
+        "relationship": "Motion-negative interpretation for still images",
+        "status": "Current production reference",
+        "stock": "KODAK VISION3 500T 5219 / 7219"
+      },
+      "sources": [
+        {
+          "publisher": "Eastman Kodak Company",
+          "title": "KODAK VISION3 500T Color Negative Film 5219 / 7219 resources",
+          "url": "https://www.kodak.com/en/motion/product/camera-films/500t-5219-7219/resources/"
+        },
+        {
+          "publisher": "Eastman Kodak Company",
+          "title": "Using KODAK Kit Chemicals in Motion Picture Film Laboratories",
+          "url": "https://www.kodak.com/content/products-brochures/Film/Using-KODAK-Kit-Chemicals-in-Motion-Picture-Film-Laboratories.pdf"
+        }
+      ],
+      "tagline": "Available darkness, held on a long color negative.",
+      "verified": "2026-07-16",
+      "version": 1,
+      "watchFor": [
+        "Sending rem-jet-backed stock through a lab that expects ordinary C-41 film.",
+        "Underexposing faces and expecting push or scan gain to restore missing color separation.",
+        "Neutralizing every mixed source until the tungsten-balanced atmosphere disappears.",
+        "Adding coarse static grain that ignores exposure and motion-film stability."
+      ]
+    },
+    "grainProfile": {
+      "crystal": "tabular",
+      "emulsion": "core-shell",
+      "medium": "dye",
+      "process": "motion",
+      "scale": "medium"
+    },
+    "group": "CINEMA / COLOR",
+    "id": "tungsten",
+    "maker": "Motion",
+    "name": "Cinema 500T",
+    "pipeline": {
+      "chemistry": {
+        "flare": 0.008,
+        "fog": 0.004,
+        "localContrast": 0.015,
+        "silverRetention": 0.0
+      },
+      "crossover": {
+        "highlights": [
+          0.015,
+          0.0,
+          -0.01
+        ],
+        "shadows": [
+          -0.01,
+          0.005,
+          0.025
+        ]
+      },
+      "curve": {
+        "gamma": 0.96,
+        "saturationCompression": 0.18,
+        "shoulder": 0.45,
+        "toe": 0.1
+      },
+      "family": "ecn2",
+      "grain": {
+        "chroma": 0.04,
+        "meanRadius": 1.1,
+        "radiusVariance": 0.35,
+        "shadowBias": 0.65
+      },
+      "monochrome": false,
+      "optics": {
+        "halation": 0.012,
+        "halationRadius": 7.0,
+        "halationThreshold": 0.92
+      },
+      "output": {
+        "scanContrast": 0.94,
+        "tint": [
+          0.99,
+          1.0,
+          1.01
+        ]
+      },
+      "scene": {
+        "flash": 0.0,
+        "sensitivity": [
+          0.98,
+          1.0,
+          1.04
+        ]
+      },
+      "version": 1
+    },
+    "settings": {
+      "contrast": 9,
+      "exposure": -0.08,
+      "fade": 5,
+      "grain": 13,
+      "saturation": -9,
+      "temperature": -12,
+      "tint": -2
+    },
+    "sort": 70,
+    "type": "color"
+  },
+  {
+    "dossier": {
+      "bestFor": [
+        "Industrial landscapes, war memory, psychological thrillers, winter exteriors, hard portraiture, and worlds losing color.",
+        "Scenes whose art direction can survive muted dark hues and denser shadows.",
+        "Images that need material severity rather than nostalgic warmth.",
+        "A tested sequence where the process has narrative meaning."
+      ],
+      "chapters": [
+        {
+          "details": [
+            {
+              "label": "Normal bleach",
+              "value": "Oxidizes metallic silver into silver-halide compounds that can be dissolved in fixer."
+            },
+            {
+              "label": "Bypass",
+              "value": "Omits or modifies bleaching so silver remains where color dyes also formed."
+            },
+            {
+              "label": "Visual consequence",
+              "value": "Retained silver raises contrast, lowers apparent saturation, darkens values, and can increase visible graininess."
+            },
+            {
+              "label": "Grainlab model",
+              "value": "Neutral metallic-silver modulation over a subdued color image, with denser low values and irregular clumping."
+            }
+          ],
+          "eyebrow": "PROCESS PHYSICS",
+          "lede": "During normal color development, exposed silver halide becomes metallic silver while oxidized developer forms dyes. Bleach converts that silver so fixer can remove it. A bypass retains some or all of the silver alongside the dye image, adding neutral density and physical texture.",
+          "notes": [
+            "This is the one color preset whose grain medium is intentionally mapped to silver: the physical result contains retained metallic silver.",
+            "No single bleach-bypass look exists; retention amount, film element, scene, exposure, and printing path all change it."
+          ],
+          "title": "What the bleach normally removes"
+        },
+        {
+          "details": [
+            {
+              "label": "Camera negative",
+              "value": "Can produce higher contrast, lighter or blown highlights, and more apparent grain in the printed result."
+            },
+            {
+              "label": "Print stage",
+              "value": "Primarily deepens shadows, blocks low detail, and mutes color while preserving the original negative."
+            },
+            {
+              "label": "Intermediate stage",
+              "value": "Historically used to control the look while reducing risk to irreplaceable camera original."
+            },
+            {
+              "label": "Digital intermediate",
+              "value": "Can emulate tonal and color consequences without physically retaining silver, but the material mechanism is absent."
+            }
+          ],
+          "eyebrow": "WHERE IT HAPPENS",
+          "lede": "Silver retention can be applied to the camera negative, intermediate positive, duplicate negative, or release print. The location changes which tonal region bears the effect and how safely the original can be preserved.",
+          "notes": [
+            "Kodak warns that skip bleach affects sensitometry, tone reproduction, process control, telecine, handling, heat absorption, and dye stability.",
+            "Reprocessing an original to remove retained silver adds handling risk and may not restore exposure decisions made for the bypass look."
+          ],
+          "title": "Negative, intermediate, or print"
+        },
+        {
+          "details": [
+            {
+              "label": "Lighting ratio",
+              "value": "Flatter capture lighting can compensate for the process increase in contrast, but exact strategy must be tested."
+            },
+            {
+              "label": "Exposure",
+              "value": "Do not assume underexposure creates grit safely; it can leave a thin negative beneath an already severe process."
+            },
+            {
+              "label": "Color design",
+              "value": "Strongly separated hues and lighter values survive silver retention better than subtle dark color distinctions."
+            },
+            {
+              "label": "Makeup / wardrobe",
+              "value": "Test skin, black fabric, dark red, and green together—the process can collapse distinctions departments expected to retain."
+            }
+          ],
+          "eyebrow": "EXPOSURE / ART DIRECTION",
+          "lede": "Because neutral silver suppresses chroma and increases density, production design must choose colors and lighting ratios that survive. Dark costumes, props, and backgrounds can merge into a single blocked mass if the negative and stage are not tested together.",
+          "notes": [
+            "Shoot a timed wedge through the complete lab and scan path before principal photography.",
+            "The best bypass images feel inevitable because lighting and production design anticipated the chemistry."
+          ],
+          "title": "Design the set for disappearing color"
+        },
+        {
+          "details": [
+            {
+              "label": "Texture",
+              "value": "Neutral silver clumps should modulate density more strongly than color and remain statistically irregular across the full frame."
+            },
+            {
+              "label": "Tone",
+              "value": "Deepen low values, steepen midtone separation, and protect enough highlight rolloff to avoid a brittle digital clip."
+            },
+            {
+              "label": "Color",
+              "value": "Reduce saturation through added neutral density, not by making every channel converge identically."
+            },
+            {
+              "label": "Grainlab intent",
+              "value": "A physically motivated hybrid image that remains usable as a grade, not a one-click war-movie cliché."
+            }
+          ],
+          "eyebrow": "DIGITAL EMULATION",
+          "lede": "A credible digital version couples neutral, exposure-dependent microstructure with the tonal and chromatic consequences of retained silver. Simple desaturation plus contrast misses the hybrid image and usually makes highlights and grain behave uniformly.",
+          "notes": [
+            "The emulation represents a generalized camera/intermediate silver-retention aesthetic, not a proprietary ENR, CCE, or ACE recipe.",
+            "Use less than you think; when every frame is severe, none of them feels dangerous."
+          ],
+          "title": "Retain the mechanism, not just the mood"
+        }
+      ],
+      "disclaimer": "Bleach Bypass is a generalized Grainlab process interpretation. ENR, CCE, ACE, skip bleach, and related laboratory methods are not interchangeable; the preset does not reproduce a proprietary lab recipe or guarantee the sensitometry of any physical process.",
+      "facts": [
+        {
+          "label": "CATEGORY",
+          "note": "Skip bleach · bypass · ENR family",
+          "value": "Silver retention"
+        },
+        {
+          "label": "BASE PROCESS",
+          "note": "Departure from normal sequence",
+          "value": "ECN-2 / ECP"
+        },
+        {
+          "label": "IMAGE",
+          "note": "Hybrid retained-silver structure",
+          "value": "Dye + silver"
+        },
+        {
+          "label": "CONTRAST",
+          "note": "Stage and retention dependent",
+          "value": "Higher"
+        },
+        {
+          "label": "SATURATION",
+          "note": "Silver adds neutral density",
+          "value": "Lower"
+        },
+        {
+          "label": "SHADOWS",
+          "note": "Print-stage effect is strongest low",
+          "value": "Denser"
+        },
+        {
+          "label": "HIGHLIGHTS",
+          "note": "Negative-stage bypass can blow out",
+          "value": "At risk"
+        },
+        {
+          "label": "CHARACTER",
+          "note": "Scene-dependent result",
+          "value": "Mineral · severe"
+        }
+      ],
+      "fieldNotes": [
+        "Choose the one red object that deserves to survive the silver.",
+        "The process should make the world feel heavier, not merely less colorful."
+      ],
+      "palette": [
+        {
+          "hex": "#c2c4bc",
+          "name": "retained silver"
+        },
+        {
+          "hex": "#713f39",
+          "name": "dried blood"
+        },
+        {
+          "hex": "#62675a",
+          "name": "army cloth"
+        },
+        {
+          "hex": "#151716",
+          "name": "dense black"
+        }
+      ],
+      "portrait": "Bleach bypass is a collision, not a filter. The color image survives, but metallic silver that would normally leave the film remains behind: blacks harden, saturation drains, highlights grow perilous, and texture takes on a mineral weight. Grainlab treats the result as a hybrid silver-and-dye image rather than gray noise over desaturated color.",
+      "reference": {
+        "manufacturer": "Laboratory technique / Kodak process guidance",
+        "relationship": "Process emulation, not a standalone film stock",
+        "status": "Specialty non-standard process family",
+        "stock": "Photochemical silver-retention processes"
+      },
+      "sources": [
+        {
+          "publisher": "Eastman Kodak Company",
+          "title": "Kodak Motion Picture Film Processing Techniques · Skip Bleach",
+          "url": "https://www.kodak.com/en/motion/page/processing-techniques/"
+        },
+        {
+          "publisher": "Eastman Kodak Company",
+          "title": "The Essential Reference Guide for Filmmakers · Silver Retention",
+          "url": "https://www.kodak.com/content/products-brochures/Film/kodak-essential-reference-guide-for-filmmakers.pdf"
+        }
+      ],
+      "tagline": "Color dyes forced to share the frame with their silver ghost.",
+      "verified": "2026-07-16",
+      "version": 1,
+      "watchFor": [
+        "Calling bleach bypass a film stock instead of a family of process interventions.",
+        "Applying identical desaturation and contrast regardless of tonal region.",
+        "Underexposing in pursuit of grit and losing the shadow record the process needs.",
+        "Using proprietary process names as though they were chemically identical."
+      ]
+    },
+    "grainProfile": {
+      "crystal": "tabular",
+      "emulsion": "mixed",
+      "medium": "silver",
+      "process": "bleach",
+      "scale": "medium"
+    },
+    "group": "CINEMA / COLOR",
+    "id": "bleach",
+    "maker": "Motion",
+    "name": "Bleach Bypass",
+    "pipeline": {
+      "chemistry": {
+        "flare": 0.004,
+        "fog": 0.0,
+        "localContrast": 0.07,
+        "silverRetention": 0.62
+      },
+      "crossover": {
+        "highlights": [
+          0.008,
+          0.0,
+          -0.006
+        ],
+        "shadows": [
+          -0.005,
+          0.0,
+          0.008
+        ]
+      },
+      "curve": {
+        "gamma": 0.95,
+        "saturationCompression": 0.16,
+        "shoulder": 0.28,
+        "toe": 0.12
+      },
+      "family": "ecn2",
+      "grain": {
+        "chroma": 0.0,
+        "meanRadius": 0.95,
+        "radiusVariance": 0.45,
+        "shadowBias": 0.75
+      },
+      "monochrome": false,
+      "optics": {
+        "halation": 0.02,
+        "halationRadius": 5.0,
+        "halationThreshold": 0.9
+      },
+      "output": {
+        "scanContrast": 1.02,
+        "tint": [
+          1.0,
+          1.0,
+          0.99
+        ]
+      },
+      "scene": {
+        "flash": 0.0,
+        "sensitivity": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "version": 1
+    },
+    "settings": {
+      "contrast": 12,
+      "exposure": 0.08,
+      "fade": 1,
+      "grain": 16,
+      "saturation": -26,
+      "temperature": -3
+    },
+    "sort": 80,
+    "type": "color"
+  },
+  {
+    "dossier": {
+      "bestFor": [
+        "Candlelight, clubs, night streets, rehearsal spaces, practical-only rooms, and stories where darkness should remain materially present.",
+        "Sequences willing to trade clean shadow color for pressure, immediacy, and texture.",
+        "Mixed tungsten, fluorescent, LED, and urban discharge light.",
+        "Frames where grain is earned by exposure conditions."
+      ],
+      "chapters": [
+        {
+          "details": [
+            {
+              "label": "One-stop push",
+              "value": "Metering 500T near EI 1000 underexposes one stop, followed by a lab-adjusted ECN-2 development target."
+            },
+            {
+              "label": "Two-stop push",
+              "value": "EI 2000 territory creates a stronger departure in contrast, grain visibility, shadow color, and lab control."
+            },
+            {
+              "label": "Why grain rises",
+              "value": "Lower exposure leaves fewer participating image sites while increased development and scan gain make density fluctuations more conspicuous."
+            },
+            {
+              "label": "Grainlab model",
+              "value": "Coarser mixed dye clouds, push-process contrast, stronger low-density texture, and restrained chroma instability."
+            }
+          ],
+          "eyebrow": "PROCESS PHYSICS",
+          "lede": "Pushing combines a higher exposure index—therefore less camera exposure—with altered development intended to raise usable density and contrast. It does not expose silver-halide grains that received too few photons, so deep shadow information remains the limiting currency.",
+          "notes": [
+            "Do not confuse rating a stock faster with changing its ISO; EI describes your exposure decision.",
+            "A lab push must be communicated by roll and calibrated to its processor, developer activity, and scan path."
+          ],
+          "title": "Push is development, not retroactive exposure"
+        },
+        {
+          "details": [
+            {
+              "label": "Metering",
+              "value": "Incident-meter the subject zone or spot-meter the darkest value that must retain hue—not empty black."
+            },
+            {
+              "label": "Practical lights",
+              "value": "Control hot bulbs and signs physically; wide latitude does not stop them from flattening the visual hierarchy."
+            },
+            {
+              "label": "Fill",
+              "value": "A trace of motivated fill can preserve color separation more gracefully than another stop of push."
+            },
+            {
+              "label": "Lens / shutter",
+              "value": "A faster lens or longer shutter changes motion and depth of field but actually supplies photons—development does not."
+            }
+          ],
+          "eyebrow": "EXPOSURE",
+          "lede": "At night, exposure is not evenly scarce. A face near a practical lamp may carry full color while the wall behind it falls below meaningful density. The cinematographer’s job is to decide where the color record ends.",
+          "notes": [
+            "Push only after using the light, lens, shutter angle, and negative area available to you.",
+            "Test human skin and the darkest costume together; the same meter number does not guarantee the same spectral record."
+          ],
+          "title": "Choose which darkness deserves color"
+        },
+        {
+          "details": [
+            {
+              "label": "Shadows",
+              "value": "Expect weaker separation, more scan amplification, and greater visibility of random dye-density structure."
+            },
+            {
+              "label": "Midtones",
+              "value": "Development can steepen separation and make skin or practical-lit surfaces feel more forceful."
+            },
+            {
+              "label": "Highlights",
+              "value": "The 500T shoulder remains useful, but push processing and scan choices alter where density becomes difficult."
+            },
+            {
+              "label": "Motion stability",
+              "value": "Real grain changes randomly each frame while retaining statistical character; fixed digital texture looks pasted on."
+            }
+          ],
+          "eyebrow": "COLOR / GRAIN",
+          "lede": "Color-film grain is the aggregate of dye-cloud fluctuations across records. In pushed night material those records do not fail equally, so texture may carry subtle chroma and density bias rather than neutral monochrome noise.",
+          "notes": [
+            "Grain should emerge from the image’s exposure logic, not be equally loud on a bright sign and an empty wall.",
+            "If the look becomes crunchy, restore tonal scale before reducing grain amplitude."
+          ],
+          "title": "Texture belongs to the underexposed layer stack"
+        },
+        {
+          "details": [
+            {
+              "label": "Lab communication",
+              "value": "Label each roll with stock, intended push, exposure index, and any bleach or pull instruction; confirm the lab’s available increments."
+            },
+            {
+              "label": "Scan",
+              "value": "Use a high-bit wide-gamut scan that preserves toe color before contrast and denoise decisions."
+            },
+            {
+              "label": "Grain management",
+              "value": "Evaluate at final crop and output size. Wide shots may need different restraint than close-ups."
+            },
+            {
+              "label": "Grainlab intent",
+              "value": "A +2-style nocturnal interpretation—not a promise of one laboratory’s exact ECN-2 sensitometry."
+            }
+          ],
+          "eyebrow": "LAB / SCAN",
+          "lede": "Kodak cinematography case studies describe 500T push tests followed by 4K scans and shot-dependent grain management. That is the professional model: test the actual lab, scan, grade, framing, and output rather than choosing a push number in isolation.",
+          "notes": [
+            "Denoise before sharpening and regrain only when the finishing chain has destroyed coherent film structure.",
+            "Keep some black truly quiet; noise everywhere makes the image feel electronically lifted instead of photochemically exposed."
+          ],
+          "title": "Test the whole chain at finishing resolution"
+        }
+      ],
+      "disclaimer": "Night Process is a generalized Grainlab interpretation of pushed VISION3 500T. Push results vary with exposure, laboratory, development increment, negative format, scanner, and grade; this preset is not an ECN-2 timing recommendation or Kodak product profile.",
+      "facts": [
+        {
+          "label": "REFERENCE EI",
+          "note": "500T pushed +1 / +2",
+          "value": "1000–2000"
+        },
+        {
+          "label": "PROCESS",
+          "note": "Extended/altered development",
+          "value": "ECN-2 push"
+        },
+        {
+          "label": "IMAGE",
+          "note": "More prominent scan texture",
+          "value": "CMY dye clouds"
+        },
+        {
+          "label": "BALANCE",
+          "note": "3200 K reference",
+          "value": "Tungsten"
+        },
+        {
+          "label": "CONTRAST",
+          "note": "Development-dependent",
+          "value": "Higher"
+        },
+        {
+          "label": "SHADOWS",
+          "note": "Missing exposure stays missing",
+          "value": "Fragile"
+        },
+        {
+          "label": "GRAIN",
+          "note": "Especially in low-density regions",
+          "value": "Coarse-visible"
+        },
+        {
+          "label": "CHARACTER",
+          "note": "Mixed-light pressure",
+          "value": "Nocturnal · raw"
+        }
+      ],
+      "fieldNotes": [
+        "Put one stop of real light on the face before asking chemistry for two.",
+        "Night is not the absence of exposure; it is the decision about where exposure stops."
+      ],
+      "palette": [
+        {
+          "hex": "#bf7444",
+          "name": "sodium flare"
+        },
+        {
+          "hex": "#5f8175",
+          "name": "fluoro mint"
+        },
+        {
+          "hex": "#274e65",
+          "name": "rain blue"
+        },
+        {
+          "hex": "#0b1113",
+          "name": "missing shadow"
+        }
+      ],
+      "portrait": "Night Process is what happens when a fast tungsten negative is asked for one more room of darkness and the laboratory answers with time. Grain grows more legible, contrast tightens, shadow color becomes selective, and practical lights acquire halos of consequence. It is not brighter night—it is night with a more expensive memory.",
+      "reference": {
+        "manufacturer": "Eastman Kodak Company / laboratory process",
+        "relationship": "Underexposure plus push-development interpretation",
+        "status": "Creative process variant, not a separate stock",
+        "stock": "KODAK VISION3 500T pushed +1 to +2 stops"
+      },
+      "sources": [
+        {
+          "publisher": "Eastman Kodak Company",
+          "title": "KODAK VISION3 500T Color Negative Film 5219 / 7219 resources",
+          "url": "https://www.kodak.com/en/motion/product/camera-films/500t-5219-7219/resources/"
+        },
+        {
+          "publisher": "Eastman Kodak Company",
+          "title": "JEANNE DU BARRY · 500T push tests and 4K scans",
+          "url": "https://www.kodak.com/en/motion/blog-post/jeanne-du-barry/"
+        }
+      ],
+      "tagline": "The city after the meter has stopped being reassuring.",
+      "verified": "2026-07-16",
+      "version": 1,
+      "watchFor": [
+        "Expecting push development to restore photons the negative never received.",
+        "Rating every scene at EI 2000 without testing skin, costume, and lab behavior.",
+        "Crushing shadows after already underexposing them, leaving no tonal rhythm.",
+        "Adding static monochrome grain over a physically color-dye image."
+      ]
+    },
+    "grainProfile": {
+      "crystal": "tabular",
+      "emulsion": "mixed",
+      "medium": "dye",
+      "process": "push",
+      "scale": "coarse"
+    },
+    "group": "CINEMA / COLOR",
+    "id": "night",
+    "maker": "Motion",
+    "name": "Night Process",
+    "pipeline": {
+      "chemistry": {
+        "flare": 0.012,
+        "fog": 0.006,
+        "localContrast": 0.05,
+        "silverRetention": 0.0
+      },
+      "crossover": {
+        "highlights": [
+          0.02,
+          0.0,
+          -0.02
+        ],
+        "shadows": [
+          -0.02,
+          0.02,
+          0.05
+        ]
+      },
+      "curve": {
+        "gamma": 1.0,
+        "saturationCompression": 0.24,
+        "shoulder": 0.42,
+        "toe": 0.18
+      },
+      "family": "ecn2",
+      "grain": {
+        "chroma": 0.05,
+        "meanRadius": 1.1,
+        "radiusVariance": 0.55,
+        "shadowBias": 0.7
+      },
+      "monochrome": false,
+      "optics": {
+        "halation": 0.06,
+        "halationRadius": 9.0,
+        "halationThreshold": 0.84
+      },
+      "output": {
+        "scanContrast": 1.02,
+        "tint": [
+          0.98,
+          1.0,
+          1.02
+        ]
+      },
+      "scene": {
+        "flash": 0.0,
+        "sensitivity": [
+          0.97,
+          1.0,
+          1.06
+        ]
+      },
+      "version": 1
+    },
+    "settings": {
+      "contrast": 14,
+      "exposure": -0.18,
+      "fade": 4,
+      "grain": 18,
+      "saturation": -14,
+      "temperature": -18,
+      "tint": 5
+    },
+    "sort": 90,
+    "type": "color"
+  },
+  {
+    "dossier": {
+      "bestFor": [
+        "Street, reportage, rehearsal rooms, available-light portraiture, and weather with an opinion.",
+        "Scenes where gesture and timing matter more than polished color separation.",
+        "35 mm frames that benefit from visible material texture.",
+        "Push workflows where harder midtones are part of the story."
+      ],
+      "chapters": [
+        {
+          "details": [
+            {
+              "label": "Image-forming material",
+              "value": "Metallic silver produced wherever exposed silver-halide grains develop."
+            },
+            {
+              "label": "Crystal interpretation",
+              "value": "Conventional cubic-family behavior rather than the cleaner plate-like signature of tabular films."
+            },
+            {
+              "label": "Grain statistic",
+              "value": "Kodak publishes diffuse RMS granularity 17 for TRI-X 400 in HC-110 Dilution B at 20°C."
+            },
+            {
+              "label": "Format distinction",
+              "value": "TRI-X 400 is the 135/120 emulsion; Kodak’s current sheet-film reference is TRI-X 320, not the same stock."
+            }
+          ],
+          "eyebrow": "EMULSION ANATOMY",
+          "lede": "The negative is a field of developed metallic silver. Grainlab models Tri-X with irregular conventional-grain clumps and a mixture of sizes: the physical pattern that gives fast silver film both sensitivity and its unmistakable edge texture.",
+          "notes": [
+            "What viewers call grain is an enlargement of random density variations—grain size, clumping, exposure, development, and magnification all participate.",
+            "The 35 mm look is louder because a small negative must be enlarged farther than 120."
+          ],
+          "title": "Conventional grain with a long memory"
+        },
+        {
+          "details": [
+            {
+              "label": "Box-speed baseline",
+              "value": "EI 400 for normal exposure and a standard development target."
+            },
+            {
+              "label": "One-stop push",
+              "value": "EI 800 can preserve a practical documentary negative with higher contrast and more emphatic grain."
+            },
+            {
+              "label": "Two-stop push",
+              "value": "Kodak publishes EI 1250 two-stop push tables; many field workflows meter 1600, but calibration matters."
+            },
+            {
+              "label": "Three-stop territory",
+              "value": "EI 3200 is a strong aesthetic decision: expect compressed shadow separation, harder midtones, and developer-dependent grain."
+            }
+          ],
+          "eyebrow": "SENSITOMETRY",
+          "lede": "At EI 400 the curve balances speed, shadow information, and a decisive midtone. Pushing does not make the emulsion catch photons it missed: it develops exposed densities more aggressively, lifting contrast while sparse shadow information stays sparse.",
+          "notes": [
+            "Meter important shadow texture, not the darkness you are willing to print as black.",
+            "If highlights become unprintable, reduce development before reducing exposure that the shadows need."
+          ],
+          "title": "Place the shadows; let the shoulder argue back"
+        },
+        {
+          "details": [
+            {
+              "label": "Kodak small-tank starts",
+              "value": "At 20°C: XTOL 7 min, D-76 6¾ min, HC-110 Dilution B 6 min in Kodak’s 2023 processing matrix."
+            },
+            {
+              "label": "Classic direction",
+              "value": "D-76 gives the familiar balance of grain, speed, and tone associated with the stock’s documentary vocabulary."
+            },
+            {
+              "label": "Speed / fine-grain direction",
+              "value": "XTOL is a common choice when retaining useful speed while moderating grain matters."
+            },
+            {
+              "label": "Agitation",
+              "value": "More agitation generally raises local developer activity and can alter contrast; consistency matters more than folklore."
+            }
+          ],
+          "eyebrow": "DARKROOM",
+          "lede": "Tri-X is a platform, not a single look. Solvent developers smooth the clumps; high-acutance or dilute practice makes edges and grain speak more loudly; push development steepens the useful curve.",
+          "notes": [
+            "Never copy a development time without matching dilution, temperature, agitation, tank type, and intended contrast.",
+            "A pushed negative is not automatically better because the grain is bigger; the emotional force comes from tone placement."
+          ],
+          "title": "The developer writes the accent"
+        },
+        {
+          "details": [
+            {
+              "label": "Scan posture",
+              "value": "Capture full negative density, invert cleanly, and shape the curve before adding local contrast."
+            },
+            {
+              "label": "Sharpening",
+              "value": "Sharpen subject edges at output scale; avoid turning every silver clump into a white-rimmed pixel island."
+            },
+            {
+              "label": "Print posture",
+              "value": "Burn the bright interruption, hold the face, and let one true black anchor the page."
+            },
+            {
+              "label": "Grainlab intent",
+              "value": "Irregular silver clumps, medium scale, high microcontrast, restrained highlight breakup."
+            }
+          ],
+          "eyebrow": "PRINT LANGUAGE",
+          "lede": "Tri-X can be velvety or violent. A low-contrast scan with a deliberate black point preserves options; a condenser enlarger or aggressive digital clarity will make the same negative feel sharper and grainier than a diffusion workflow.",
+          "notes": [
+            "The canonical look is not gray mush plus noise. It is a strong curve carrying real, exposure-dependent silver texture.",
+            "Judge at print size. A 200% display crop is microscopy, not photography."
+          ],
+          "title": "Make the grain answer to the picture"
+        }
+      ],
+      "disclaimer": "Tri-X 400 is a Grainlab artistic emulation informed by public Kodak literature. It is not endorsed by Kodak Alaris and does not reproduce a specific developer, enlarger, scanner, paper, or sensitometric curve. Process data are starting points only.",
+      "facts": [
+        {
+          "label": "NOMINAL SPEED",
+          "note": "400TX roll-film reference",
+          "value": "ISO 400 / 27°"
+        },
+        {
+          "label": "PUSH RANGE",
+          "note": "Process-dependent; test first",
+          "value": "EI 800–3200"
+        },
+        {
+          "label": "PROCESS",
+          "note": "D-76 · XTOL · HC-110 and others",
+          "value": "B&W negative"
+        },
+        {
+          "label": "IMAGE",
+          "note": "Crisp density clumps",
+          "value": "Metallic silver"
+        },
+        {
+          "label": "SENSITIZATION",
+          "note": "Broad visible response",
+          "value": "Panchromatic"
+        },
+        {
+          "label": "FORMATS",
+          "note": "400TX; sheet film is TRI-X 320",
+          "value": "135 · 120"
+        },
+        {
+          "label": "RMS GRANULARITY",
+          "note": "Kodak rates this as fine",
+          "value": "17"
+        },
+        {
+          "label": "CHARACTER",
+          "note": "Classic press-film cadence",
+          "value": "Grit · shoulder"
+        }
+      ],
+      "fieldNotes": [
+        "Keep the camera where the event is uncomfortable. Tri-X earns its grain through proximity.",
+        "One face in window light, one stop less than polite, and enough silver in the shadows to remember the room."
+      ],
+      "palette": [
+        {
+          "hex": "#d8d6ca",
+          "name": "newsprint"
+        },
+        {
+          "hex": "#8d8b82",
+          "name": "sidewalk"
+        },
+        {
+          "hex": "#3a3b38",
+          "name": "charcoal"
+        },
+        {
+          "hex": "#0d0f0e",
+          "name": "printer ink"
+        }
+      ],
+      "portrait": "Tri-X does not decorate a scene; it testifies. Midtones arrive with muscle, highlights carry the memory of hard light, and the silver grain feels less like an effect than the handwriting of the event itself. Grainlab keeps the clumps irregular and the contrast alive, with enough shoulder to remain photographic instead of merely harsh.",
+      "reference": {
+        "manufacturer": "Kodak Alaris",
+        "relationship": "Classic conventional-grain interpretation",
+        "status": "Current production reference",
+        "stock": "KODAK PROFESSIONAL TRI-X 400 / 400TX"
+      },
+      "sources": [
+        {
+          "publisher": "Kodak Alaris, revised October 2021",
+          "title": "KODAK PROFESSIONAL TRI-X 320 and 400 Films · F-4017",
+          "url": "https://www.kodakprofessional.com/sites/default/files/wysiwyg/film/f4017_trix_320400.pdf"
+        },
+        {
+          "publisher": "Kodak Alaris, March 2023",
+          "title": "Processing KODAK PROFESSIONAL Black-and-White Films · ED-BWF",
+          "url": "https://www.kodakprofessional.com/sites/default/files/wysiwyg/pro/resources/edbwf_0.pdf"
+        }
+      ],
+      "tagline": "The photograph as eyewitness testimony.",
+      "verified": "2026-07-16",
+      "version": 1,
+      "watchFor": [
+        "Treating push development as a substitute for shadow exposure.",
+        "Using one internet development time across different tanks, agitation patterns, and thermometers.",
+        "Sharpening the scan until grain becomes a digital halo pattern.",
+        "Calling every contrasty monochrome look Tri-X without preserving its shoulder and midtone scale."
+      ]
+    },
+    "grainProfile": {
+      "crystal": "cubic",
+      "emulsion": "mixed",
+      "medium": "silver",
+      "process": "standard",
+      "scale": "medium"
+    },
+    "group": "MONOCHROME",
+    "id": "trix",
+    "maker": "Mono",
+    "name": "Tri-X 400",
+    "pipeline": {
+      "chemistry": {
+        "flare": 0.004,
+        "fog": 0.004,
+        "localContrast": 0.07,
+        "silverRetention": 0.0
+      },
+      "crossover": {
+        "highlights": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "shadows": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "curve": {
+        "gamma": 1.0,
+        "saturationCompression": 0.0,
+        "shoulder": 0.35,
+        "toe": 0.15
+      },
+      "family": "bw",
+      "grain": {
+        "chroma": 0.0,
+        "meanRadius": 1.15,
+        "radiusVariance": 0.6,
+        "shadowBias": 0.7
+      },
+      "monochrome": true,
+      "optics": {
+        "halation": 0.02,
+        "halationRadius": 3.0,
+        "halationThreshold": 0.95
+      },
+      "output": {
+        "scanContrast": 1.0,
+        "tint": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "scene": {
+        "flash": 0.0,
+        "sensitivity": [
+          0.29,
+          0.61,
+          0.1
+        ]
+      },
+      "version": 1
+    },
+    "settings": {
+      "contrast": 24,
+      "exposure": 0.02,
+      "fade": 2,
+      "grain": 21,
+      "saturation": -100
+    },
+    "sort": 100,
+    "type": "mono"
+  },
+  {
+    "dossier": {
+      "bestFor": [
+        "Architecture, still life, landscape, and portrait sessions where texture must remain articulate.",
+        "Medium-format negatives intended for large, calm prints.",
+        "Overcast light whose close tonal values need separation instead of brute contrast.",
+        "Photographers who want silver character without a loud grain signature."
+      ],
+      "chapters": [
+        {
+          "details": [
+            {
+              "label": "Image-forming material",
+              "value": "Metallic silver remaining after development and fixation."
+            },
+            {
+              "label": "Crystal model",
+              "value": "Delta-family engineered crystals; the shader uses its dedicated Delta response rather than generic cubic grain."
+            },
+            {
+              "label": "Support",
+              "value": "0.125 mm acetate for 135, 0.110 mm clear acetate for 120, and 0.180 mm polyester for sheet film."
+            },
+            {
+              "label": "Halation control",
+              "value": "120 and sheet versions carry an anti-halation backing that clears during processing."
+            }
+          ],
+          "eyebrow": "EMULSION ANATOMY",
+          "lede": "The physical photograph is formed by developed metallic silver. ILFORD’s Delta family uses engineered core-shell crystal technology to gain speed efficiently while holding grain tight; Grainlab translates that into small, restrained clumps with a clean frequency distribution.",
+          "notes": [
+            "The visible grain is the statistical pattern of developed silver, not a texture printed on top of the image.",
+            "Format matters: the same emulsion enlarged from 35 mm will announce itself sooner than a 120 or sheet negative."
+          ],
+          "title": "A modern silver negative"
+        },
+        {
+          "details": [
+            {
+              "label": "Metering baseline",
+              "value": "EI 100 for a normal contrast index and the manufacturer’s intended balance."
+            },
+            {
+              "label": "Overexposure",
+              "value": "EI 50 gives one extra stop of exposure; useful for luminous skin, foliage separation, and scan-friendly shadow density."
+            },
+            {
+              "label": "Underexposure",
+              "value": "EI 200 can work cleanly, but sparse shadows cannot be recreated by longer development."
+            },
+            {
+              "label": "Reciprocity",
+              "value": "Long exposures need ILFORD’s published reciprocity compensation; test when exposure time leaves the ordinary shutter-speed range."
+            }
+          ],
+          "eyebrow": "SENSITOMETRY",
+          "lede": "At box speed the stock gives a full, measured scale. Rating at EI 50 supplies a denser negative and generous shadow placement; EI 200 is within ILFORD’s stated good-image-quality range but asks more of development and shadow exposure.",
+          "notes": [
+            "Expose for the shadow value you need to print; develop for the highlight contrast your output medium can hold.",
+            "A yellow or orange filter changes both spectral rendering and effective exposure—apply the published filter factor or TTL reading."
+          ],
+          "title": "Long midtones, disciplined shoulders"
+        },
+        {
+          "details": [
+            {
+              "label": "Balanced starting point",
+              "value": "ILFOTEC DD-X 1+4 for 10 minutes at 20°C, or ID-11 stock for 8½ minutes, per ILFORD’s sheet."
+            },
+            {
+              "label": "Finest-grain direction",
+              "value": "PERCEPTOL stock at EI 50, or DD-X at EI 100, trades speed or edge bite for smoothness."
+            },
+            {
+              "label": "Acutance direction",
+              "value": "More dilute developers can emphasize edge effects; control agitation before chasing longer times."
+            },
+            {
+              "label": "Process discipline",
+              "value": "Development data are starting points. Calibrate for thermometer, agitation, tank, water, scanner, and paper."
+            }
+          ],
+          "eyebrow": "DARKROOM",
+          "lede": "Fine grain is not one immutable property. Solvent action, dilution, agitation, time, and enlargement all decide whether Delta looks creamy, etched, or clinically smooth.",
+          "notes": [
+            "Short development below five minutes can invite unevenness; choose a dilution that keeps the process controllable.",
+            "Judge a developer from the final enlargement or scan, not a 100% negative crop in isolation."
+          ],
+          "title": "Developer choice is part of the lens"
+        },
+        {
+          "details": [
+            {
+              "label": "Scan posture",
+              "value": "Capture a flat, unclipped 16-bit grayscale master and establish contrast downstream."
+            },
+            {
+              "label": "Sharpening",
+              "value": "Use radius appropriate to output size. Do not sharpen grain into a false edge network."
+            },
+            {
+              "label": "Darkroom print",
+              "value": "A strong fit for fiber paper, fine-art subjects, and split-grade control of quiet skies."
+            },
+            {
+              "label": "Grainlab intent",
+              "value": "Crisp silver microstructure with restrained amplitude and a smooth tonal envelope."
+            }
+          ],
+          "eyebrow": "SCAN / PRINT",
+          "lede": "Delta rewards a neutral scan with conservative sharpening. Its beauty is the relationship between fine grain and clear local contrast; aggressive clarity can turn that relationship brittle.",
+          "notes": [
+            "If the file feels sterile, add print contrast or local burning before increasing grain.",
+            "If it feels digital, reduce edge sharpening first—the stock itself is supposed to be fine."
+          ],
+          "title": "Give the microcontrast somewhere to go"
+        }
+      ],
+      "disclaimer": "Delta 100 is a Grainlab emulation informed by public manufacturer literature. It is not an ICC profile, spectral measurement, sensitometric reproduction, or product of HARMAN technology. Developer times are reference starting points—consult the current data sheet and test your own process.",
+      "facts": [
+        {
+          "label": "NOMINAL SPEED",
+          "note": "Daylight rating",
+          "value": "ISO 100 / 21°"
+        },
+        {
+          "label": "PRACTICAL EI",
+          "note": "Manufacturer’s useful metering range",
+          "value": "50–200"
+        },
+        {
+          "label": "PROCESS",
+          "note": "Developer choice shapes acutance and grain",
+          "value": "B&W negative"
+        },
+        {
+          "label": "IMAGE",
+          "note": "No dye-cloud image",
+          "value": "Metallic silver"
+        },
+        {
+          "label": "SENSITIZATION",
+          "note": "Normal color-filter practice applies",
+          "value": "Panchromatic"
+        },
+        {
+          "label": "FORMATS",
+          "note": "Base thickness varies by format",
+          "value": "135 · 120 · sheet"
+        },
+        {
+          "label": "GRAIN FAMILY",
+          "note": "Fine engineered crystal system",
+          "value": "Core-shell / Delta"
+        },
+        {
+          "label": "CHARACTER",
+          "note": "High enlargement headroom",
+          "value": "Fine · lucid"
+        }
+      ],
+      "fieldNotes": [
+        "Let the negative whisper. Delta is most convincing when the light has already done the dramatic work.",
+        "Meter the dark stone, protect the bright plaster, and leave the middle of the curve room to breathe."
+      ],
+      "palette": [
+        {
+          "hex": "#d9ded8",
+          "name": "paper white"
+        },
+        {
+          "hex": "#89928c",
+          "name": "pewter"
+        },
+        {
+          "hex": "#434a46",
+          "name": "graphite"
+        },
+        {
+          "hex": "#141816",
+          "name": "selenium"
+        }
+      ],
+      "portrait": "Delta 100 is the quiet precision instrument in the monochrome drawer: fine enough to describe weathered stone, open enough to keep a pale sky breathing, and modern enough that the grain reads as structure rather than nostalgia. This emulation favors long tonal sentences, lucid edges, and blacks that arrive deliberately instead of collapsing into ink.",
+      "reference": {
+        "manufacturer": "HARMAN technology / ILFORD PHOTO",
+        "relationship": "Close technical and aesthetic study; rendering is interpretive",
+        "status": "Current production reference",
+        "stock": "ILFORD DELTA 100 PROFESSIONAL"
+      },
+      "sources": [
+        {
+          "publisher": "ILFORD PHOTO / HARMAN technology, April 2023",
+          "title": "DELTA 100 PROFESSIONAL Technical Information",
+          "url": "https://www.ilfordphoto.com/amfile/file/download/file/3/product/423/"
+        },
+        {
+          "publisher": "ILFORD PHOTO",
+          "title": "DELTA 100 Professional developer and process chart",
+          "url": "https://www.ilfordphoto.com/delta-100-professional-sheet-film"
+        }
+      ],
+      "tagline": "Silver rendered with a draftsman’s restraint.",
+      "verified": "2026-07-16",
+      "version": 1,
+      "watchFor": [
+        "Casual underexposure: development can raise contrast but cannot manufacture missing shadow exposure.",
+        "Over-sharpening fine scans until engineered grain resembles digital noise.",
+        "Mixing film-speed changes and development changes without a repeatable test method.",
+        "Assuming every Delta format uses the same physical base or handling routine."
+      ]
+    },
+    "grainProfile": {
+      "crystal": "delta",
+      "emulsion": "core-shell",
+      "medium": "silver",
+      "process": "standard",
+      "scale": "fine"
+    },
+    "group": "MONOCHROME",
+    "id": "delta",
+    "maker": "Mono",
+    "name": "Delta 100",
+    "pipeline": {
+      "chemistry": {
+        "flare": 0.003,
+        "fog": 0.002,
+        "localContrast": 0.06,
+        "silverRetention": 0.0
+      },
+      "crossover": {
+        "highlights": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "shadows": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "curve": {
+        "gamma": 0.98,
+        "saturationCompression": 0.0,
+        "shoulder": 0.35,
+        "toe": 0.08
+      },
+      "family": "bw",
+      "grain": {
+        "chroma": 0.0,
+        "meanRadius": 0.65,
+        "radiusVariance": 0.2,
+        "shadowBias": 0.45
+      },
+      "monochrome": true,
+      "optics": {
+        "halation": 0.012,
+        "halationRadius": 2.0,
+        "halationThreshold": 0.96
+      },
+      "output": {
+        "scanContrast": 1.0,
+        "tint": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "scene": {
+        "flash": 0.0,
+        "sensitivity": [
+          0.25,
+          0.68,
+          0.07
+        ]
+      },
+      "version": 1
+    },
+    "settings": {
+      "contrast": 13,
+      "exposure": 0.04,
+      "grain": 8,
+      "saturation": -100
+    },
+    "sort": 110,
+    "type": "mono"
+  },
+  {
+    "dossier": {
+      "bestFor": [
+        "Hard-sun foliage, old trees, formal gardens, cloud architecture, and landscapes that should feel unearthly but precise.",
+        "Black-and-white work where a spectral shift matters more than coarse grain.",
+        "Clear-base reversal experiments and high-resolution scans.",
+        "Scenes with deliberate separation between living vegetation and dark atmosphere."
+      ],
+      "chapters": [
+        {
+          "details": [
+            {
+              "label": "Spectral response",
+              "value": "Visible light plus a pronounced response extending from roughly 650 to 750 nm."
+            },
+            {
+              "label": "Image-forming material",
+              "value": "Developed metallic silver; no dye clouds and no channel-colored grain."
+            },
+            {
+              "label": "Published structure",
+              "value": "7.5 μm thin, silver-rich emulsion on a crystal-clear 100 μm polyester support."
+            },
+            {
+              "label": "Crystal caveat",
+              "value": "The manufacturer does not name a tabular geometry; Grainlab uses a fine conventional-grain model as an explicit inference."
+            }
+          ],
+          "eyebrow": "SPECTRAL ANATOMY",
+          "lede": "The reference is a silver-rich hyperpanchromatic black-and-white emulsion with sensitivity extending into near infrared. Its clear polyester support, thin emulsion, and published fine grain distinguish it from the woolly infrared caricature often added in software.",
+          "notes": [
+            "The Wood effect comes from foliage reflecting near-infrared radiation, not from simply brightening green pixels.",
+            "Spectral output changes with season, plant health, sun angle, haze, filter cutoff, lens transmission, and development."
+          ],
+          "title": "Beyond panchromatic seeing"
+        },
+        {
+          "details": [
+            {
+              "label": "Without an IR filter",
+              "value": "Use as a sharp hyperpanchromatic film around EI 200–400, refined for the chosen developer."
+            },
+            {
+              "label": "With a 715–730 nm filter",
+              "value": "Expect a major speed loss and bracket. Published nominal ISO no longer describes the complete system."
+            },
+            {
+              "label": "Focus",
+              "value": "Infrared focuses beyond visible light. Stop down or use an IR focus index when the lens provides one."
+            },
+            {
+              "label": "Loading",
+              "value": "Protect the clear-base film from strong light and follow current manufacturer handling guidance."
+            }
+          ],
+          "eyebrow": "EXPOSURE RITUAL",
+          "lede": "An ordinary meter does not directly tell you how much near-infrared radiation reaches the film. Filter factors are starting points; a bracket is often the only honest meter for a new filter, lens, season, or time of day.",
+          "notes": [
+            "Shoot a three-to-five-frame exposure ladder the first time a filter/lens combination matters.",
+            "Hard sun maximizes the spectral separation; overcast light produces a quieter, less theatrical infrared rendering."
+          ],
+          "title": "Meter visible light, then test the invisible"
+        },
+        {
+          "details": [
+            {
+              "label": "Foliage",
+              "value": "Often renders pale under a deep IR filter because healthy leaves reflect strongly in near infrared."
+            },
+            {
+              "label": "Sky / water",
+              "value": "Can fall dramatically dark when little near-IR energy reaches the camera from those directions."
+            },
+            {
+              "label": "Skin",
+              "value": "May become smooth and pale; eyes, veins, and cosmetics can respond in unfamiliar ways."
+            },
+            {
+              "label": "Grainlab intent",
+              "value": "Fine metallic-silver clumps with high tonal separation, not oversized monochrome noise."
+            }
+          ],
+          "eyebrow": "TONE / GRAIN",
+          "lede": "The most convincing infrared image keeps ordinary photographic logic beneath the spectral surprise. Fine silver grain, clear edge detail, and a protected highlight scale make luminous foliage feel physical rather than inverted.",
+          "notes": [
+            "The shader can evoke infrared relationships from RGB input, but a normal digital photo does not contain a true near-IR capture channel.",
+            "A real IR negative remains scene- and spectrum-dependent in ways no fixed preset can fully reconstruct."
+          ],
+          "title": "Strange light, disciplined structure"
+        },
+        {
+          "details": [
+            {
+              "label": "Published example",
+              "value": "Rollei lists R09/Rodinal 1+25 for 10½ min at 20°C and ID-11/D-76 stock for 10:50 at EI 400."
+            },
+            {
+              "label": "Agitation reference",
+              "value": "Continuous first 60 seconds, then 5 seconds every 30 seconds in the manufacturer’s table."
+            },
+            {
+              "label": "Scan posture",
+              "value": "Hold foliage detail below clipping and establish the black point from the subject, not from empty sky."
+            },
+            {
+              "label": "Support handling",
+              "value": "Polyester is dimensionally stable and strong; use clean sleeves and a carrier that keeps it flat."
+            }
+          ],
+          "eyebrow": "DARKROOM / SCAN",
+          "lede": "The clear PET base suits negative or reversal workflows and scans cleanly, but its physical behavior deserves care. Keep the strip controlled, avoid static and dust, and do not crush the spectral separation into pure black and white too early.",
+          "notes": [
+            "Development times vary with actual EI, contrast target, dilution, equipment, and personal technique.",
+            "Use local contrast sparingly around bright leaves; halos instantly break the optical illusion."
+          ],
+          "title": "Clear base, deep information"
+        }
+      ],
+      "disclaimer": "Infrared 400 is a Grainlab interpretation informed by Rollei Infrared literature. A conventional RGB source does not record near-infrared wavelengths, so this preset can evoke—but cannot recover—true spectral information. Process and exposure values require testing with your actual film, filter, lens, and developer.",
+      "facts": [
+        {
+          "label": "NOMINAL SPEED",
+          "note": "Filter and developer dependent",
+          "value": "ISO 200–400"
+        },
+        {
+          "label": "SPECTRAL REACH",
+          "note": "Hyperpanchromatic into near IR",
+          "value": "650–750 nm"
+        },
+        {
+          "label": "IR FILTER",
+          "note": "Manufacturer’s recommended zone",
+          "value": "715–730 nm"
+        },
+        {
+          "label": "IMAGE",
+          "note": "Silver-rich thin emulsion",
+          "value": "Metallic silver"
+        },
+        {
+          "label": "RMS GRANULARITY",
+          "note": "Fine-grain reference",
+          "value": "11"
+        },
+        {
+          "label": "RESOLVING POWER",
+          "note": "At contrast 1000:1",
+          "value": "160 lines/mm"
+        },
+        {
+          "label": "BASE",
+          "note": "Crystal-clear polyester",
+          "value": "100 μm clear PET"
+        },
+        {
+          "label": "FORMATS",
+          "note": "Also 35 mm bulk rolls",
+          "value": "135 · 120 · 4×5"
+        }
+      ],
+      "fieldNotes": [
+        "Find the brightest leaves at noon, then meter as though the sky intends to become night.",
+        "Infrared becomes art when the strange foliage still has veins."
+      ],
+      "palette": [
+        {
+          "hex": "#e3e4d9",
+          "name": "wood glow"
+        },
+        {
+          "hex": "#a7aca3",
+          "name": "silver grass"
+        },
+        {
+          "hex": "#38413f",
+          "name": "storm sky"
+        },
+        {
+          "hex": "#0a0d0c",
+          "name": "infrared black"
+        }
+      ],
+      "portrait": "Infrared 400 is a landscape seen by the edge of human vision. Chlorophyll lifts toward porcelain, blue atmosphere falls toward charcoal, and ordinary daylight takes on the charged stillness of a dream remembered at noon. The emulation is intentionally spectral in mood, but its grain stays fine: the reference stock is not a crude special-effect material.",
+      "reference": {
+        "manufacturer": "Maco Photo Products / Rollei Analog",
+        "relationship": "Hyperpanchromatic infrared interpretation",
+        "status": "Current production reference",
+        "stock": "ROLLEI INFRARED"
+      },
+      "sources": [
+        {
+          "publisher": "Maco Photo Products / Rollei Analog, 2021",
+          "title": "ROLLEI INFRARED Data Sheet · R210401",
+          "url": "https://www.rolleianalog.com/wp-content/uploads/2021/04/INFRARED_Datenblatt_EN_R210401.pdf?lang=en"
+        },
+        {
+          "publisher": "Rollei Analog",
+          "title": "Rollei Infrared product and development reference",
+          "url": "https://www.rolleianalog.com/rollei-infrared/?lang=en"
+        }
+      ],
+      "tagline": "Green leaves become their own moonlight.",
+      "verified": "2026-07-16",
+      "version": 1,
+      "watchFor": [
+        "Trusting a visible-light meter as if it measures near-infrared radiation.",
+        "Wide-open focus errors caused by the infrared focal shift.",
+        "Assuming every green object reflects IR like healthy chlorophyll.",
+        "Claiming a true infrared record from ordinary RGB data—the preset is a spectral interpretation."
+      ]
+    },
+    "grainProfile": {
+      "crystal": "cubic",
+      "emulsion": "mixed",
+      "medium": "silver",
+      "process": "standard",
+      "scale": "fine"
+    },
+    "group": "MONOCHROME",
+    "id": "infra",
+    "maker": "Mono",
+    "name": "Infrared 400",
+    "pipeline": {
+      "chemistry": {
+        "flare": 0.005,
+        "fog": 0.003,
+        "localContrast": 0.08,
+        "silverRetention": 0.0
+      },
+      "crossover": {
+        "highlights": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "shadows": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "curve": {
+        "gamma": 1.05,
+        "saturationCompression": 0.0,
+        "shoulder": 0.15,
+        "toe": 0.2
+      },
+      "family": "bw",
+      "grain": {
+        "chroma": 0.0,
+        "meanRadius": 0.7,
+        "radiusVariance": 0.25,
+        "shadowBias": 0.55
+      },
+      "monochrome": true,
+      "optics": {
+        "halation": 0.025,
+        "halationRadius": 4.0,
+        "halationThreshold": 0.92
+      },
+      "output": {
+        "scanContrast": 1.03,
+        "tint": [
+          0.99,
+          1.0,
+          1.01
+        ]
+      },
+      "scene": {
+        "flash": 0.0,
+        "sensitivity": [
+          0.35,
+          0.6,
+          0.05
+        ]
+      },
+      "version": 1
+    },
+    "settings": {
+      "contrast": 34,
+      "exposure": 0.14,
+      "grain": 12,
+      "saturation": -100
+    },
+    "sort": 120,
+    "type": "mono"
+  }
+]

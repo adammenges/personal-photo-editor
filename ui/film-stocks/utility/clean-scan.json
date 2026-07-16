@@ -1,0 +1,133 @@
+{
+  "id": "neutral",
+  "name": "Clean Scan",
+  "maker": "Utility",
+  "type": "utility",
+  "group": "UTILITY / BASE",
+  "sort": 10,
+  "settings": { "grain": 0 },
+  "grainProfile": { "medium": "dye", "crystal": "tabular", "emulsion": "core-shell", "scale": "fine", "process": "standard" },
+  "pipeline": {
+    "version": 1,
+    "family": "utility",
+    "monochrome": false,
+    "scene": { "sensitivity": [1.0, 1.0, 1.0], "flash": 0.0 },
+    "curve": { "toe": 0.0, "shoulder": 0.0, "gamma": 1.0, "saturationCompression": 0.0 },
+    "crossover": { "shadows": [0.0, 0.0, 0.0], "highlights": [0.0, 0.0, 0.0] },
+    "chemistry": { "silverRetention": 0.0, "fog": 0.0, "flare": 0.0, "localContrast": 0.0 },
+    "optics": { "halation": 0.0, "halationRadius": 0.0, "halationThreshold": 1.0 },
+    "output": { "tint": [1.0, 1.0, 1.0], "scanContrast": 1.0 },
+    "grain": { "meanRadius": 0.6, "radiusVariance": 0.05, "shadowBias": 0.1, "chroma": 0.03 }
+  },
+  "dossier": {
+    "version": 1,
+    "reference": {
+      "stock": "Neutral scene-referred scan baseline",
+      "manufacturer": "Grainlab Utility",
+      "relationship": "Control condition; intentionally not a film emulation",
+      "status": "Digital reference transform"
+    },
+    "tagline": "Zero romance, maximum evidence.",
+    "portrait": "Clean Scan is the blank sensitometric page. It adds no stock curve, no visible grain, no temperature story, and no historical costume. Its job is to show what the source and your manual controls are actually doing so every film interpretation has an honest control to stand beside.",
+    "facts": [
+      { "label": "CATEGORY", "value": "Control", "note": "Not a physical stock" },
+      { "label": "STOCK CURVE", "value": "None", "note": "Neutral preset offsets" },
+      { "label": "GRAIN", "value": "0", "note": "No synthetic film structure" },
+      { "label": "COLOR CAST", "value": "None", "note": "Source values retained" },
+      { "label": "PROCESS", "value": "Digital", "note": "Local full-resolution pipeline" },
+      { "label": "PURPOSE", "value": "Baseline", "note": "Compare edits and diagnose" },
+      { "label": "LATITUDE", "value": "Source-bound", "note": "No invented recovery" },
+      { "label": "CHARACTER", "value": "Literal · clean", "note": "A/B reference state" }
+    ],
+    "palette": [
+      { "name": "display white", "hex": "#e1e8e4" },
+      { "name": "middle gray", "hex": "#858b88" },
+      { "name": "neutral dark", "hex": "#3d4240" },
+      { "name": "display black", "hex": "#0d100f" }
+    ],
+    "chapters": [
+      {
+        "eyebrow": "CONTROL CONDITION",
+        "title": "What zero means in this application",
+        "lede": "Clean Scan sets the stock-specific adjustment offsets and grain amount to zero. It does not linearize a camera file, reverse prior edits, recover clipped channels, or bypass the application’s display and export pipeline.",
+        "details": [
+          { "label": "Tone", "value": "No preset exposure, contrast, fade, highlight, or shadow bias." },
+          { "label": "Color", "value": "No preset temperature, tint, or saturation bias." },
+          { "label": "Texture", "value": "No preset grain. User-added grain and vignette controls can still alter the frame." },
+          { "label": "Resolution", "value": "The editor keeps a full-resolution decoded image buffer; zoom changes view scale, not source pixel count." }
+        ],
+        "notes": [
+          "A neutral preset is not automatically colorimetric truth; source profile interpretation and webview color management still matter.",
+          "Reset Frame is the true return to default manual controls. Clean Scan only selects the zero-bias stock."
+        ]
+      },
+      {
+        "eyebrow": "COLOR MANAGEMENT",
+        "title": "Numbers need a color space before they become color",
+        "lede": "RGB triplets are meaningful only in relation to primaries, transfer functions, white point, and viewing conditions. Clean Scan avoids an artistic stock transform but cannot make an untagged or incorrectly decoded file self-describing.",
+        "details": [
+          { "label": "Input", "value": "JPEG, PNG, and WebP are decoded by the platform; embedded profile support depends on the webview imaging path." },
+          { "label": "Working behavior", "value": "Grainlab currently processes display-oriented RGB values rather than a scene-linear RAW negative." },
+          { "label": "Display", "value": "Perceived neutrality depends on a calibrated display, ambient light, and the operating system’s color pipeline." },
+          { "label": "Export", "value": "JPEG output is a rendered derivative; preserve the original file separately as the source of record." }
+        ],
+        "notes": [
+          "Use a photographed gray card or color target when reproduction accuracy matters.",
+          "Do not judge subtle casts beside a saturated wallpaper, colored room light, or uncalibrated high-vivid display mode."
+        ]
+      },
+      {
+        "eyebrow": "DIAGNOSTIC USE",
+        "title": "A reference frame for every aesthetic claim",
+        "lede": "Film emulation is easiest to understand by difference. Clean Scan lets you isolate whether an effect comes from the selected stock, the manual adjustment stack, the source capture, or the display.",
+        "details": [
+          { "label": "Grain test", "value": "Set Clean Scan, zero Texture, then add one grain trait at a time to inspect physical-model behavior." },
+          { "label": "Tone test", "value": "Compare the histogram before and after a stock to see which density regions the interpretation moves." },
+          { "label": "Color test", "value": "Use a neutral object and known memory colors—skin, sky, foliage—to separate cast from intended palette." },
+          { "label": "Resolution test", "value": "Inspect at 100% view before blaming a stock for source compression, focus, denoise, or prior sharpening artifacts." }
+        ],
+        "notes": [
+          "A useful emulation should survive comparison with its baseline; hiding the before image encourages self-deception.",
+          "When a preset feels excessive, diagnose tone, color, and texture independently before reducing everything."
+        ]
+      },
+      {
+        "eyebrow": "ARCHIVAL POSTURE",
+        "title": "The source is not the look",
+        "lede": "A rendered JPEG is an interpretation. Preserve the camera original or highest-quality source, store edit intent separately when possible, and make new derivatives for new display contexts rather than overwriting the only master.",
+        "details": [
+          { "label": "Source master", "value": "Keep the untouched original with its metadata and embedded profile." },
+          { "label": "Edit master", "value": "Export the highest practical quality and avoid repeated lossy JPEG round trips." },
+          { "label": "Delivery", "value": "Size and sharpen for the actual print or display instead of treating one derivative as universal." },
+          { "label": "Grainlab intent", "value": "Provide a visually quiet checkpoint from which deliberate film behavior can be evaluated." }
+        ],
+        "notes": [
+          "Neutrality is a workflow tool, not an artistic virtue.",
+          "The cleanest file is valuable because it leaves the next decision open."
+        ]
+      }
+    ],
+    "bestFor": [
+      "Checking the unstyled source before choosing a stock.",
+      "Building a manual grade from zero and testing one variable at a time.",
+      "Diagnosing compression, sharpening, color cast, and source-resolution issues.",
+      "Making a conservative derivative when no film interpretation is appropriate."
+    ],
+    "watchFor": [
+      "Calling a display-oriented decoded image a RAW or scene-linear negative.",
+      "Assuming zero preset offsets neutralize an incorrect source profile or room lighting.",
+      "Forgetting that user controls remain active after selecting the utility preset.",
+      "Overwriting the only original with a rendered JPEG."
+    ],
+    "fieldNotes": [
+      "Before asking which film the picture wants, ask what is already in the file.",
+      "A control is not boring. It is how you know the romance came from a decision."
+    ],
+    "sources": [
+      { "title": "ICC specification and color-management resources", "publisher": "International Color Consortium", "url": "https://www.color.org/icc_specs2.xalter" },
+      { "title": "Kodak Glossary of Motion Picture Terms · density, resolution, RGB, RMS", "publisher": "Eastman Kodak Company", "url": "https://www.kodak.com/en/motion/page/glossary-of-motion-picture-terms/" }
+    ],
+    "verified": "2026-07-16",
+    "disclaimer": "Clean Scan is a Grainlab control preset, not a film stock, camera profile, ICC transform, RAW workflow, or claim of colorimetric accuracy. It deliberately applies no stock-specific creative offsets."
+  }
+}

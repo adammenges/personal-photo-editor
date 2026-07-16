@@ -1,0 +1,133 @@
+{
+  "id": "bleach",
+  "name": "Bleach Bypass",
+  "maker": "Motion",
+  "type": "color",
+  "group": "CINEMA / COLOR",
+  "sort": 80,
+  "settings": { "exposure": 0.08, "contrast": 12, "saturation": -26, "temperature": -3, "fade": 1, "grain": 16 },
+  "grainProfile": { "medium": "silver", "crystal": "tabular", "emulsion": "mixed", "scale": "medium", "process": "bleach" },
+  "pipeline": {
+    "version": 1,
+    "family": "ecn2",
+    "monochrome": false,
+    "scene": { "sensitivity": [1.0, 1.0, 1.0], "flash": 0.0 },
+    "curve": { "toe": 0.12, "shoulder": 0.28, "gamma": 0.95, "saturationCompression": 0.16 },
+    "crossover": { "shadows": [-0.005, 0.0, 0.008], "highlights": [0.008, 0.0, -0.006] },
+    "chemistry": { "silverRetention": 0.62, "fog": 0.0, "flare": 0.004, "localContrast": 0.07 },
+    "optics": { "halation": 0.02, "halationRadius": 5.0, "halationThreshold": 0.9 },
+    "output": { "tint": [1.0, 1.0, 0.99], "scanContrast": 1.02 },
+    "grain": { "meanRadius": 0.95, "radiusVariance": 0.45, "shadowBias": 0.75, "chroma": 0.0 }
+  },
+  "dossier": {
+    "version": 1,
+    "reference": {
+      "stock": "Photochemical silver-retention processes",
+      "manufacturer": "Laboratory technique / Kodak process guidance",
+      "relationship": "Process emulation, not a standalone film stock",
+      "status": "Specialty non-standard process family"
+    },
+    "tagline": "Color dyes forced to share the frame with their silver ghost.",
+    "portrait": "Bleach bypass is a collision, not a filter. The color image survives, but metallic silver that would normally leave the film remains behind: blacks harden, saturation drains, highlights grow perilous, and texture takes on a mineral weight. Grainlab treats the result as a hybrid silver-and-dye image rather than gray noise over desaturated color.",
+    "facts": [
+      { "label": "CATEGORY", "value": "Silver retention", "note": "Skip bleach · bypass · ENR family" },
+      { "label": "BASE PROCESS", "value": "ECN-2 / ECP", "note": "Departure from normal sequence" },
+      { "label": "IMAGE", "value": "Dye + silver", "note": "Hybrid retained-silver structure" },
+      { "label": "CONTRAST", "value": "Higher", "note": "Stage and retention dependent" },
+      { "label": "SATURATION", "value": "Lower", "note": "Silver adds neutral density" },
+      { "label": "SHADOWS", "value": "Denser", "note": "Print-stage effect is strongest low" },
+      { "label": "HIGHLIGHTS", "value": "At risk", "note": "Negative-stage bypass can blow out" },
+      { "label": "CHARACTER", "value": "Mineral · severe", "note": "Scene-dependent result" }
+    ],
+    "palette": [
+      { "name": "retained silver", "hex": "#c2c4bc" },
+      { "name": "dried blood", "hex": "#713f39" },
+      { "name": "army cloth", "hex": "#62675a" },
+      { "name": "dense black", "hex": "#151716" }
+    ],
+    "chapters": [
+      {
+        "eyebrow": "PROCESS PHYSICS",
+        "title": "What the bleach normally removes",
+        "lede": "During normal color development, exposed silver halide becomes metallic silver while oxidized developer forms dyes. Bleach converts that silver so fixer can remove it. A bypass retains some or all of the silver alongside the dye image, adding neutral density and physical texture.",
+        "details": [
+          { "label": "Normal bleach", "value": "Oxidizes metallic silver into silver-halide compounds that can be dissolved in fixer." },
+          { "label": "Bypass", "value": "Omits or modifies bleaching so silver remains where color dyes also formed." },
+          { "label": "Visual consequence", "value": "Retained silver raises contrast, lowers apparent saturation, darkens values, and can increase visible graininess." },
+          { "label": "Grainlab model", "value": "Neutral metallic-silver modulation over a subdued color image, with denser low values and irregular clumping." }
+        ],
+        "notes": [
+          "This is the one color preset whose grain medium is intentionally mapped to silver: the physical result contains retained metallic silver.",
+          "No single bleach-bypass look exists; retention amount, film element, scene, exposure, and printing path all change it."
+        ]
+      },
+      {
+        "eyebrow": "WHERE IT HAPPENS",
+        "title": "Negative, intermediate, or print",
+        "lede": "Silver retention can be applied to the camera negative, intermediate positive, duplicate negative, or release print. The location changes which tonal region bears the effect and how safely the original can be preserved.",
+        "details": [
+          { "label": "Camera negative", "value": "Can produce higher contrast, lighter or blown highlights, and more apparent grain in the printed result." },
+          { "label": "Print stage", "value": "Primarily deepens shadows, blocks low detail, and mutes color while preserving the original negative." },
+          { "label": "Intermediate stage", "value": "Historically used to control the look while reducing risk to irreplaceable camera original." },
+          { "label": "Digital intermediate", "value": "Can emulate tonal and color consequences without physically retaining silver, but the material mechanism is absent." }
+        ],
+        "notes": [
+          "Kodak warns that skip bleach affects sensitometry, tone reproduction, process control, telecine, handling, heat absorption, and dye stability.",
+          "Reprocessing an original to remove retained silver adds handling risk and may not restore exposure decisions made for the bypass look."
+        ]
+      },
+      {
+        "eyebrow": "EXPOSURE / ART DIRECTION",
+        "title": "Design the set for disappearing color",
+        "lede": "Because neutral silver suppresses chroma and increases density, production design must choose colors and lighting ratios that survive. Dark costumes, props, and backgrounds can merge into a single blocked mass if the negative and stage are not tested together.",
+        "details": [
+          { "label": "Lighting ratio", "value": "Flatter capture lighting can compensate for the process increase in contrast, but exact strategy must be tested." },
+          { "label": "Exposure", "value": "Do not assume underexposure creates grit safely; it can leave a thin negative beneath an already severe process." },
+          { "label": "Color design", "value": "Strongly separated hues and lighter values survive silver retention better than subtle dark color distinctions." },
+          { "label": "Makeup / wardrobe", "value": "Test skin, black fabric, dark red, and green together—the process can collapse distinctions departments expected to retain." }
+        ],
+        "notes": [
+          "Shoot a timed wedge through the complete lab and scan path before principal photography.",
+          "The best bypass images feel inevitable because lighting and production design anticipated the chemistry."
+        ]
+      },
+      {
+        "eyebrow": "DIGITAL EMULATION",
+        "title": "Retain the mechanism, not just the mood",
+        "lede": "A credible digital version couples neutral, exposure-dependent microstructure with the tonal and chromatic consequences of retained silver. Simple desaturation plus contrast misses the hybrid image and usually makes highlights and grain behave uniformly.",
+        "details": [
+          { "label": "Texture", "value": "Neutral silver clumps should modulate density more strongly than color and remain statistically irregular across the full frame." },
+          { "label": "Tone", "value": "Deepen low values, steepen midtone separation, and protect enough highlight rolloff to avoid a brittle digital clip." },
+          { "label": "Color", "value": "Reduce saturation through added neutral density, not by making every channel converge identically." },
+          { "label": "Grainlab intent", "value": "A physically motivated hybrid image that remains usable as a grade, not a one-click war-movie cliché." }
+        ],
+        "notes": [
+          "The emulation represents a generalized camera/intermediate silver-retention aesthetic, not a proprietary ENR, CCE, or ACE recipe.",
+          "Use less than you think; when every frame is severe, none of them feels dangerous."
+        ]
+      }
+    ],
+    "bestFor": [
+      "Industrial landscapes, war memory, psychological thrillers, winter exteriors, hard portraiture, and worlds losing color.",
+      "Scenes whose art direction can survive muted dark hues and denser shadows.",
+      "Images that need material severity rather than nostalgic warmth.",
+      "A tested sequence where the process has narrative meaning."
+    ],
+    "watchFor": [
+      "Calling bleach bypass a film stock instead of a family of process interventions.",
+      "Applying identical desaturation and contrast regardless of tonal region.",
+      "Underexposing in pursuit of grit and losing the shadow record the process needs.",
+      "Using proprietary process names as though they were chemically identical."
+    ],
+    "fieldNotes": [
+      "Choose the one red object that deserves to survive the silver.",
+      "The process should make the world feel heavier, not merely less colorful."
+    ],
+    "sources": [
+      { "title": "Kodak Motion Picture Film Processing Techniques · Skip Bleach", "publisher": "Eastman Kodak Company", "url": "https://www.kodak.com/en/motion/page/processing-techniques/" },
+      { "title": "The Essential Reference Guide for Filmmakers · Silver Retention", "publisher": "Eastman Kodak Company", "url": "https://www.kodak.com/content/products-brochures/Film/kodak-essential-reference-guide-for-filmmakers.pdf" }
+    ],
+    "verified": "2026-07-16",
+    "disclaimer": "Bleach Bypass is a generalized Grainlab process interpretation. ENR, CCE, ACE, skip bleach, and related laboratory methods are not interchangeable; the preset does not reproduce a proprietary lab recipe or guarantee the sensitometry of any physical process."
+  }
+}

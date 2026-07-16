@@ -1,26 +1,34 @@
 {
-  "$schema": "https://raw.githubusercontent.com/tauri-apps/tauri/dev/crates/tauri-config-schema/schema.json",
-  "productName": "macos_tauri_template",
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Grainlab",
   "version": "0.1.0",
-  "identifier": "com.example.macos-tauri-template",
+  "identifier": "com.adammenges.grainlab",
   "build": {
-    "frontendDist": "../ui"
+    "frontendDist": "../ui",
+    "removeUnusedCommands": true
   },
   "app": {
     "withGlobalTauri": true,
     "windows": [
       {
         "label": "main",
-        "title": "Rust + Tauri Terminal Shell",
+        "title": "Grainlab",
         "width": 1080,
         "height": 720,
-        "minWidth": 700,
-        "minHeight": 520,
-        "transparent": true,
+        "minWidth": 740,
+        "minHeight": 620,
+        "backgroundColor": "#0d1210",
+        "transparent": false,
         "decorations": true,
+        "hiddenTitle": true,
+        "titleBarStyle": "Overlay",
         "center": true
       }
-    ]
+    ],
+    "security": {
+      "csp": "default-src 'self'; base-uri 'self'; object-src 'none'; connect-src 'self' ipc: http://ipc.localhost; img-src 'self' blob: data: asset: http://asset.localhost; script-src 'self'; style-src 'self' 'unsafe-inline'",
+      "freezePrototype": true
+    }
   },
   "bundle": {
     "active": true,

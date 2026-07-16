@@ -1,0 +1,133 @@
+{
+  "id": "portra",
+  "name": "Portrait 400",
+  "maker": "Archive",
+  "type": "color",
+  "group": "DAYLIGHT / COLOR",
+  "sort": 40,
+  "settings": { "exposure": 0.12, "contrast": -5, "saturation": -7, "temperature": 8, "fade": 6, "grain": 11 },
+  "grainProfile": { "medium": "dye", "crystal": "tabular", "emulsion": "core-shell", "scale": "medium", "process": "standard" },
+  "pipeline": {
+    "version": 1,
+    "family": "c41",
+    "monochrome": false,
+    "scene": { "sensitivity": [1.02, 1.0, 0.97], "flash": 0.002 },
+    "curve": { "toe": 0.06, "shoulder": 0.35, "gamma": 0.98, "saturationCompression": 0.18 },
+    "crossover": { "shadows": [0.01, -0.004, -0.006], "highlights": [0.008, 0.002, -0.01] },
+    "chemistry": { "silverRetention": 0.0, "fog": 0.003, "flare": 0.005, "localContrast": 0.02 },
+    "optics": { "halation": 0.035, "halationRadius": 5.0, "halationThreshold": 0.9 },
+    "output": { "tint": [1.015, 1.0, 0.985], "scanContrast": 0.96 },
+    "grain": { "meanRadius": 0.95, "radiusVariance": 0.28, "shadowBias": 0.5, "chroma": 0.045 }
+  },
+  "dossier": {
+    "version": 1,
+    "reference": {
+      "stock": "KODAK PROFESSIONAL PORTRA 400",
+      "manufacturer": "Kodak Alaris",
+      "relationship": "Portrait-negative interpretation; not a measured profile",
+      "status": "Current production reference"
+    },
+    "tagline": "A generous negative for the colors people remember.",
+    "portrait": "Portrait 400 is built around mercy: room in the highlights, room around skin, room for a white shirt and a dark jacket to remain in the same emotional scene. The palette is warm without turning amber, restrained without becoming gray, and softly granular in the way overlapping dye clouds feel when a negative is scanned with care.",
+    "facts": [
+      { "label": "NOMINAL SPEED", "value": "ISO 400 / 27°", "note": "Daylight color negative" },
+      { "label": "PROCESS", "value": "C-41", "note": "KODAK FLEXICOLOR reference" },
+      { "label": "IMAGE", "value": "CMY dye clouds", "note": "Silver is removed in processing" },
+      { "label": "BALANCE", "value": "Daylight", "note": "Electronic flash without correction" },
+      { "label": "FORMATS", "value": "135 · 120 · sheet", "note": "Availability varies" },
+      { "label": "CRYSTAL MODEL", "value": "T-GRAIN", "note": "Efficient tabular family" },
+      { "label": "LATITUDE", "value": "Wide negative", "note": "Highlight-friendly curve" },
+      { "label": "CHARACTER", "value": "Warm · forgiving", "note": "Moderate saturation" }
+    ],
+    "palette": [
+      { "name": "porcelain skin", "hex": "#e4c5ad" },
+      { "name": "late wheat", "hex": "#b89462" },
+      { "name": "sage cloth", "hex": "#778377" },
+      { "name": "soft umber", "hex": "#332c29" }
+    ],
+    "chapters": [
+      {
+        "eyebrow": "EMULSION ANATOMY",
+        "title": "Three color records, many layers, one forgiving negative",
+        "lede": "A color negative begins with silver-halide exposure, but the final image is formed by cyan, magenta, and yellow dye clouds after bleaching and fixing remove the silver. Multiple sensitized layers and interlayers control speed, color separation, sharpness, and unwanted dye interactions.",
+        "details": [
+          { "label": "Image-forming material", "value": "Overlapping cyan, magenta, and yellow dye clouds; density is orange-masked for color printing and scanning." },
+          { "label": "Crystal system", "value": "The reference family uses KODAK T-GRAIN and motion-picture-derived emulsion technology for speed with controlled grain." },
+          { "label": "Grainlab model", "value": "Soft dye-cloud modulation seeded by tabular, mixed-size, core-shell-inspired crystals." },
+          { "label": "Why grain has color", "value": "The three dye records fluctuate independently at microscopic scale, creating subtle chroma variation rather than one neutral noise field." }
+        ],
+        "notes": [
+          "The silver-halide crystal initiates the dye image; it is not the final visible particle in a normally processed color negative.",
+          "Apparent grain depends strongly on scanner optics, sharpening, color-channel noise, negative size, and exposure density."
+        ]
+      },
+      {
+        "eyebrow": "SENSITOMETRY",
+        "title": "A long shoulder made for faces and accidents",
+        "lede": "Modern portrait negative film carries far more scene brightness than a typical display can show at once. Its signature is not flatness but recoverable information: open shadows when exposed honestly and highlights that compress gracefully before clipping.",
+        "details": [
+          { "label": "Metering baseline", "value": "EI 400 in daylight or electronic flash for the manufacturer’s intended speed relationship." },
+          { "label": "Extra exposure", "value": "A denser negative can yield cleaner shadows and finer-looking grain, but color and density still depend on scanning and lab control." },
+          { "label": "Underexposure", "value": "Thin shadows expose fewer grains and tend to scan with more visible grain, color crossover, and weaker separation." },
+          { "label": "Highlights", "value": "The negative shoulder is generous, but no stock makes careless metering or a clipped scan unlimited." }
+        ],
+        "notes": [
+          "For backlit portraits, meter the face or incident light rather than allowing the bright background to starve the negative.",
+          "Bracket critical work; lab scanners and home inversion workflows do not place density identically."
+        ]
+      },
+      {
+        "eyebrow": "COLOR SIGNATURE",
+        "title": "Skin first, saturation second",
+        "lede": "The reference is designed for natural skin reproduction, fine grain, and scanning. Grainlab leans into warm neutrals, calm foliage, and modest saturation while keeping reds alive enough that faces do not feel bloodless.",
+        "details": [
+          { "label": "Skin", "value": "Warm-neutral with controlled red and magenta; intended to tolerate mixed complexions in one frame." },
+          { "label": "Greens", "value": "Muted toward sage rather than electric yellow-green." },
+          { "label": "Blues", "value": "Open and slightly restrained, especially in bright skies." },
+          { "label": "Neutrals", "value": "Creamy highlights and softly warm grays without a hard vintage color cast." }
+        ],
+        "notes": [
+          "A film stock has no single immutable palette; illuminant, exposure, processing, scanner characterization, and grading all participate.",
+          "White balance the scan from a true neutral before deciding whether the stock itself is warm."
+        ]
+      },
+      {
+        "eyebrow": "LAB / SCAN",
+        "title": "Scan the negative you exposed, not the preset you expected",
+        "lede": "Process consistency protects color balance. The scan should preserve the orange-masked negative’s channel information before a display transform shapes the final contrast and palette.",
+        "details": [
+          { "label": "Chemistry", "value": "Process C-41 in controlled color-negative chemistry; Kodak specifies FLEXICOLOR process families." },
+          { "label": "Scan posture", "value": "Capture all three channels without clipping, invert from a neutral mask, and make the creative grade after normalization." },
+          { "label": "Dust / correction", "value": "Infrared dust-removal systems generally work on chromogenic dye images, unlike traditional silver B&W negatives." },
+          { "label": "Grain discipline", "value": "Reduce digital sharpening and underexposure before adding blur; real dye-cloud grain should retain subject edges." }
+        ],
+        "notes": [
+          "The most film-like scan is not necessarily the flattest or warmest—it is the one whose tone and color remain internally coherent.",
+          "Keep a high-bit, low-contrast master so later printing choices are reversible."
+        ]
+      }
+    ],
+    "bestFor": [
+      "Portraits, weddings, interiors, travel, family documents, and any scene where people outrank palette theatrics.",
+      "Backlight, white clothing, mixed complexions, and broad scene brightness.",
+      "35 mm work needing useful speed without a coarse-grain aesthetic.",
+      "Scans intended for a gentle editorial grade."
+    ],
+    "watchFor": [
+      "Thin, underexposed shadows that exaggerate grain and color contamination.",
+      "Stacking warmth in capture, lab scan, and grade until skin turns orange.",
+      "Calling the negative unlimited because it has wide latitude.",
+      "Using aggressive clarity that turns soft dye clouds into brittle digital texture."
+    ],
+    "fieldNotes": [
+      "Give the face enough light to become a negative, then let the window remain a window.",
+      "The stock should feel like memory with excellent color science—not memory faded by neglect."
+    ],
+    "sources": [
+      { "title": "KODAK PROFESSIONAL PORTRA 400 Film · E-4050", "publisher": "Kodak Alaris", "url": "https://www.kodakprofessional.com/sites/default/files/wysiwyg/pro/resources/e4050_portra_400.pdf" },
+      { "title": "KODAK PROFESSIONAL Film Technical Resources", "publisher": "Kodak Alaris", "url": "https://kodakprofessional.com/photographers/resources" }
+    ],
+    "verified": "2026-07-16",
+    "disclaimer": "Portrait 400 is an independent Grainlab interpretation informed by KODAK PROFESSIONAL PORTRA 400 literature. It is not a measured film profile, does not reproduce a specific scanner or paper path, and is not endorsed by Kodak Alaris."
+  }
+}

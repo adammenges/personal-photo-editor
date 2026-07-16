@@ -2,34 +2,52 @@ name: CI
 
 on:
   push:
+    branches: [main]
   pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  CARGO_INCREMENTAL: 0
+  CARGO_TERM_COLOR: always
+  TAURI_CLI_VERSION: 2.11.4
 
 jobs:
   macos:
+    name: Check and bundle
     runs-on: macos-latest
+    timeout-minutes: 45
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Install Rust
         uses: dtolnay/rust-toolchain@stable
         with:
+          toolchain: 1.95.0
           components: rustfmt, clippy
 
-      - name: Install Tauri CLI
-        run: cargo install tauri-cli
-
-      - name: Cache cargo
+      - name: Cache Cargo
         uses: Swatinem/rust-cache@v2
 
-      - name: Format check
-        run: cargo fmt --all -- --check
+      - name: Install Tauri CLI
+        run: cargo install tauri-cli --version "$TAURI_CLI_VERSION" --locked
 
-      - name: Clippy
-        run: cargo clippy --all-targets --all-features -- -D warnings
+      - name: Run checks
+        run: ./scripts/check.sh
 
-      - name: Tests
-        run: cargo test --all-features
+      - name: Build app bundle
+        run: ./scripts/build_macos_app.sh
 
-      - name: Build .app bundle
-        run: cargo tauri build
+      - name: Upload app bundle
+        uses: actions/upload-artifact@v7
+        with:
+          name: grainlab-macos
+          path: dist/*.app
+          if-no-files-found: error
+          retention-days: 7

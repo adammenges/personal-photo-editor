@@ -1,0 +1,133 @@
+{
+  "id": "night",
+  "name": "Night Process",
+  "maker": "Motion",
+  "type": "color",
+  "group": "CINEMA / COLOR",
+  "sort": 90,
+  "settings": { "exposure": -0.18, "contrast": 14, "saturation": -14, "temperature": -18, "tint": 5, "fade": 4, "grain": 18 },
+  "grainProfile": { "medium": "dye", "crystal": "tabular", "emulsion": "mixed", "scale": "coarse", "process": "push" },
+  "pipeline": {
+    "version": 1,
+    "family": "ecn2",
+    "monochrome": false,
+    "scene": { "sensitivity": [0.97, 1.0, 1.06], "flash": 0.0 },
+    "curve": { "toe": 0.18, "shoulder": 0.42, "gamma": 1.0, "saturationCompression": 0.24 },
+    "crossover": { "shadows": [-0.02, 0.02, 0.05], "highlights": [0.02, 0.0, -0.02] },
+    "chemistry": { "silverRetention": 0.0, "fog": 0.006, "flare": 0.012, "localContrast": 0.05 },
+    "optics": { "halation": 0.06, "halationRadius": 9.0, "halationThreshold": 0.84 },
+    "output": { "tint": [0.98, 1.0, 1.02], "scanContrast": 1.02 },
+    "grain": { "meanRadius": 1.1, "radiusVariance": 0.55, "shadowBias": 0.7, "chroma": 0.05 }
+  },
+  "dossier": {
+    "version": 1,
+    "reference": {
+      "stock": "KODAK VISION3 500T pushed +1 to +2 stops",
+      "manufacturer": "Eastman Kodak Company / laboratory process",
+      "relationship": "Underexposure plus push-development interpretation",
+      "status": "Creative process variant, not a separate stock"
+    },
+    "tagline": "The city after the meter has stopped being reassuring.",
+    "portrait": "Night Process is what happens when a fast tungsten negative is asked for one more room of darkness and the laboratory answers with time. Grain grows more legible, contrast tightens, shadow color becomes selective, and practical lights acquire halos of consequence. It is not brighter night—it is night with a more expensive memory.",
+    "facts": [
+      { "label": "REFERENCE EI", "value": "1000–2000", "note": "500T pushed +1 / +2" },
+      { "label": "PROCESS", "value": "ECN-2 push", "note": "Extended/altered development" },
+      { "label": "IMAGE", "value": "CMY dye clouds", "note": "More prominent scan texture" },
+      { "label": "BALANCE", "value": "Tungsten", "note": "3200 K reference" },
+      { "label": "CONTRAST", "value": "Higher", "note": "Development-dependent" },
+      { "label": "SHADOWS", "value": "Fragile", "note": "Missing exposure stays missing" },
+      { "label": "GRAIN", "value": "Coarse-visible", "note": "Especially in low-density regions" },
+      { "label": "CHARACTER", "value": "Nocturnal · raw", "note": "Mixed-light pressure" }
+    ],
+    "palette": [
+      { "name": "sodium flare", "hex": "#bf7444" },
+      { "name": "fluoro mint", "hex": "#5f8175" },
+      { "name": "rain blue", "hex": "#274e65" },
+      { "name": "missing shadow", "hex": "#0b1113" }
+    ],
+    "chapters": [
+      {
+        "eyebrow": "PROCESS PHYSICS",
+        "title": "Push is development, not retroactive exposure",
+        "lede": "Pushing combines a higher exposure index—therefore less camera exposure—with altered development intended to raise usable density and contrast. It does not expose silver-halide grains that received too few photons, so deep shadow information remains the limiting currency.",
+        "details": [
+          { "label": "One-stop push", "value": "Metering 500T near EI 1000 underexposes one stop, followed by a lab-adjusted ECN-2 development target." },
+          { "label": "Two-stop push", "value": "EI 2000 territory creates a stronger departure in contrast, grain visibility, shadow color, and lab control." },
+          { "label": "Why grain rises", "value": "Lower exposure leaves fewer participating image sites while increased development and scan gain make density fluctuations more conspicuous." },
+          { "label": "Grainlab model", "value": "Coarser mixed dye clouds, push-process contrast, stronger low-density texture, and restrained chroma instability." }
+        ],
+        "notes": [
+          "Do not confuse rating a stock faster with changing its ISO; EI describes your exposure decision.",
+          "A lab push must be communicated by roll and calibrated to its processor, developer activity, and scan path."
+        ]
+      },
+      {
+        "eyebrow": "EXPOSURE",
+        "title": "Choose which darkness deserves color",
+        "lede": "At night, exposure is not evenly scarce. A face near a practical lamp may carry full color while the wall behind it falls below meaningful density. The cinematographer’s job is to decide where the color record ends.",
+        "details": [
+          { "label": "Metering", "value": "Incident-meter the subject zone or spot-meter the darkest value that must retain hue—not empty black." },
+          { "label": "Practical lights", "value": "Control hot bulbs and signs physically; wide latitude does not stop them from flattening the visual hierarchy." },
+          { "label": "Fill", "value": "A trace of motivated fill can preserve color separation more gracefully than another stop of push." },
+          { "label": "Lens / shutter", "value": "A faster lens or longer shutter changes motion and depth of field but actually supplies photons—development does not." }
+        ],
+        "notes": [
+          "Push only after using the light, lens, shutter angle, and negative area available to you.",
+          "Test human skin and the darkest costume together; the same meter number does not guarantee the same spectral record."
+        ]
+      },
+      {
+        "eyebrow": "COLOR / GRAIN",
+        "title": "Texture belongs to the underexposed layer stack",
+        "lede": "Color-film grain is the aggregate of dye-cloud fluctuations across records. In pushed night material those records do not fail equally, so texture may carry subtle chroma and density bias rather than neutral monochrome noise.",
+        "details": [
+          { "label": "Shadows", "value": "Expect weaker separation, more scan amplification, and greater visibility of random dye-density structure." },
+          { "label": "Midtones", "value": "Development can steepen separation and make skin or practical-lit surfaces feel more forceful." },
+          { "label": "Highlights", "value": "The 500T shoulder remains useful, but push processing and scan choices alter where density becomes difficult." },
+          { "label": "Motion stability", "value": "Real grain changes randomly each frame while retaining statistical character; fixed digital texture looks pasted on." }
+        ],
+        "notes": [
+          "Grain should emerge from the image’s exposure logic, not be equally loud on a bright sign and an empty wall.",
+          "If the look becomes crunchy, restore tonal scale before reducing grain amplitude."
+        ]
+      },
+      {
+        "eyebrow": "LAB / SCAN",
+        "title": "Test the whole chain at finishing resolution",
+        "lede": "Kodak cinematography case studies describe 500T push tests followed by 4K scans and shot-dependent grain management. That is the professional model: test the actual lab, scan, grade, framing, and output rather than choosing a push number in isolation.",
+        "details": [
+          { "label": "Lab communication", "value": "Label each roll with stock, intended push, exposure index, and any bleach or pull instruction; confirm the lab’s available increments." },
+          { "label": "Scan", "value": "Use a high-bit wide-gamut scan that preserves toe color before contrast and denoise decisions." },
+          { "label": "Grain management", "value": "Evaluate at final crop and output size. Wide shots may need different restraint than close-ups." },
+          { "label": "Grainlab intent", "value": "A +2-style nocturnal interpretation—not a promise of one laboratory’s exact ECN-2 sensitometry." }
+        ],
+        "notes": [
+          "Denoise before sharpening and regrain only when the finishing chain has destroyed coherent film structure.",
+          "Keep some black truly quiet; noise everywhere makes the image feel electronically lifted instead of photochemically exposed."
+        ]
+      }
+    ],
+    "bestFor": [
+      "Candlelight, clubs, night streets, rehearsal spaces, practical-only rooms, and stories where darkness should remain materially present.",
+      "Sequences willing to trade clean shadow color for pressure, immediacy, and texture.",
+      "Mixed tungsten, fluorescent, LED, and urban discharge light.",
+      "Frames where grain is earned by exposure conditions."
+    ],
+    "watchFor": [
+      "Expecting push development to restore photons the negative never received.",
+      "Rating every scene at EI 2000 without testing skin, costume, and lab behavior.",
+      "Crushing shadows after already underexposing them, leaving no tonal rhythm.",
+      "Adding static monochrome grain over a physically color-dye image."
+    ],
+    "fieldNotes": [
+      "Put one stop of real light on the face before asking chemistry for two.",
+      "Night is not the absence of exposure; it is the decision about where exposure stops."
+    ],
+    "sources": [
+      { "title": "KODAK VISION3 500T Color Negative Film 5219 / 7219 resources", "publisher": "Eastman Kodak Company", "url": "https://www.kodak.com/en/motion/product/camera-films/500t-5219-7219/resources/" },
+      { "title": "JEANNE DU BARRY · 500T push tests and 4K scans", "publisher": "Eastman Kodak Company", "url": "https://www.kodak.com/en/motion/blog-post/jeanne-du-barry/" }
+    ],
+    "verified": "2026-07-16",
+    "disclaimer": "Night Process is a generalized Grainlab interpretation of pushed VISION3 500T. Push results vary with exposure, laboratory, development increment, negative format, scanner, and grade; this preset is not an ECN-2 timing recommendation or Kodak product profile."
+  }
+}
