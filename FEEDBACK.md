@@ -11,3 +11,4 @@
 - Cursor-centered zoom must be verified against the photo's actual on-screen bounds: after zooming, the normalized source coordinate beneath an off-center pointer must remain unchanged.
 - Pan limits must provide inspection overscroll: every corner of a zoomed image should be draggable into the central viewing area, not merely allowed to touch the viewport edge.
 - Always load and process the complete native-resolution image in the editor. Do not use an adaptive, fit-sized, or otherwise downsampled preview buffer; the canvas backing dimensions must equal the decoded source dimensions at every zoom level.
+- Grain must remain spatially anchored to the photographed frame while controls change. Never implement grain size, strength, or development by warping noise coordinates or changing the stochastic field mixture in a way that makes the texture swim over the image; crossfade fixed per-frame crystal populations and vary their density/contrast instead.

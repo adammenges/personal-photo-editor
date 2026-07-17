@@ -438,6 +438,15 @@ function processImageData(source, settings, showOriginal = false, grainField = s
     const centerX = width / 2;
     const centerY = height / 2;
     const maximumDistance = Math.sqrt(centerX * centerX + centerY * centerY);
+    const grainSampler = GrainlabGrain.createEmulsionGrainSampler(
+        width,
+        height,
+        grainField,
+        settings.grain,
+        settings.grainProfile,
+        pipeline.grain,
+    );
+    const grainSample = new Float32Array(6);
 
     for (let y = 0; y < height; y += 1) {
         for (let x = 0; x < width; x += 1) {
@@ -457,9 +466,16 @@ function processImageData(source, settings, showOriginal = false, grainField = s
                 blue += halo * 0.08;
             }
 
-            red = filmCurve(red, pipeline.curve);
-            green = filmCurve(green, pipeline.curve);
-            blue = filmCurve(blue, pipeline.curve);
+            if (grainSampler) {
+                grainSampler.sample(x, y, red, green, blue, grainSample);
+                red = grainSample[0];
+                green = grainSample[1];
+                blue = grainSample[2];
+            }
+
+            red = filmCurve(red, pipeline.curve) + grainSample[3];
+            green = filmCurve(green, pipeline.curve) + grainSample[4];
+            blue = filmCurve(blue, pipeline.curve) + grainSample[5];
 
             let neutral = relativeLuminance(red, green, blue);
             const shadowMask = (1 - clamp(neutral, 0, 1)) ** 2;
@@ -526,16 +542,6 @@ function processImageData(source, settings, showOriginal = false, grainField = s
             pixels[index + 3] = source.data[index + 3];
         }
     }
-
-    GrainlabGrain.applyFilmGrain(
-        pixels,
-        width,
-        height,
-        grainField,
-        settings.grain,
-        settings.grainProfile,
-        settings.pipeline.grain,
-    );
 
     return output;
 }

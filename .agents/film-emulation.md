@@ -28,7 +28,9 @@ The emulsion stage owns:
 - midtone/development gamma;
 - shadow and highlight channel crossover;
 - chroma-dependent saturation compression;
-- image-forming medium and grain-density behavior.
+- image-forming medium and grain-density behavior, sampled from local scene exposure before display encoding.
+
+Granularity is part of image formation. Derive an approximate crystal-activation probability from local scene-linear exposure, use the stock's correlated stochastic field to perturb exposure before the H-D response, and carry a restrained developed-density floor immediately after that response. The toe, shoulder, crossover, chemistry, scan contrast, and output controls must therefore transform the image and its granularity together. Do not restore a post-sRGB grain overlay.
 
 Grainlab uses a normalized H-D-style approximation rather than claiming measured sensitometry. Clean Scan must remain close to identity; stock values should shape the image without stacking extreme contrast on top of the older creative controls.
 
@@ -63,6 +65,8 @@ The output stage owns:
 - fade and vignette;
 - encoding back to display sRGB.
 
+Spatial grain correlation represents emulsion thickness and scanner/enlarger aperture. Scale its effective radius from a fixed reference edge so changing scan resolution changes how many pixels resolve a clump, not the simulated clump's physical size.
+
 Keep output tint separate from scene sensitivity. Scanner behavior should not pretend to change which crystals received photons.
 
 ## Physical grain requirements
@@ -73,7 +77,10 @@ The former repeated circular/rosette grain artifact was unacceptable. Preserve t
 - Grain covers the entire developed image, including flat highlights and shadows, with physically plausible density modulation.
 - Use non-periodic stochastic fields with spatial correlation across multiple radii.
 - Seed grain deterministically per frame so rerenders do not shimmer or randomly replace the image structure.
+- Keep every stochastic population spatially anchored while controls change. Strength scales density/contrast, and radius or development crossfades fixed fine/medium/coarse fields; never warp noise coordinates or change the strength-dependent field mixture in a way that makes grain swim over a stationary image.
 - Keep grain signal-dependent. A Boolean exposure/development model produces the strongest variance around intermediate density, with a floor across the frame.
+- Condition color-layer uncertainty on each channel's local scene exposure; a blue sky and a red surface must not receive identical RGB statistics.
+- Grain must enter before display encoding. A small developed-density floor may follow the curve, but it remains upstream of chemistry, scan/output tone, and sRGB.
 - Underexposed/pushed shadows may show additional prominence, but “shadow bias” must not become digital chroma noise.
 - Calibrate at both fit view and 100%. At fit view grain should read as texture, not snowfall; at 100% clumps may be inspected without forming wallpaper geometry.
 

@@ -82,7 +82,8 @@ decoded sRGB source
         ├── thresholded neighboring highlights → halation exposure
         ▼
 2. EMULSION
-   toe · shoulder · development gamma · channel crossover · saturation compression
+   probabilistic crystal activation · silver/dye density structure · toe · shoulder
+   development gamma · channel crossover · saturation compression
         │
         ▼
 3. LAB / CHEMISTRY
@@ -90,11 +91,8 @@ decoded sRGB source
         │
         ▼
 4. SCAN / OUTPUT
-   flare · output tint · scan contrast · creative tone/color controls · vignette
-        │
-        ▼
-5. IMAGE STRUCTURE
-   density-dependent silver or dye grain · sRGB encoding · full-resolution output
+   flare · resolution-scaled optical grain correlation · output tint · scan contrast
+   creative tone/color controls · vignette · sRGB encoding · full-resolution output
 ```
 
 ### Scene and emulsion response
@@ -117,7 +115,11 @@ Scanner flare remains a separate veiling-light control. It lifts the scan path r
 
 ### Grain
 
-Grain is deterministic for a given frame but spatially non-periodic. It does not use a repeating texture tile, which avoids the rosette and wallpaper artifacts common to simple film-grain shaders.
+Grain is part of the emulsion response, not a texture added after the image is encoded. Grainlab converts each scene-linear channel exposure into an approximate crystal-activation probability, then uses deterministic, spatially non-periodic fields to perturb that exposure before it enters the toe, straight-line, and shoulder response. A restrained signed density residual represents fog grains and developed structures that remain visible where multiplicative exposure variation would vanish. Both components continue through crossover, chemistry, scan contrast, creative adjustments, and sRGB encoding with the photograph underneath them.
+
+The stochastic field does not use a repeating texture tile, which avoids the rosette and wallpaper artifacts common to simple film-grain shaders. Its correlated radii scale from a 1024-pixel reference edge so scans of the same simulated film area resolve the same clumps with more pixels instead of inventing finer physical grain.
+
+Those stochastic populations are spatially anchored to the frame. Grain strength reveals more or less of the same developed structure, while apparent radius and push/pull development crossfade fixed fine, soft, and coarse populations. Controls never warp the noise coordinates or reseed the emulsion, so the grain cannot crawl across a stationary photograph while a slider moves.
 
 The model combines multiple continuous stochastic fields and varies them by:
 
@@ -125,7 +127,7 @@ The model combines multiple continuous stochastic fields and varies them by:
 - cubic, tabular, or Delta-style crystal geometry;
 - uniform, mixed-size, or core-shell-inspired emulsion construction;
 - mean clump radius and radius variance;
-- image density and additional shadow exposure bias;
+- local channel exposure, activation uncertainty, and additional shadow exposure bias;
 - shared luminance grain versus weak independent dye-layer chroma variation;
 - standard, pushed, pulled, motion-picture, bleach-bypass, or cross processing.
 

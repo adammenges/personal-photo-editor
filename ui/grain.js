@@ -151,9 +151,38 @@
         return top * (1 - ty) + bottom * ty;
     }
 
-    function applyFilmGrain(pixels, width, height, field, intensity, profile = {}, detail = {}) {
+    const ACTIVATION_MIDPOINT = 0.18;
+
+    function activationProbability(exposure) {
+        const bounded = Math.max(0, exposure);
+        return bounded / (bounded + ACTIVATION_MIDPOINT);
+    }
+
+    function relativeLuminance(red, green, blue) {
+        return red * 0.2126 + green * 0.7152 + blue * 0.0722;
+    }
+
+    function activationVariance(activation) {
+        return Math.sqrt(Math.max(0, 4 * activation * (1 - activation)));
+    }
+
+    function modulateExposure(exposure, noise, amplitude) {
+        if (exposure <= 0 || amplitude <= 0) return Math.max(0, exposure);
+        const activation = activationProbability(exposure);
+        const stochasticActivation = Math.max(0, Math.min(
+            0.997,
+            activation + noise * amplitude * activationVariance(activation),
+        ));
+        return ACTIVATION_MIDPOINT * stochasticActivation / (1 - stochasticActivation);
+    }
+
+    // Grain is sampled as part of image formation, not applied to encoded RGB.
+    // The first three output values are stochastic scene exposures that will enter
+    // the film curve; the last three are a small developed-density floor added just
+    // after that curve. Reusing one output array avoids per-pixel allocations.
+    function createEmulsionGrainSampler(width, height, field, intensity, profile = {}, detail = {}) {
         const strength = Math.max(0, Math.min(64, intensity));
-        if (!field || strength <= 0) return pixels;
+        if (!field || strength <= 0) return null;
 
         const resolved = {
             medium: profile.medium || "dye",
@@ -232,80 +261,111 @@
 
         const xMap = createAxisMap(width, field.width);
         const yMap = createAxisMap(height, field.height);
-        const normalizedStrength = strength / 64;
         let chromaWeight = resolved.medium === "silver"
             ? 0
-            : Math.max(0, Math.min(0.16, (detail.chroma ?? 0.035) + normalizedStrength * 0.02));
+            : Math.max(0, Math.min(0.16, detail.chroma ?? 0.035));
         if (resolved.process === "motion") chromaWeight *= 0.7;
         if (resolved.process === "cross") chromaWeight *= 1.35;
-        const amplitude = strength * 0.18 * model.amplitude;
+        const exposureAmplitude = strength * 0.00085 * model.amplitude;
+        const densityFloorAmplitude = strength * 0.000035 * model.amplitude;
 
-        for (let y = 0; y < height; y += 1) {
+        function sample(x, y, red, green, blue, output) {
             const y0 = yMap.low[y];
             const y1 = yMap.high[y];
             const ty = yMap.blend[y];
-            for (let x = 0; x < width; x += 1) {
-                const index = (y * width + x) * 4;
-                const x0 = xMap.low[x];
-                const x1 = xMap.high[x];
-                const tx = xMap.blend[x];
+            const x0 = xMap.low[x];
+            const x1 = xMap.high[x];
+            const tx = xMap.blend[x];
 
-                const sharp = bilinear(field.sharp, field.width, x0, x1, tx, y0, y1, ty);
-                const fine = bilinear(field.fine, field.width, x0, x1, tx, y0, y1, ty);
-                const soft = bilinear(field.soft, field.width, x0, x1, tx, y0, y1, ty);
-                const coarse = bilinear(field.coarse, field.width, x0, x1, tx, y0, y1, ty);
+            const sharp = bilinear(field.sharp, field.width, x0, x1, tx, y0, y1, ty);
+            const fine = bilinear(field.fine, field.width, x0, x1, tx, y0, y1, ty);
+            const soft = bilinear(field.soft, field.width, x0, x1, tx, y0, y1, ty);
+            const coarse = bilinear(field.coarse, field.width, x0, x1, tx, y0, y1, ty);
+            const redActivation = activationProbability(red);
+            const greenActivation = activationProbability(green);
+            const blueActivation = activationProbability(blue);
+            const activation = Math.max(0, Math.min(1,
+                relativeLuminance(redActivation, greenActivation, blueActivation)));
 
-                const luminance = Math.max(0, Math.min(1,
-                    (pixels[index] * 0.299 + pixels[index + 1] * 0.587 + pixels[index + 2] * 0.114) / 255));
-                // The Boolean grain model has variance proportional to p(1-p):
-                // strongest around middle density, tapering toward clear and opaque film.
-                // A floor keeps grain present across the entire developed frame.
-                const densityVariance = Math.pow(Math.max(0, 4 * luminance * (1 - luminance)), 0.65);
-                let densityScale = (0.30 + densityVariance * 0.70) * (1 + (1 - luminance) * shadowBias);
-                let coarseWeight = model.coarse;
-                if (resolved.emulsion === "mixed") coarseWeight *= 1 + (1 - luminance) * 0.62;
-                if (resolved.emulsion === "core-shell") densityScale *= 0.68 + luminance * 0.32;
-                if (resolved.process === "push") densityScale *= 1 + (1 - luminance) * 0.30;
-                const energyCorrection = 1 / Math.sqrt(
-                    model.sharp ** 2 + model.fine ** 2 + model.soft ** 2 + coarseWeight ** 2,
-                );
-                let baseNoise = (
-                    sharp * model.sharp
-                    + fine * model.fine
-                    + soft * model.soft
-                    + coarse * coarseWeight
-                ) * energyCorrection;
-                if (model.tail !== 1) {
-                    baseNoise = Math.sign(baseNoise) * Math.abs(baseNoise) ** model.tail;
-                }
-                const grainAmplitude = amplitude * densityScale;
+            let coarseWeight = model.coarse;
+            if (resolved.emulsion === "mixed") coarseWeight *= 1 + (1 - activation) * 0.62;
+            const energyCorrection = 1 / Math.sqrt(
+                model.sharp ** 2 + model.fine ** 2 + model.soft ** 2 + coarseWeight ** 2,
+            );
+            let baseNoise = (
+                sharp * model.sharp
+                + fine * model.fine
+                + soft * model.soft
+                + coarse * coarseWeight
+            ) * energyCorrection;
+            if (model.tail !== 1) {
+                baseNoise = Math.sign(baseNoise) * Math.abs(baseNoise) ** model.tail;
+            }
 
-                if (resolved.medium === "silver") {
-                    const grain = baseNoise * grainAmplitude;
-                    pixels[index] += grain;
-                    pixels[index + 1] += grain;
-                    pixels[index + 2] += grain;
-                    continue;
-                }
+            let processScale = 1;
+            if (resolved.emulsion === "core-shell") processScale *= 0.72 + activation * 0.28;
+            if (resolved.process === "push") processScale *= 1 + (1 - activation) * 0.30;
+            const shadowScale = (1 + (1 - activation) * shadowBias * 0.55) * processScale;
 
+            let redNoise = baseNoise;
+            let greenNoise = baseNoise;
+            let blueNoise = baseNoise;
+            if (resolved.medium !== "silver") {
                 const redLayer = bilinear(field.redLayer, field.width, x0, x1, tx, y0, y1, ty);
                 const blueLayer = bilinear(field.blueLayer, field.width, x0, x1, tx, y0, y1, ty);
-                const sharedWeight = 1 - chromaWeight;
-                const redNoise = baseNoise * sharedWeight + redLayer * chromaWeight;
-                const blueNoise = baseNoise * sharedWeight + blueLayer * chromaWeight;
-                const greenNoise = baseNoise * (1 - chromaWeight * 0.55)
-                    - (redLayer + blueLayer) * chromaWeight * 0.225;
-                pixels[index] += redNoise * grainAmplitude;
-                pixels[index + 1] += greenNoise * grainAmplitude;
-                pixels[index + 2] += blueNoise * grainAmplitude;
+                const shadowChroma = Math.min(0.18, chromaWeight * (1 + (1 - activation) * 0.65));
+                // Keep the shared dye-cloud structure at a fixed spatial phase.
+                // Chroma is a weak opponent residual revealed around it, not a
+                // crossfade that replaces one grain pattern as strength changes.
+                redNoise = baseNoise + redLayer * shadowChroma;
+                greenNoise = baseNoise
+                    - (redLayer * 0.2973 + blueLayer * 0.1009) * shadowChroma;
+                blueNoise = baseNoise + blueLayer * shadowChroma;
             }
+
+            if (resolved.medium === "silver") {
+                const neutralExposure = relativeLuminance(red, green, blue);
+                const modulatedNeutral = modulateExposure(
+                    neutralExposure,
+                    baseNoise,
+                    exposureAmplitude * shadowScale,
+                );
+                const multiplier = neutralExposure > 0 ? modulatedNeutral / neutralExposure : 1;
+                output[0] = Math.max(0, red) * multiplier;
+                output[1] = Math.max(0, green) * multiplier;
+                output[2] = Math.max(0, blue) * multiplier;
+            } else {
+                output[0] = modulateExposure(
+                    red,
+                    redNoise,
+                    exposureAmplitude * shadowScale,
+                );
+                output[1] = modulateExposure(
+                    green,
+                    greenNoise,
+                    exposureAmplitude * shadowScale,
+                );
+                output[2] = modulateExposure(
+                    blue,
+                    blueNoise,
+                    exposureAmplitude * shadowScale,
+                );
+            }
+
+            // A small signed density residual represents fog grains and developed
+            // structures that remain visible where multiplicative exposure noise
+            // alone would vanish. It is still upstream of chemistry and scan tone.
+            const densityFloor = densityFloorAmplitude * (0.72 + (1 - activation) * 0.28) * processScale;
+            output[3] = redNoise * densityFloor;
+            output[4] = greenNoise * densityFloor;
+            output[5] = blueNoise * densityFloor;
         }
 
-        return pixels;
+        return Object.freeze({ sample });
     }
 
     root.GrainlabGrain = Object.freeze({
-        applyFilmGrain,
+        createEmulsionGrainSampler,
         createFilmGrainField,
         hashString,
     });

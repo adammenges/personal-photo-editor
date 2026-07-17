@@ -120,7 +120,7 @@ The render model follows physical stage boundaries:
 2. `curve` and `crossover` describe emulsion response: toe, shoulder, development gamma, color-record crossover, and saturation compression.
 3. `chemistry` describes lab effects: retained silver, chemical fog, scanner flare, and density-edge acutance. `silverRetention` is the bleach-bypass mechanism; it is not implemented as ordinary desaturation.
 4. `optics` derives halation from thresholded neighboring scene highlights before the curve. Radius is specified in pixels at a 2048-pixel long edge and scales with image resolution.
-5. `output` models the chosen positive/scan path. `grain` controls mean clump radius, radius distribution, extra shadow visibility, and dye-layer chroma variance.
+5. `grain` controls the emulsion's mean clump radius, radius distribution, extra shadow uncertainty, and dye-layer chroma variance. Its stochastic exposure modulation enters before the film curve; its small developed-density floor remains upstream of chemistry and output. `output` then models the chosen positive/scan path.
 
 Keep stage ownership honest. Exposure and white balance belong before the emulsion; push/pull changes exposure, curve shape, fog, crossover, and grain together; output tint should not be baked into channel sensitivity. The build script rejects missing blocks, non-finite values, invalid vectors, unsupported families, and values outside intentionally conservative physical/artistic ranges.
 

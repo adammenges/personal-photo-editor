@@ -14,6 +14,8 @@ if command -v node >/dev/null 2>&1; then
   for script in ui/*.js; do
     node --check "$script"
   done
+  echo "==> Checking emulsion grain model"
+  node scripts/test_grain_model.js
 fi
 
 echo "==> Checking Rust formatting"

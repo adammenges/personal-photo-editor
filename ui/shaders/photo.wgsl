@@ -206,10 +206,43 @@ fn value_noise(coordinate: vec2<f32>, radius: f32, seed: u32) -> f32 {
     return mix(top, bottom, blend.y);
 }
 
-fn film_grain(rgb: vec3<f32>, coordinate: vec2<f32>) -> vec3<f32> {
+struct EmulsionGrainSample {
+    exposure: vec3<f32>,
+    density: vec3<f32>,
+}
+
+fn activation_probability(exposure: vec3<f32>) -> vec3<f32> {
+    let bounded = max(exposure, vec3<f32>(0.0));
+    return bounded / (bounded + vec3<f32>(0.18));
+}
+
+fn activation_variance(activation: vec3<f32>) -> vec3<f32> {
+    return sqrt(max(
+        vec3<f32>(0.0),
+        4.0 * activation * (vec3<f32>(1.0) - activation),
+    ));
+}
+
+fn modulate_exposure(exposure: vec3<f32>, noise: vec3<f32>, amplitude: vec3<f32>) -> vec3<f32> {
+    let bounded = max(exposure, vec3<f32>(0.0));
+    let activation = activation_probability(bounded);
+    let stochastic_activation = clamp(
+        activation + noise * amplitude * activation_variance(activation),
+        vec3<f32>(0.0),
+        vec3<f32>(0.997),
+    );
+    return vec3<f32>(0.18) * stochastic_activation
+        / (vec3<f32>(1.0) - stochastic_activation);
+}
+
+// Sample the stochastic emulsion while the image is still scene-linear. The
+// exposure component enters the H-D curve; the small density residual represents
+// fog grains and developed structures that remain after activation. Nothing here
+// is added to encoded display RGB as a separate texture.
+fn emulsion_grain(exposure: vec3<f32>, coordinate: vec2<f32>) -> EmulsionGrainSample {
     let strength = clamp(params.texture.z, 0.0, 64.0);
     if strength <= 0.0 {
-        return rgb;
+        return EmulsionGrainSample(exposure, vec3<f32>(0.0));
     }
 
     var sharp_weight = 0.44;
@@ -282,16 +315,48 @@ fn film_grain(rgb: vec3<f32>, coordinate: vec2<f32>) -> vec3<f32> {
         amplitude_model *= 1.10;
     }
 
-    coarse_weight *= 1.0 + params.grain_detail.y * 0.65;
     let radius_scale = clamp(params.grain_detail.x / 0.8, 0.45, 2.4);
-    let sharp = gaussian_at(vec2<i32>(coordinate), params.seed ^ 0x243f6a88u);
-    let fine = value_noise(coordinate, 1.55 * radius_scale, params.seed ^ 0x243f6a88u);
-    let soft = value_noise(coordinate, 2.65 * radius_scale, params.seed ^ 0x243f6a88u);
-    let coarse = value_noise(coordinate, 5.2 * radius_scale, params.seed ^ 0x243f6a88u);
-    let display_luminance = clamp(dot(rgb, vec3<f32>(0.299, 0.587, 0.114)) / 255.0, 0.0, 1.0);
+    // Apparent crystal size crossfades fixed per-frame spatial populations.
+    // Rescaling the sampling coordinates here would make grain swim whenever
+    // development or the radius control changes.
+    if radius_scale > 1.0 {
+        sharp_weight /= radius_scale;
+        fine_weight /= sqrt(radius_scale);
+        soft_weight *= sqrt(radius_scale);
+        coarse_weight *= radius_scale;
+    } else {
+        sharp_weight *= 1.0 / radius_scale;
+        fine_weight *= 1.0 / sqrt(radius_scale);
+        coarse_weight *= radius_scale;
+    }
+    coarse_weight *= 1.0 + params.grain_detail.y * 0.65;
+    // Grain radius is defined at a 1024-pixel reference edge, mirroring the CPU
+    // field. A higher-resolution scan resolves the same clumps with more pixels.
+    let presentation_scale = max(1.0, f32(max(params.size.x, params.size.y)) / 1024.0);
+    var sharp = gaussian_at(vec2<i32>(coordinate), params.seed ^ 0x243f6a88u);
+    if presentation_scale > 1.0 {
+        sharp = value_noise(coordinate, presentation_scale, params.seed ^ 0x243f6a88u);
+    }
+    let fine = value_noise(
+        coordinate,
+        1.55 * presentation_scale,
+        params.seed ^ 0x243f6a88u,
+    );
+    let soft = value_noise(
+        coordinate,
+        2.65 * presentation_scale,
+        params.seed ^ 0x243f6a88u,
+    );
+    let coarse = value_noise(
+        coordinate,
+        5.2 * presentation_scale,
+        params.seed ^ 0x243f6a88u,
+    );
+    let channel_activation = activation_probability(exposure);
+    let activation = clamp(luminance(channel_activation), 0.0, 1.0);
 
     if params.grain_model.z == 1u {
-        coarse_weight *= 1.0 + (1.0 - display_luminance) * 0.62;
+        coarse_weight *= 1.0 + (1.0 - activation) * 0.62;
     }
     let energy = inverseSqrt(
         sharp_weight * sharp_weight
@@ -309,36 +374,66 @@ fn film_grain(rgb: vec3<f32>, coordinate: vec2<f32>) -> vec3<f32> {
         base_noise = sign(base_noise) * pow(abs(base_noise), tail);
     }
 
-    let density_variance = pow(max(0.0, 4.0 * display_luminance * (1.0 - display_luminance)), 0.65);
-    var density_scale = (0.30 + density_variance * 0.70)
-        * (1.0 + (1.0 - display_luminance) * params.grain_detail.z);
+    var process_scale = 1.0;
     if params.grain_model.z == 2u {
-        density_scale *= 0.68 + display_luminance * 0.32;
+        process_scale *= 0.72 + activation * 0.28;
     }
     if process == 1u {
-        density_scale *= 1.0 + (1.0 - display_luminance) * 0.30;
+        process_scale *= 1.0 + (1.0 - activation) * 0.30;
     }
-    let grain_amplitude = strength * 0.18 * amplitude_model * density_scale;
+    let shadow_scale = (1.0 + (1.0 - activation) * params.grain_detail.z * 0.55)
+        * process_scale;
 
-    if params.grain_model.x == 0u {
-        return rgb + vec3<f32>(base_noise * grain_amplitude);
-    }
-
-    var chroma_weight = clamp(params.grain_detail.w + (strength / 64.0) * 0.02, 0.0, 0.16);
+    var chroma_weight = clamp(params.grain_detail.w, 0.0, 0.16);
     if process == 2u {
         chroma_weight *= 0.70;
     } else if process == 5u {
         chroma_weight *= 1.35;
     }
-    let red_layer = value_noise(coordinate, 2.1 * radius_scale, params.seed ^ 0x85a308d3u);
-    let blue_layer = value_noise(coordinate, 2.3 * radius_scale, params.seed ^ 0x13198a2eu);
-    let shared_weight = 1.0 - chroma_weight;
-    let layer_noise = vec3<f32>(
-        base_noise * shared_weight + red_layer * chroma_weight,
-        base_noise * (1.0 - chroma_weight * 0.55) - (red_layer + blue_layer) * chroma_weight * 0.225,
-        base_noise * shared_weight + blue_layer * chroma_weight,
+    var layer_noise = vec3<f32>(base_noise);
+    if params.grain_model.x == 1u {
+        let red_layer = value_noise(
+            coordinate,
+            2.1 * presentation_scale,
+            params.seed ^ 0x85a308d3u,
+        );
+        let blue_layer = value_noise(
+            coordinate,
+            2.3 * presentation_scale,
+            params.seed ^ 0x13198a2eu,
+        );
+        let shadow_chroma = min(0.18, chroma_weight * (1.0 + (1.0 - activation) * 0.65));
+        // Preserve the shared dye-cloud field and add only a weak opponent
+        // residual. Strength must reveal the same structure, not replace it.
+        layer_noise = vec3<f32>(
+            base_noise + red_layer * shadow_chroma,
+            base_noise - (red_layer * 0.2973 + blue_layer * 0.1009) * shadow_chroma,
+            base_noise + blue_layer * shadow_chroma,
+        );
+    }
+
+    let exposure_amplitude = strength * 0.00085 * amplitude_model * shadow_scale;
+    var developed_exposure = modulate_exposure(
+        exposure,
+        layer_noise,
+        vec3<f32>(exposure_amplitude),
     );
-    return rgb + layer_noise * grain_amplitude;
+    if params.grain_model.x == 0u {
+        let neutral_exposure = luminance(exposure);
+        let modulated_neutral = modulate_exposure(
+            vec3<f32>(neutral_exposure),
+            vec3<f32>(base_noise),
+            vec3<f32>(exposure_amplitude),
+        ).x;
+        var multiplier = 1.0;
+        if neutral_exposure > 0.0 {
+            multiplier = modulated_neutral / neutral_exposure;
+        }
+        developed_exposure = max(exposure, vec3<f32>(0.0)) * multiplier;
+    }
+    let density_floor = strength * 0.000035 * amplitude_model
+        * (0.72 + (1.0 - activation) * 0.28) * process_scale;
+    return EmulsionGrainSample(developed_exposure, layer_noise * density_floor);
 }
 
 @compute @workgroup_size(16, 16)
@@ -362,7 +457,10 @@ fn process_photo(@builtin(global_invocation_id) invocation: vec3<u32>) {
         scene_color += vec3<f32>(halo, halo * 0.30, halo * 0.08);
     }
 
-    var color = emulsion_curve(scene_color);
+    let density_detail = local_density_detail(coordinate, scene_color);
+    let granularity = emulsion_grain(scene_color, vec2<f32>(invocation.xy));
+    scene_color = granularity.exposure;
+    var color = emulsion_curve(scene_color) + granularity.density;
     var neutral = luminance(color);
     let shadow_mask = pow(1.0 - clamp(neutral, 0.0, 1.0), 2.0);
     let highlight_mask = pow(clamp(neutral, 0.0, 1.0), 2.0);
@@ -376,8 +474,7 @@ fn process_photo(@builtin(global_invocation_id) invocation: vec3<u32>) {
     neutral = luminance(color);
     let silver_retention = params.chemistry.x;
     color = vec3<f32>(neutral) + (color - vec3<f32>(neutral)) * (1.0 - silver_retention * 0.78);
-    let chemical_base = params.chemistry.y + params.chemistry.z
-        + local_density_detail(coordinate, scene_color);
+    let chemical_base = params.chemistry.y + params.chemistry.z + density_detail;
     color = (color - vec3<f32>(0.18)) * (1.0 + silver_retention * 0.46)
         + vec3<f32>(0.18 + chemical_base);
 
@@ -405,7 +502,6 @@ fn process_photo(@builtin(global_invocation_id) invocation: vec3<u32>) {
     }
 
     color *= params.output_transform.rgb;
-    var display = linear_to_srgb(color) * 255.0;
-    display = film_grain(display, vec2<f32>(invocation.xy));
+    let display = linear_to_srgb(color) * 255.0;
     output_pixels[index] = pack_rgba(vec4<f32>(display, original.a));
 }
