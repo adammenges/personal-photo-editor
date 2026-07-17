@@ -189,7 +189,8 @@ make dev
 | `make setup` | Install pinned tools and fetch dependencies |
 | `make doctor` | Verify Cargo, Rust, Xcode tools, Tauri, and the lockfile |
 | `make dev` | Launch Grainlab in Tauri development mode |
-| `make check` | Check shell and JavaScript syntax, Rust formatting, Clippy, and tests |
+| `make check` | Check shell, JavaScript, Python, and Swift syntax, Rust formatting, Clippy, and tests |
+| `make visual-test` | Verify licensed fixtures, run grain checks, and build the local visual report |
 | `make icons` | Regenerate platform icons from the 1024px source asset |
 | `make build-app` | Build, sign, verify, and copy the release app to `dist/` |
 | `make clean` | Remove generated Cargo and app output |
@@ -258,7 +259,12 @@ scripts/
   doctor.sh                      environment diagnostics
   dev.sh                         development launcher
   check.sh                       repository validation
+  run_visual_tests.sh            licensed fixture, metric, and report workflow
   build_macos_app.sh             release packaging and verification
+
+tests/visual/
+  fixture-manifest.json          provenance, checksums, render matrix, and crop intent
+  README.md                      visual calibration and baseline-refresh protocol
 ```
 
 The frontend is intentionally static HTML, CSS, JavaScript, and WGSL. Rust owns the native Tauri shell and packaging boundary. This keeps the application inspectable and makes the film model easy to extend without introducing a JavaScript build toolchain.
@@ -268,13 +274,15 @@ The frontend is intentionally static HTML, CSS, JavaScript, and WGSL. Rust owns 
 `make check` is expected to pass before packaging. It currently verifies:
 
 - Bash syntax for repository scripts;
-- JavaScript syntax for every frontend module;
+- JavaScript syntax for every frontend module plus Python and Swift syntax for repository tools;
 - Rust formatting;
 - Clippy with warnings treated as errors;
 - Rust unit and documentation tests;
 - all film-stock definitions through the Tauri build script.
 
 At runtime, Grainlab requests a high-performance WebGPU adapter and compiles `photo.wgsl`. Shader compilation errors are surfaced before the pipeline is created. If WebGPU is unavailable or rendering fails, the app falls back to the CPU implementation and labels the active engine `CPU / SAFE` instead of silently changing behavior.
+
+Renderer changes also use a local visual calibration suite. `make visual-test` downloads and verifies licensed Portra, Tri-X, and iPhone fixtures into the ignored `artifacts/` tree, generates controlled charts, runs the deterministic grain regression, measures available Grainlab renders, and produces `artifacts/visual-tests/report/index.html`. See [the visual test protocol](tests/visual/README.md) for the exact render matrix and interpretation limits.
 
 ## Privacy, scope, and current limitations
 
@@ -293,7 +301,7 @@ At runtime, Grainlab requests a high-performance WebGPU adapter and compiles `ph
 - Curves, straighten, masks, local corrections, and batch export.
 - High-bit-depth intermediates and color-managed TIFF or PNG output.
 - Scanner, enlarger, and paper profiles as explicit output modules.
-- Quantitative step-wedge, ColorChecker, and grain-spectrum regression fixtures.
+- Expanded ColorChecker and camera-RAW calibration beyond the existing step-wedge and grain-spectrum fixtures.
 
 ## Template upstream
 

@@ -155,7 +155,11 @@ Use more than the demo photograph when materially changing the renderer. A usefu
 
 Look for histogram pathologies, clipped channels, halos that ignore highlight thresholds, colored speckle, repeated geometry, resolution-dependent grain scale, and stocks that differ only by one global cast.
 
-For deeper future validation, add step-response plots, color-difference comparisons, grain power spectral density, spatial autocorrelation, and deterministic regression fixtures.
+The checked-in protocol at `tests/visual/README.md` defines the licensed calibration set, render matrix, and interpretation limits. `make visual-test` verifies real Portra and Tri-X sources, creates iPhone and synthetic fixtures, runs the deterministic fixed-field regression, measures smooth-region and tone-binned granularity, compares normalized grain power spectra, and writes a local HTML report beneath `artifacts/visual-tests/`.
+
+Keep hard gates separate from calibration evidence. Checksums, deterministic rerenders, neutral silver structure, and anchored controls may fail the build or review. Absolute grain size must not be matched directly between an unknown real scan chain and a generated output; scanner aperture, enlargement, developer, sharpening, and film-area scale make that comparison underdetermined. Use normalized spectrum shape and visible pathologies as calibration guidance instead.
+
+For deeper future validation, add color-difference comparisons, measured film-area scaling, more developers/scanners, and spatial-autocorrelation confidence bands.
 
 ## Performance and reliability
 

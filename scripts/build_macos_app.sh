@@ -3,6 +3,11 @@ set -euo pipefail
 
 ROOT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$ROOT_DIR"
+
+RUSTUP_BIN_DIR="$(dirname -- "$(command -v rustup 2>/dev/null || true)")"
+if [[ -n "$RUSTUP_BIN_DIR" && -x "$RUSTUP_BIN_DIR/cargo" ]]; then
+  export PATH="$RUSTUP_BIN_DIR:$PATH"
+fi
 export LC_ALL=C
 
 if [[ "${OSTYPE:-}" != darwin* ]]; then
@@ -99,7 +104,10 @@ if [[ ! -f "$ICON_SOURCE" ]]; then
     echo "error: no icon source or generated fallback is available." >&2
     exit 1
   fi
+  swift scripts/prepare_app_icon.swift "$ICON_SOURCE" "$ICON_SOURCE"
 fi
+
+swift scripts/validate_app_icon.swift "$ICON_SOURCE"
 
 if [[ "$FORCE_ICONS" == "1" || ! -f src-tauri/icons/icon.icns || "$ICON_SOURCE" -nt src-tauri/icons/icon.icns ]]; then
   echo "Generating platform icons from $ICON_SOURCE..."

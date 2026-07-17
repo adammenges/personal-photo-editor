@@ -12,8 +12,30 @@ try fileManager.createDirectory(
 let canvasSize = NSSize(width: 1024, height: 1024)
 let canvasRect = NSRect(origin: .zero, size: canvasSize)
 
-let image = NSImage(size: canvasSize)
-image.lockFocus()
+guard let bitmap = NSBitmapImageRep(
+    bitmapDataPlanes: nil,
+    pixelsWide: 1024,
+    pixelsHigh: 1024,
+    bitsPerSample: 8,
+    samplesPerPixel: 4,
+    hasAlpha: true,
+    isPlanar: false,
+    colorSpaceName: .deviceRGB,
+    bytesPerRow: 0,
+    bitsPerPixel: 0
+), let graphics = NSGraphicsContext(bitmapImageRep: bitmap) else {
+    fputs("Failed to allocate icon image.\n", stderr)
+    exit(1)
+}
+
+bitmap.size = canvasSize
+NSGraphicsContext.saveGraphicsState()
+NSGraphicsContext.current = graphics
+
+NSGraphicsContext.saveGraphicsState()
+let silhouetteRect = canvasRect.insetBy(dx: 64, dy: 64)
+let silhouette = NSBezierPath(roundedRect: silhouetteRect, xRadius: 160, yRadius: 160)
+silhouette.addClip()
 
 if let gradient = NSGradient(
     colors: [
@@ -33,8 +55,13 @@ NSColor(calibratedWhite: 1.0, alpha: 0.08).setFill()
 cardPath.fill()
 
 if let baseSymbol = NSImage(systemSymbolName: "sparkles", accessibilityDescription: nil),
-   let configured = baseSymbol.withSymbolConfiguration(.init(pointSize: 440, weight: .medium)),
-   let tinted = configured.withTintColor(.white) {
+   let configured = baseSymbol.withSymbolConfiguration(.init(pointSize: 440, weight: .medium)) {
+    let tinted = NSImage(size: configured.size)
+    tinted.lockFocus()
+    configured.draw(at: .zero, from: .zero, operation: .sourceOver, fraction: 1)
+    NSColor.white.setFill()
+    NSRect(origin: .zero, size: configured.size).fill(using: .sourceAtop)
+    tinted.unlockFocus()
     let symbolRect = NSRect(x: 292, y: 292, width: 440, height: 440)
     tinted.draw(in: symbolRect)
 } else {
@@ -51,11 +78,11 @@ if let baseSymbol = NSImage(systemSymbolName: "sparkles", accessibilityDescripti
     fallback.draw(in: NSRect(x: 210, y: 360, width: 604, height: 260), withAttributes: attributes)
 }
 
-image.unlockFocus()
+NSGraphicsContext.restoreGraphicsState()
+graphics.flushGraphics()
+NSGraphicsContext.restoreGraphicsState()
 
-guard let tiff = image.tiffRepresentation,
-      let bitmap = NSBitmapImageRep(data: tiff),
-      let pngData = bitmap.representation(using: .png, properties: [:]) else {
+guard let pngData = bitmap.representation(using: .png, properties: [:]) else {
     fputs("Failed to render icon image.\n", stderr)
     exit(1)
 }

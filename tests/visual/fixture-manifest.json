@@ -1,0 +1,203 @@
+{
+  "schemaVersion": 1,
+  "artifactRoot": "artifacts/visual-tests",
+  "references": [
+    {
+      "id": "portra-400-turnbull",
+      "kind": "real-film-scene",
+      "title": "Turnbull Wildlife Refuge — Kodak Portra 400",
+      "path": "artifacts/visual-tests/sources/reference/portra-400-turnbull.jpg",
+      "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f8/Turnbull_Wildlife_Refuge.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Turnbull_Wildlife_Refuge.jpg",
+      "sha256": "13864f798ecaaff5355b5b49fcec1be5ce6a5648291c06264a3186d9d7454467",
+      "dimensions": [5208, 5328],
+      "author": "Jacobbutcher",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/deed.en"
+      },
+      "capture": {
+        "camera": "Lubitel 66",
+        "film": "Kodak Portra 400",
+        "scanner": "Canon CanoScan 9000F Mark II"
+      },
+      "diagnostic": "A real color-negative scan for judging whether density, color, and texture read as one material response.",
+      "crop": [0.06, 0.42, 0.88, 0.50]
+    },
+    {
+      "id": "tri-x-400-grain-flat",
+      "kind": "real-film-flat-field",
+      "title": "Kodak Tri-X 400 controlled grain sample",
+      "path": "artifacts/visual-tests/sources/reference/tri-x-400-grain-flat.png",
+      "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Tri-x_400_grain1.png",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Tri-x_400_grain1.png",
+      "sha256": "b5da2224aa3b978362f33ecb5f3b971893cd948c3ab7f8c0ccc81b75beff76f0",
+      "dimensions": [5623, 3667],
+      "author": "Wiley.andrew.r",
+      "license": {
+        "name": "CC0 1.0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/deed.en"
+      },
+      "capture": {
+        "film": "Kodak Tri-X 400, 35 mm",
+        "exposure": "Uniform medium-density negative exposed through white paper",
+        "scanner": "Nikon Coolscan V ED",
+        "processing": "16-bit grayscale; luminance normalized to approximately CIELAB middle gray"
+      },
+      "diagnostic": "A controlled flat negative for measuring granularity, autocorrelation, and spatial-frequency balance without scene edges.",
+      "crop": [0.35, 0.25, 0.30, 0.46]
+    }
+  ],
+  "inputs": [
+    {
+      "id": "iphone-sky",
+      "kind": "iphone-source",
+      "title": "Aircraft over a blue sky",
+      "path": "artifacts/visual-tests/sources/iphone/iphone-13-pro-max-sky.jpg",
+      "fixturePath": "artifacts/visual-tests/fixtures/iphone-13-pro-max-sky-2048.jpg",
+      "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/a/ac/Aircraft_with_blue_sky_over_Warsaw%2C_Poland%2C_2022.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Aircraft_with_blue_sky_over_Warsaw,_Poland,_2022.jpg",
+      "sha256": "516144ad7c5ba12b60697faf2d509e1e382d8f882dd1978ede541000ea2dd99e",
+      "dimensions": [4032, 3024],
+      "author": "Kgbo",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/deed.en"
+      },
+      "capture": {
+        "camera": "Apple iPhone 13 Pro Max"
+      },
+      "diagnostic": "Large smooth blue regions make any detached overlay, tiling, chroma speckle, or slider crawl immediately visible.",
+      "crop": [0.04, 0.04, 0.44, 0.44]
+    },
+    {
+      "id": "iphone-daylight",
+      "kind": "iphone-source",
+      "title": "Streets Beach in daylight",
+      "path": "artifacts/visual-tests/sources/iphone/iphone-13-pro-max-daylight.jpg",
+      "fixturePath": "artifacts/visual-tests/fixtures/iphone-13-pro-max-daylight-2048.jpg",
+      "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/0/04/Streets_Beach%2C_South_Bank_Parklands%2C_Brisbane%2C_June_2022%2C_03.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Streets_Beach,_South_Bank_Parklands,_Brisbane,_June_2022,_03.jpg",
+      "sha256": "5329b509149beb1774c1c20430289bf23857e2d4a790d29030f7a201e3b5c431",
+      "dimensions": [4032, 3024],
+      "author": "Kgbo",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/deed.en"
+      },
+      "capture": {
+        "camera": "Apple iPhone 13 Pro Max"
+      },
+      "diagnostic": "Sky, water, foliage, skin, and phone sharpening reveal whether grain follows tone and survives around real detail.",
+      "crop": [0.52, 0.03, 0.40, 0.48]
+    },
+    {
+      "id": "iphone-night",
+      "kind": "iphone-source",
+      "title": "Illuminated Brisbane City Hall at night",
+      "path": "artifacts/visual-tests/sources/iphone/iphone-13-pro-max-night.jpg",
+      "fixturePath": "artifacts/visual-tests/fixtures/iphone-13-pro-max-night-2048.jpg",
+      "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/7/74/Illuminated_Brisbane_City_Hall_at_night%2C_2022.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Illuminated_Brisbane_City_Hall_at_night,_2022.jpg",
+      "sha256": "7fa7b6405fe5686d4b34cf81f91dc7fc4229a5c75f38ad538ddbca6e679bffd5",
+      "dimensions": [2844, 3007],
+      "author": "Kgbo",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/deed.en"
+      },
+      "capture": {
+        "camera": "Apple iPhone 13 Pro Max"
+      },
+      "diagnostic": "Deep shadows beside clipped point highlights test shadow-biased grain, highlight response, halation, and flare separation.",
+      "crop": [0.20, 0.25, 0.60, 0.54]
+    }
+  ],
+  "synthetic": [
+    {
+      "id": "middle-gray-flat",
+      "title": "CIELAB-like middle-gray flat",
+      "path": "artifacts/visual-tests/synthetic/middle-gray-flat.png",
+      "dimensions": [2048, 1536],
+      "diagnostic": "A texture-free input for isolating the generated grain spectrum and channel structure."
+    },
+    {
+      "id": "tone-wedge",
+      "title": "Sixteen-patch tone wedge",
+      "path": "artifacts/visual-tests/synthetic/tone-wedge.png",
+      "dimensions": [2048, 1024],
+      "diagnostic": "Reveals whether granularity changes continuously with density through shadows, midtones, and highlights."
+    },
+    {
+      "id": "halation-edges",
+      "title": "Highlight and edge stress chart",
+      "path": "artifacts/visual-tests/synthetic/halation-edges.png",
+      "dimensions": [2048, 1536],
+      "diagnostic": "Separates image-forming grain from highlight scatter, local contrast, and scan flare."
+    }
+  ],
+  "renderCases": [
+    {
+      "id": "iphone-sky-portra-400",
+      "sourceId": "iphone-sky",
+      "sourcePath": "artifacts/visual-tests/fixtures/iphone-13-pro-max-sky-2048.jpg",
+      "capturePath": "artifacts/visual-tests/captures/iphone-sky-portra-400.png",
+      "presetId": "kodak-portra-400",
+      "presetName": "Kodak Portra 400",
+      "outputPath": "artifacts/visual-tests/rendered/iphone-sky-kodak-portra-400.jpg",
+      "diagnostic": "The grain should remain fixed while strength changes and should read as density variation within the blue record."
+    },
+    {
+      "id": "iphone-daylight-portra-400",
+      "sourceId": "iphone-daylight",
+      "sourcePath": "artifacts/visual-tests/fixtures/iphone-13-pro-max-daylight-2048.jpg",
+      "capturePath": "artifacts/visual-tests/captures/iphone-daylight-portra-400.png",
+      "presetId": "kodak-portra-400",
+      "presetName": "Kodak Portra 400",
+      "outputPath": "artifacts/visual-tests/rendered/iphone-daylight-kodak-portra-400.jpg",
+      "diagnostic": "Fine dye-cloud structure should coexist with water and foliage instead of veiling their edges."
+    },
+    {
+      "id": "iphone-daylight-tri-x-320",
+      "sourceId": "iphone-daylight",
+      "sourcePath": "artifacts/visual-tests/fixtures/iphone-13-pro-max-daylight-2048.jpg",
+      "capturePath": "artifacts/visual-tests/captures/iphone-daylight-tri-x-320.png",
+      "presetId": "kodak-tri-x-320",
+      "presetName": "Kodak Tri-X 320",
+      "outputPath": "artifacts/visual-tests/rendered/iphone-daylight-kodak-tri-x-320.jpg",
+      "diagnostic": "A single neutral silver structure should replace the RGB records without colored speckle."
+    },
+    {
+      "id": "iphone-night-vision3-500t",
+      "sourceId": "iphone-night",
+      "sourcePath": "artifacts/visual-tests/fixtures/iphone-13-pro-max-night-2048.jpg",
+      "capturePath": "artifacts/visual-tests/captures/iphone-night-vision3-500t.png",
+      "presetId": "kodak-vision3-500t",
+      "presetName": "Kodak Vision3 500T 5219",
+      "outputPath": "artifacts/visual-tests/rendered/iphone-night-kodak-vision3-500t.jpg",
+      "diagnostic": "Open highlights and shadow-weighted dye-cloud structure should remain materially connected around light sources."
+    },
+    {
+      "id": "middle-gray-tri-x-320",
+      "sourceId": "middle-gray-flat",
+      "sourcePath": "artifacts/visual-tests/synthetic/middle-gray-flat.png",
+      "capturePath": "artifacts/visual-tests/captures/middle-gray-tri-x-320.png",
+      "detailCapturePath": "artifacts/visual-tests/captures/middle-gray-tri-x-320-detail.png",
+      "detailOutputPath": "artifacts/visual-tests/rendered/middle-gray-kodak-tri-x-320-detail.png",
+      "presetId": "kodak-tri-x-320",
+      "presetName": "Kodak Tri-X 320",
+      "outputPath": "artifacts/visual-tests/rendered/middle-gray-kodak-tri-x-320.jpg",
+      "diagnostic": "Provides a scene-free generated spectrum to compare with the controlled Tri-X scan."
+    },
+    {
+      "id": "tone-wedge-portra-400",
+      "sourceId": "tone-wedge",
+      "sourcePath": "artifacts/visual-tests/synthetic/tone-wedge.png",
+      "capturePath": "artifacts/visual-tests/captures/tone-wedge-portra-400.png",
+      "presetId": "kodak-portra-400",
+      "presetName": "Kodak Portra 400",
+      "outputPath": "artifacts/visual-tests/rendered/tone-wedge-kodak-portra-400.jpg",
+      "diagnostic": "Grain should vary by exposure and development response, not sit at one uniform opacity across the wedge."
+    }
+  ]
+}

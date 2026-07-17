@@ -4,6 +4,14 @@ set -euo pipefail
 ROOT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$ROOT_DIR"
 
+# Homebrew can place an older standalone Cargo ahead of Rustup in PATH. Put
+# Rustup's proxy directory first so the repository's rust-toolchain.toml is
+# respected by every Cargo command below.
+RUSTUP_BIN_DIR="$(dirname -- "$(command -v rustup 2>/dev/null || true)")"
+if [[ -n "$RUSTUP_BIN_DIR" && -x "$RUSTUP_BIN_DIR/cargo" ]]; then
+  export PATH="$RUSTUP_BIN_DIR:$PATH"
+fi
+
 TAURI_CLI_VERSION="${TAURI_CLI_VERSION:-2.11.4}"
 
 if ! command -v rustup >/dev/null 2>&1; then
