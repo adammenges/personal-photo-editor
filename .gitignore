@@ -8,11 +8,11 @@ debug/
 assets/icons/*.icns
 .DS_Store
 
-# Local QA and agent worktrees
+# Local QA and agent workspaces
 /artifacts/
 /design-qa.md
 /online_examples/
-.claude/worktrees/
+/.claude/
 
 # Local source-asset backups
 assets/icons/*-old.png
