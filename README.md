@@ -48,6 +48,16 @@ This is still an artistic emulator rather than a measured color-science product.
 - Lab processes: standard, push, pull, motion-picture ECN-2, retained-silver bleach bypass, and cross process.
 - A live technical readout exposes the active family, toe, shoulder, gamma, and halation response.
 
+### Personal scan-style learning
+
+- Analyzes one positive film scan or a folder from one roll entirely on the local machine.
+- Measures tone spacing, low-chroma color balance, density-dependent crossover, and tone-aware apparent grain structure.
+- Produces an installable data-driven stock, raw evidence JSON, confidence labels, source previews, and a local HTML report.
+- Keeps underdetermined properties such as exposure, halation, vignette, retained silver, and scanner flare neutral unless they are deliberately authored later.
+- Treats the output honestly as a learned **scan style**—film, development, lab correction, scanner optics, sharpening, and scene content cannot be separated from unpaired finished photographs.
+
+See [Learned film styles](docs/learned-film-styles.md) for the workflow, capture protocol, and inference limits.
+
 ## Film library
 
 The bundled library combines a researched **Century 100** canon with ten Grainlab house/process profiles. The canon spans 45 monochrome and 55 color materials from the United States, Japan, the United Kingdom, Germany, Belgium, the Czech Republic, Italy, Austria, Ukraine/former USSR, and China. Its process coverage is 43 silver B&W, 25 C-41/chromogenic, 16 reversal, 14 ECN-2 cinema-negative, and two instant materials.
@@ -191,6 +201,7 @@ make dev
 | `make dev` | Launch Grainlab in Tauri development mode |
 | `make check` | Check shell, JavaScript, Python, and Swift syntax, Rust formatting, Clippy, and tests |
 | `make visual-test` | Verify licensed fixtures, run grain checks, and build the local visual report |
+| `make learn-style INPUT=/path/to/roll ID=my-roll` | Analyze, report, install, and validate a personal scan style |
 | `make icons` | Regenerate platform icons from the 1024px source asset |
 | `make build-app` | Build, sign, verify, and copy the release app to `dist/` |
 | `make clean` | Remove generated Cargo and app output |
@@ -260,6 +271,8 @@ scripts/
   dev.sh                         development launcher
   check.sh                       repository validation
   run_visual_tests.sh            licensed fixture, metric, and report workflow
+  learn_film_style.sh            local roll-analysis and stock-generation entry point
+  learn_film_style.py            tone, color, and texture inference plus evidence report
   build_macos_app.sh             release packaging and verification
 
 tests/visual/

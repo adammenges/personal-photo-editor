@@ -50,11 +50,13 @@ Run commands from the repository root:
 ./scripts/build_macos_app.sh
 ```
 
-Equivalent `make` targets exist for setup, doctor, dev, check, visual-test, icons, build-app, clean, and help.
+Equivalent `make` targets exist for setup, doctor, dev, check, visual-test, learn-style, icons, build-app, clean, and help.
 
 `scripts/check.sh` verifies shell, JavaScript, Python, and Swift syntax, the app-icon source contract, Rust formatting, Clippy with warnings denied, and Rust tests. Because the Tauri build script runs during Cargo compilation, it also validates film-stock data and regenerates the manifest.
 
 `scripts/run_visual_tests.sh` is the opt-in renderer-calibration path. It downloads only manifest-pinned, licensed fixtures into the ignored `artifacts/` tree, creates deterministic charts and iPhone QA inputs, runs the grain-model regression, and builds the local report. Baselines must be produced by Grainlab's real GPU or CPU renderer rather than a duplicated test implementation.
+
+`scripts/learn_film_style.sh` is the local personal-style path. It analyzes positive scans without uploading them, writes a candidate stock plus measurement evidence and an HTML report beneath the ignored `artifacts/learned-styles/` tree, and installs only with an explicit flag. `make learn-style INPUT=/path/to/roll ID=my-roll NAME="My Roll"` installs the definition and runs Cargo so the common stock validator rebuilds the manifest. The result must remain labeled as a scan-derived interpretation, not a measured stock characterization.
 
 ## macOS packaging
 

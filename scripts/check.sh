@@ -30,6 +30,22 @@ if command -v python3 >/dev/null 2>&1; then
   done
 fi
 
+IMAGING_PY="${GRAINLAB_PYTHON:-}"
+if [[ -z "$IMAGING_PY" ]]; then
+  CODEX_PY="$HOME/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3"
+  if [[ -x "$CODEX_PY" ]]; then
+    IMAGING_PY="$CODEX_PY"
+  else
+    IMAGING_PY="$(command -v python3 2>/dev/null || true)"
+  fi
+fi
+if [[ -n "$IMAGING_PY" ]] && "$IMAGING_PY" -c 'import numpy, PIL' >/dev/null 2>&1; then
+  echo "==> Testing learned film styles"
+  PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=scripts "$IMAGING_PY" scripts/test_learn_film_style.py
+else
+  echo "==> Skipping learned film-style tests (Pillow and NumPy unavailable)"
+fi
+
 if [[ "${OSTYPE:-}" == darwin* ]] && command -v swift >/dev/null 2>&1; then
   echo "==> Checking Swift syntax"
   for script in scripts/*.swift; do

@@ -6,6 +6,8 @@ The researched Century 100 profiles also include a `catalog` block with the stab
 
 `src-tauri/build.rs` discovers the files recursively, validates required fields, and regenerates `index.json`. Adding a valid definition and running `make dev`, `make check`, or `make build-app` makes it appear in the Film Library automatically.
 
+Personal styles learned from positive scans use exactly this interface. `scripts/learn_film_style.sh` first writes a candidate and evidence report beneath `artifacts/learned-styles/`; its explicit `--install` mode writes the reviewed definition beneath `ui/film-stocks/learned/`. Learned profiles must identify themselves as scan-derived interpretations because an unpaired rendered scan cannot isolate film stock, exposure, developer, laboratory correction, scanner transfer, sharpening, and scene content. See [`docs/learned-film-styles.md`](../../docs/learned-film-styles.md).
+
 ```json
 {
   "id": "example-400",

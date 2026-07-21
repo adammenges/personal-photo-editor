@@ -122,6 +122,14 @@ Do not add a stock by editing `PRESETS` or branching on its id in `main.js`. Ext
 
 See `ui/film-stocks/README.md` for the canonical schema, allowed families, ranges, and annotated example.
 
+### Learned personal styles
+
+The local learner at `scripts/learn_film_style.sh` converts one positive scan or a same-roll folder into the common stock interface. It is a scan-look estimator, not a second renderer and not a license for stock-specific code paths. A generated definition must pass the same build validation and the GPU and CPU pipelines must treat it like every other stock.
+
+Keep the inference boundary explicit. Unpaired finished photographs entangle subject reflectance, exposure, film, development, lab correction, scanner optics/profile, denoise, sharpening, compression, and output encoding. Automatic learning may conservatively map tone spacing, low-chroma output balance, density-dependent crossover, and apparent smooth-region texture. It must not claim measured sensitometry, spectral sensitivity, halation, vignette, retained silver, scanner flare, or a film/process identity from those pixels alone. Known provenance may be supplied as metadata; it must not be presented as image inference.
+
+Every learned run writes raw measurements, confidence labels, source previews, the candidate stock, and an HTML report beneath `artifacts/learned-styles/`. Default operation is review-only. Installation and replacement require explicit flags, and installed definitions belong under `ui/film-stocks/learned/`. See `docs/learned-film-styles.md` for capture guidance and workflow.
+
 ## Dossier standard
 
 Stock dossiers should feel complete to a film enthusiast and useful in the field. Include:
